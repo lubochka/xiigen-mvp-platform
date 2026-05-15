@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net10.0": {
+      "xiigen.fabrics.inmemory": {
+        "type": "Project",
+        "dependencies": {
+          "Xiigen.Kernel": "[0.1.1, )"
+        }
+      },
+      "xiigen.kernel": {
+        "type": "Project"
+      },
+      "xiigen.platform.marketplace": {
+        "type": "Project",
+        "dependencies": {
+          "Xiigen.Kernel": "[0.1.1, )"
+        }
+      }
+    }
+  }
+}

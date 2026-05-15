@@ -1,4 +1,20 @@
 services:
+  platform-api:
+    build:
+      context: .
+      dockerfile: src/Xiigen.Platform.Api/Dockerfile
+    container_name: xiigen-platform-api
+    ports:
+      - "5080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    depends_on:
+      - vault
+      - elasticsearch
+      - rabbitmq
+      - redis
+      - local-nuget-registry
+      - local-npm-registry
   vault:
     image: hashicorp/vault:1.15
     container_name: xiigen-vault
@@ -29,7 +45,7 @@ services:
     container_name: xiigen-redis
     ports:
       - "6379:6379"
-  baget:
+  local-nuget-registry:
     image: loicsharma/baget:latest
     container_name: xiigen-baget
     ports:
@@ -38,3 +54,8 @@ services:
       ApiKey: xiigen-local
       Storage__Type: FileSystem
       Storage__Path: /var/baget/packages
+  local-npm-registry:
+    image: verdaccio/verdaccio:5
+    container_name: xiigen-verdaccio
+    ports:
+      - "4873:4873"
