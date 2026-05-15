@@ -1,12 +1,18 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/Xiigen.Auth/Xiigen.Auth.csproj" />
     <Project Path="src/Xiigen.Fabrics.InMemory/Xiigen.Fabrics.InMemory.csproj" />
+    <Project Path="src/Xiigen.Fabrics.Scheduler/Xiigen.Fabrics.Scheduler.csproj" />
+    <Project Path="src/Xiigen.Freedom/Xiigen.Freedom.csproj" />
     <Project Path="src/Xiigen.Kernel/Xiigen.Kernel.csproj" />
     <Project Path="src/Xiigen.Platform.Api/Xiigen.Platform.Api.csproj" />
     <Project Path="src/Xiigen.Platform.Marketplace/Xiigen.Platform.Marketplace.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/Xiigen.Auth.Tests/Xiigen.Auth.Tests.csproj" />
     <Project Path="tests/Xiigen.Fabrics.InMemory.Tests/Xiigen.Fabrics.InMemory.Tests.csproj" />
+    <Project Path="tests/Xiigen.Fabrics.Scheduler.Tests/Xiigen.Fabrics.Scheduler.Tests.csproj" />
+    <Project Path="tests/Xiigen.Freedom.Tests/Xiigen.Freedom.Tests.csproj" />
     <Project Path="tests/Xiigen.Kernel.Tests/Xiigen.Kernel.Tests.csproj" />
     <Project Path="tests/Xiigen.Platform.Marketplace.Tests/Xiigen.Platform.Marketplace.Tests.csproj" />
   </Folder>
