@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Xiigen.Kernel/Xiigen.Kernel.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Xiigen.Kernel.Tests/Xiigen.Kernel.Tests.csproj" />
+  </Folder>
+</Solution>

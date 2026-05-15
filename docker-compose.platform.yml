@@ -1,0 +1,40 @@
+services:
+  vault:
+    image: hashicorp/vault:1.15
+    container_name: xiigen-vault
+    ports:
+      - "8200:8200"
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: xiigen-dev-root
+      VAULT_DEV_LISTEN_ADDRESS: 0.0.0.0:8200
+    cap_add:
+      - IPC_LOCK
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.3
+    container_name: xiigen-elasticsearch
+    ports:
+      - "9200:9200"
+    environment:
+      discovery.type: single-node
+      xpack.security.enabled: "false"
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: xiigen-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  redis:
+    image: redis:7.2
+    container_name: xiigen-redis
+    ports:
+      - "6379:6379"
+  baget:
+    image: loicsharma/baget:latest
+    container_name: xiigen-baget
+    ports:
+      - "5555:80"
+    environment:
+      ApiKey: xiigen-local
+      Storage__Type: FileSystem
+      Storage__Path: /var/baget/packages
