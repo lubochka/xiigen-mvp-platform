@@ -1,0 +1,11 @@
+{
+  "unitId": "primary-master-tenant.xiigen-enterprise-master.arbiter",
+  "importPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/import/arbiter.import.json",
+  "requiredInputs": [
+    "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/manifests/arbiter.manifest.json",
+    "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/checkpoints/arbiter.checkpoint-reference.json",
+    "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/validation/arbiter.validation-report.json"
+  ],
+  "registersLocatorEntry": "xiigen-unit://primary-master-tenant/xiigen-enterprise-master/arbiter/1.0.0",
+  "validatesCheckpointChecksum": "7103e1629bf5783340ee9cb6dbc9481b6bfa59f6ab00a46d90ea1d15df7b9faf"
+}

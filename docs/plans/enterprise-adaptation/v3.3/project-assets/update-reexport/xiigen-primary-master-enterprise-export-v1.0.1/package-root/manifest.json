@@ -1,0 +1,33 @@
+{
+    "schema_version":  "1.0",
+    "package_id":  "xiigen-primary-master-enterprise-export",
+    "package_name":  "xiigen-primary-master-enterprise-export-v1.0.1",
+    "tenantId":  "primary-master-tenant",
+    "projectId":  "xiigen-enterprise-adaptation-v3.3",
+    "version":  "1.0.1",
+    "sourceCommit":  "dd7d59116a68fbc693d1f4db43a65e4b706ba0b0",
+    "sourceBranch":  "main",
+    "sourceRemote":  "https://github.com/lubochka/xiigen-platform-dot-net-angular.git",
+    "generatedAtUtc":  "2026-05-25T20:51:49.0617548Z",
+    "packageTree":  [
+                        "manifest.json",
+                        "provenance.json",
+                        "hashes.json",
+                        "signature/",
+                        "app/",
+                        "config/",
+                        "trainable-units/",
+                        "project-local-wiki/",
+                        "plugin-locators/",
+                        "evidence/",
+                        "install/"
+                    ],
+    "authorization":  {
+                          "downloadPolicy":  "tenant-scoped",
+                          "allowedTenantId":  "primary-master-tenant",
+                          "crossTenantDownload":  "forbidden"
+                      },
+    "noEmbeddedPluginWeights":  true,
+    "noRawSecrets":  true,
+    "evidenceMap":  "evidence/evidence-map.json"
+}

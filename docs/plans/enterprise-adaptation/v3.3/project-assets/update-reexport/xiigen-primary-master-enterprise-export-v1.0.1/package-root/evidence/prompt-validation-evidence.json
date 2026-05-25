@@ -1,0 +1,44 @@
+{
+    "session":  "SESSION-08-PROMPT-BY-PROMPT-VALIDATION",
+    "capturedAtUtc":  "2026-05-25T20:13:49Z",
+    "sourceResolution":  {
+                             "requestedPath":  "orchestrator prompts.txt",
+                             "requestedPathFound":  false,
+                             "resolvedAuthority":  "C:\\Projects\\xiigen mvp\\fixtures\\prompts",
+                             "resolutionReason":  "The v3.3 package references orchestrator prompts.txt but does not include it; the XIIGen source fixture prompt suite contains the concrete prompt items used by the orchestrator and is used as the execution authority.",
+                             "promptCount":  10
+                         },
+    "promptMatrixPath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-by-prompt-matrix.json",
+    "validationContract":  "docs/plans/enterprise-adaptation/v3.3/PROMPT-SUITE-VALIDATION-CONTRACT.md",
+    "smartCodeAssistantEvidence":  "docs/plans/enterprise-adaptation/v3.3/evidence/smart-code-assistant-evidence.json",
+    "generatedRows":  10,
+    "promptIds":  [
+                      "crud-generate--genesis--v1.0.0",
+                      "architecture-scan--genesis--v1.0.0",
+                      "capability-inventory--genesis--v1.0.0",
+                      "convention-extract--genesis--v1.0.0",
+                      "derived-context-assembly--genesis--v1.0.0",
+                      "integration-analysis--genesis--v1.0.0",
+                      "iron-rule-derivation--genesis--v1.0.0",
+                      "integration-test-generate--genesis--v1.0.0",
+                      "requirement-extract--genesis--v1.0.0",
+                      "unit-test-generate--genesis--v1.0.0"
+                  ],
+    "rows":  {
+                 "PROMPT-01":  "PASS",
+                 "PROMPT-02":  "PASS",
+                 "PROMPT-03":  "PASS",
+                 "PROMPT-04":  "PASS",
+                 "PROMPT-05":  "PASS",
+                 "PROMPT-06":  "PASS",
+                 "PROMPT-07":  "PASS",
+                 "PROMPT-08":  "PASS",
+                 "PROMPT-09":  "PASS",
+                 "PROMPT-10":  "PASS"
+             },
+    "metricsPolicy":  {
+                          "fakeMetricPassForbidden":  true,
+                          "missingRuntimeMetricsValue":  "UNKNOWN",
+                          "knownMetricEvidence":  "policy_validation_ms=42 from smart-code-assistant AWS runtime evidence"
+                      }
+}

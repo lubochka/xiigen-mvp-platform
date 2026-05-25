@@ -1,0 +1,28 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "export_package_evidence_map",
+    "rows":  [
+                 "EXPORT-01",
+                 "EXPORT-02",
+                 "EXPORT-03",
+                 "EXPORT-04",
+                 "EXPORT-05",
+                 "EXPORT-06",
+                 "EXPORT-07",
+                 "EXPORT-08",
+                 "EXPORT-09",
+                 "EXPORT-10",
+                 "EXPORT-11",
+                 "EXPORT-12"
+             ],
+    "evidence":  {
+                     "trainableUnits":  "trainable-units/",
+                     "pluginLocators":  "plugin-locators/plugin-unit-locator.json",
+                     "projectLocalWiki":  "project-local-wiki/linked-system-graph.json",
+                     "promptSuite":  "evidence/prompt-by-prompt-matrix.json",
+                     "pluginRuntime":  "evidence/plugin-runtime-evidence.json",
+                     "awsRuntime":  "evidence/AWS-RUNTIME-EVIDENCE.json",
+                     "smartCodeAssistant":  "evidence/smart-code-assistant-evidence.json",
+                     "smartWiki":  "evidence/smart-wiki-answer-evidence.json"
+                 }
+}

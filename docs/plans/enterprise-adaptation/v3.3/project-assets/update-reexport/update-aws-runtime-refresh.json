@@ -1,0 +1,22 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "update_aws_runtime_refresh",
+    "generatedAtUtc":  "2026-05-25T20:51:49.0617548Z",
+    "redeployRequired":  false,
+    "redeployReason":  "NO_RUNTIME_GRAPH_DELTA_CORPORATE_INSTALL_EVIDENCE_ONLY",
+    "server":  {
+                   "url":  "https://snt2bpe3zt.eu-west-1.awsapprunner.com/health/ready",
+                   "status":  "PASS",
+                   "statusCode":  200
+               },
+    "client":  {
+                   "url":  "http://xiigen-primary-master-flow19-client-595003292091.s3-website-eu-west-1.amazonaws.com",
+                   "status":  "PASS",
+                   "statusCode":  200
+               },
+    "visualEvidence":  {
+                           "status":  "PASS_REUSED_UNCHANGED_RUNTIME_VISUAL_EVIDENCE",
+                           "source":  "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/visualEvidenceIndex.json",
+                           "reason":  "No Angular/.NET/SQL runtime graph delta detected in update."
+                       }
+}

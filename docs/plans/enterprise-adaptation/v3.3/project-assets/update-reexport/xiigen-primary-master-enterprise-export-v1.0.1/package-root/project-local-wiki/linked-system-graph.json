@@ -1,0 +1,276 @@
+{
+  "flow": "FLOW-19",
+  "flowSlug": "durable-sagas-compliance",
+  "session": "SESSION-03-LINKED-SYSTEM-GRAPH",
+  "generatedAtUtc": "2026-05-25T19:35:00Z",
+  "sourceRoots": {
+    "angular": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\client\\angular",
+    "dotnetApi": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Api",
+    "dotnetApplication": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application",
+    "dotnetInfrastructure": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Infrastructure",
+    "contracts": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\contracts",
+    "manifest": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\flow.manifest.json"
+  },
+  "nodes": [
+    {
+      "nodeId": "manifest:FLOW-19",
+      "type": "FlowManifest",
+      "flowId": "FLOW-19",
+      "flowSlug": "durable-sagas-compliance",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\flow.manifest.json",
+      "line": 1,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "angular-route:questionnaire",
+      "type": "AngularRoute",
+      "path": "durable-sagas-compliance/questionnaire",
+      "componentId": "angular-component:App",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\client\\angular\\src\\app\\app.routes.ts",
+      "line": 6,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "angular-route:matching",
+      "type": "AngularRoute",
+      "path": "durable-sagas-compliance/matching",
+      "componentId": "angular-component:App",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\client\\angular\\src\\app\\app.routes.ts",
+      "line": 10,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "angular-route:personalization",
+      "type": "AngularRoute",
+      "path": "durable-sagas-compliance/personalization",
+      "componentId": "angular-component:App",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\client\\angular\\src\\app\\app.routes.ts",
+      "line": 14,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "angular-component:App",
+      "type": "AngularComponent",
+      "selector": "app-root",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\client\\angular\\src\\app\\app.ts",
+      "templatePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\client\\angular\\src\\app\\app.html",
+      "line": 39,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "angular-service:none",
+      "type": "AngularService",
+      "status": "ABSTAIN_NO_SOURCE",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\client\\angular\\src\\app",
+      "line": null,
+      "abstentionReason": "No Angular service or HttpClient usage exists in FLOW-19 source; UI is currently static/interactive without API client calls.",
+      "confidence": "source-scan"
+    },
+    {
+      "nodeId": "dotnet-controller:Program",
+      "type": "DotNetController",
+      "controllerKind": "ASP.NET Core Minimal API",
+      "route": "/api/dynamic/durable-sagas-compliance",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Api\\Program.cs",
+      "line": 42,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "dotnet-service:DurableSagasComplianceService",
+      "type": "DotNetService",
+      "serviceClass": "DurableSagasComplianceService",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application\\DurableSagasComplianceService.cs",
+      "line": 13,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "contract:endpoints",
+      "type": "Contract",
+      "contractKind": "endpoint-descriptor",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\contracts\\endpoints\\flow-endpoints.json",
+      "line": 1,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "contract:request-schema",
+      "type": "Contract",
+      "contractKind": "json-schema-request",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\contracts\\schemas\\durable-sagas-compliance-request.schema.json",
+      "line": 1,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "contract:response-schema",
+      "type": "Contract",
+      "contractKind": "json-schema-response",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\contracts\\schemas\\durable-sagas-compliance-response.schema.json",
+      "line": 1,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "table:xiigen-flow19-saga-states",
+      "type": "Table",
+      "logicalName": "xiigen-flow19-saga-states",
+      "storageKind": "document-collection",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application\\DurableSagasComplianceConstants.cs",
+      "line": 9,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "table:xiigen-flow19-compliance-records",
+      "type": "Table",
+      "logicalName": "xiigen-flow19-compliance-records",
+      "storageKind": "document-collection",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application\\DurableSagasComplianceConstants.cs",
+      "line": 13,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "table:xiigen-flow19-compensation-records",
+      "type": "Table",
+      "logicalName": "xiigen-flow19-compensation-records",
+      "storageKind": "document-collection",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application\\DurableSagasComplianceConstants.cs",
+      "line": 12,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "table:xiigen-flow19-retention-archive",
+      "type": "Table",
+      "logicalName": "xiigen-flow19-retention-archive",
+      "storageKind": "document-collection",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application\\DurableSagasComplianceConstants.cs",
+      "line": 14,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "table:xiigen-flow19-export-jobs",
+      "type": "Table",
+      "logicalName": "xiigen-flow19-export-jobs",
+      "storageKind": "document-collection",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application\\DurableSagasComplianceConstants.cs",
+      "line": 16,
+      "confidence": "source"
+    },
+    {
+      "nodeId": "stored-procedure:none",
+      "type": "StoredProcedure",
+      "status": "ABSTAIN_NO_SOURCE",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance",
+      "line": null,
+      "abstentionReason": "No CREATE PROCEDURE, CREATE PROC, stored procedure or DbContext source exists for FLOW-19; graph must not invent SQL procedure links.",
+      "confidence": "source-scan"
+    },
+    {
+      "nodeId": "view:none",
+      "type": "View",
+      "status": "ABSTAIN_NO_SOURCE",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance",
+      "line": null,
+      "abstentionReason": "No SQL view source exists for FLOW-19.",
+      "confidence": "source-scan"
+    },
+    {
+      "nodeId": "job:export-queued",
+      "type": "Job",
+      "logicalName": "xiigen.flow19.compliance.export-queued",
+      "jobKind": "outbox-event",
+      "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application\\DurableSagasComplianceConstants.cs",
+      "line": 30,
+      "confidence": "source"
+    }
+  ],
+  "edges": [
+    { "from": "angular-route:questionnaire", "to": "angular-component:App", "type": "renders", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\client\\angular\\src\\app\\app.routes.ts", "line": 6, "confidence": "source" },
+    { "from": "angular-route:matching", "to": "angular-component:App", "type": "renders", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\client\\angular\\src\\app\\app.routes.ts", "line": 10, "confidence": "source" },
+    { "from": "angular-route:personalization", "to": "angular-component:App", "type": "renders", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\client\\angular\\src\\app\\app.routes.ts", "line": 14, "confidence": "source" },
+    { "from": "dotnet-controller:Program", "to": "dotnet-service:DurableSagasComplianceService", "type": "calls", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Api\\Program.cs", "line": 62, "confidence": "source" },
+    { "from": "dotnet-controller:Program", "to": "contract:endpoints", "type": "usesDto", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\contracts\\endpoints\\flow-endpoints.json", "line": 1, "confidence": "contract" },
+    { "from": "dotnet-controller:Program", "to": "contract:request-schema", "type": "usesDto", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\contracts\\schemas\\durable-sagas-compliance-request.schema.json", "line": 1, "confidence": "contract" },
+    { "from": "dotnet-controller:Program", "to": "contract:response-schema", "type": "usesDto", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\contracts\\schemas\\durable-sagas-compliance-response.schema.json", "line": 1, "confidence": "contract" },
+    { "from": "dotnet-controller:Program", "to": "dotnet-controller:Program", "type": "guardedByPolicy", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Api\\Program.cs", "line": 182, "confidence": "source" },
+    { "from": "dotnet-service:DurableSagasComplianceService", "to": "table:xiigen-flow19-saga-states", "type": "readsTable", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application\\DurableSagasComplianceService.cs", "line": 110, "confidence": "source" },
+    { "from": "dotnet-service:DurableSagasComplianceService", "to": "table:xiigen-flow19-saga-states", "type": "writesTable", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application\\DurableSagasComplianceService.cs", "line": 166, "confidence": "source" },
+    { "from": "dotnet-service:DurableSagasComplianceService", "to": "table:xiigen-flow19-compliance-records", "type": "writesTable", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application\\DurableSagasComplianceService.cs", "line": 336, "confidence": "source" },
+    { "from": "dotnet-service:DurableSagasComplianceService", "to": "table:xiigen-flow19-retention-archive", "type": "writesTable", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application\\DurableSagasComplianceService.cs", "line": 425, "confidence": "source" },
+    { "from": "dotnet-service:DurableSagasComplianceService", "to": "table:xiigen-flow19-export-jobs", "type": "writesTable", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application\\DurableSagasComplianceService.cs", "line": 470, "confidence": "source" },
+    { "from": "dotnet-service:DurableSagasComplianceService", "to": "job:export-queued", "type": "emitsEvent", "sourcePath": "C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\server\\Xiigen.Flow.DurableSagasCompliance.Application\\DurableSagasComplianceService.cs", "line": 471, "confidence": "source" }
+  ],
+  "sourceEvidence": {
+    "allowedVerificationCommand": "rg -n \"CREATE PROCEDURE|CREATE PROC|stored procedure|DbContext|Controller|CanActivate|Route|HttpClient\" .",
+    "flowScopedCommand": "rg -n \"CREATE PROCEDURE|CREATE PROC|stored procedure|DbContext|Controller|CanActivate|Route|HttpClient\" C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance",
+    "flowScopedAllowedHits": [
+      "client/angular/src/app/app.config.ts:2 import { provideRouter } from '@angular/router';",
+      "client/angular/src/app/app.routes.ts:4 export const FLOW_02_ROUTES: Routes = ["
+    ],
+    "endpointDiscoveryCommand": "Select-String Program.cs -Pattern 'MapGet|MapPost|RequireRole|StartSagaAsync|CompensateSagaAsync|WriteComplianceRecordAsync|EnforceRetentionAsync|QueueComplianceExportAsync|GetDashboardAsync'",
+    "endpointDiscoveryHits": [
+      "server/Xiigen.Flow.DurableSagasCompliance.Api/Program.cs:42 MapGet public-preview",
+      "server/Xiigen.Flow.DurableSagasCompliance.Api/Program.cs:50 MapPost dynamic endpoint",
+      "server/Xiigen.Flow.DurableSagasCompliance.Api/Program.cs:70 MapPost compensate",
+      "server/Xiigen.Flow.DurableSagasCompliance.Api/Program.cs:89 MapPost compliance",
+      "server/Xiigen.Flow.DurableSagasCompliance.Api/Program.cs:108 MapPost retention/enforce",
+      "server/Xiigen.Flow.DurableSagasCompliance.Api/Program.cs:127 MapPost exports",
+      "server/Xiigen.Flow.DurableSagasCompliance.Api/Program.cs:146 MapGet operations/me",
+      "server/Xiigen.Flow.DurableSagasCompliance.Api/Program.cs:163 MapGet dashboard"
+    ]
+  },
+  "abstentions": [
+    {
+      "sourceFamily": "SQL stored procedures",
+      "status": "ABSTAIN_NO_SOURCE",
+      "scanCommand": "rg -n \"CREATE PROCEDURE|CREATE PROC|stored procedure|DbContext\" C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance",
+      "reason": "FLOW-19 uses document-collection fabric names and no SQL procedure source. Stored-procedure impact questions must answer with this abstention unless SQL sources are added later."
+    },
+    {
+      "sourceFamily": "Angular HttpClient services",
+      "status": "ABSTAIN_NO_SOURCE",
+      "scanCommand": "rg -n \"HttpClient|inject\\(HttpClient\\)|@Injectable\" C:\\Projects\\xiigen-flows-dot-net-angular\\flows\\FLOW-19-durable-sagas-compliance\\client\\angular\\src",
+      "reason": "FLOW-19 Angular UI is currently route/component/template only; API calls are represented on the .NET side and endpoint contracts."
+    }
+  ],
+  "advancedQuestions": [
+    {
+      "questionId": "entity-impact",
+      "status": "ANSWERABLE_WITH_CITATIONS",
+      "example": "Impact of xiigen-flow19-compliance-records includes WriteComplianceRecordAsync, EnforceRetentionAsync, /compliance, /retention/enforce, compliance audit UI and retention archive edge."
+    },
+    {
+      "questionId": "flow-trace",
+      "status": "ANSWERABLE_WITH_CITATIONS",
+      "example": "A saga start travels from /api/dynamic/durable-sagas-compliance to StartSagaAsync, writes saga state/step lock and emits saga started/step executed events."
+    },
+    {
+      "questionId": "stored-procedure-impact",
+      "status": "ABSTAIN_NO_SOURCE",
+      "example": "No stored procedure source exists for FLOW-19; graph must not claim procedure dependencies."
+    },
+    {
+      "questionId": "angular-impact",
+      "status": "ANSWERABLE_WITH_CITATIONS",
+      "example": "Role/display changes affect App component computed role gates and all three Angular routes that render App."
+    },
+    {
+      "questionId": "dotnet-impact",
+      "status": "ANSWERABLE_WITH_CITATIONS",
+      "example": "Changing endpoint schema impacts Program.cs Minimal API handlers, endpoint descriptors and request/response schemas."
+    },
+    {
+      "questionId": "missing-evidence-abstention",
+      "status": "ANSWERABLE_WITH_CITATIONS",
+      "example": "SQL and Angular HttpClient questions use ABSTAIN_NO_SOURCE rows rather than fabricated links."
+    }
+  ],
+  "matrixRowsClosed": [
+    "LGS-01",
+    "LGS-02",
+    "LGS-03",
+    "LGS-04",
+    "LGS-05",
+    "LGS-06",
+    "LGS-07",
+    "LGS-08",
+    "LGS-09",
+    "LGS-10"
+  ]
+}

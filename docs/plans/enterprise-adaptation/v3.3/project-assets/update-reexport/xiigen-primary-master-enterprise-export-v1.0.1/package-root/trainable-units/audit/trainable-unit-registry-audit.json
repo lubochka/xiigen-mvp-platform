@@ -1,0 +1,23 @@
+{
+  "auditId": "tu-registry-69af0ea765e18175",
+  "tenantId": "primary-master-tenant",
+  "projectId": "xiigen-enterprise-master",
+  "action": "TRAINABLE_UNIT_REGISTRY_UPDATED",
+  "evidencePath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/trainable-unit-registry-evidence.json",
+  "updatedAtUtc": "2026-05-25T19:01:44.362Z",
+  "unitCount": 5,
+  "rowsClosed": [
+    "TU-01",
+    "TU-02",
+    "TU-03",
+    "TU-04",
+    "TU-05",
+    "TU-06",
+    "TU-07",
+    "TU-08",
+    "TU-09",
+    "TU-10",
+    "TU-11",
+    "TU-12"
+  ]
+}

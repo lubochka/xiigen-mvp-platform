@@ -1,0 +1,12 @@
+{
+    "schema_version":  "1.0",
+    "signingProvider":  "SESSION-12_EPHEMERAL_RSA_APPROVED_SIGNER_NO_PRIVATE_KEY_PERSISTED",
+    "algorithm":  "RSA-SHA256-PKCS1",
+    "keySize":  2048,
+    "signedArtifact":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/xiigen-primary-master-enterprise-export-v1.0.1.zip",
+    "packageSha256":  "103bb6a9c3518ab8efb6350bad0312dcc2714706c6dd170b0f927777c1781980",
+    "signatureBase64":  "K2GYipl0IC1luo330Cpc2hXC3plel77QJPZMg7b5Gbx1CZzsTl1T6ZysHpsKGS7016PwsxylmeURiiO9TRTGQCwQHa5+lWTzHvvHbz/lrJ2Bne01ygf6fv87ViJL01joZ7qHP0CzhP3k4QYWHiVwr435n43EETqCpjrLy/N+SqT/Zt5Y4dC/sMOABATIcfkz2fEkQqNyPUrtixj+DkhQhHgJ1LEIZPvd9HIGzF8y5TgtrT7YPYBLacCV4awcShAPKoqwlQGhfOjY220ueD+IXQQD6hqQseqPIcWu1G9VOvTK7NnbmH0JuB8VyhAecYKAzzCuIth7MXNqjbbDoJ4vlQ==",
+    "publicKeyPath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/xiigen-primary-master-enterprise-export-v1.0.1.public-key.json",
+    "privateKeyPersisted":  false,
+    "createdAtUtc":  "2026-05-25T20:53:50.2266406Z"
+}

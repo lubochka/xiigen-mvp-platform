@@ -3,8 +3,8 @@
     "goal_reached":  false,
     "stop_allowed":  false,
     "gate_status":  "IN_PROGRESS_NEXT_STEP_KNOWN",
-    "next_action":  "Execute SESSION-12-UPDATE-REEXPORT-LIFECYCLE.md: verify update/re-export lifecycle and close UPDATE-01 first UNKNOWN row.",
-    "next_action_plan_source":  "SESSION-12 / UPDATE-01 first UNKNOWN row",
+    "next_action":  "Execute SESSION-13-LEGAL-DOCUMENTS-SITE-INTEGRATION.md: implement legal document site integration and close LEGAL-01 first UNKNOWN row.",
+    "next_action_plan_source":  "SESSION-13 / LEGAL-01 first UNKNOWN row",
     "actionable_gaps":  [
                             "FLOW-19 AWS capability not verified from Enterprise repo evidence",
                             "AWS runtime endpoint/IP evidence not captured from FLOW-19 output",
@@ -12,8 +12,8 @@
                             "Trainable unit registry/import/export proof not implemented",
                             "Final evidence scope does not yet equal final claim scope"
                         ],
-    "current_internal_role_state":  "ARCHITECT_INTERNAL_REVIEW_PASS_SESSION_11_CORPORATE_INSTALL_CONTINUE_SESSION_12",
-    "last_role_transition_reason":  "Corporate install/import evidence verified manifest, signature, hash/provenance, no-secrets scan, unit locator import, checkpoint resolution, AWS server/client/data health, plugin locator visibility, rollback and persisted evidence; INSTALL-01 through INSTALL-12 can close.",
+    "current_internal_role_state":  "ARCHITECT_INTERNAL_REVIEW_PASS_SESSION_12_UPDATE_REEXPORT_CONTINUE_SESSION_13",
+    "last_role_transition_reason":  "Update/re-export lifecycle verified graph delta, unaffected wiki/unit/prompt/plugin evidence, signed v1.0.1 re-export package, AWS health refresh, rollback and provenance; UPDATE-01 through UPDATE-12 can close.",
     "return_to_executor_required":  true,
     "loaded_skills":  [
                           "architect plan",
@@ -48,20 +48,20 @@
                                  "push_is_stop_gate":  false
                              },
     "executor_authority":  "REINSTATED_FOR_PLAN_DERIVED_ACTION_ONLY",
-    "executor_authority_scope":  "Execute SESSION-12 Update/Re-export Lifecycle only; keep corporate install evidence as source of truth.",
+    "executor_authority_scope":  "Execute SESSION-13 Legal Documents Site Integration only; keep update/re-export evidence as source of truth.",
     "executor_may_not_self_restore":  true,
     "architect_reinstatement_required":  true,
     "executor_authority_reinstated":  true,
     "architect_verdict":  "ARCHITECT_VERDICT_CONTINUE_EXECUTION",
     "reinstatement_reason":  "SESSION-01 capability map provides exact implementation targets for missing AWS CI/CD rows.",
-    "first_failed_requirement_id":  "UPDATE-01",
+    "first_failed_requirement_id":  "LEGAL-01",
     "last_plan_reminder":  {
-                               "next_action":  "Execute SESSION-12-UPDATE-REEXPORT-LIFECYCLE.md: verify update/re-export lifecycle and close UPDATE-01 first UNKNOWN row.",
-                               "source":  "UPDATE-01"
+                               "next_action":  "Execute SESSION-13-LEGAL-DOCUMENTS-SITE-INTEGRATION.md: implement legal document site integration and close LEGAL-01 first UNKNOWN row.",
+                               "source":  "LEGAL-01"
                            },
     "execution_attempt_latest":  {
-                                     "next_action":  "Execute SESSION-12-UPDATE-REEXPORT-LIFECYCLE.md: verify update/re-export lifecycle and close UPDATE-01 first UNKNOWN row.",
-                                     "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-12 update re-export lifecycle slice"
+                                     "next_action":  "Execute SESSION-13-LEGAL-DOCUMENTS-SITE-INTEGRATION.md: implement legal document site integration and close LEGAL-01 first UNKNOWN row.",
+                                     "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-13 legal documents site integration slice"
                                  },
     "constitution_linkage":  {
                                  "required_if_file_exists":  true,
@@ -292,8 +292,8 @@
                            "architect_final_authority_only":  true,
                            "coverage_challenge_architect_first":  true,
                            "stop_permission_gate_required":  true,
-                           "next_action":  "Execute SESSION-12-UPDATE-REEXPORT-LIFECYCLE.md: verify update/re-export lifecycle and close UPDATE-01 first UNKNOWN row.",
-                           "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-11 corporate install evidence slice"
+                           "next_action":  "Execute SESSION-13-LEGAL-DOCUMENTS-SITE-INTEGRATION.md: implement legal document site integration and close LEGAL-01 first UNKNOWN row.",
+                           "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-13 legal documents site integration slice"
                        },
     "masterTenantLaunch":  {
                                "controlPlane":  "main Enterprise project / master tenant",
@@ -398,5 +398,12 @@
                                                         "INSTALL-11",
                                                         "INSTALL-12"
                                                     ]
-                                 }
+                                 },
+    "updateReexportEvidence":  {
+                                   "status":  "PASS_UPDATE_REEXPORT_LIFECYCLE_VERIFIED",
+                                   "evidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/update-reexport-lifecycle-evidence.json",
+                                   "packageZip":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/xiigen-primary-master-enterprise-export-v1.0.1.zip",
+                                   "packageSha256":  "103bb6a9c3518ab8efb6350bad0312dcc2714706c6dd170b0f927777c1781980",
+                                   "firstUnknownAfterClose":  "LEGAL-01"
+                               }
 }

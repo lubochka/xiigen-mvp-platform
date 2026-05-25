@@ -1,0 +1,22 @@
+{
+  "unitId": "primary-master-tenant.xiigen-enterprise-master.smart-code-assistant",
+  "unitType": "smart-code-assistant",
+  "tenantId": "primary-master-tenant",
+  "projectId": "xiigen-enterprise-master",
+  "version": "1.0.0",
+  "sourceGraphId": "docs/plans/enterprise-adaptation/v3.3/evidence/linked-system-graph.json",
+  "sourceGraphChecksum": "5a6e0322a53d85b8650c11a40fd061ffcb141402e0b89afdc38c60c6d4a7300a",
+  "checkpointReference": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/checkpoints/smart-code-assistant.checkpoint-reference.json",
+  "checkpointChecksum": "e9b59c6eabb80a0cb814d66cecfbd73d88eb8a5b740c37bc91b8ec722da8f46d",
+  "locatorEntry": "xiigen-unit://primary-master-tenant/xiigen-enterprise-master/smart-code-assistant/1.0.0",
+  "exportPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/export/smart-code-assistant.export.json",
+  "importPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/import/smart-code-assistant.import.json",
+  "validationReportPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/validation/smart-code-assistant.validation-report.json",
+  "upgradeFrom": null,
+  "upgradeTo": null,
+  "migrationStrategy": "semver; minor/patch can reuse locator with version update, major requires new locator and migration report",
+  "validationTargetOnly": false,
+  "noEmbeddedPluginWeights": true,
+  "purpose": "Guides code changes through tenant policy, linked graph impact and patch validation.",
+  "createdAtUtc": "2026-05-25T19:01:44.362Z"
+}

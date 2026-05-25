@@ -1,0 +1,291 @@
+{
+    "schema_version":  "1.0",
+    "generatedAtUtc":  "2026-05-25T20:51:49.0617548Z",
+    "files":  [
+                  {
+                      "path":  "app\\src\\Xiigen.Platform.Api\\Program.cs",
+                      "bytes":  25162,
+                      "sha256":  "b87191a443e36833a9aad1831825e3119604aa13caa9e433027baa2b44311a1e"
+                  },
+                  {
+                      "path":  "app\\src\\Xiigen.Platform.Api\\Xiigen.Platform.Api.csproj",
+                      "bytes":  433,
+                      "sha256":  "20dc31c2a4a7670b7f910af555c0aeed7076acef552b4b84170bf2979ba451f8"
+                  },
+                  {
+                      "path":  "app\\src\\Xiigen.Platform.Marketplace\\MarketplaceContracts.cs",
+                      "bytes":  8893,
+                      "sha256":  "624662afba281c2acfa442046df6ac2b7069d94b4e48ed00ff19798ac6f9d442"
+                  },
+                  {
+                      "path":  "app\\src\\Xiigen.Platform.Marketplace\\MarketplaceService.cs",
+                      "bytes":  11785,
+                      "sha256":  "af598561d12f2ac8ba3195ec0aa7844b8ae9bf3e3215502e8da38209f7876a0f"
+                  },
+                  {
+                      "path":  "app\\src\\Xiigen.Platform.Marketplace\\packages.lock.json",
+                      "bytes":  890,
+                      "sha256":  "bd6708ae260191d4e134c205732f426b93834ba969d54ad261e0303225c0cbca"
+                  },
+                  {
+                      "path":  "app\\src\\Xiigen.Platform.Marketplace\\SmartCodeAssistantService.cs",
+                      "bytes":  10012,
+                      "sha256":  "71048e62f0e05b3dc679f9bf393915112747dad77d95b57675b7a1c0a2d2747a"
+                  },
+                  {
+                      "path":  "app\\src\\Xiigen.Platform.Marketplace\\SmartWikiService.cs",
+                      "bytes":  15271,
+                      "sha256":  "4681e24672b920989d61078426254c343a74d9e1827c25924f52ebafa921d97a"
+                  },
+                  {
+                      "path":  "app\\src\\Xiigen.Platform.Marketplace\\TenantAdaptationStudioService.cs",
+                      "bytes":  16593,
+                      "sha256":  "57b4f85f4e3ff1c117ec060d26428913a933f8a8ad50b7506babb8bb9e1fabf7"
+                  },
+                  {
+                      "path":  "app\\src\\Xiigen.Platform.Marketplace\\Xiigen.Platform.Marketplace.csproj",
+                      "bytes":  775,
+                      "sha256":  "26c548291bbaa67656d2c41e140414f2066855a59d0762c04e76943f2073c935"
+                  },
+                  {
+                      "path":  "app\\src\\Xiigen.Platform.Marketplace\\XiigenMarketplaceServiceCollectionExtensions.cs",
+                      "bytes":  615,
+                      "sha256":  "fdd3e528ff545ff6bb3786b24d45b912e2a6cd5c64e44b40715732685c6607b3"
+                  },
+                  {
+                      "path":  "config\\aws\\ecs-task-definition.json",
+                      "bytes":  1763,
+                      "sha256":  "3578dbed9e4ef008d9bd443ad2f1c4fa631780f96ede255480b30fac9dc1dc48"
+                  },
+                  {
+                      "path":  "config\\aws\\flow19-deployment.manifest.json",
+                      "bytes":  3127,
+                      "sha256":  "a74c6f2a218fffda09f58d1485113b3b35f78841112aac19ebd4c14a0702f5ad"
+                  },
+                  {
+                      "path":  "config\\aws\\xiigen-cicd-iam-policy.json",
+                      "bytes":  2543,
+                      "sha256":  "fe020b04c2362c963c5b24336dd97e2b2d9c234a8562bcba228e194965762d23"
+                  },
+                  {
+                      "path":  "evidence\\AWS-CICD-EVIDENCE.json",
+                      "bytes":  3386,
+                      "sha256":  "6a8aa60e57c5c0426b73f6fe5223706d912ff1ec76d24d22eb8d19f3bc8174f4"
+                  },
+                  {
+                      "path":  "evidence\\AWS-RUNTIME-EVIDENCE.json",
+                      "bytes":  2918,
+                      "sha256":  "8b59054669f98e7da1eb2414612ad63e48a9816487bd47f7c8069b05f607f9e8"
+                  },
+                  {
+                      "path":  "evidence\\corporate-install\\corporate-install-evidence.json",
+                      "bytes":  2036,
+                      "sha256":  "af6291923e7878965be307de63407c0eb6a7e40d56c76450602b7fa1b1f3e4bd"
+                  },
+                  {
+                      "path":  "evidence\\evidence-map.json",
+                      "bytes":  1150,
+                      "sha256":  "0d9a91172e745ee7a4fa897eb67bc8df8123ef71ba581a2eb11382c6359e3519"
+                  },
+                  {
+                      "path":  "evidence\\plugin-runtime-evidence.json",
+                      "bytes":  9251,
+                      "sha256":  "04008ce3723b30ab6fdd4b5d52bc75575a68b54d2c041f6e3ed14ad5988cf9ce"
+                  },
+                  {
+                      "path":  "evidence\\plugin-runtime-scenario-map.json",
+                      "bytes":  9107,
+                      "sha256":  "4fd1d1cab88e8ca1ef6e0ff12be4a3f7ba85ecc5adf4da248da92b6c9a5a4165"
+                  },
+                  {
+                      "path":  "evidence\\prompt-by-prompt-matrix.json",
+                      "bytes":  17756,
+                      "sha256":  "0c04706142667a14d600e1bec7ba66f6cb024623a7bd3a8193f002e0d5b63e14"
+                  },
+                  {
+                      "path":  "evidence\\prompt-validation-evidence.json",
+                      "bytes":  2469,
+                      "sha256":  "0646c5398357b16ed458852aa67f08bd6ba104eed6bb0951b5daf3c9a562bd56"
+                  },
+                  {
+                      "path":  "evidence\\smart-code-assistant-evidence.json",
+                      "bytes":  1954,
+                      "sha256":  "d58f0540fe97bb15c945eccda5e27a71e95a37df23f51a2b2192cdf21dd8b9a6"
+                  },
+                  {
+                      "path":  "evidence\\smart-wiki-answer-evidence.json",
+                      "bytes":  2517,
+                      "sha256":  "86b781ca23aae02005668eb6a10a2ee79ef53af70891b950671661fd23848655"
+                  },
+                  {
+                      "path":  "install\\INSTALL-RUNBOOK.md",
+                      "bytes":  699,
+                      "sha256":  "bb4486968c047df58a3c39e98c9232f7fa5a2fd1b3395bd8c69e8cdcaafb80ae"
+                  },
+                  {
+                      "path":  "manifest.json",
+                      "bytes":  1400,
+                      "sha256":  "173901086f3c00f79642daaac17f752a8193a383790ca103d0e5666e8d2982cb"
+                  },
+                  {
+                      "path":  "plugin-locators\\plugin-unit-locator.json",
+                      "bytes":  2851,
+                      "sha256":  "0c14e84a4be8eed48069295780e4d49ba765d3925c687a0d203342623ac4f354"
+                  },
+                  {
+                      "path":  "project-local-wiki\\linked-system-graph.json",
+                      "bytes":  17289,
+                      "sha256":  "5a6e0322a53d85b8650c11a40fd061ffcb141402e0b89afdc38c60c6d4a7300a"
+                  },
+                  {
+                      "path":  "provenance.json",
+                      "bytes":  763,
+                      "sha256":  "044e6a3c578c208c11ee97dba4c96ad981ccab70fbadc7b0fe6553acf8c88de2"
+                  },
+                  {
+                      "path":  "trainable-units\\audit\\trainable-unit-registry-audit.json",
+                      "bytes":  547,
+                      "sha256":  "b4287c8d21a79a80bee03cf6678a5d073b06b38b67253a9a809c61a8403e0133"
+                  },
+                  {
+                      "path":  "trainable-units\\checkpoints\\arbiter.checkpoint-reference.json",
+                      "bytes":  682,
+                      "sha256":  "a01e6fa377f6ca9d6d44707587debd38c35b2beb7e2c7445c73c8d6ad57ac6b2"
+                  },
+                  {
+                      "path":  "trainable-units\\checkpoints\\project-local-wiki.checkpoint-reference.json",
+                      "bytes":  704,
+                      "sha256":  "a10d0e15b58c214237c011b5928807f5242dfad180145f63a870008c88796a12"
+                  },
+                  {
+                      "path":  "trainable-units\\checkpoints\\reprocessor.checkpoint-reference.json",
+                      "bytes":  690,
+                      "sha256":  "42d0088134241d297289330aea1cb9958fc0a4ace79ceef28d23c34307d12a5a"
+                  },
+                  {
+                      "path":  "trainable-units\\checkpoints\\routing.checkpoint-reference.json",
+                      "bytes":  682,
+                      "sha256":  "57dccaa958a71bf191a87b8340689658435f8a70d56c8786ee705582868b626b"
+                  },
+                  {
+                      "path":  "trainable-units\\checkpoints\\smart-code-assistant.checkpoint-reference.json",
+                      "bytes":  708,
+                      "sha256":  "b7b2baad6ac428a355b9cbe20d70b6e26201f7c861e756b92de072ad6e1a4048"
+                  },
+                  {
+                      "path":  "trainable-units\\export\\arbiter.export.json",
+                      "bytes":  644,
+                      "sha256":  "c442cf3c5805bbff108725807d6d67830e23b97bd0f638ab68e40c6820cffc1b"
+                  },
+                  {
+                      "path":  "trainable-units\\export\\project-local-wiki.export.json",
+                      "bytes":  699,
+                      "sha256":  "bf2a42415289c0cc66d78eaac6a1a8aa0a2ae3cbe05012ae368ed1a5681fe8cb"
+                  },
+                  {
+                      "path":  "trainable-units\\export\\reprocessor.export.json",
+                      "bytes":  664,
+                      "sha256":  "9b4beeb4379cd04c10bb8803f2867bfefffef7747ac82a7c118ae73d60e2f5a1"
+                  },
+                  {
+                      "path":  "trainable-units\\export\\routing.export.json",
+                      "bytes":  644,
+                      "sha256":  "f965938bf4de160c03ab3c60f54542fbfe73c488b9f169adb4b9bf48dfb7c793"
+                  },
+                  {
+                      "path":  "trainable-units\\export\\smart-code-assistant.export.json",
+                      "bytes":  709,
+                      "sha256":  "3de95e436ec0d07e1444594884ed8e46816b2bd5fd2ef5fc8a8a460545382cef"
+                  },
+                  {
+                      "path":  "trainable-units\\import\\arbiter.import.json",
+                      "bytes":  768,
+                      "sha256":  "a8109984d7fb20567da4dbf1e8a1116382af6cd959dcce54ffbe83cbd27c0a68"
+                  },
+                  {
+                      "path":  "trainable-units\\import\\project-local-wiki.import.json",
+                      "bytes":  834,
+                      "sha256":  "202b4b9272f42ead14d5b5cd229749fadb684ad3ba3781190d1b281bc1f463df"
+                  },
+                  {
+                      "path":  "trainable-units\\import\\reprocessor.import.json",
+                      "bytes":  792,
+                      "sha256":  "33a350b7f1fd25b6a17c3d60589491d038e047631822ae623b0c291573739eab"
+                  },
+                  {
+                      "path":  "trainable-units\\import\\routing.import.json",
+                      "bytes":  768,
+                      "sha256":  "ccca7af1a93e17c998282657c4cb241ce720af65b3c9c840161f1679d169cff9"
+                  },
+                  {
+                      "path":  "trainable-units\\import\\smart-code-assistant.import.json",
+                      "bytes":  846,
+                      "sha256":  "d9dfd3b761f539e3b56e43fc950312ffab1feddc95a34355af0dc06159e59962"
+                  },
+                  {
+                      "path":  "trainable-units\\locators\\plugin-unit-locator.json",
+                      "bytes":  2851,
+                      "sha256":  "0c14e84a4be8eed48069295780e4d49ba765d3925c687a0d203342623ac4f354"
+                  },
+                  {
+                      "path":  "trainable-units\\manifests\\arbiter.manifest.json",
+                      "bytes":  1484,
+                      "sha256":  "df296f487054c126f532fd8a34d2e364f9e2bc87c134235b5cc80180d37b246f"
+                  },
+                  {
+                      "path":  "trainable-units\\manifests\\project-local-wiki.manifest.json",
+                      "bytes":  1569,
+                      "sha256":  "4789b7a6ec4a79f6545b3ecd83bba97e4670b305019777c73a76b84494294ee7"
+                  },
+                  {
+                      "path":  "trainable-units\\manifests\\reprocessor.manifest.json",
+                      "bytes":  1499,
+                      "sha256":  "3a4f80ce0fcb5e98c7ad73ad9670e418febb1906dbc09d839653c4c961ade1b1"
+                  },
+                  {
+                      "path":  "trainable-units\\manifests\\routing.manifest.json",
+                      "bytes":  1495,
+                      "sha256":  "f1a7d6e021f1e12046d4a7a778e8b43f736f31305b1be59e9871ac59fb8d4a0a"
+                  },
+                  {
+                      "path":  "trainable-units\\manifests\\smart-code-assistant.manifest.json",
+                      "bytes":  1573,
+                      "sha256":  "b2589b373f1f6e49dc0f06e974809cbee7a4af35f6d1a79ec53a7eb8cb96d8e4"
+                  },
+                  {
+                      "path":  "trainable-units\\registry\\trainable-unit-registry.json",
+                      "bytes":  4029,
+                      "sha256":  "d8814cb86a6007b72e4026f6c88a752fdab697025967a3e78a2ad90fc58bce4e"
+                  },
+                  {
+                      "path":  "trainable-units\\trainable-unit-registry-evidence.json",
+                      "bytes":  6177,
+                      "sha256":  "9d71dc335b6e37bb794ef5454bb9297a23dc948fe5fccf80ce471cf4ce7d506f"
+                  },
+                  {
+                      "path":  "trainable-units\\validation\\arbiter.validation-report.json",
+                      "bytes":  668,
+                      "sha256":  "ecadcdd2eeab6421a78f3ae0c1429c0772aca2a17f469dc6f7b163d50bae7828"
+                  },
+                  {
+                      "path":  "trainable-units\\validation\\project-local-wiki.validation-report.json",
+                      "bytes":  679,
+                      "sha256":  "bcff77ce3f9e158178d101e3b2344f8d0e9b01a2a4c5efb4b22b8613b79f9132"
+                  },
+                  {
+                      "path":  "trainable-units\\validation\\reprocessor.validation-report.json",
+                      "bytes":  672,
+                      "sha256":  "c24174279cc416be27077607f9c50daf9f55932424ec408ec2f2470621abf2fa"
+                  },
+                  {
+                      "path":  "trainable-units\\validation\\routing.validation-report.json",
+                      "bytes":  668,
+                      "sha256":  "0ed6c9d3be1fe2eb241aa7cdb3d398d2ee721dc7c8088008ab6faf3f8754c52d"
+                  },
+                  {
+                      "path":  "trainable-units\\validation\\smart-code-assistant.validation-report.json",
+                      "bytes":  681,
+                      "sha256":  "45a0f478f252726986117486e37ba11ec91fcca7122f6923f0cf10797a27563b"
+                  }
+              ]
+}

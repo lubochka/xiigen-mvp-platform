@@ -1,0 +1,31 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "update_reexport_lifecycle_evidence",
+    "status":  "PASS_UPDATE_REEXPORT_LIFECYCLE_VERIFIED",
+    "generatedAtUtc":  "2026-05-25T20:51:49.0617548Z",
+    "baselineCommit":  "e993b1c",
+    "currentCommit":  "dd7d59116a68fbc693d1f4db43a65e4b706ba0b0",
+    "graphDeltaReport":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/update-graph-delta-report.json",
+    "regressionMatrix":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/update-regression-matrix.json",
+    "newPackageRoot":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/xiigen-primary-master-enterprise-export-v1.0.1/package-root",
+    "newPackageZip":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/xiigen-primary-master-enterprise-export-v1.0.1.zip",
+    "newPackageSha256":  "103bb6a9c3518ab8efb6350bad0312dcc2714706c6dd170b0f927777c1781980",
+    "signature":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/xiigen-primary-master-enterprise-export-v1.0.1.signature.json",
+    "publicKey":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/xiigen-primary-master-enterprise-export-v1.0.1.public-key.json",
+    "awsRuntimeRefresh":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/update-aws-runtime-refresh.json",
+    "rollback":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/update-rollback-verification.json",
+    "rowsClosed":  [
+                       "UPDATE-01",
+                       "UPDATE-02",
+                       "UPDATE-03",
+                       "UPDATE-04",
+                       "UPDATE-05",
+                       "UPDATE-06",
+                       "UPDATE-07",
+                       "UPDATE-08",
+                       "UPDATE-09",
+                       "UPDATE-10",
+                       "UPDATE-11",
+                       "UPDATE-12"
+                   ]
+}

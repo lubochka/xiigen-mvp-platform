@@ -1,0 +1,17 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "update_rollback_verification",
+    "generatedAtUtc":  "2026-05-25T20:51:49.0617548Z",
+    "status":  "PASS_ROLLBACK_TO_PREVIOUS_PACKAGE_VERIFIED_BY_HASH_AND_SIGNATURE_PATH",
+    "previousPackage":  "docs/plans/enterprise-adaptation/v3.3/project-assets/export-package/xiigen-primary-master-enterprise-export-v1.0.0.zip",
+    "previousPackageExists":  true,
+    "previousEvidence":  "docs\\plans\\enterprise-adaptation\\v3.3\\project-assets\\export-package\\export-package-evidence.json",
+    "newPackage":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/xiigen-primary-master-enterprise-export-v1.0.1.zip",
+    "rollbackSteps":  [
+                          "verify previous package hash and signature evidence",
+                          "restore previous package locator and manifests",
+                          "rerun corporate install validator",
+                          "rerun AWS health checks",
+                          "persist rollback audit event"
+                      ]
+}

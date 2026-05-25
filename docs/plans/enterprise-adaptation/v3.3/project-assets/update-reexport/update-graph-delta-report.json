@@ -1,0 +1,43 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "update_graph_delta_report",
+    "generatedAtUtc":  "2026-05-25T20:51:49.0617548Z",
+    "baselineCommit":  "e993b1c",
+    "currentCommit":  "dd7d59116a68fbc693d1f4db43a65e4b706ba0b0",
+    "changedFiles":  [
+                         "docs/plans/enterprise-adaptation/v3.3/XIIGEN-ENTERPRISE-ADAPTATION-COMPLETION-MATRIX-v3.3.md",
+                         "docs/plans/enterprise-adaptation/v3.3/XIIGEN-ENTERPRISE-ADAPTATION-STATE-v3.3.json",
+                         "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/CORPORATE-INSTALL-RUNBOOK.md",
+                         "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/corporate-install-evidence.json",
+                         "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/import/checkpoint-resolution.import.json",
+                         "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/import/corporate-unit-registry.import.json",
+                         "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/import/plugin-unit-locator.import.json",
+                         "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/install.ps1",
+                         "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/rollback/rollback-plan.json",
+                         "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/validation/corporate-install-health-checks.json"
+                     ],
+    "graphDelta":  {
+                       "angular":  [
+
+                                   ],
+                       "dotnet":  [
+
+                                  ],
+                       "sql":  [
+
+                               ],
+                       "evidencePackaging":  [
+                                                 "docs/plans/enterprise-adaptation/v3.3/XIIGEN-ENTERPRISE-ADAPTATION-COMPLETION-MATRIX-v3.3.md",
+                                                 "docs/plans/enterprise-adaptation/v3.3/XIIGEN-ENTERPRISE-ADAPTATION-STATE-v3.3.json",
+                                                 "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/CORPORATE-INSTALL-RUNBOOK.md",
+                                                 "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/corporate-install-evidence.json",
+                                                 "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/import/checkpoint-resolution.import.json",
+                                                 "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/import/corporate-unit-registry.import.json",
+                                                 "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/import/plugin-unit-locator.import.json",
+                                                 "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/install.ps1",
+                                                 "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/rollback/rollback-plan.json",
+                                                 "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/validation/corporate-install-health-checks.json"
+                                             ]
+                   },
+    "runtimeImpact":  "NO_RUNTIME_GRAPH_DELTA_CORPORATE_INSTALL_EVIDENCE_ONLY"
+}

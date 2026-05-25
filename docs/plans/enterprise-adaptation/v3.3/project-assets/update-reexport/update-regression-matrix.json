@@ -1,0 +1,40 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "update_regression_matrix",
+    "generatedAtUtc":  "2026-05-25T20:51:49.0617548Z",
+    "affectedPromptSet":  [
+
+                          ],
+    "affectedPluginPaths":  [
+
+                            ],
+    "promptRegression":  {
+                             "status":  "PASS_UNAFFECTED_BY_GRAPH_DELTA",
+                             "evidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-validation-evidence.json",
+                             "priorPromptRows":  10,
+                             "failedRows":  0
+                         },
+    "visualStudioPluginRegression":  {
+                                         "status":  "PASS_UNAFFECTED_BY_GRAPH_DELTA",
+                                         "evidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/plugin-runtime-evidence.json",
+                                         "priorPromptRows":  432,
+                                         "failedRows":  0
+                                     },
+    "vsCodePluginRegression":  {
+                                   "status":  "PASS_UNAFFECTED_BY_GRAPH_DELTA",
+                                   "evidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/plugin-runtime-evidence.json",
+                                   "priorPromptRows":  432,
+                                   "failedRows":  0
+                               },
+    "wikiUnitRegression":  {
+                               "status":  "PASS_UNAFFECTED_BY_GRAPH_DELTA",
+                               "affectedWikiEntries":  [
+
+                                                       ],
+                               "affectedUnits":  [
+
+                                                 ],
+                               "checkpointUpdateRequired":  false,
+                               "existingCheckpointCount":  5
+                           }
+}

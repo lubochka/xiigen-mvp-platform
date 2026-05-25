@@ -1,0 +1,8 @@
+{
+    "schema_version":  "1.0",
+    "algorithm":  "RSA-SHA256-PKCS1",
+    "keySize":  2048,
+    "modulusBase64":  "x65dWZVL44TEeKHEZg52yHoDS56zyyg4H6zZ1JVvcfdGvRP31omjLwFx7LpS0alfyL+J8XODAN1RolspCTvMMrhcLFNbaim5IdFgho7eRrw86TV5FeDNmscho2rQqnzq0DaP2j+lkxlo895cCcNaWbXleulrpSG3HZLs6H+qERBqzEbh/6ObqB2b3t6ibxlOu8hrTlQautXjTFlHK0rG6mw7X1AHG0ZdTX2E93TP5nV49QyPtB+NAjRctBTZ7LKUT+sUGJN81J9PTmSJm8qJNSeAXevGEkBuZe3YRzUXtI2czEZzAEbGcPbRYQZFIbJ7nKh3aZUqbt8jR/xBqTUTBQ==",
+    "exponentBase64":  "AQAB",
+    "privateKeyPersisted":  false
+}

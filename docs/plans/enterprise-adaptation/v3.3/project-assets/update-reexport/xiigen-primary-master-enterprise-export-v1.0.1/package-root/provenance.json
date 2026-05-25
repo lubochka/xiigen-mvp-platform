@@ -1,0 +1,14 @@
+{
+    "schema_version":  "1.0",
+    "package_id":  "xiigen-primary-master-enterprise-export",
+    "version":  "1.0.1",
+    "tenantId":  "primary-master-tenant",
+    "projectId":  "xiigen-enterprise-adaptation-v3.3",
+    "sourceCommit":  "dd7d59116a68fbc693d1f4db43a65e4b706ba0b0",
+    "sourceBranch":  "main",
+    "sourceRemote":  "https://github.com/lubochka/xiigen-platform-dot-net-angular.git",
+    "generatedAtUtc":  "2026-05-25T20:51:49.0617548Z",
+    "sourceAwsEvidence":  "docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json",
+    "sourcePluginEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/plugin-runtime-evidence.json",
+    "auditEventId":  "update-reexport-session-12-dd7d59116a68"
+}
