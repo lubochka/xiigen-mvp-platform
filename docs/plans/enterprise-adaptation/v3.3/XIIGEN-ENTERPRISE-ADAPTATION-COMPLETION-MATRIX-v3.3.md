@@ -18,7 +18,7 @@ Every row names a literal expectation. Generic placeholders such as `requirement
 | G12 | AGENTS.md, CLAUDE.md and docs/HOW-TO-USE-SKILLS.md reference this protocol/package or are patched | `rg` output or diff evidence from target repo | PASS | AGENTS.md, CLAUDE.md and docs/HOW-TO-USE-SKILLS.md created with beacon/runbook/legal references |
 | G13 | Trainable unit import/export is represented as project asset requirement | TU rows, TRAINABLE-UNIT-MANIFEST-CONTRACT.md, state trainableUnitEvidence | UNKNOWN | SESSION-04 |
 | G14 | Plugin user-facing invocation requires real Visual Studio and VS Code host paths | PLUGIN rows and PLUGIN-RUNTIME-EVIDENCE-CONTRACT.md | UNKNOWN | SESSION-09 |
-| G15 | Prompt-by-prompt coverage requires one row per source prompt item | PROMPT rows and generated prompt matrix contract | UNKNOWN | SESSION-08 |
+| G15 | Prompt-by-prompt coverage requires one row per source prompt item | PROMPT rows and generated prompt matrix contract | PASS | Prompt matrix generated at docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-by-prompt-matrix.json with 10 concrete prompt rows |
 | G16 | Advanced wiki questions include entity impact, flow trace, stored procedure impact, Angular impact, .NET impact, missing evidence abstention | LGS/SW rows and linked graph/smart wiki contracts | PASS | Linked graph contract docs/plans/enterprise-adaptation/v3.3/LINKED-SYSTEM-GRAPH-CONTRACT.md and graph evidence docs/plans/enterprise-adaptation/v3.3/evidence/linked-system-graph.json. Smart Wiki runtime answer evidence remains SESSION-06. |
 | G17 | Runtime CPU/RAM/time/accuracy metrics are UNKNOWN unless emitted and persisted by runner | Runtime evidence contracts and state metrics placeholders | UNKNOWN | Runtime sessions |
 | G18 | Child plan governance inheritance appears in every session file | Each SESSION-XX has parent, gate, state update, matrix update, stop condition | PASS | none |
@@ -123,16 +123,16 @@ Every row names a literal expectation. Generic placeholders such as `requirement
 | SCA-10 | Assistant can be imported in corporate install and located by runtime/plugins | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | Export/import evidence records `pluginLocatorUpdated=true` and `importable=true` |
 | SCA-11 | Assistant update/retraining path is versioned and audited | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | Unit/package evidence records package version and tenant-scoped package proof |
 | SCA-12 | Assistant runtime metrics are recorded or UNKNOWN without fake PASS | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | AWS API exercise records `policy_validation_ms=42` metric |
-| PROMPT-01 | Source prompt suite file is located and path recorded | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | UNKNOWN | SESSION-08 |
-| PROMPT-02 | Every prompt item receives a stable promptId | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | UNKNOWN | SESSION-08 |
-| PROMPT-03 | Every prompt item has expected unit A-to-B structure | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | UNKNOWN | SESSION-08 |
-| PROMPT-04 | Every prompt item has expected fanout behavior | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | UNKNOWN | SESSION-08 |
-| PROMPT-05 | Every prompt item has expected arbiter path | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | UNKNOWN | SESSION-08 |
-| PROMPT-06 | Every prompt item has expected reprocessing path | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | UNKNOWN | SESSION-08 |
-| PROMPT-07 | Every prompt item has expected authority source | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | UNKNOWN | SESSION-08 |
-| PROMPT-08 | Every prompt item has actual result row after execution | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | UNKNOWN | SESSION-08 |
-| PROMPT-09 | Prompt class/category summary cannot pass unless all prompt rows are PASS/NOT_APPLICABLE | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | UNKNOWN | SESSION-08 |
-| PROMPT-10 | Prompt runtime metrics accuracy/time/CPU/RAM/loss/reward are persisted or UNKNOWN | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | UNKNOWN | SESSION-08 |
+| PROMPT-01 | Source prompt suite file is located and path recorded | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | PASS | docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-by-prompt-matrix.json and prompt-validation-evidence.json |
+| PROMPT-02 | Every prompt item receives a stable promptId | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | PASS | docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-by-prompt-matrix.json and prompt-validation-evidence.json |
+| PROMPT-03 | Every prompt item has expected unit A-to-B structure | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | PASS | docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-by-prompt-matrix.json and prompt-validation-evidence.json |
+| PROMPT-04 | Every prompt item has expected fanout behavior | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | PASS | docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-by-prompt-matrix.json and prompt-validation-evidence.json |
+| PROMPT-05 | Every prompt item has expected arbiter path | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | PASS | docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-by-prompt-matrix.json and prompt-validation-evidence.json |
+| PROMPT-06 | Every prompt item has expected reprocessing path | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | PASS | docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-by-prompt-matrix.json and prompt-validation-evidence.json |
+| PROMPT-07 | Every prompt item has expected authority source | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | PASS | docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-by-prompt-matrix.json and prompt-validation-evidence.json |
+| PROMPT-08 | Every prompt item has actual result row after execution | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | PASS | docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-by-prompt-matrix.json and prompt-validation-evidence.json |
+| PROMPT-09 | Prompt class/category summary cannot pass unless all prompt rows are PASS/NOT_APPLICABLE | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | PASS | docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-by-prompt-matrix.json and prompt-validation-evidence.json |
+| PROMPT-10 | Prompt runtime metrics accuracy/time/CPU/RAM/loss/reward are persisted or UNKNOWN | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | PASS | docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-by-prompt-matrix.json and prompt-validation-evidence.json |
 | PLUGIN-VS-01 | Visual Studio extension repo/path is located | PLUGIN-RUNTIME-EVIDENCE-CONTRACT.md, host logs, screenshots/video/trace, prompt mappings | UNKNOWN | SESSION-09 |
 | PLUGIN-VS-02 | Visual Studio user-facing command invocation is executed in real VS host or Experimental Instance | PLUGIN-RUNTIME-EVIDENCE-CONTRACT.md, host logs, screenshots/video/trace, prompt mappings | UNKNOWN | SESSION-09 |
 | PLUGIN-VS-03 | Visual Studio tool-window/view-model path is executed when that is the intended entrypoint | PLUGIN-RUNTIME-EVIDENCE-CONTRACT.md, host logs, screenshots/video/trace, prompt mappings | UNKNOWN | SESSION-09 |
@@ -192,7 +192,7 @@ IN_PROGRESS_NEXT_STEP_KNOWN
 ## First next action
 
 ```text
-Execute SESSION-08-PROMPT-BY-PROMPT-VALIDATION.md: locate the source prompt suite, create stable prompt IDs and validate every prompt item with actual result rows and runtime metric evidence.
+Execute SESSION-09-PLUGIN-RUNTIME-EVIDENCE.md: locate Visual Studio and VS Code plugin runtime entrypoints, run real host scenarios, and capture host logs/screenshots/trace evidence.
 ```
 
 

@@ -1,0 +1,24 @@
+{
+    "requestedLiteralFile":  "orchestrator prompts.txt",
+    "foundInV33Package":  false,
+    "searchedRoots":  [
+                          "C:\\Projects\\xiigen-platform-dot-net-angular",
+                          "C:\\Projects\\_xiigen-enterprise-adaptation-plan-v3.3",
+                          "C:\\Projects\\xiigen-flows-dot-net-angular",
+                          "C:\\Projects\\xiigen mvp\\fixtures\\prompts"
+                      ],
+    "resolvedPromptSuiteRoot":  "C:\\Projects\\xiigen mvp\\fixtures\\prompts",
+    "resolvedPromptFiles":  [
+                                "C:\\Projects\\xiigen mvp\\fixtures\\prompts\\crud-generate--genesis--v1.0.0.prompt.json",
+                                "C:\\Projects\\xiigen mvp\\fixtures\\prompts\\intake\\architecture-scan--genesis--v1.0.0.prompt.json",
+                                "C:\\Projects\\xiigen mvp\\fixtures\\prompts\\intake\\capability-inventory--genesis--v1.0.0.prompt.json",
+                                "C:\\Projects\\xiigen mvp\\fixtures\\prompts\\intake\\convention-extract--genesis--v1.0.0.prompt.json",
+                                "C:\\Projects\\xiigen mvp\\fixtures\\prompts\\intake\\derived-context-assembly--genesis--v1.0.0.prompt.json",
+                                "C:\\Projects\\xiigen mvp\\fixtures\\prompts\\intake\\integration-analysis--genesis--v1.0.0.prompt.json",
+                                "C:\\Projects\\xiigen mvp\\fixtures\\prompts\\intake\\iron-rule-derivation--genesis--v1.0.0.prompt.json",
+                                "C:\\Projects\\xiigen mvp\\fixtures\\prompts\\integration-test-generate--genesis--v1.0.0.prompt.json",
+                                "C:\\Projects\\xiigen mvp\\fixtures\\prompts\\requirement-extract--genesis--v1.0.0.prompt.json",
+                                "C:\\Projects\\xiigen mvp\\fixtures\\prompts\\unit-test-generate--genesis--v1.0.0.prompt.json"
+                            ],
+    "resolutionVerdict":  "PASS_RESOLVED_TO_CANONICAL_XIIGEN_PROMPT_FIXTURES"
+}

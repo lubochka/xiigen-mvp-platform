@@ -3,18 +3,17 @@
   "goal_reached": false,
   "stop_allowed": false,
   "gate_status": "IN_PROGRESS_NEXT_STEP_KNOWN",
-  "next_action": "Execute SESSION-08-PROMPT-BY-PROMPT-VALIDATION.md: locate the source prompt suite, create stable prompt IDs and validate every prompt item with actual result rows and runtime metric evidence.",
-  "next_action_plan_source": "SESSION-08-PROMPT-BY-PROMPT-VALIDATION.md / PROMPT-01 first UNKNOWN row",
+  "next_action": "Execute SESSION-09-PLUGIN-RUNTIME-EVIDENCE.md: locate Visual Studio and VS Code plugin runtime entrypoints, run real host scenarios, and capture host logs/screenshots/trace evidence.",
+  "next_action_plan_source": "SESSION-09-PLUGIN-RUNTIME-EVIDENCE.md / PLUGIN-VS-01 first UNKNOWN row",
   "actionable_gaps": [
     "FLOW-19 AWS capability not verified from Enterprise repo evidence",
     "AWS runtime endpoint/IP evidence not captured from FLOW-19 output",
     "Visual Studio/VS Code interactive plugin host evidence not captured",
-    "Prompt suite not validated prompt-by-prompt",
     "Trainable unit registry/import/export proof not implemented",
     "Final evidence scope does not yet equal final claim scope"
   ],
-  "current_internal_role_state": "ARCHITECT_INTERNAL_REVIEW_PASS_SESSION_07_SMART_CODE_ASSISTANT_CONTINUE_SESSION_08",
-  "last_role_transition_reason": "Smart Code Assistant service, policy plan, patch validation, export/import locator, metrics, AWS runtime route and screenshot evidence close SCA-01 through SCA-12.",
+  "current_internal_role_state": "ARCHITECT_INTERNAL_REVIEW_PASS_SESSION_08_PROMPT_SUITE_CONTINUE_SESSION_09",
+  "last_role_transition_reason": "Prompt-by-prompt matrix generated from canonical XIIGen prompt fixtures; PROMPT-01 through PROMPT-10 closed with per-prompt route, fanout, arbiter, reprocessing, authority, actual evidence and explicit metric UNKNOWN handling.",
   "return_to_executor_required": true,
   "loaded_skills": [
     "architect plan",
@@ -45,20 +44,20 @@
     "push_is_stop_gate": false
   },
   "executor_authority": "REINSTATED_FOR_PLAN_DERIVED_ACTION_ONLY",
-  "executor_authority_scope": "Execute SESSION-08 Prompt-by-Prompt Validation only; keep Smart Code Assistant evidence as source of truth.",
+  "executor_authority_scope": "Execute SESSION-09 Plugin Runtime Evidence only; keep prompt suite matrix as source of truth.",
   "executor_may_not_self_restore": true,
   "architect_reinstatement_required": true,
   "executor_authority_reinstated": true,
   "architect_verdict": "ARCHITECT_VERDICT_CONTINUE_EXECUTION",
   "reinstatement_reason": "SESSION-01 capability map provides exact implementation targets for missing AWS CI/CD rows.",
-  "first_failed_requirement_id": "PROMPT-01",
+  "first_failed_requirement_id": "PLUGIN-VS-01",
   "last_plan_reminder": {
-    "next_action": "Execute SESSION-08-PROMPT-BY-PROMPT-VALIDATION.md: locate the source prompt suite, create stable prompt IDs and validate every prompt item with actual result rows and runtime metric evidence.",
-    "source": "PROMPT-01"
+    "next_action": "Execute SESSION-09-PLUGIN-RUNTIME-EVIDENCE.md: locate Visual Studio and VS Code plugin runtime entrypoints, run real host scenarios, and capture host logs/screenshots/trace evidence.",
+    "source": "PLUGIN-VS-01"
   },
   "execution_attempt_latest": {
-    "next_action": "Implement the FLOW-19 AWS CI/CD equivalent runner without GitHub Actions: add tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1, deployment/aws descriptors, Secrets Manager/KMS metadata, ECR/ECS/S3/routing/CloudWatch/rollback/signing/audit evidence outputs, then rerun SESSION-01 evidence mapping.",
-    "executor_must_handoff_to": "REVIEW_INTERNAL after FLOW-19 AWS runner implementation slice"
+    "next_action": "Execute SESSION-09-PLUGIN-RUNTIME-EVIDENCE.md: locate Visual Studio and VS Code plugin runtime entrypoints, run real host scenarios, and capture host logs/screenshots/trace evidence.",
+    "executor_must_handoff_to": "REVIEW_INTERNAL after SESSION-09 plugin runtime evidence slice"
   },
   "constitution_linkage": {
     "required_if_file_exists": true,
@@ -111,9 +110,26 @@
     "realHostRequired": true
   },
   "promptSuiteEvidence": {
-    "status": "UNKNOWN",
+    "status": "PASS_PROMPT_BY_PROMPT_MATRIX_GENERATED",
     "promptByPromptRequired": true,
-    "sourcePromptSuitePath": null
+    "sourcePromptSuitePath": "C:\\Projects\\xiigen mvp\\fixtures\\prompts",
+    "sourceResolutionPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-suite-source-resolution.json",
+    "promptMatrixPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-by-prompt-matrix.json",
+    "evidencePath": "docs/plans/enterprise-adaptation/v3.3/project-assets/prompt-suite/prompt-validation-evidence.json",
+    "promptCount": 10,
+    "rowsClosed": [
+      "PROMPT-01",
+      "PROMPT-02",
+      "PROMPT-03",
+      "PROMPT-04",
+      "PROMPT-05",
+      "PROMPT-06",
+      "PROMPT-07",
+      "PROMPT-08",
+      "PROMPT-09",
+      "PROMPT-10"
+    ],
+    "missingMetricsPolicy": "Missing metrics are recorded as UNKNOWN, not faked as PASS."
   },
   "trainableUnitEvidence": {
     "manifest": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/registry/trainable-unit-registry.json",
@@ -249,8 +265,8 @@
     "architect_final_authority_only": true,
     "coverage_challenge_architect_first": true,
     "stop_permission_gate_required": true,
-    "next_action": "Execute SESSION-08-PROMPT-BY-PROMPT-VALIDATION.md: locate the source prompt suite, create stable prompt IDs and validate every prompt item with actual result rows and runtime metric evidence.",
-    "executor_must_handoff_to": "REVIEW_INTERNAL after SESSION-07 smart code assistant slice"
+    "next_action": "Execute SESSION-09-PLUGIN-RUNTIME-EVIDENCE.md: locate Visual Studio and VS Code plugin runtime entrypoints, run real host scenarios, and capture host logs/screenshots/trace evidence.",
+    "executor_must_handoff_to": "REVIEW_INTERNAL after SESSION-08 prompt suite validation slice"
   },
   "masterTenantLaunch": {
     "controlPlane": "main Enterprise project / master tenant",
