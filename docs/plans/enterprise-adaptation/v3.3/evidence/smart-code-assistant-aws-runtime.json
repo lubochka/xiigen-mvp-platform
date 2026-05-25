@@ -1,0 +1,48 @@
+{
+  "session": "SESSION-07-SMART-CODE-ASSISTANT",
+  "capturedAtUtc": "2026-05-25T20:22:00Z",
+  "provider": "aws",
+  "awsAccount": "595003292091",
+  "awsRegion": "eu-west-1",
+  "runtimeMode": "AWS App Runner platform API",
+  "hostedBaseUrl": "https://gyxwjim5ea.eu-west-1.awsapprunner.com",
+  "assistantUrl": "https://gyxwjim5ea.eu-west-1.awsapprunner.com/assistant",
+  "ecr": {
+    "repository": "xiigen/platform-api",
+    "imageUri": "595003292091.dkr.ecr.eu-west-1.amazonaws.com/xiigen/platform-api:smart-code-assistant-d346c7d9a59e",
+    "imageDigest": "sha256:a656b040ee8bd095cca4c779cf7b61ae16228d35728f7c24b1684046326038b9"
+  },
+  "assistantPage": {
+    "statusCode": 200,
+    "title": "XIIGen Smart Code Assistant",
+    "containsPlanBeforePatch": true,
+    "containsPolicy": true,
+    "containsMetrics": true,
+    "screenshot": "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/smart-code-assistant-aws.png"
+  },
+  "apiExercise": {
+    "unitType": "smart-code-assistant",
+    "noEmbeddedPluginWeights": true,
+    "planStatus": "PLAN_READY_PATCH_BLOCKED_UNTIL_VALIDATED",
+    "patchStatus": "PATCH_READY_FOR_REVIEW",
+    "blockedStatus": "ESCALATED_POLICY_VIOLATION",
+    "exportable": true,
+    "importable": true,
+    "metricName": "policy_validation_ms",
+    "metricValue": 42
+  },
+  "matrixRows": [
+    "SCA-01",
+    "SCA-02",
+    "SCA-03",
+    "SCA-04",
+    "SCA-05",
+    "SCA-06",
+    "SCA-07",
+    "SCA-08",
+    "SCA-09",
+    "SCA-10",
+    "SCA-11",
+    "SCA-12"
+  ]
+}

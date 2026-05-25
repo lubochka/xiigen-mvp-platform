@@ -197,3 +197,69 @@ public interface ISmartWikiService
         string projectId,
         CancellationToken cancellationToken = default);
 }
+
+public sealed record SmartCodeAssistantUnitRequest(
+    string ProjectId,
+    string UnitId,
+    string LocatorEntry,
+    string ManifestPath,
+    string ExportPath,
+    string ImportPath,
+    string CheckpointReference,
+    string CreatedBy);
+
+public sealed record SmartCodeAssistantPlanRequest(
+    string ProjectId,
+    string Objective,
+    string CodingPolicy,
+    string ArchitecturePolicy,
+    IReadOnlyList<string> Scope,
+    IReadOnlyList<string> Constraints,
+    string RequestedBy);
+
+public sealed record SmartCodeAssistantPatchValidationRequest(
+    string ProjectId,
+    string PlanId,
+    IReadOnlyList<string> AffectedFiles,
+    IReadOnlyList<string> AffectedProcedures,
+    IReadOnlyList<string> TestsAndChecks,
+    string PatchSummary,
+    bool ViolatesPolicy,
+    string ReviewedBy);
+
+public sealed record SmartCodeAssistantExportImportRequest(
+    string ProjectId,
+    string UnitId,
+    string PackageVersion,
+    string LocatorEntry,
+    string RequestedBy);
+
+public sealed record SmartCodeAssistantMetricRequest(
+    string ProjectId,
+    string UnitId,
+    string MetricName,
+    double MetricValue,
+    string Source);
+
+public interface ISmartCodeAssistantService
+{
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>>> CreateUnitAsync(
+        SmartCodeAssistantUnitRequest request,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>>> ProposePlanAsync(
+        SmartCodeAssistantPlanRequest request,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>>> ValidatePatchAsync(
+        SmartCodeAssistantPatchValidationRequest request,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>>> RecordExportImportAsync(
+        SmartCodeAssistantExportImportRequest request,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>>> RecordMetricAsync(
+        SmartCodeAssistantMetricRequest request,
+        CancellationToken cancellationToken = default);
+}

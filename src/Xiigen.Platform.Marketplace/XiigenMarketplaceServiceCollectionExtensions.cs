@@ -9,6 +9,7 @@ public static class XiigenMarketplaceServiceCollectionExtensions
         services.AddSingleton<IMarketplaceService, MarketplaceService>();
         services.AddSingleton<ITenantAdaptationStudioService, TenantAdaptationStudioService>();
         services.AddSingleton<ISmartWikiService, SmartWikiService>();
+        services.AddSingleton<ISmartCodeAssistantService, SmartCodeAssistantService>();
         return services;
     }
 }

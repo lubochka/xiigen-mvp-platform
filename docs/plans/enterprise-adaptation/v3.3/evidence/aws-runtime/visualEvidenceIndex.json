@@ -72,6 +72,22 @@
         "99.81.31.115",
         "99.81.81.209"
       ]
+    },
+    {
+      "matrixRow": "SCA-01..SCA-12",
+      "url": "https://gyxwjim5ea.eu-west-1.awsapprunner.com/assistant",
+      "tenant": "primary-master-tenant",
+      "role": "tenant_admin",
+      "screenshot": "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/smart-code-assistant-aws.png",
+      "trace": "",
+      "video": "",
+      "secretsRedacted": true,
+      "sourceCommand": "playwright-core screenshot via Edge channel against AWS App Runner /assistant",
+      "dnsResolvedPublicIps": [
+        "176.34.92.174",
+        "99.81.31.115",
+        "99.81.81.209"
+      ]
     }
   ]
 }

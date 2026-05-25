@@ -293,6 +293,86 @@ app.MapGet("/api/wiki/index/{projectId}", async (
         : ToHttpResult(result);
 });
 
+app.MapPost("/api/assistant/units", async (
+    HttpContext context,
+    SmartCodeAssistantUnitRequest request,
+    ISmartCodeAssistantService assistant,
+    CancellationToken cancellationToken) =>
+{
+    var authorization = RequireStudioRole(context);
+    if (authorization is not null)
+    {
+        return authorization;
+    }
+
+    var result = await assistant.CreateUnitAsync(request, cancellationToken).ConfigureAwait(false);
+    return ToHttpResult(result);
+});
+
+app.MapPost("/api/assistant/plans", async (
+    HttpContext context,
+    SmartCodeAssistantPlanRequest request,
+    ISmartCodeAssistantService assistant,
+    CancellationToken cancellationToken) =>
+{
+    var authorization = RequireStudioRole(context);
+    if (authorization is not null)
+    {
+        return authorization;
+    }
+
+    var result = await assistant.ProposePlanAsync(request, cancellationToken).ConfigureAwait(false);
+    return ToHttpResult(result);
+});
+
+app.MapPost("/api/assistant/patch-validations", async (
+    HttpContext context,
+    SmartCodeAssistantPatchValidationRequest request,
+    ISmartCodeAssistantService assistant,
+    CancellationToken cancellationToken) =>
+{
+    var authorization = RequireStudioRole(context);
+    if (authorization is not null)
+    {
+        return authorization;
+    }
+
+    var result = await assistant.ValidatePatchAsync(request, cancellationToken).ConfigureAwait(false);
+    return ToHttpResult(result);
+});
+
+app.MapPost("/api/assistant/package-evidence", async (
+    HttpContext context,
+    SmartCodeAssistantExportImportRequest request,
+    ISmartCodeAssistantService assistant,
+    CancellationToken cancellationToken) =>
+{
+    var authorization = RequireStudioRole(context);
+    if (authorization is not null)
+    {
+        return authorization;
+    }
+
+    var result = await assistant.RecordExportImportAsync(request, cancellationToken).ConfigureAwait(false);
+    return ToHttpResult(result);
+});
+
+app.MapPost("/api/assistant/metrics", async (
+    HttpContext context,
+    SmartCodeAssistantMetricRequest request,
+    ISmartCodeAssistantService assistant,
+    CancellationToken cancellationToken) =>
+{
+    var authorization = RequireStudioRole(context);
+    if (authorization is not null)
+    {
+        return authorization;
+    }
+
+    var result = await assistant.RecordMetricAsync(request, cancellationToken).ConfigureAwait(false);
+    return ToHttpResult(result);
+});
+
 app.MapGet("/marketplace", async (IMarketplaceService marketplace, CancellationToken cancellationToken) =>
 {
     var result = await marketplace.ListListingsAsync(cancellationToken).ConfigureAwait(false);
@@ -345,6 +425,74 @@ app.MapGet("/marketplace", async (IMarketplaceService marketplace, CancellationT
             </thead>
             <tbody>{{rows}}</tbody>
           </table>
+        </body>
+        </html>
+        """;
+    return Results.Content(html, "text/html");
+});
+
+app.MapGet("/assistant", () =>
+{
+    const string html = """
+        <!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>XIIGen Smart Code Assistant</title>
+          <style>
+            body { font-family: Arial, sans-serif; margin: 32px; color: #17202a; background: #fbfbfb; }
+            h1 { font-size: 30px; margin: 0 0 8px; }
+            h2 { font-size: 18px; margin: 0 0 10px; }
+            p { color: #4d5b66; line-height: 1.5; }
+            main { max-width: 1120px; }
+            section { background: #fff; border: 1px solid #d8dee4; border-radius: 8px; padding: 18px; margin: 16px 0; }
+            .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+            .badge { display: inline-block; padding: 4px 8px; border-radius: 999px; background: #eef6ff; color: #17446b; font-size: 12px; font-weight: 700; }
+            code { background: #f0f3f6; padding: 2px 5px; border-radius: 4px; }
+            ul { padding-inline-start: 20px; }
+          </style>
+        </head>
+        <body>
+          <main>
+            <span class="badge">Trainable tenant code assistant</span>
+            <h1>XIIGen Smart Code Assistant</h1>
+            <p>Creates plan-before-patch evidence, applies tenant coding and architecture policy, validates graph impact, records patch rationale and exports/imports through the project unit locator.</p>
+
+            <div class="grid">
+              <section>
+                <h2>Trainable Unit</h2>
+                <p>Endpoint: <code>POST /api/assistant/units</code></p>
+                <ul>
+                  <li>Creates trainable, exportable and importable assistant unit evidence</li>
+                  <li>Uses locator, manifest, checkpoint and no embedded plugin weights</li>
+                </ul>
+              </section>
+              <section>
+                <h2>Policy Plan</h2>
+                <p>Endpoint: <code>POST /api/assistant/plans</code></p>
+                <ul>
+                  <li>Requires coding policy and architecture policy</li>
+                  <li>Plan-before-patch blocks patch apply until validation</li>
+                </ul>
+              </section>
+              <section>
+                <h2>Patch Validation</h2>
+                <p>Endpoint: <code>POST /api/assistant/patch-validations</code></p>
+                <ul>
+                  <li>Records affected Angular, .NET and SQL graph impact</li>
+                  <li>Escalates policy violations instead of applying them</li>
+                </ul>
+              </section>
+              <section>
+                <h2>Package And Metrics</h2>
+                <p>Endpoints: <code>/package-evidence</code> and <code>/metrics</code></p>
+                <ul>
+                  <li>Records export/import locator proof</li>
+                  <li>Stores runtime metrics for the assistant unit</li>
+                </ul>
+              </section>
+            </div>
+          </main>
         </body>
         </html>
         """;

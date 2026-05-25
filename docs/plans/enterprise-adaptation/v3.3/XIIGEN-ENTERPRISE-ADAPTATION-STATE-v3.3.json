@@ -3,8 +3,8 @@
   "goal_reached": false,
   "stop_allowed": false,
   "gate_status": "IN_PROGRESS_NEXT_STEP_KNOWN",
-  "next_action": "Execute SESSION-07-SMART-CODE-ASSISTANT.md: implement Smart Code Assistant trainable unit evidence for tenant coding/architecture policies, plan-before-patch, graph impact validation, patch rationale, export/import and runtime metrics.",
-  "next_action_plan_source": "SESSION-07-SMART-CODE-ASSISTANT.md / SCA-01 first UNKNOWN row",
+  "next_action": "Execute SESSION-08-PROMPT-BY-PROMPT-VALIDATION.md: locate the source prompt suite, create stable prompt IDs and validate every prompt item with actual result rows and runtime metric evidence.",
+  "next_action_plan_source": "SESSION-08-PROMPT-BY-PROMPT-VALIDATION.md / PROMPT-01 first UNKNOWN row",
   "actionable_gaps": [
     "FLOW-19 AWS capability not verified from Enterprise repo evidence",
     "AWS runtime endpoint/IP evidence not captured from FLOW-19 output",
@@ -13,8 +13,8 @@
     "Trainable unit registry/import/export proof not implemented",
     "Final evidence scope does not yet equal final claim scope"
   ],
-  "current_internal_role_state": "ARCHITECT_INTERNAL_REVIEW_PASS_SESSION_06_SMART_WIKI_CONTINUE_SESSION_07",
-  "last_role_transition_reason": "Smart Wiki service, cited answer tests, AWS runtime route, API exercise, abstention and screenshot evidence close SW-01 through SW-10.",
+  "current_internal_role_state": "ARCHITECT_INTERNAL_REVIEW_PASS_SESSION_07_SMART_CODE_ASSISTANT_CONTINUE_SESSION_08",
+  "last_role_transition_reason": "Smart Code Assistant service, policy plan, patch validation, export/import locator, metrics, AWS runtime route and screenshot evidence close SCA-01 through SCA-12.",
   "return_to_executor_required": true,
   "loaded_skills": [
     "architect plan",
@@ -45,16 +45,16 @@
     "push_is_stop_gate": false
   },
   "executor_authority": "REINSTATED_FOR_PLAN_DERIVED_ACTION_ONLY",
-  "executor_authority_scope": "Execute SESSION-07 Smart Code Assistant only; keep Smart Wiki evidence as source of truth.",
+  "executor_authority_scope": "Execute SESSION-08 Prompt-by-Prompt Validation only; keep Smart Code Assistant evidence as source of truth.",
   "executor_may_not_self_restore": true,
   "architect_reinstatement_required": true,
   "executor_authority_reinstated": true,
   "architect_verdict": "ARCHITECT_VERDICT_CONTINUE_EXECUTION",
   "reinstatement_reason": "SESSION-01 capability map provides exact implementation targets for missing AWS CI/CD rows.",
-  "first_failed_requirement_id": "SCA-01",
+  "first_failed_requirement_id": "PROMPT-01",
   "last_plan_reminder": {
-    "next_action": "Execute SESSION-07-SMART-CODE-ASSISTANT.md: implement Smart Code Assistant trainable unit evidence for tenant coding/architecture policies, plan-before-patch, graph impact validation, patch rationale, export/import and runtime metrics.",
-    "source": "SCA-01"
+    "next_action": "Execute SESSION-08-PROMPT-BY-PROMPT-VALIDATION.md: locate the source prompt suite, create stable prompt IDs and validate every prompt item with actual result rows and runtime metric evidence.",
+    "source": "PROMPT-01"
   },
   "execution_attempt_latest": {
     "next_action": "Implement the FLOW-19 AWS CI/CD equivalent runner without GitHub Actions: add tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1, deployment/aws descriptors, Secrets Manager/KMS metadata, ECR/ECS/S3/routing/CloudWatch/rollback/signing/audit evidence outputs, then rerun SESSION-01 evidence mapping.",
@@ -204,6 +204,39 @@
     "storedProcedureStatus": "ABSTAIN_NO_SOURCE",
     "reindexChecksum": "checksum-after-session-06-smart-wiki"
   },
+  "smartCodeAssistantEvidence": {
+    "status": "PASS_SMART_CODE_ASSISTANT_IMPLEMENTED_AND_AWS_VERIFIED",
+    "contractPath": "docs/plans/enterprise-adaptation/v3.3/SMART-CODE-ASSISTANT-CONTRACT.md",
+    "evidencePath": "docs/plans/enterprise-adaptation/v3.3/evidence/smart-code-assistant-evidence.json",
+    "runtimeEvidencePath": "docs/plans/enterprise-adaptation/v3.3/evidence/smart-code-assistant-aws-runtime.json",
+    "screenshot": "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/smart-code-assistant-aws.png",
+    "hostedBaseUrl": "https://gyxwjim5ea.eu-west-1.awsapprunner.com",
+    "assistantUrl": "https://gyxwjim5ea.eu-west-1.awsapprunner.com/assistant",
+    "service": "src/Xiigen.Platform.Marketplace/SmartCodeAssistantService.cs",
+    "api": "src/Xiigen.Platform.Api/Program.cs",
+    "test": "tests/Xiigen.Platform.Marketplace.Tests/SmartCodeAssistantServiceTests.cs",
+    "rowsClosed": [
+      "SCA-01",
+      "SCA-02",
+      "SCA-03",
+      "SCA-04",
+      "SCA-05",
+      "SCA-06",
+      "SCA-07",
+      "SCA-08",
+      "SCA-09",
+      "SCA-10",
+      "SCA-11",
+      "SCA-12"
+    ],
+    "localTestCommand": "scripts/pre-commit-check.ps1",
+    "localTestsPassed": 35,
+    "localTestsFailed": 0,
+    "planStatus": "PLAN_READY_PATCH_BLOCKED_UNTIL_VALIDATED",
+    "patchStatus": "PATCH_READY_FOR_REVIEW",
+    "policyViolationStatus": "ESCALATED_POLICY_VIOLATION",
+    "runtimeMetric": "policy_validation_ms=42"
+  },
   "beacon_prompt_path": "docs/plans/enterprise-adaptation/v3.3/XIIGEN-ENTERPRISE-ADAPTATION-BEACON-PROMPT-v1.md",
   "beacon_required_before_every_role_action": true,
   "executor_must_handoff_to_review_after_each_slice": true,
@@ -216,8 +249,8 @@
     "architect_final_authority_only": true,
     "coverage_challenge_architect_first": true,
     "stop_permission_gate_required": true,
-    "next_action": "Execute SESSION-07-SMART-CODE-ASSISTANT.md: implement Smart Code Assistant trainable unit evidence for tenant coding/architecture policies, plan-before-patch, graph impact validation, patch rationale, export/import and runtime metrics.",
-    "executor_must_handoff_to": "REVIEW_INTERNAL after SESSION-06 smart wiki slice"
+    "next_action": "Execute SESSION-08-PROMPT-BY-PROMPT-VALIDATION.md: locate the source prompt suite, create stable prompt IDs and validate every prompt item with actual result rows and runtime metric evidence.",
+    "executor_must_handoff_to": "REVIEW_INTERNAL after SESSION-07 smart code assistant slice"
   },
   "masterTenantLaunch": {
     "controlPlane": "main Enterprise project / master tenant",

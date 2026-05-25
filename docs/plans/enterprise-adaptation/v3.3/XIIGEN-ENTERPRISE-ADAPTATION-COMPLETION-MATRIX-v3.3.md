@@ -111,18 +111,18 @@ Every row names a literal expectation. Generic placeholders such as `requirement
 | SW-08 | Smart Wiki abstains when evidence is missing | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | PASS | Stored procedure answer uses `ABSTAIN_NO_SOURCE`; missing-evidence question cites abstention record |
 | SW-09 | Smart Wiki stores tenant-local wiki data in project asset registry | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | PASS | Wiki index stores tenant id and registry path for project-local wiki unit |
 | SW-10 | Smart Wiki update path handles graph changes and reindexing | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | PASS | `SmartWikiService.ReindexAsync` updates source graph checksum and records reindex evidence |
-| SCA-01 | Smart Code Assistant unit is created as trainable/exportable/importable unit | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
-| SCA-02 | Assistant reads tenant coding policy from tenant-scoped source | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
-| SCA-03 | Assistant reads architecture policy from tenant-scoped source | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
-| SCA-04 | Assistant proposes plan before code patch | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
-| SCA-05 | Assistant produces patch/diff only after scope and policy checks | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
-| SCA-06 | Assistant validates affected Angular + .NET + SQL graph impact | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
-| SCA-07 | Assistant blocks or escalates changes outside tenant policy | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
-| SCA-08 | Assistant records rationale, affected files, affected procedures and tests/checks | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
-| SCA-09 | Assistant can be exported with tenant package as locator/manifest/checkpoint, not embedded plugin weights | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
-| SCA-10 | Assistant can be imported in corporate install and located by runtime/plugins | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
-| SCA-11 | Assistant update/retraining path is versioned and audited | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
-| SCA-12 | Assistant runtime metrics are recorded or UNKNOWN without fake PASS | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
+| SCA-01 | Smart Code Assistant unit is created as trainable/exportable/importable unit | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | `SmartCodeAssistantService.CreateUnitAsync` stores trainable/exportable/importable unit evidence |
+| SCA-02 | Assistant reads tenant coding policy from tenant-scoped source | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | `ProposePlanAsync` requires and records tenant coding policy before patch planning |
+| SCA-03 | Assistant reads architecture policy from tenant-scoped source | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | `ProposePlanAsync` requires and records tenant architecture policy before patch planning |
+| SCA-04 | Assistant proposes plan before code patch | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | `ProposePlanAsync` returns `PLAN_READY_PATCH_BLOCKED_UNTIL_VALIDATED` with `planBeforePatch` |
+| SCA-05 | Assistant produces patch/diff only after scope and policy checks | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | `ValidatePatchAsync` creates patch validation only for an existing tenant plan and policy-reviewed scope |
+| SCA-06 | Assistant validates affected Angular + .NET + SQL graph impact | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | Patch validation stores affected files, procedure abstention and tests/checks |
+| SCA-07 | Assistant blocks or escalates changes outside tenant policy | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | Policy violation path returns `ESCALATED_POLICY_VIOLATION` |
+| SCA-08 | Assistant records rationale, affected files, affected procedures and tests/checks | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | Patch validation records rationale, affected files, affected procedures and checks |
+| SCA-09 | Assistant can be exported with tenant package as locator/manifest/checkpoint, not embedded plugin weights | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | Export/import evidence records locator and `noEmbeddedPluginWeights=true` |
+| SCA-10 | Assistant can be imported in corporate install and located by runtime/plugins | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | Export/import evidence records `pluginLocatorUpdated=true` and `importable=true` |
+| SCA-11 | Assistant update/retraining path is versioned and audited | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | Unit/package evidence records package version and tenant-scoped package proof |
+| SCA-12 | Assistant runtime metrics are recorded or UNKNOWN without fake PASS | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | PASS | AWS API exercise records `policy_validation_ms=42` metric |
 | PROMPT-01 | Source prompt suite file is located and path recorded | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | UNKNOWN | SESSION-08 |
 | PROMPT-02 | Every prompt item receives a stable promptId | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | UNKNOWN | SESSION-08 |
 | PROMPT-03 | Every prompt item has expected unit A-to-B structure | PROMPT-SUITE-VALIDATION-CONTRACT.md and generated prompt-by-prompt matrix | UNKNOWN | SESSION-08 |
@@ -192,7 +192,7 @@ IN_PROGRESS_NEXT_STEP_KNOWN
 ## First next action
 
 ```text
-Execute SESSION-07-SMART-CODE-ASSISTANT.md: implement Smart Code Assistant trainable unit evidence for tenant coding/architecture policies, plan-before-patch, graph impact validation, patch rationale, export/import and runtime metrics.
+Execute SESSION-08-PROMPT-BY-PROMPT-VALIDATION.md: locate the source prompt suite, create stable prompt IDs and validate every prompt item with actual result rows and runtime metric evidence.
 ```
 
 
