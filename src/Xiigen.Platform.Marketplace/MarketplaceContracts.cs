@@ -70,3 +70,68 @@ public interface IMarketplaceService
         ApplyAdaptationRequest request,
         CancellationToken cancellationToken = default);
 }
+
+public sealed record CreateTenantWorkspaceRequest(
+    string WorkspaceName,
+    string CorporateName,
+    string RequestedBy,
+    IReadOnlyDictionary<string, object?> Metadata);
+
+public sealed record ConnectProjectSourceRequest(
+    string WorkspaceId,
+    string? RepositoryUrl,
+    string? SnapshotName,
+    string? SnapshotHash,
+    string RequestedBy,
+    IReadOnlyDictionary<string, object?> Metadata);
+
+public sealed record CaptureTenantPolicyRequest(
+    string WorkspaceId,
+    string PolicyKind,
+    string PolicyText,
+    string Source,
+    string CapturedBy);
+
+public sealed record RequestTenantAdaptationRequest(
+    string WorkspaceId,
+    string Objective,
+    IReadOnlyList<string> Constraints,
+    string RequestedBy);
+
+public sealed record ReviewAdaptationDiffRequest(
+    string WorkspaceId,
+    string AdaptationId,
+    string Decision,
+    string ReviewedBy,
+    string ReviewNote);
+
+public interface ITenantAdaptationStudioService
+{
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>>> CreateWorkspaceAsync(
+        CreateTenantWorkspaceRequest request,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>>> ConnectProjectSourceAsync(
+        ConnectProjectSourceRequest request,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>>> CapturePolicyAsync(
+        CaptureTenantPolicyRequest request,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>>> RequestAdaptationAsync(
+        RequestTenantAdaptationRequest request,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>>> ReviewDiffAsync(
+        ReviewAdaptationDiffRequest request,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>?>> GetWorkspaceAsync(
+        string workspaceId,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyList<IReadOnlyDictionary<string, object?>>>> ListAuditAsync(
+        string workspaceId,
+        CancellationToken cancellationToken = default);
+}

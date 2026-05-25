@@ -3,8 +3,8 @@
   "goal_reached": false,
   "stop_allowed": false,
   "gate_status": "IN_PROGRESS_NEXT_STEP_KNOWN",
-  "next_action": "Execute SESSION-05-TENANT-ADAPTATION-STUDIO.md: implement or define Tenant Adaptation Studio workspace, repo/snapshot intake, policy, diff, approval, audit and AWS visual evidence rows.",
-  "next_action_plan_source": "SESSION-05-TENANT-ADAPTATION-STUDIO.md / TAS-01 first UNKNOWN row",
+  "next_action": "Execute SESSION-06-SMART-WIKI.md: implement Smart Wiki answer evidence for linked graph questions, tenant-local wiki data, missing-evidence abstention and visual evidence where UI is claimed.",
+  "next_action_plan_source": "SESSION-06-SMART-WIKI.md / SW-01 first UNKNOWN row",
   "actionable_gaps": [
     "FLOW-19 AWS capability not verified from Enterprise repo evidence",
     "AWS runtime endpoint/IP evidence not captured from FLOW-19 output",
@@ -13,8 +13,8 @@
     "Trainable unit registry/import/export proof not implemented",
     "Final evidence scope does not yet equal final claim scope"
   ],
-  "current_internal_role_state": "ARCHITECT_INTERNAL_REVIEW_PASS_SESSION_04_TRAINABLE_UNIT_REGISTRY_CONTINUE_SESSION_05",
-  "last_role_transition_reason": "Trainable unit registry, manifests, checkpoint references, locator, import/export maps, validation reports and audit evidence close TU-01 through TU-12.",
+  "current_internal_role_state": "ARCHITECT_INTERNAL_REVIEW_PASS_SESSION_05_TENANT_ADAPTATION_STUDIO_CONTINUE_SESSION_06",
+  "last_role_transition_reason": "Tenant Adaptation Studio API, service tests, AWS runtime route, API exercise and screenshot evidence close TAS-01 through TAS-10.",
   "return_to_executor_required": true,
   "loaded_skills": [
     "architect plan",
@@ -45,16 +45,16 @@
     "push_is_stop_gate": false
   },
   "executor_authority": "REINSTATED_FOR_PLAN_DERIVED_ACTION_ONLY",
-  "executor_authority_scope": "Execute SESSION-05 Tenant Adaptation Studio only; keep trainable unit registry evidence as source of truth.",
+  "executor_authority_scope": "Execute SESSION-06 Smart Wiki only; keep Tenant Adaptation Studio evidence as source of truth.",
   "executor_may_not_self_restore": true,
   "architect_reinstatement_required": true,
   "executor_authority_reinstated": true,
   "architect_verdict": "ARCHITECT_VERDICT_CONTINUE_EXECUTION",
   "reinstatement_reason": "SESSION-01 capability map provides exact implementation targets for missing AWS CI/CD rows.",
-  "first_failed_requirement_id": "TAS-01",
+  "first_failed_requirement_id": "SW-01",
   "last_plan_reminder": {
-    "next_action": "Execute SESSION-05-TENANT-ADAPTATION-STUDIO.md: implement or define Tenant Adaptation Studio workspace, repo/snapshot intake, policy, diff, approval, audit and AWS visual evidence rows.",
-    "source": "TAS-01"
+    "next_action": "Execute SESSION-06-SMART-WIKI.md: implement Smart Wiki answer evidence for linked graph questions, tenant-local wiki data, missing-evidence abstention and visual evidence where UI is claimed.",
+    "source": "SW-01"
   },
   "execution_attempt_latest": {
     "next_action": "Implement the FLOW-19 AWS CI/CD equivalent runner without GitHub Actions: add tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1, deployment/aws descriptors, Secrets Manager/KMS metadata, ECR/ECS/S3/routing/CloudWatch/rollback/signing/audit evidence outputs, then rerun SESSION-01 evidence mapping.",
@@ -144,6 +144,35 @@
     "validationProjectsAreTargetsOnly": true,
     "staticHelperRejected": true
   },
+  "tenantAdaptationStudioEvidence": {
+    "status": "PASS_TENANT_ADAPTATION_STUDIO_IMPLEMENTED_AND_AWS_VERIFIED",
+    "contractPath": "docs/plans/enterprise-adaptation/v3.3/TENANT-ADAPTATION-STUDIO-CONTRACT.md",
+    "capabilityMapPath": "docs/plans/enterprise-adaptation/v3.3/evidence/tenant-adaptation-studio-capability-map.json",
+    "runtimeEvidencePath": "docs/plans/enterprise-adaptation/v3.3/evidence/tenant-adaptation-studio-aws-runtime.json",
+    "screenshot": "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/tenant-adaptation-studio-aws.png",
+    "hostedBaseUrl": "https://gyxwjim5ea.eu-west-1.awsapprunner.com",
+    "studioUrl": "https://gyxwjim5ea.eu-west-1.awsapprunner.com/studio",
+    "service": "src/Xiigen.Platform.Marketplace/TenantAdaptationStudioService.cs",
+    "api": "src/Xiigen.Platform.Api/Program.cs",
+    "test": "tests/Xiigen.Platform.Marketplace.Tests/TenantAdaptationStudioServiceTests.cs",
+    "rowsClosed": [
+      "TAS-01",
+      "TAS-02",
+      "TAS-03",
+      "TAS-04",
+      "TAS-05",
+      "TAS-06",
+      "TAS-07",
+      "TAS-08",
+      "TAS-09",
+      "TAS-10"
+    ],
+    "localTestCommand": "dotnet test tests/Xiigen.Platform.Marketplace.Tests/Xiigen.Platform.Marketplace.Tests.csproj -c Release",
+    "localTestsPassed": 10,
+    "localTestsFailed": 0,
+    "awsApiExerciseAuditCount": 6,
+    "crossTenantStatus": 404
+  },
   "beacon_prompt_path": "docs/plans/enterprise-adaptation/v3.3/XIIGEN-ENTERPRISE-ADAPTATION-BEACON-PROMPT-v1.md",
   "beacon_required_before_every_role_action": true,
   "executor_must_handoff_to_review_after_each_slice": true,
@@ -156,8 +185,8 @@
     "architect_final_authority_only": true,
     "coverage_challenge_architect_first": true,
     "stop_permission_gate_required": true,
-    "next_action": "Execute SESSION-05-TENANT-ADAPTATION-STUDIO.md: implement or define Tenant Adaptation Studio workspace, repo/snapshot intake, policy, diff, approval, audit and AWS visual evidence rows.",
-    "executor_must_handoff_to": "REVIEW_INTERNAL after SESSION-04 trainable unit registry slice"
+    "next_action": "Execute SESSION-06-SMART-WIKI.md: implement Smart Wiki answer evidence for linked graph questions, tenant-local wiki data, missing-evidence abstention and visual evidence where UI is claimed.",
+    "executor_must_handoff_to": "REVIEW_INTERNAL after SESSION-05 tenant adaptation studio slice"
   },
   "masterTenantLaunch": {
     "controlPlane": "main Enterprise project / master tenant",

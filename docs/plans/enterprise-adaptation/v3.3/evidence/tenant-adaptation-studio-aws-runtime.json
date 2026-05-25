@@ -1,0 +1,71 @@
+{
+  "session": "SESSION-05-TENANT-ADAPTATION-STUDIO",
+  "capturedAtUtc": "2026-05-25T19:42:00Z",
+  "provider": "aws",
+  "awsAccount": "595003292091",
+  "awsRegion": "eu-west-1",
+  "runtimeMode": "AWS App Runner platform API",
+  "hostedBaseUrl": "https://gyxwjim5ea.eu-west-1.awsapprunner.com",
+  "serverHealthUrl": "https://gyxwjim5ea.eu-west-1.awsapprunner.com/health/ready",
+  "studioUrl": "https://gyxwjim5ea.eu-west-1.awsapprunner.com/studio",
+  "appRunner": {
+    "serviceName": "xiigen-platform-primary",
+    "serviceArn": "arn:aws:apprunner:eu-west-1:595003292091:service/xiigen-platform-primary/a43b42b090ef4d66b33099863c28555d",
+    "serviceUrl": "gyxwjim5ea.eu-west-1.awsapprunner.com",
+    "status": "RUNNING"
+  },
+  "ecr": {
+    "repository": "xiigen/platform-api",
+    "imageUri": "595003292091.dkr.ecr.eu-west-1.amazonaws.com/xiigen/platform-api:tenant-adaptation-studio-8ad9c5305847",
+    "imageDigest": "sha256:5e8721a6dbfd4b10b2990bfe481c4fbaeb5845b7b25f149e1011b16d7b849231"
+  },
+  "healthCheck": {
+    "statusCode": 200,
+    "responseBody": {
+      "status": "ready",
+      "service": "xiigen-platform-api"
+    }
+  },
+  "studioPage": {
+    "statusCode": 200,
+    "title": "XIIGen Tenant Adaptation Studio",
+    "containsWorkspace": true,
+    "containsPlanBeforePatch": true,
+    "screenshot": "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/tenant-adaptation-studio-aws.png"
+  },
+  "apiExercise": {
+    "tenantId": "primary-tenant",
+    "role": "tenant_admin",
+    "workspaceId": "workspace-16d1128ee76e6754",
+    "workspaceStatus": "workspace_created",
+    "sourceId": "source-93d6b01efeb1d60f",
+    "codingPolicy": "coding",
+    "architecturePolicy": "architecture",
+    "adaptationStatus": "PLAN_READY_REVIEW_REQUIRED",
+    "hasPlanBeforePatch": true,
+    "hasReviewableDiff": true,
+    "reviewStatus": "APPROVED_FOR_APPLY_OR_EXPORT",
+    "auditCount": 6,
+    "crossTenantStatus": 404
+  },
+  "invalidEvidenceRejected": true,
+  "rejectedEvidenceKinds": [
+    "localhost",
+    "mock endpoint",
+    "direct helper call",
+    "contract harness only",
+    "screenshot without AWS URL metadata"
+  ],
+  "matrixRows": [
+    "TAS-01",
+    "TAS-02",
+    "TAS-03",
+    "TAS-04",
+    "TAS-05",
+    "TAS-06",
+    "TAS-07",
+    "TAS-08",
+    "TAS-09",
+    "TAS-10"
+  ]
+}

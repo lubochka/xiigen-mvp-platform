@@ -1,0 +1,59 @@
+{
+  "session": "SESSION-05-TENANT-ADAPTATION-STUDIO",
+  "capturedAtUtc": "2026-05-25T19:42:00Z",
+  "implementation": {
+    "service": "src/Xiigen.Platform.Marketplace/TenantAdaptationStudioService.cs",
+    "contracts": "src/Xiigen.Platform.Marketplace/MarketplaceContracts.cs",
+    "api": "src/Xiigen.Platform.Api/Program.cs",
+    "tests": "tests/Xiigen.Platform.Marketplace.Tests/TenantAdaptationStudioServiceTests.cs"
+  },
+  "rows": {
+    "TAS-01": {
+      "status": "PASS",
+      "evidence": "CreateWorkspaceAsync and POST /api/studio/workspaces create tenant-scoped corporate workspace records."
+    },
+    "TAS-02": {
+      "status": "PASS",
+      "evidence": "ConnectProjectSourceAsync and POST /api/studio/workspaces/{workspaceId}/sources accept repository URL or snapshot evidence."
+    },
+    "TAS-03": {
+      "status": "PASS",
+      "evidence": "CapturePolicyAsync accepts policyKind=coding and stores company coding policy."
+    },
+    "TAS-04": {
+      "status": "PASS",
+      "evidence": "CapturePolicyAsync accepts policyKind=architecture and stores company architecture policy."
+    },
+    "TAS-05": {
+      "status": "PASS",
+      "evidence": "RequestAdaptationAsync accepts scoped objective and constraints."
+    },
+    "TAS-06": {
+      "status": "PASS",
+      "evidence": "Adaptation request stores planBeforePatch before any patch apply/export."
+    },
+    "TAS-07": {
+      "status": "PASS",
+      "evidence": "Adaptation request stores reviewableDiff and ReviewDiffAsync gates approve/reject."
+    },
+    "TAS-08": {
+      "status": "PASS",
+      "evidence": "GetWorkspaceAsync returns null for cross-tenant workspace reads; AWS API returned 404 for other tenant."
+    },
+    "TAS-09": {
+      "status": "PASS",
+      "evidence": "Audit records are written for workspace, source, policy, adaptation and review actions."
+    },
+    "TAS-10": {
+      "status": "PASS",
+      "evidence": "AWS App Runner /studio screenshot captured from https://gyxwjim5ea.eu-west-1.awsapprunner.com/studio."
+    }
+  },
+  "localVerification": {
+    "command": "dotnet test tests/Xiigen.Platform.Marketplace.Tests/Xiigen.Platform.Marketplace.Tests.csproj -c Release",
+    "sdk": "10.0.300",
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0
+  }
+}

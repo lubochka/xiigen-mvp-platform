@@ -7,6 +7,7 @@ public static class XiigenMarketplaceServiceCollectionExtensions
     public static IServiceCollection AddXiigenMarketplace(this IServiceCollection services)
     {
         services.AddSingleton<IMarketplaceService, MarketplaceService>();
+        services.AddSingleton<ITenantAdaptationStudioService, TenantAdaptationStudioService>();
         return services;
     }
 }

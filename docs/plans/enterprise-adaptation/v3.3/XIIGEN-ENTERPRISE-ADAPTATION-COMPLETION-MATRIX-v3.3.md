@@ -91,16 +91,16 @@ Every row names a literal expectation. Generic placeholders such as `requirement
 | TU-10 | Validation projects are marked validation targets only, not unit owners | TRAINABLE-UNIT-MANIFEST-CONTRACT.md plus generated unit registry/evidence | PASS | Trainable unit contract docs/plans/enterprise-adaptation/v3.3/TRAINABLE-UNIT-MANIFEST-CONTRACT.md, registry docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/registry/trainable-unit-registry.json and evidence docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/trainable-unit-registry-evidence.json. |
 | TU-11 | No static helper is allowed to make semantic/routing decisions instead of trainable/exportable unit | TRAINABLE-UNIT-MANIFEST-CONTRACT.md plus generated unit registry/evidence | PASS | Trainable unit contract docs/plans/enterprise-adaptation/v3.3/TRAINABLE-UNIT-MANIFEST-CONTRACT.md, registry docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/registry/trainable-unit-registry.json and evidence docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/trainable-unit-registry-evidence.json. |
 | TU-12 | Unit registry update is audited and tenant-scoped | TRAINABLE-UNIT-MANIFEST-CONTRACT.md plus generated unit registry/evidence | PASS | Trainable unit contract docs/plans/enterprise-adaptation/v3.3/TRAINABLE-UNIT-MANIFEST-CONTRACT.md, registry docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/registry/trainable-unit-registry.json and evidence docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/trainable-unit-registry-evidence.json. |
-| TAS-01 | Tenant can create corporate workspace in Tenant Adaptation Studio | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | UNKNOWN | SESSION-05 |
-| TAS-02 | Tenant can connect repo or upload project snapshot | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | UNKNOWN | SESSION-05 |
-| TAS-03 | Tenant can define company coding policy | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | UNKNOWN | SESSION-05 |
-| TAS-04 | Tenant can define architecture policy | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | UNKNOWN | SESSION-05 |
-| TAS-05 | Tenant can request adaptation with scoped objective and constraints | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | UNKNOWN | SESSION-05 |
-| TAS-06 | Adaptation request produces plan before patch | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | UNKNOWN | SESSION-05 |
-| TAS-07 | Patch proposal is reviewable before apply/export | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | UNKNOWN | SESSION-05 |
-| TAS-08 | Tenant isolation prevents access to another tenant workspace/adaptation | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | UNKNOWN | SESSION-05 |
-| TAS-09 | Adaptation audit records requester, tenant, source, policy, diff, result | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | UNKNOWN | SESSION-05 |
-| TAS-10 | Website UI evidence is captured from AWS endpoint when runtime claim is made | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | UNKNOWN | SESSION-05 |
+| TAS-01 | Tenant can create corporate workspace in Tenant Adaptation Studio | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | PASS | Tenant workspace API implemented in `TenantAdaptationStudioService`; AWS API evidence in `evidence/tenant-adaptation-studio-aws-runtime.json` |
+| TAS-02 | Tenant can connect repo or upload project snapshot | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | PASS | Project source endpoint accepts repository URL or snapshot metadata; covered by service test and AWS API exercise |
+| TAS-03 | Tenant can define company coding policy | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | PASS | Coding policy capture implemented and tested; AWS API exercise stored `policyKind=coding` |
+| TAS-04 | Tenant can define architecture policy | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | PASS | Architecture policy capture implemented and tested; AWS API exercise stored `policyKind=architecture` |
+| TAS-05 | Tenant can request adaptation with scoped objective and constraints | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | PASS | Adaptation request endpoint accepts objective and constraints; capability map row TAS-05 |
+| TAS-06 | Adaptation request produces plan before patch | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | PASS | Adaptation response contains `planBeforePatch`; verified by unit test and AWS API exercise |
+| TAS-07 | Patch proposal is reviewable before apply/export | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | PASS | Adaptation response contains `reviewableDiff`; review endpoint gates approval before export/apply |
+| TAS-08 | Tenant isolation prevents access to another tenant workspace/adaptation | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | PASS | Cross-tenant workspace read returns not found; AWS API evidence returned 404 for other tenant |
+| TAS-09 | Adaptation audit records requester, tenant, source, policy, diff, result | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | PASS | Audit endpoint returned 6 tenant-scoped events after AWS exercise |
+| TAS-10 | Website UI evidence is captured from AWS endpoint when runtime claim is made | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | PASS | AWS screenshot `evidence/aws-runtime/tenant-adaptation-studio-aws.png` captured from App Runner `/studio` |
 | SW-01 | Smart Wiki indexes Angular + .NET + SQL graph as linked knowledge | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | UNKNOWN | SESSION-06 |
 | SW-02 | Smart Wiki answers cite source graph authority, not unsupported model memory | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | UNKNOWN | SESSION-06 |
 | SW-03 | Smart Wiki supports entity impact questions | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | UNKNOWN | SESSION-06 |
@@ -192,7 +192,7 @@ IN_PROGRESS_NEXT_STEP_KNOWN
 ## First next action
 
 ```text
-Execute SESSION-05-TENANT-ADAPTATION-STUDIO.md: implement or define Tenant Adaptation Studio workspace, repo/snapshot intake, policy, diff, approval, audit and AWS visual evidence rows.
+Execute SESSION-06-SMART-WIKI.md: implement Smart Wiki answer evidence for linked graph questions, tenant-local wiki data, missing-evidence abstention and visual evidence where UI is claimed.
 ```
 
 

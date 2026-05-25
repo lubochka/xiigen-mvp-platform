@@ -40,6 +40,22 @@
         "3.5.74.16",
         "52.92.37.4"
       ]
+    },
+    {
+      "matrixRow": "TAS-10",
+      "url": "https://gyxwjim5ea.eu-west-1.awsapprunner.com/studio",
+      "tenant": "primary-tenant",
+      "role": "tenant_admin",
+      "screenshot": "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/tenant-adaptation-studio-aws.png",
+      "trace": "",
+      "video": "",
+      "secretsRedacted": true,
+      "sourceCommand": "playwright-core screenshot via Edge channel against AWS App Runner /studio",
+      "dnsResolvedPublicIps": [
+        "176.34.92.174",
+        "99.81.31.115",
+        "99.81.81.209"
+      ]
     }
   ]
 }
