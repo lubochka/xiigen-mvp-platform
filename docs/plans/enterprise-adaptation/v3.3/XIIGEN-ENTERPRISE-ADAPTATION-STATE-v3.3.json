@@ -1,0 +1,165 @@
+﻿{
+    "main_focus_goal":  "Create/train/export/import/validate/update/use Enterprise trainable units for project-local wiki and Smart Code Assistant over Angular + .NET + SQL, with VS/VS Code plugin runtime entrypoints, AWS endpoint/IP visual evidence, and prompt-by-prompt validation.",
+    "goal_reached":  false,
+    "stop_allowed":  false,
+    "gate_status":  "IN_PROGRESS_NEXT_STEP_KNOWN",
+    "next_action":  "Execute SESSION-01-FLOW19-AWS-CICD: locate FLOW-19 AWS CI/CD implementation and evidence in the Enterprise repos, map AWS build/deploy/runtime capabilities CI-AWS-01..13, and record new-development-required rows where real FLOW-19 evidence is absent.",
+    "next_action_plan_source":  "SESSION-01-FLOW19-AWS-CICD.md / AWS-CICD-EVIDENCE-CONTRACT.md / CI-AWS matrix rows",
+    "actionable_gaps":  [
+                            "FLOW-19 AWS capability not verified from Enterprise repo evidence",
+                            "AWS runtime endpoint/IP evidence not captured from FLOW-19 output",
+                            "Visual Studio/VS Code interactive plugin host evidence not captured",
+                            "Prompt suite not validated prompt-by-prompt",
+                            "Trainable unit registry/import/export proof not implemented",
+                            "Final evidence scope does not yet equal final claim scope"
+                        ],
+    "current_internal_role_state":  "ARCHITECT_VERDICT_CONTINUE_EXECUTION_EXECUTOR_INTERNAL_CONTINUE_SESSION_01",
+    "last_role_transition_reason":  "SESSION-00 governance package installed in platform repo, REVIEW_INTERNAL passed, architect reinstated executor authority for SESSION-01 only.",
+    "return_to_executor_required":  true,
+    "loaded_skills":  [
+                          "architect plan",
+                          "plan review",
+                          "protocol architect",
+                          "requirement-to-flow",
+                          "coverage gate"
+                      ],
+    "plan_completion_hole_register":  [
+
+                                      ],
+    "completion_matrix_path":  "XIIGEN-ENTERPRISE-ADAPTATION-COMPLETION-MATRIX-v3.3.md",
+    "score_audit_latest":  {
+                               "current_score":  0,
+                               "last_delta":  0,
+                               "last_delta_reason":  "governance repair package authored; no positive points awarded for repair",
+                               "positive_points_awarded_for_repair":  0,
+                               "progress_step_count":  0,
+                               "last_score_event":  "governance repair; no progress score"
+                           },
+    "premature_stop_review":  {
+                                  "required_if_stop_attempted_before_goal":  true,
+                                  "loophole_found":  "",
+                                  "governing_files_to_patch":  [
+
+                                                               ]
+                              },
+    "commit_push_boundary":  {
+                                 "commit_required_for_phase":  true,
+                                 "push_required_for_phase":  true,
+                                 "commit_is_stop_gate":  false,
+                                 "push_is_stop_gate":  false
+                             },
+    "executor_authority":  "REINSTATED_FOR_PLAN_DERIVED_ACTION_ONLY",
+    "executor_authority_scope":  "SESSION-01-FLOW19-AWS-CICD only; no product/site implementation beyond FLOW-19 AWS CI/CD capability discovery and evidence mapping.",
+    "executor_may_not_self_restore":  true,
+    "architect_reinstatement_required":  true,
+    "executor_authority_reinstated":  true,
+    "architect_verdict":  "ARCHITECT_VERDICT_CONTINUE_EXECUTION",
+    "reinstatement_reason":  "SESSION-00 governance evidence passed and next action derived from matrix first failed row CI-AWS-01.",
+    "first_failed_requirement_id":  "CI-AWS-01",
+    "last_plan_reminder":  {
+                               "next_action":  "Execute SESSION-01-FLOW19-AWS-CICD: locate FLOW-19 AWS CI/CD implementation and evidence in the Enterprise repos, map AWS build/deploy/runtime capabilities CI-AWS-01..13, and record new-development-required rows where real FLOW-19 evidence is absent.",
+                               "source":  "SESSION-01 + CI-AWS matrix rows"
+                           },
+    "execution_attempt_latest":  {
+                                     "next_action":  "Execute SESSION-01-FLOW19-AWS-CICD: locate FLOW-19 AWS CI/CD implementation and evidence in the Enterprise repos, map AWS build/deploy/runtime capabilities CI-AWS-01..13, and record new-development-required rows where real FLOW-19 evidence is absent.",
+                                     "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-01 slice"
+                                 },
+    "constitution_linkage":  {
+                                 "required_if_file_exists":  true,
+                                 "file":  "CONSTITUTION-EXECUTOR-ARCHITECT-ROUND-CONTROL-v1.md",
+                                 "status":  "NOT_APPLICABLE_FILE_ABSENT"
+                             },
+    "awsCicdEvidence":  {
+                            "required":  true,
+                            "provider":  "aws",
+                            "flow":  "FLOW-19",
+                            "workflowRunUrl":  null,
+                            "workflowConclusion":  null,
+                            "hostedBaseUrl":  null,
+                            "serverHealthUrl":  null,
+                            "clientUrl":  null,
+                            "resolvedPublicIps":  [
+
+                                                  ],
+                            "region":  null,
+                            "environment":  null,
+                            "imageDigest":  null,
+                            "packageHash":  null,
+                            "visualEvidenceDir":  null,
+                            "screenshots":  [
+
+                                            ],
+                            "status":  "UNKNOWN"
+                        },
+    "interactiveIdeEvidence":  {
+                                   "visualStudio":  "UNKNOWN",
+                                   "visualStudioCode":  "UNKNOWN",
+                                   "contractHarnessOnlyDoesNotPass":  true,
+                                   "realHostRequired":  true
+                               },
+    "promptSuiteEvidence":  {
+                                "status":  "UNKNOWN",
+                                "promptByPromptRequired":  true,
+                                "sourcePromptSuitePath":  null
+                            },
+    "trainableUnitEvidence":  {
+                                  "manifest":  null,
+                                  "locator":  null,
+                                  "checkpointReference":  null,
+                                  "importPath":  null,
+                                  "exportPath":  null,
+                                  "status":  "UNKNOWN"
+                              },
+    "beacon_prompt_path":  "docs/plans/enterprise-adaptation/v3.3/XIIGEN-ENTERPRISE-ADAPTATION-BEACON-PROMPT-v1.md",
+    "beacon_required_before_every_role_action":  true,
+    "executor_must_handoff_to_review_after_each_slice":  true,
+    "executor_may_not_final_report_by_self_judgment":  true,
+    "architect_control_required_for_completion":  true,
+    "beacon_control":  {
+                           "beacon_first":  true,
+                           "rag_lookup_order_defined":  true,
+                           "executor_handoff_required":  true,
+                           "architect_final_authority_only":  true,
+                           "coverage_challenge_architect_first":  true,
+                           "stop_permission_gate_required":  true
+                       },
+    "masterTenantLaunch":  {
+                               "controlPlane":  "main Enterprise project / master tenant",
+                               "canonicalPackagePath":  "docs/plans/enterprise-adaptation/v3.3/",
+                               "customerTenantReposAreTargetsOnly":  true,
+                               "validationProjectsAreTargetsOnly":  true,
+                               "launchRunbook":  "MASTER-TENANT-LAUNCH-RUNBOOK-v1.md",
+                               "scopeEvidence":  "PASS: platform repo remote is github.com/lubochka/xiigen-platform-dot-net-angular and package installed under docs/plans/enterprise-adaptation/v3.3 for master tenant control plane.",
+                               "currentBranchEvidence":  "main",
+                               "repoRemoteEvidence":  "https://github.com/lubochka/xiigen-platform-dot-net-angular.git"
+                           },
+    "legalDocuments":  {
+                           "contract":  "LEGAL-DOCUMENTS-SITE-INTEGRATION-CONTRACT.md",
+                           "session":  "SESSION-13-LEGAL-DOCUMENTS-SITE-INTEGRATION.md",
+                           "registryPath":  "UNKNOWN",
+                           "routeMapPath":  "UNKNOWN",
+                           "acceptanceContextMapPath":  "UNKNOWN",
+                           "visualEvidenceIndexPath":  "UNKNOWN",
+                           "allRequiredDocsApproved":  false,
+                           "publicLaunchLegalGate":  "UNKNOWN",
+                           "requiredLocales":  [
+                                                   "en",
+                                                   "he",
+                                                   "ru"
+                                               ],
+                           "requiredDocuments":  [
+                                                     "terms",
+                                                     "privacy",
+                                                     "cookies",
+                                                     "eula",
+                                                     "enterprise_terms",
+                                                     "dpa",
+                                                     "acceptable_use",
+                                                     "affiliate_terms",
+                                                     "refund_cancellation",
+                                                     "security",
+                                                     "subprocessors",
+                                                     "open_source_notices"
+                                                 ]
+                       }
+}
