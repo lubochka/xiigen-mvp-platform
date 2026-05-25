@@ -1,0 +1,25 @@
+{
+    "eventId":  "flow19-aws-629572382e424206af58b47f185f4558",
+    "flow":  "FLOW-19",
+    "eventType":  "xiigen.flow19.aws.deployment.evidence",
+    "environment":  "primary-master-tenant",
+    "commitSha":  "fd2e3bfd843940d4341a9b86a0503cb382ac8122",
+    "packageHash":  "1f377fada0f804d9cf517b24e08277dc7f3d767f07a18a78254fd6f4fe30c9bc",
+    "imageUri":  "xiigen/flow-19-durable-sagas-compliance:primary-master-tenant-fd2e3bfd8439",
+    "executeAws":  false,
+    "createdAtUtc":  "2026-05-25T18:07:10.6530374+00:00",
+    "rowsCovered":  [
+                        "CI-AWS-02",
+                        "CI-AWS-03",
+                        "CI-AWS-04",
+                        "CI-AWS-05",
+                        "CI-AWS-06",
+                        "CI-AWS-07",
+                        "CI-AWS-08",
+                        "CI-AWS-09",
+                        "CI-AWS-10",
+                        "CI-AWS-11",
+                        "CI-AWS-12",
+                        "CI-AWS-13"
+                    ]
+}

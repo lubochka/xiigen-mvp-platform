@@ -1,6 +1,7 @@
 **/bin/
 **/obj/
 **/TestResults/
+/artifacts/enterprise-deploy/
 *.user
 *.log
 *.pid

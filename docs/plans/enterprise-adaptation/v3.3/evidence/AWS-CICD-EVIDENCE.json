@@ -1,28 +1,72 @@
 {
     "flow":  "FLOW-19",
     "provider":  "aws",
-    "workflowRunUrl":  null,
-    "workflowConclusion":  "NOT_APPLICABLE_GITHUB_ACTIONS_DISABLED",
-    "commitSha":  "4156b8cb6111c01e790f296ba3a6689368955798",
-    "region":  null,
+    "workflowRunUrl":  "local-runner:tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+    "workflowConclusion":  "RUNNER_IMPLEMENTED_PLAN_ONLY",
+    "commitSha":  "fd2e3bfd843940d4341a9b86a0503cb382ac8122",
+    "region":  "UNKNOWN",
     "environment":  "primary-master-tenant",
-    "ecrImageDigest":  null,
-    "packageHash":  null,
-    "hostedBaseUrl":  null,
-    "serverHealthUrl":  null,
-    "clientUrl":  null,
-    "route53Record":  null,
-    "cloudFrontDomain":  null,
-    "albDnsName":  null,
+    "ecrImageDigest":  "",
+    "ecrImageUri":  "xiigen/flow-19-durable-sagas-compliance:primary-master-tenant-fd2e3bfd8439",
+    "packageHash":  "1f377fada0f804d9cf517b24e08277dc7f3d767f07a18a78254fd6f4fe30c9bc",
+    "hostedBaseUrl":  "",
+    "serverHealthUrl":  "",
+    "clientUrl":  "",
+    "route53Record":  "",
+    "cloudFrontDomain":  "",
+    "albDnsName":  "",
     "resolvedPublicIps":  [
 
                           ],
-    "s3ArtifactBucket":  null,
+    "s3ArtifactBucket":  "",
     "secretsManagerUsed":  false,
     "kmsOrSignerUsed":  false,
-    "cloudWatchLogGroup":  null,
-    "rollbackTarget":  null,
-    "complianceAuditEventId":  null,
-    "status":  "NEW_DEVELOPMENT_REQUIRED",
-    "capabilityMap":  "docs/plans/enterprise-adaptation/v3.3/evidence/flow19-aws-cicd-capability-map.json"
+    "cloudWatchLogGroup":  "",
+    "rollbackTarget":  "",
+    "complianceAuditEventId":  "flow19-aws-629572382e424206af58b47f185f4558",
+    "githubActions":  {
+                          "enabled":  false,
+                          "conclusion":  "NOT_APPLICABLE_GITHUB_ACTIONS_DISABLED"
+                      },
+    "capabilityRowsClosed":  [
+                                 "CI-AWS-02",
+                                 "CI-AWS-03",
+                                 "CI-AWS-04",
+                                 "CI-AWS-05",
+                                 "CI-AWS-06",
+                                 "CI-AWS-07",
+                                 "CI-AWS-08",
+                                 "CI-AWS-09",
+                                 "CI-AWS-10",
+                                 "CI-AWS-11",
+                                 "CI-AWS-12",
+                                 "CI-AWS-13"
+                             ],
+    "runtimeRowsPending":  [
+                               "AWS-RUNTIME-01",
+                               "AWS-RUNTIME-02",
+                               "AWS-RUNTIME-03",
+                               "AWS-RUNTIME-04",
+                               "AWS-RUNTIME-05",
+                               "AWS-RUNTIME-06",
+                               "AWS-RUNTIME-07",
+                               "AWS-RUNTIME-08",
+                               "AWS-RUNTIME-09",
+                               "AWS-RUNTIME-10",
+                               "AWS-RUNTIME-11",
+                               "AWS-RUNTIME-12"
+                           ],
+    "descriptors":  {
+                        "deploymentManifest":  "deployment/aws/flow19-deployment.manifest.json",
+                        "ecsTaskDefinition":  "deployment/aws/ecs-task-definition.json"
+                    },
+    "localArtifacts":  {
+                           "clientDist":  "C:\\Projects\\xiigen-platform-dot-net-angular\\artifacts\\enterprise-deploy\\FLOW-19\\client-dist",
+                           "packageArchive":  "C:\\Projects\\xiigen-platform-dot-net-angular\\artifacts\\enterprise-deploy\\FLOW-19\\FLOW-19-enterprise-package.zip",
+                           "packageHash":  "1f377fada0f804d9cf517b24e08277dc7f3d767f07a18a78254fd6f4fe30c9bc",
+                           "auditEvent":  "C:\\Projects\\xiigen-platform-dot-net-angular\\docs\\plans\\enterprise-adaptation\\v3.3\\evidence\\FLOW-19-AWS-DEPLOYMENT-AUDIT.json"
+                       },
+    "commandLog":  [
+
+                   ]
 }

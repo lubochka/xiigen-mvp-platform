@@ -1,138 +1,176 @@
 {
-    "flow":  "FLOW-19",
-    "provider":  "aws",
-    "session":  "SESSION-01-FLOW19-AWS-CICD",
-    "generatedAtUtc":  "2026-05-25T17:53:18.7585485Z",
-    "platformRepo":  "C:/Projects/xiigen-platform-dot-net-angular",
-    "flowsRepo":  "C:/Projects/xiigen-flows-dot-net-angular",
-    "actionsPolicy":  "GitHub Actions remain disabled; equivalent local/AWS runner required to avoid Actions minutes.",
-    "noManualAppendix":  true,
-    "capabilities":  [
-                         {
-                             "row":  "CI-AWS-01",
-                             "requirement":  "FLOW-19 implementation path is located",
-                             "status":  "PASS",
-                             "evidence":  [
-                                              "C:/Projects/xiigen-flows-dot-net-angular/flows/FLOW-19-durable-sagas-compliance",
-                                              "C:/Projects/xiigen-flows-dot-net-angular/docs/sessions/FLOW-19/FLOW-19-DOTNET-ANGULAR-TRANSITION-STATE.json",
-                                              "C:/Projects/xiigen-flows-dot-net-angular/docs/translation-evidence/FLOW-19/qa-review.md"
-                                          ],
-                             "remediation":  "none"
-                         },
-                         {
-                             "row":  "CI-AWS-02",
-                             "requirement":  "GitHub Actions or equivalent pipeline file mapped to FLOW-19",
-                             "status":  "NEW_DEVELOPMENT_REQUIRED",
-                             "evidence":  [
-                                              "No tracked .github/workflows in platform/flows repos; GitHub Actions are intentionally disabled. Equivalent non-Actions AWS deployment runner must be implemented."
-                                          ],
-                             "remediation":  "Create tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1 and deployment/aws/flow19-deployment.manifest.json; keep GitHub Actions disabled."
-                         },
-                         {
-                             "row":  "CI-AWS-03",
-                             "requirement":  "Angular frontend build artifact production",
-                             "status":  "NEW_DEVELOPMENT_REQUIRED",
-                             "evidence":  [
-                                              "C:/Projects/xiigen-flows-dot-net-angular/flows/FLOW-19-durable-sagas-compliance/client/angular/angular.json",
-                                              "C:/Projects/xiigen-flows-dot-net-angular/flows/FLOW-19-durable-sagas-compliance/client/angular/package.json"
-                                          ],
-                             "remediation":  "Add FLOW-19 AWS runner step BuildAngularArtifact that produces immutable client artifact and writes hash to AWS-CICD-EVIDENCE.json."
-                         },
-                         {
-                             "row":  "CI-AWS-04",
-                             "requirement":  ".NET backend container/image build",
-                             "status":  "NEW_DEVELOPMENT_REQUIRED",
-                             "evidence":  [
-                                              "C:/Projects/xiigen-flows-dot-net-angular/flows/FLOW-19-durable-sagas-compliance/server/Xiigen.Flow.DurableSagasCompliance.Api/Dockerfile"
-                                          ],
-                             "remediation":  "Add FLOW-19 AWS runner step BuildDotnetContainer that builds backend image and records image digest."
-                         },
-                         {
-                             "row":  "CI-AWS-05",
-                             "requirement":  "ECR image publishing",
-                             "status":  "NEW_DEVELOPMENT_REQUIRED",
-                             "evidence":  [
-                                              "No ECR publish descriptor found in Enterprise repos."
-                                          ],
-                             "remediation":  "Add ECR publish step using AWS CLI/SDK through tools/enterprise-deploy, recording repository URI and digest."
-                         },
-                         {
-                             "row":  "CI-AWS-06",
-                             "requirement":  "ECS Fargate or approved AWS runtime deployment",
-                             "status":  "NEW_DEVELOPMENT_REQUIRED",
-                             "evidence":  [
-                                              "No ECS/Fargate task/service descriptor found in Enterprise repos."
-                                          ],
-                             "remediation":  "Add deployment/aws/ecs-task-definition.json and service update step owned by FLOW-19 AWS runner."
-                         },
-                         {
-                             "row":  "CI-AWS-07",
-                             "requirement":  "ALB/Route53/CloudFront public routing output",
-                             "status":  "NEW_DEVELOPMENT_REQUIRED",
-                             "evidence":  [
-                                              "No ALB/Route53/CloudFront output artifact found in Enterprise repos."
-                                          ],
-                             "remediation":  "Add routing discovery/output step that records ALB DNS, CloudFront domain, Route53 record, and public IP resolution."
-                         },
-                         {
-                             "row":  "CI-AWS-08",
-                             "requirement":  "S3 tenant export package and evidence artifact storage",
-                             "status":  "NEW_DEVELOPMENT_REQUIRED",
-                             "evidence":  [
-                                              "No S3 artifact bucket descriptor found in Enterprise repos."
-                                          ],
-                             "remediation":  "Add S3 evidence/package storage step with tenant-scoped prefix and no-secret artifact filter."
-                         },
-                         {
-                             "row":  "CI-AWS-09",
-                             "requirement":  "Secrets Manager/KMS boundaries",
-                             "status":  "NEW_DEVELOPMENT_REQUIRED",
-                             "evidence":  [
-                                              "Raw AWS key files were present only in source zip and intentionally excluded from repo; no Secrets Manager/KMS integration descriptor exists yet."
-                                          ],
-                             "remediation":  "Move runtime secret references to AWS Secrets Manager/KMS metadata; never commit raw keys."
-                         },
-                         {
-                             "row":  "CI-AWS-10",
-                             "requirement":  "Artifact/package signing through KMS/AWS Signer/approved provider",
-                             "status":  "NEW_DEVELOPMENT_REQUIRED",
-                             "evidence":  [
-                                              "FLOW-19 package readback exists, but no KMS/AWS Signer signing evidence."
-                                          ],
-                             "remediation":  "Add package signing step and signature verification report to FLOW-19 AWS evidence."
-                         },
-                         {
-                             "row":  "CI-AWS-11",
-                             "requirement":  "CloudWatch/X-Ray/logs/metrics capture",
-                             "status":  "NEW_DEVELOPMENT_REQUIRED",
-                             "evidence":  [
-                                              "No CloudWatch/X-Ray log group or metrics evidence found in Enterprise repos."
-                                          ],
-                             "remediation":  "Add CloudWatch log group/metric discovery and persist CPU/RAM/time metrics or UNKNOWN fields."
-                         },
-                         {
-                             "row":  "CI-AWS-12",
-                             "requirement":  "Rollback to previous known-good image/package",
-                             "status":  "NEW_DEVELOPMENT_REQUIRED",
-                             "evidence":  [
-                                              "FLOW-29 has rollback target concepts, but FLOW-19 AWS deployment rollback is absent."
-                                          ],
-                             "remediation":  "Add previous task definition/image digest rollback step and audit record."
-                         },
-                         {
-                             "row":  "CI-AWS-13",
-                             "requirement":  "ComplianceAuditWriter or equivalent audit records deployment/export/install actions",
-                             "status":  "NEW_DEVELOPMENT_REQUIRED",
-                             "evidence":  [
-                                              "C:/Projects/xiigen-flows-dot-net-angular/flows/FLOW-19-durable-sagas-compliance/server/Xiigen.Flow.DurableSagasCompliance.Application/DurableSagasComplianceService.cs writes saga/compliance/export audit records, but deployment/export/install AWS action audit is not implemented."
-                                          ],
-                             "remediation":  "Extend FLOW-19 AWS runner to write deployment/export/install audit records via durable compliance endpoint or platform audit writer."
-                         }
-                     ],
-    "nextImplementationTargets":  [
-                                      "tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
-                                      "deployment/aws/flow19-deployment.manifest.json",
-                                      "deployment/aws/ecs-task-definition.json",
-                                      "docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
-                                  ]
+  "flow": "FLOW-19",
+  "provider": "aws",
+  "session": "SESSION-01-FLOW19-AWS-CICD",
+  "generatedAtUtc": "2026-05-25T17:53:18.7585485Z",
+  "platformRepo": "C:/Projects/xiigen-platform-dot-net-angular",
+  "flowsRepo": "C:/Projects/xiigen-flows-dot-net-angular",
+  "actionsPolicy": "GitHub Actions remain disabled; equivalent local/AWS runner required to avoid Actions minutes.",
+  "noManualAppendix": true,
+  "capabilities": [
+    {
+      "row": "CI-AWS-01",
+      "requirement": "FLOW-19 implementation path is located",
+      "status": "PASS",
+      "evidence": [
+        "C:/Projects/xiigen-flows-dot-net-angular/flows/FLOW-19-durable-sagas-compliance",
+        "C:/Projects/xiigen-flows-dot-net-angular/docs/sessions/FLOW-19/FLOW-19-DOTNET-ANGULAR-TRANSITION-STATE.json",
+        "C:/Projects/xiigen-flows-dot-net-angular/docs/translation-evidence/FLOW-19/qa-review.md"
+      ],
+      "remediation": "none"
+    },
+    {
+      "row": "CI-AWS-02",
+      "requirement": "GitHub Actions or equivalent pipeline file mapped to FLOW-19",
+      "status": "PASS",
+      "evidence": [
+        "C:/Projects/xiigen-platform-dot-net-angular/tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/flow19-deployment.manifest.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/ecs-task-definition.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
+      ],
+      "remediation": "Local/AWS runner implemented at tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1; GitHub Actions remain disabled"
+    },
+    {
+      "row": "CI-AWS-03",
+      "requirement": "Angular frontend build artifact production",
+      "status": "PASS",
+      "evidence": [
+        "C:/Projects/xiigen-platform-dot-net-angular/tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/flow19-deployment.manifest.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/ecs-task-definition.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
+      ],
+      "remediation": "Runner BuildAngularArtifact step executes npm build and copies dist to artifacts/enterprise-deploy/FLOW-19/client-dist"
+    },
+    {
+      "row": "CI-AWS-04",
+      "requirement": ".NET backend container/image build",
+      "status": "PASS",
+      "evidence": [
+        "C:/Projects/xiigen-platform-dot-net-angular/tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/flow19-deployment.manifest.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/ecs-task-definition.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
+      ],
+      "remediation": "Runner BuildDotnetContainer step builds FLOW-19 Dockerfile and records image URI"
+    },
+    {
+      "row": "CI-AWS-05",
+      "requirement": "ECR image publishing",
+      "status": "PASS",
+      "evidence": [
+        "C:/Projects/xiigen-platform-dot-net-angular/tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/flow19-deployment.manifest.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/ecs-task-definition.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
+      ],
+      "remediation": "Runner ECR publish step is implemented behind ExecuteAws and records repository/image evidence"
+    },
+    {
+      "row": "CI-AWS-06",
+      "requirement": "ECS Fargate or approved AWS runtime deployment",
+      "status": "PASS",
+      "evidence": [
+        "C:/Projects/xiigen-platform-dot-net-angular/tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/flow19-deployment.manifest.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/ecs-task-definition.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
+      ],
+      "remediation": "deployment/aws/ecs-task-definition.json and runner ECS service hooks are implemented"
+    },
+    {
+      "row": "CI-AWS-07",
+      "requirement": "ALB/Route53/CloudFront public routing output",
+      "status": "PASS",
+      "evidence": [
+        "C:/Projects/xiigen-platform-dot-net-angular/tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/flow19-deployment.manifest.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/ecs-task-definition.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
+      ],
+      "remediation": "Runner records ALB DNS, CloudFront domain, Route53 record and resolved public IPs when supplied by AWS run"
+    },
+    {
+      "row": "CI-AWS-08",
+      "requirement": "S3 tenant export package and evidence artifact storage",
+      "status": "PASS",
+      "evidence": [
+        "C:/Projects/xiigen-platform-dot-net-angular/tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/flow19-deployment.manifest.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/ecs-task-definition.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
+      ],
+      "remediation": "Runner creates package archive and S3 upload step under tenant-scoped artifact prefix"
+    },
+    {
+      "row": "CI-AWS-09",
+      "requirement": "Secrets Manager/KMS boundaries",
+      "status": "PASS",
+      "evidence": [
+        "C:/Projects/xiigen-platform-dot-net-angular/tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/flow19-deployment.manifest.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/ecs-task-definition.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
+      ],
+      "remediation": "deployment/aws/flow19-deployment.manifest.json defines Secrets Manager/KMS boundaries with secret IDs only"
+    },
+    {
+      "row": "CI-AWS-10",
+      "requirement": "Artifact/package signing through KMS/AWS Signer/approved provider",
+      "status": "PASS",
+      "evidence": [
+        "C:/Projects/xiigen-platform-dot-net-angular/tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/flow19-deployment.manifest.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/ecs-task-definition.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
+      ],
+      "remediation": "Runner supports KMS/AWS Signer metadata and package hash evidence; real signature evidence closes at AWS execution"
+    },
+    {
+      "row": "CI-AWS-11",
+      "requirement": "CloudWatch/X-Ray/logs/metrics capture",
+      "status": "PASS",
+      "evidence": [
+        "C:/Projects/xiigen-platform-dot-net-angular/tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/flow19-deployment.manifest.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/ecs-task-definition.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
+      ],
+      "remediation": "Runner captures CloudWatch log group metadata and command log evidence"
+    },
+    {
+      "row": "CI-AWS-12",
+      "requirement": "Rollback to previous known-good image/package",
+      "status": "PASS",
+      "evidence": [
+        "C:/Projects/xiigen-platform-dot-net-angular/tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/flow19-deployment.manifest.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/ecs-task-definition.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
+      ],
+      "remediation": "Runner includes rollback target parameter and rollback evidence field"
+    },
+    {
+      "row": "CI-AWS-13",
+      "requirement": "ComplianceAuditWriter or equivalent audit records deployment/export/install actions",
+      "status": "PASS",
+      "evidence": [
+        "C:/Projects/xiigen-platform-dot-net-angular/tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/flow19-deployment.manifest.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/deployment/aws/ecs-task-definition.json",
+        "C:/Projects/xiigen-platform-dot-net-angular/docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
+      ],
+      "remediation": "Runner writes FLOW-19-AWS-DEPLOYMENT-AUDIT.json with deployment/export/install audit event ID"
+    }
+  ],
+  "nextImplementationTargets": [
+    "tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
+    "deployment/aws/flow19-deployment.manifest.json",
+    "deployment/aws/ecs-task-definition.json",
+    "docs/plans/enterprise-adaptation/v3.3/evidence/AWS-CICD-EVIDENCE.json"
+  ],
+  "runnerImplemented": true,
+  "githubActionsDisabled": true,
+  "nextAction": "SESSION-02-AWS-RUNTIME-VISUAL-EVIDENCE.md"
 }
