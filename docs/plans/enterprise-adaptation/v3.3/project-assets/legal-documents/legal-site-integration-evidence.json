@@ -1,0 +1,43 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_site_integration_evidence",
+    "status":  "PASS_LEGAL_SITE_INTEGRATION_GOVERNED_NOT_PUBLIC",
+    "generatedAtUtc":  "2026-05-25T20:56:01.9362388Z",
+    "contentModel":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-content-model.json",
+    "registryPath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-document-registry.json",
+    "routeMapPath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-route-map.json",
+    "acceptanceContextMapPath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-acceptance-context-map.json",
+    "visualEvidenceIndexPath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-visual-evidence-index.json",
+    "publicationReport":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-publication-report.md",
+    "exportInstallLinkage":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-export-install-linkage.json",
+    "requiredDocumentRecords":  36,
+    "requiredDocumentTypes":  12,
+    "requiredLocales":  [
+                            "en",
+                            "he",
+                            "ru"
+                        ],
+    "allRequiredDocsApproved":  false,
+    "publicLaunchLegalGate":  "BLOCKED_UNTIL_LEGAL_APPROVAL",
+    "draftPublishedAsFinal":  false,
+    "rowsClosed":  [
+                       "LEGAL-01",
+                       "LEGAL-02",
+                       "LEGAL-03",
+                       "LEGAL-04",
+                       "LEGAL-05",
+                       "LEGAL-06",
+                       "LEGAL-07",
+                       "LEGAL-08",
+                       "LEGAL-09",
+                       "LEGAL-10",
+                       "LEGAL-11",
+                       "LEGAL-12",
+                       "LEGAL-13",
+                       "LEGAL-14",
+                       "LEGAL-15",
+                       "LEGAL-16",
+                       "LEGAL-17",
+                       "LEGAL-18"
+                   ]
+}

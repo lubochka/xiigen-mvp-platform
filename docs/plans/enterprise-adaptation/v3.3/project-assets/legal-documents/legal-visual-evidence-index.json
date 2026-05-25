@@ -1,0 +1,98 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_visual_evidence_index",
+    "generatedAtUtc":  "2026-05-25T20:56:01.9362388Z",
+    "awsEndpoint":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com",
+    "publicRouteScreenshotsRequiredNow":  0,
+    "reason":  "No legal document is APPROVED/PUBLISHED; screenshots become required before public legal publication.",
+    "hebrewRtlGate":  "REQUIRED_WHEN_HEBREW_LEGAL_ROUTE_IS_PUBLISHED",
+    "localeStatus":  [
+                         {
+                             "documentType":  "terms_of_service",
+                             "en":  "LEGAL_REVIEW_REQUIRED",
+                             "he":  "LEGAL_REVIEW_REQUIRED_RTL_REQUIRED_WHEN_PUBLISHED",
+                             "ru":  "LEGAL_REVIEW_REQUIRED",
+                             "publicPublished":  false
+                         },
+                         {
+                             "documentType":  "privacy_policy",
+                             "en":  "LEGAL_REVIEW_REQUIRED",
+                             "he":  "LEGAL_REVIEW_REQUIRED_RTL_REQUIRED_WHEN_PUBLISHED",
+                             "ru":  "LEGAL_REVIEW_REQUIRED",
+                             "publicPublished":  false
+                         },
+                         {
+                             "documentType":  "cookie_policy",
+                             "en":  "LEGAL_REVIEW_REQUIRED",
+                             "he":  "LEGAL_REVIEW_REQUIRED_RTL_REQUIRED_WHEN_PUBLISHED",
+                             "ru":  "LEGAL_REVIEW_REQUIRED",
+                             "publicPublished":  false
+                         },
+                         {
+                             "documentType":  "eula_license",
+                             "en":  "LEGAL_REVIEW_REQUIRED",
+                             "he":  "LEGAL_REVIEW_REQUIRED_RTL_REQUIRED_WHEN_PUBLISHED",
+                             "ru":  "LEGAL_REVIEW_REQUIRED",
+                             "publicPublished":  false
+                         },
+                         {
+                             "documentType":  "enterprise_terms_msa",
+                             "en":  "LEGAL_REVIEW_REQUIRED",
+                             "he":  "LEGAL_REVIEW_REQUIRED_RTL_REQUIRED_WHEN_PUBLISHED",
+                             "ru":  "LEGAL_REVIEW_REQUIRED",
+                             "publicPublished":  false
+                         },
+                         {
+                             "documentType":  "dpa",
+                             "en":  "LEGAL_REVIEW_REQUIRED",
+                             "he":  "LEGAL_REVIEW_REQUIRED_RTL_REQUIRED_WHEN_PUBLISHED",
+                             "ru":  "LEGAL_REVIEW_REQUIRED",
+                             "publicPublished":  false
+                         },
+                         {
+                             "documentType":  "acceptable_use",
+                             "en":  "LEGAL_REVIEW_REQUIRED",
+                             "he":  "LEGAL_REVIEW_REQUIRED_RTL_REQUIRED_WHEN_PUBLISHED",
+                             "ru":  "LEGAL_REVIEW_REQUIRED",
+                             "publicPublished":  false
+                         },
+                         {
+                             "documentType":  "affiliate_terms",
+                             "en":  "LEGAL_REVIEW_REQUIRED",
+                             "he":  "LEGAL_REVIEW_REQUIRED_RTL_REQUIRED_WHEN_PUBLISHED",
+                             "ru":  "LEGAL_REVIEW_REQUIRED",
+                             "publicPublished":  false
+                         },
+                         {
+                             "documentType":  "refund_cancellation",
+                             "en":  "LEGAL_REVIEW_REQUIRED",
+                             "he":  "LEGAL_REVIEW_REQUIRED_RTL_REQUIRED_WHEN_PUBLISHED",
+                             "ru":  "LEGAL_REVIEW_REQUIRED",
+                             "publicPublished":  false
+                         },
+                         {
+                             "documentType":  "security_responsible_disclosure",
+                             "en":  "LEGAL_REVIEW_REQUIRED",
+                             "he":  "LEGAL_REVIEW_REQUIRED_RTL_REQUIRED_WHEN_PUBLISHED",
+                             "ru":  "LEGAL_REVIEW_REQUIRED",
+                             "publicPublished":  false
+                         },
+                         {
+                             "documentType":  "subprocessors",
+                             "en":  "LEGAL_REVIEW_REQUIRED",
+                             "he":  "LEGAL_REVIEW_REQUIRED_RTL_REQUIRED_WHEN_PUBLISHED",
+                             "ru":  "LEGAL_REVIEW_REQUIRED",
+                             "publicPublished":  false
+                         },
+                         {
+                             "documentType":  "open_source_notices",
+                             "en":  "LEGAL_REVIEW_REQUIRED",
+                             "he":  "LEGAL_REVIEW_REQUIRED_RTL_REQUIRED_WHEN_PUBLISHED",
+                             "ru":  "LEGAL_REVIEW_REQUIRED",
+                             "publicPublished":  false
+                         }
+                     ],
+    "screenshots":  [
+
+                    ]
+}

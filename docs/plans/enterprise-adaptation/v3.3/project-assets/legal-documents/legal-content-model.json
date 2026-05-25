@@ -1,0 +1,34 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_content_model",
+    "modelName":  "LegalDocument",
+    "fields":  [
+                   "id",
+                   "slug",
+                   "documentType",
+                   "version",
+                   "status",
+                   "locale",
+                   "canonicalLocale",
+                   "title",
+                   "body",
+                   "summary",
+                   "effectiveDate",
+                   "approvedBy",
+                   "approvedAtUtc",
+                   "owner",
+                   "previousVersionId",
+                   "canonicalUrl",
+                   "requiredAcceptanceContexts",
+                   "relatedSiteSurfaces",
+                   "evidencePath"
+               ],
+    "statusVocabulary":  [
+                             "DRAFT",
+                             "LEGAL_REVIEW_REQUIRED",
+                             "APPROVED",
+                             "PUBLISHED",
+                             "SUPERSEDED"
+                         ],
+    "publishRule":  "Only APPROVED or PUBLISHED legal documents may be linked as public final documents."
+}

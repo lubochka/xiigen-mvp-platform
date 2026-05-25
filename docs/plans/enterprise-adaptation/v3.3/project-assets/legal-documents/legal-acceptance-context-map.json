@@ -1,0 +1,87 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_acceptance_context_map",
+    "generatedAtUtc":  "2026-05-25T20:56:01.9362388Z",
+    "acceptanceRecordSchema":  {
+                                   "fields":  [
+                                                  "userId",
+                                                  "tenantId",
+                                                  "documentId",
+                                                  "documentType",
+                                                  "version",
+                                                  "locale",
+                                                  "acceptedAtUtc",
+                                                  "acceptanceContext",
+                                                  "ipHashOrAuditReference",
+                                                  "userAgentHashOrAuditReference"
+                                              ],
+                                   "rawPersonalDataForbidden":  true
+                               },
+    "contexts":  [
+                     {
+                         "acceptanceContext":  "signup",
+                         "requiredDocumentTypes":  [
+                                                       "terms_of_service",
+                                                       "privacy_policy",
+                                                       "acceptable_use"
+                                                   ],
+                         "requiredVersionSource":  "legal-document-registry.json",
+                         "persistExactVersion":  true,
+                         "status":  "READY_FOR_APPROVED_DOCUMENTS_BLOCKED_FOR_LEGAL_REVIEW"
+                     },
+                     {
+                         "acceptanceContext":  "accountCreation",
+                         "requiredDocumentTypes":  [
+                                                       "terms_of_service",
+                                                       "privacy_policy"
+                                                   ],
+                         "requiredVersionSource":  "legal-document-registry.json",
+                         "persistExactVersion":  true,
+                         "status":  "READY_FOR_APPROVED_DOCUMENTS_BLOCKED_FOR_LEGAL_REVIEW"
+                     },
+                     {
+                         "acceptanceContext":  "checkout",
+                         "requiredDocumentTypes":  [
+                                                       "eula_license",
+                                                       "refund_cancellation"
+                                                   ],
+                         "requiredVersionSource":  "legal-document-registry.json",
+                         "persistExactVersion":  true,
+                         "status":  "READY_FOR_APPROVED_DOCUMENTS_BLOCKED_FOR_LEGAL_REVIEW"
+                     },
+                     {
+                         "acceptanceContext":  "affiliateApply",
+                         "requiredDocumentTypes":  [
+                                                       "affiliate_terms",
+                                                       "acceptable_use",
+                                                       "privacy_policy"
+                                                   ],
+                         "requiredVersionSource":  "legal-document-registry.json",
+                         "persistExactVersion":  true,
+                         "status":  "READY_FOR_APPROVED_DOCUMENTS_BLOCKED_FOR_LEGAL_REVIEW"
+                     },
+                     {
+                         "acceptanceContext":  "exportDownload",
+                         "requiredDocumentTypes":  [
+                                                       "enterprise_terms_msa",
+                                                       "eula_license",
+                                                       "open_source_notices"
+                                                   ],
+                         "requiredVersionSource":  "legal-document-registry.json",
+                         "persistExactVersion":  true,
+                         "status":  "READY_FOR_APPROVED_DOCUMENTS_BLOCKED_FOR_LEGAL_REVIEW"
+                     },
+                     {
+                         "acceptanceContext":  "corporateInstall",
+                         "requiredDocumentTypes":  [
+                                                       "enterprise_terms_msa",
+                                                       "dpa",
+                                                       "open_source_notices",
+                                                       "subprocessors"
+                                                   ],
+                         "requiredVersionSource":  "legal-document-registry.json",
+                         "persistExactVersion":  true,
+                         "status":  "READY_FOR_APPROVED_DOCUMENTS_BLOCKED_FOR_LEGAL_REVIEW"
+                     }
+                 ]
+}

@@ -1,0 +1,15 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_export_install_linkage",
+    "generatedAtUtc":  "2026-05-25T20:56:01.9362388Z",
+    "exportPackage":  "docs/plans/enterprise-adaptation/v3.3/project-assets/update-reexport/xiigen-primary-master-enterprise-export-v1.0.1.zip",
+    "corporateInstallRunbook":  "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/CORPORATE-INSTALL-RUNBOOK.md",
+    "requiredReferences":  [
+                               "enterprise_terms_msa",
+                               "eula_license",
+                               "open_source_notices",
+                               "dpa",
+                               "subprocessors"
+                           ],
+    "status":  "PASS_LINKAGE_RECORDED_PUBLICATION_BLOCKED_UNTIL_LEGAL_APPROVAL"
+}

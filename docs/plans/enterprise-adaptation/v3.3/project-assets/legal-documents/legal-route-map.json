@@ -1,0 +1,189 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_route_map",
+    "generatedAtUtc":  "2026-05-25T20:56:01.9362388Z",
+    "hostedBaseUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com",
+    "publicationMode":  "ROUTES_DEFINED_PUBLICATION_BLOCKED_UNTIL_LEGAL_APPROVAL",
+    "footerRoutes":  [
+                         {
+                             "documentType":  "terms_of_service",
+                             "route":  "/legal/terms-of-service",
+                             "canonicalUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/terms-of-service",
+                             "linkedSurfaces":  [
+                                                    "footer",
+                                                    "signup",
+                                                    "accountCreation"
+                                                ],
+                             "published":  false,
+                             "reason":  "LEGAL_REVIEW_REQUIRED"
+                         },
+                         {
+                             "documentType":  "privacy_policy",
+                             "route":  "/legal/privacy-policy",
+                             "canonicalUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/privacy-policy",
+                             "linkedSurfaces":  [
+                                                    "footer",
+                                                    "signup",
+                                                    "cookieBanner",
+                                                    "analyticsNotice"
+                                                ],
+                             "published":  false,
+                             "reason":  "LEGAL_REVIEW_REQUIRED"
+                         },
+                         {
+                             "documentType":  "cookie_policy",
+                             "route":  "/legal/cookie-policy",
+                             "canonicalUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/cookie-policy",
+                             "linkedSurfaces":  [
+                                                    "footer",
+                                                    "cookieBanner",
+                                                    "cookiePreferences"
+                                                ],
+                             "published":  false,
+                             "reason":  "LEGAL_REVIEW_REQUIRED"
+                         },
+                         {
+                             "documentType":  "eula_license",
+                             "route":  "/legal/eula-license-agreement",
+                             "canonicalUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/eula-license-agreement",
+                             "linkedSurfaces":  [
+                                                    "footer",
+                                                    "checkout",
+                                                    "downloadInstall",
+                                                    "activation"
+                                                ],
+                             "published":  false,
+                             "reason":  "LEGAL_REVIEW_REQUIRED"
+                         },
+                         {
+                             "documentType":  "enterprise_terms_msa",
+                             "route":  "/legal/enterprise-terms-msa",
+                             "canonicalUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/enterprise-terms-msa",
+                             "linkedSurfaces":  [
+                                                    "footer",
+                                                    "enterpriseContact",
+                                                    "exportDownload",
+                                                    "corporateInstall"
+                                                ],
+                             "published":  false,
+                             "reason":  "LEGAL_REVIEW_REQUIRED"
+                         },
+                         {
+                             "documentType":  "dpa",
+                             "route":  "/legal/data-processing-agreement",
+                             "canonicalUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/data-processing-agreement",
+                             "linkedSurfaces":  [
+                                                    "footer",
+                                                    "privacy",
+                                                    "corporateTenant"
+                                                ],
+                             "published":  false,
+                             "reason":  "LEGAL_REVIEW_REQUIRED"
+                         },
+                         {
+                             "documentType":  "acceptable_use",
+                             "route":  "/legal/acceptable-use-policy",
+                             "canonicalUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/acceptable-use-policy",
+                             "linkedSurfaces":  [
+                                                    "footer",
+                                                    "signup",
+                                                    "affiliateApply",
+                                                    "workspaceCreation"
+                                                ],
+                             "published":  false,
+                             "reason":  "LEGAL_REVIEW_REQUIRED"
+                         },
+                         {
+                             "documentType":  "affiliate_terms",
+                             "route":  "/legal/affiliate-program-terms",
+                             "canonicalUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/affiliate-program-terms",
+                             "linkedSurfaces":  [
+                                                    "footer",
+                                                    "affiliateApply",
+                                                    "affiliateDashboard",
+                                                    "affiliateTraining"
+                                                ],
+                             "published":  false,
+                             "reason":  "LEGAL_REVIEW_REQUIRED"
+                         },
+                         {
+                             "documentType":  "refund_cancellation",
+                             "route":  "/legal/refund-cancellation-policy",
+                             "canonicalUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/refund-cancellation-policy",
+                             "linkedSurfaces":  [
+                                                    "footer",
+                                                    "pricing",
+                                                    "checkout",
+                                                    "billing"
+                                                ],
+                             "published":  false,
+                             "reason":  "LEGAL_REVIEW_REQUIRED"
+                         },
+                         {
+                             "documentType":  "security_responsible_disclosure",
+                             "route":  "/legal/security-responsible-disclosure",
+                             "canonicalUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/security-responsible-disclosure",
+                             "linkedSurfaces":  [
+                                                    "footer",
+                                                    "footer",
+                                                    "securityPage"
+                                                ],
+                             "published":  false,
+                             "reason":  "LEGAL_REVIEW_REQUIRED"
+                         },
+                         {
+                             "documentType":  "subprocessors",
+                             "route":  "/legal/subprocessors-infrastructure",
+                             "canonicalUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/subprocessors-infrastructure",
+                             "linkedSurfaces":  [
+                                                    "footer",
+                                                    "privacy",
+                                                    "dpa",
+                                                    "corporateCustomers"
+                                                ],
+                             "published":  false,
+                             "reason":  "LEGAL_REVIEW_REQUIRED"
+                         },
+                         {
+                             "documentType":  "open_source_notices",
+                             "route":  "/legal/open-source-third-party-notices",
+                             "canonicalUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/open-source-third-party-notices",
+                             "linkedSurfaces":  [
+                                                    "footer",
+                                                    "downloadInstall",
+                                                    "exportPackage",
+                                                    "corporateInstall"
+                                                ],
+                             "published":  false,
+                             "reason":  "LEGAL_REVIEW_REQUIRED"
+                         }
+                     ],
+    "surfaceLinks":  {
+                         "signup":  [
+                                        "terms_of_service",
+                                        "privacy_policy",
+                                        "acceptable_use"
+                                    ],
+                         "checkout":  [
+                                          "eula_license",
+                                          "refund_cancellation",
+                                          "privacy_policy"
+                                      ],
+                         "affiliate":  [
+                                           "affiliate_terms",
+                                           "acceptable_use",
+                                           "privacy_policy"
+                                       ],
+                         "exportDownload":  [
+                                                "enterprise_terms_msa",
+                                                "eula_license",
+                                                "open_source_notices"
+                                            ],
+                         "corporateInstall":  [
+                                                  "enterprise_terms_msa",
+                                                  "dpa",
+                                                  "open_source_notices",
+                                                  "subprocessors"
+                                              ]
+                     }
+}
