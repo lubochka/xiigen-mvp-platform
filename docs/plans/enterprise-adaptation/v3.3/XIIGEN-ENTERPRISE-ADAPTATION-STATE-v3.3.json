@@ -1,10 +1,10 @@
-﻿{
+{
     "main_focus_goal":  "Create/train/export/import/validate/update/use Enterprise trainable units for project-local wiki and Smart Code Assistant over Angular + .NET + SQL, with VS/VS Code plugin runtime entrypoints, AWS endpoint/IP visual evidence, and prompt-by-prompt validation.",
     "goal_reached":  false,
     "stop_allowed":  false,
     "gate_status":  "IN_PROGRESS_NEXT_STEP_KNOWN",
-    "next_action":  "Execute SESSION-01-FLOW19-AWS-CICD: locate FLOW-19 AWS CI/CD implementation and evidence in the Enterprise repos, map AWS build/deploy/runtime capabilities CI-AWS-01..13, and record new-development-required rows where real FLOW-19 evidence is absent.",
-    "next_action_plan_source":  "SESSION-01-FLOW19-AWS-CICD.md / AWS-CICD-EVIDENCE-CONTRACT.md / CI-AWS matrix rows",
+    "next_action":  "Implement the FLOW-19 AWS CI/CD equivalent runner without GitHub Actions: add tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1, deployment/aws descriptors, Secrets Manager/KMS metadata, ECR/ECS/S3/routing/CloudWatch/rollback/signing/audit evidence outputs, then rerun SESSION-01 evidence mapping.",
+    "next_action_plan_source":  "SESSION-01-FLOW19-AWS-CICD.md / flow19-aws-cicd-capability-map.json / CI-AWS-02..13 new-development-required rows",
     "actionable_gaps":  [
                             "FLOW-19 AWS capability not verified from Enterprise repo evidence",
                             "AWS runtime endpoint/IP evidence not captured from FLOW-19 output",
@@ -13,8 +13,8 @@
                             "Trainable unit registry/import/export proof not implemented",
                             "Final evidence scope does not yet equal final claim scope"
                         ],
-    "current_internal_role_state":  "ARCHITECT_VERDICT_CONTINUE_EXECUTION_EXECUTOR_INTERNAL_CONTINUE_SESSION_01",
-    "last_role_transition_reason":  "SESSION-00 governance package installed in platform repo, REVIEW_INTERNAL passed, architect reinstated executor authority for SESSION-01 only.",
+    "current_internal_role_state":  "ARCHITECT_INTERNAL_REPAIR_EXECUTOR_INTERNAL_CONTINUE_REQUIRED_FOR_FLOW19_AWS_IMPLEMENTATION",
+    "last_role_transition_reason":  "SESSION-01 evidence map found FLOW-19 implementation but no AWS CI/CD equivalent runner. Architect repair opens implementation scope for CI-AWS-02..13.",
     "return_to_executor_required":  true,
     "loaded_skills":  [
                           "architect plan",
@@ -49,20 +49,20 @@
                                  "push_is_stop_gate":  false
                              },
     "executor_authority":  "REINSTATED_FOR_PLAN_DERIVED_ACTION_ONLY",
-    "executor_authority_scope":  "SESSION-01-FLOW19-AWS-CICD only; no product/site implementation beyond FLOW-19 AWS CI/CD capability discovery and evidence mapping.",
+    "executor_authority_scope":  "Implement CI-AWS-02..13 FLOW-19 AWS CI/CD equivalent runner only; keep GitHub Actions disabled and do not claim AWS runtime visual evidence until SESSION-02.",
     "executor_may_not_self_restore":  true,
     "architect_reinstatement_required":  true,
     "executor_authority_reinstated":  true,
     "architect_verdict":  "ARCHITECT_VERDICT_CONTINUE_EXECUTION",
-    "reinstatement_reason":  "SESSION-00 governance evidence passed and next action derived from matrix first failed row CI-AWS-01.",
-    "first_failed_requirement_id":  "CI-AWS-01",
+    "reinstatement_reason":  "SESSION-01 capability map provides exact implementation targets for missing AWS CI/CD rows.",
+    "first_failed_requirement_id":  "CI-AWS-02",
     "last_plan_reminder":  {
-                               "next_action":  "Execute SESSION-01-FLOW19-AWS-CICD: locate FLOW-19 AWS CI/CD implementation and evidence in the Enterprise repos, map AWS build/deploy/runtime capabilities CI-AWS-01..13, and record new-development-required rows where real FLOW-19 evidence is absent.",
-                               "source":  "SESSION-01 + CI-AWS matrix rows"
+                               "next_action":  "Implement the FLOW-19 AWS CI/CD equivalent runner without GitHub Actions: add tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1, deployment/aws descriptors, Secrets Manager/KMS metadata, ECR/ECS/S3/routing/CloudWatch/rollback/signing/audit evidence outputs, then rerun SESSION-01 evidence mapping.",
+                               "source":  "CI-AWS-02..13 remediation targets"
                            },
     "execution_attempt_latest":  {
-                                     "next_action":  "Execute SESSION-01-FLOW19-AWS-CICD: locate FLOW-19 AWS CI/CD implementation and evidence in the Enterprise repos, map AWS build/deploy/runtime capabilities CI-AWS-01..13, and record new-development-required rows where real FLOW-19 evidence is absent.",
-                                     "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-01 slice"
+                                     "next_action":  "Implement the FLOW-19 AWS CI/CD equivalent runner without GitHub Actions: add tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1, deployment/aws descriptors, Secrets Manager/KMS metadata, ECR/ECS/S3/routing/CloudWatch/rollback/signing/audit evidence outputs, then rerun SESSION-01 evidence mapping.",
+                                     "executor_must_handoff_to":  "REVIEW_INTERNAL after FLOW-19 AWS runner implementation slice"
                                  },
     "constitution_linkage":  {
                                  "required_if_file_exists":  true,
@@ -74,7 +74,7 @@
                             "provider":  "aws",
                             "flow":  "FLOW-19",
                             "workflowRunUrl":  null,
-                            "workflowConclusion":  null,
+                            "workflowConclusion":  "NOT_APPLICABLE_GITHUB_ACTIONS_DISABLED",
                             "hostedBaseUrl":  null,
                             "serverHealthUrl":  null,
                             "clientUrl":  null,
@@ -85,11 +85,11 @@
                             "environment":  null,
                             "imageDigest":  null,
                             "packageHash":  null,
-                            "visualEvidenceDir":  null,
+                            "visualEvidenceDir":  "docs/plans/enterprise-adaptation/v3.3/evidence",
                             "screenshots":  [
 
                                             ],
-                            "status":  "UNKNOWN"
+                            "status":  "NEW_DEVELOPMENT_REQUIRED"
                         },
     "interactiveIdeEvidence":  {
                                    "visualStudio":  "UNKNOWN",

@@ -1,0 +1,28 @@
+{
+    "flow":  "FLOW-19",
+    "provider":  "aws",
+    "workflowRunUrl":  null,
+    "workflowConclusion":  "NOT_APPLICABLE_GITHUB_ACTIONS_DISABLED",
+    "commitSha":  "4156b8cb6111c01e790f296ba3a6689368955798",
+    "region":  null,
+    "environment":  "primary-master-tenant",
+    "ecrImageDigest":  null,
+    "packageHash":  null,
+    "hostedBaseUrl":  null,
+    "serverHealthUrl":  null,
+    "clientUrl":  null,
+    "route53Record":  null,
+    "cloudFrontDomain":  null,
+    "albDnsName":  null,
+    "resolvedPublicIps":  [
+
+                          ],
+    "s3ArtifactBucket":  null,
+    "secretsManagerUsed":  false,
+    "kmsOrSignerUsed":  false,
+    "cloudWatchLogGroup":  null,
+    "rollbackTarget":  null,
+    "complianceAuditEventId":  null,
+    "status":  "NEW_DEVELOPMENT_REQUIRED",
+    "capabilityMap":  "docs/plans/enterprise-adaptation/v3.3/evidence/flow19-aws-cicd-capability-map.json"
+}

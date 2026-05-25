@@ -1,4 +1,4 @@
-﻿# XIIGEN-ENTERPRISE-ADAPTATION-COMPLETION-MATRIX-v3.3.md
+# XIIGEN-ENTERPRISE-ADAPTATION-COMPLETION-MATRIX-v3.3.md
 
 Every row names a literal expectation. Generic placeholders such as `requirement 1` are forbidden by this matrix.
 
@@ -44,19 +44,19 @@ Every row names a literal expectation. Generic placeholders such as `requirement
 | BEACON-06 | Executor handoff to REVIEW_INTERNAL after every slice is mandatory | Beacon section 4 and SESSION-00 stop condition | PASS | none |
 | BEACON-07 | Architect is the only role allowed to authorize final report | Beacon sections 3, 5, 11, 13 | PASS | none |
 | BEACON-08 | State next_action and matrix first failed row must stay synchronized | Beacon section 12 and state fields | PASS | State next_action, reminders and first_failed_requirement_id now point to SESSION-01 / CI-AWS-01 |
-| CI-AWS-01 | FLOW-19 implementation path is located in Enterprise repo | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | UNKNOWN | SESSION-01 |
-| CI-AWS-02 | GitHub Actions or equivalent pipeline file is located and mapped to FLOW-19 | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | UNKNOWN | SESSION-01 |
-| CI-AWS-03 | Angular frontend build artifact production is handled by FLOW-19 or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | UNKNOWN | SESSION-01 |
-| CI-AWS-04 | .NET backend container/image build is handled by FLOW-19 or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | UNKNOWN | SESSION-01 |
-| CI-AWS-05 | ECR image publishing is implemented or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | UNKNOWN | SESSION-01 |
-| CI-AWS-06 | ECS Fargate or approved AWS runtime deployment is implemented or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | UNKNOWN | SESSION-01 |
-| CI-AWS-07 | ALB/Route53/CloudFront public routing output is implemented or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | UNKNOWN | SESSION-01 |
-| CI-AWS-08 | S3 tenant export package and evidence artifact storage is implemented or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | UNKNOWN | SESSION-01 |
-| CI-AWS-09 | Secrets Manager/KMS boundaries are implemented with no secrets in repo/export or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | UNKNOWN | SESSION-01 |
-| CI-AWS-10 | Artifact/package signing through KMS/AWS Signer/approved signing provider is implemented or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | UNKNOWN | SESSION-01 |
-| CI-AWS-11 | CloudWatch/X-Ray/logs/metrics capture is implemented or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | UNKNOWN | SESSION-01 |
-| CI-AWS-12 | Rollback to previous known-good image/package is implemented and audited or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | UNKNOWN | SESSION-01 |
-| CI-AWS-13 | ComplianceAuditWriter or equivalent FLOW-19 audit records deployment/export/install actions | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | UNKNOWN | SESSION-01 |
+| CI-AWS-01 | FLOW-19 implementation path is located in Enterprise repo | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | PASS | FLOW-19 located in xiigen-flows-dot-net-angular at flows/FLOW-19-durable-sagas-compliance with state and QA evidence |
+| CI-AWS-02 | GitHub Actions or equivalent pipeline file is located and mapped to FLOW-19 | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | NEW_DEVELOPMENT_REQUIRED | GitHub Actions are disabled and no equivalent AWS runner exists; target tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1 |
+| CI-AWS-03 | Angular frontend build artifact production is handled by FLOW-19 or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | NEW_DEVELOPMENT_REQUIRED | FLOW-19 Angular project exists but AWS artifact step is absent; add BuildAngularArtifact to FLOW-19 AWS runner |
+| CI-AWS-04 | .NET backend container/image build is handled by FLOW-19 or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | NEW_DEVELOPMENT_REQUIRED | FLOW-19 Dockerfile exists but AWS image build/digest step is absent; add BuildDotnetContainer |
+| CI-AWS-05 | ECR image publishing is implemented or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | NEW_DEVELOPMENT_REQUIRED | No ECR publish descriptor found; add ECR publish step and digest evidence |
+| CI-AWS-06 | ECS Fargate or approved AWS runtime deployment is implemented or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | NEW_DEVELOPMENT_REQUIRED | No ECS/Fargate descriptor found; add task definition/service update evidence |
+| CI-AWS-07 | ALB/Route53/CloudFront public routing output is implemented or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | NEW_DEVELOPMENT_REQUIRED | No ALB/Route53/CloudFront output artifact found; add routing output capture |
+| CI-AWS-08 | S3 tenant export package and evidence artifact storage is implemented or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | NEW_DEVELOPMENT_REQUIRED | No S3 artifact bucket descriptor found; add tenant-scoped package/evidence storage |
+| CI-AWS-09 | Secrets Manager/KMS boundaries are implemented with no secrets in repo/export or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | NEW_DEVELOPMENT_REQUIRED | Raw key files excluded from repo; add AWS Secrets Manager/KMS integration descriptors |
+| CI-AWS-10 | Artifact/package signing through KMS/AWS Signer/approved signing provider is implemented or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | NEW_DEVELOPMENT_REQUIRED | FLOW-19 package readback exists but no KMS/AWS Signer signing evidence exists |
+| CI-AWS-11 | CloudWatch/X-Ray/logs/metrics capture is implemented or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | NEW_DEVELOPMENT_REQUIRED | No CloudWatch/X-Ray log/metric evidence exists; add capture in FLOW-19 AWS runner |
+| CI-AWS-12 | Rollback to previous known-good image/package is implemented and audited or marked new development required | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | NEW_DEVELOPMENT_REQUIRED | No FLOW-19 AWS rollback step exists; add previous image/task rollback evidence |
+| CI-AWS-13 | ComplianceAuditWriter or equivalent FLOW-19 audit records deployment/export/install actions | FLOW-19 source path, workflow/deployment descriptor, audit/evidence file path | NEW_DEVELOPMENT_REQUIRED | FLOW-19 writes compliance/export records but not AWS deployment/export/install action audit; extend runner/audit writer |
 | AWS-RUNTIME-01 | FLOW-19 emits hostedBaseUrl for the deployed AWS environment | AWS-CICD-EVIDENCE.json field `hostedBaseUrl` | UNKNOWN | SESSION-02 |
 | AWS-RUNTIME-02 | FLOW-19 emits serverHealthUrl and it is tested against hosted AWS endpoint | AWS-CICD-EVIDENCE.json + health check result | UNKNOWN | SESSION-02 |
 | AWS-RUNTIME-03 | FLOW-19 emits clientUrl for Angular frontend hosted on AWS path | AWS-CICD-EVIDENCE.json field `clientUrl` | UNKNOWN | SESSION-02 |
@@ -237,4 +237,3 @@ Execute SESSION-00-GOVERNANCE-ACCEPTANCE.md.
 | LEGAL-16 | Export download/corporate install references license, third-party notices and enterprise terms | export/install evidence | UNKNOWN | SESSION-13 |
 | LEGAL-17 | EN/HE/RU locale status is recorded; Hebrew RTL legal page evidence is required when published | locale registry + screenshot metadata | UNKNOWN | SESSION-13 |
 | LEGAL-18 | No DRAFT or LEGAL_REVIEW_REQUIRED legal document is publicly published as final | publication status report + route access evidence | UNKNOWN | SESSION-13 |
-
