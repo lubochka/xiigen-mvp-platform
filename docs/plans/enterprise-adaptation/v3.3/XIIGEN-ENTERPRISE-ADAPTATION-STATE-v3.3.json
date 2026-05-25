@@ -3,8 +3,8 @@
   "goal_reached": false,
   "stop_allowed": false,
   "gate_status": "IN_PROGRESS_NEXT_STEP_KNOWN",
-  "next_action": "Execute SESSION-04-TRAINABLE-UNIT-REGISTRY.md: define and generate the trainable unit registry, manifest, locator, import/export paths and validation evidence.",
-  "next_action_plan_source": "SESSION-04-TRAINABLE-UNIT-REGISTRY.md / TU-01 first UNKNOWN row",
+  "next_action": "Execute SESSION-05-TENANT-ADAPTATION-STUDIO.md: implement or define Tenant Adaptation Studio workspace, repo/snapshot intake, policy, diff, approval, audit and AWS visual evidence rows.",
+  "next_action_plan_source": "SESSION-05-TENANT-ADAPTATION-STUDIO.md / TAS-01 first UNKNOWN row",
   "actionable_gaps": [
     "FLOW-19 AWS capability not verified from Enterprise repo evidence",
     "AWS runtime endpoint/IP evidence not captured from FLOW-19 output",
@@ -13,8 +13,8 @@
     "Trainable unit registry/import/export proof not implemented",
     "Final evidence scope does not yet equal final claim scope"
   ],
-  "current_internal_role_state": "ARCHITECT_INTERNAL_REVIEW_PASS_SESSION_03_LINKED_SYSTEM_GRAPH_CONTINUE_SESSION_04",
-  "last_role_transition_reason": "Linked system graph contract and source evidence close LGS-01 through LGS-10, including SQL and Angular service abstention rows.",
+  "current_internal_role_state": "ARCHITECT_INTERNAL_REVIEW_PASS_SESSION_04_TRAINABLE_UNIT_REGISTRY_CONTINUE_SESSION_05",
+  "last_role_transition_reason": "Trainable unit registry, manifests, checkpoint references, locator, import/export maps, validation reports and audit evidence close TU-01 through TU-12.",
   "return_to_executor_required": true,
   "loaded_skills": [
     "architect plan",
@@ -45,16 +45,16 @@
     "push_is_stop_gate": false
   },
   "executor_authority": "REINSTATED_FOR_PLAN_DERIVED_ACTION_ONLY",
-  "executor_authority_scope": "Execute SESSION-04 trainable unit registry only; keep linked-system graph evidence as source of truth.",
+  "executor_authority_scope": "Execute SESSION-05 Tenant Adaptation Studio only; keep trainable unit registry evidence as source of truth.",
   "executor_may_not_self_restore": true,
   "architect_reinstatement_required": true,
   "executor_authority_reinstated": true,
   "architect_verdict": "ARCHITECT_VERDICT_CONTINUE_EXECUTION",
   "reinstatement_reason": "SESSION-01 capability map provides exact implementation targets for missing AWS CI/CD rows.",
-  "first_failed_requirement_id": "TU-01",
+  "first_failed_requirement_id": "TAS-01",
   "last_plan_reminder": {
-    "next_action": "Execute SESSION-04-TRAINABLE-UNIT-REGISTRY.md: define and generate the trainable unit registry, manifest, locator, import/export paths and validation evidence.",
-    "source": "TU-01"
+    "next_action": "Execute SESSION-05-TENANT-ADAPTATION-STUDIO.md: implement or define Tenant Adaptation Studio workspace, repo/snapshot intake, policy, diff, approval, audit and AWS visual evidence rows.",
+    "source": "TAS-01"
   },
   "execution_attempt_latest": {
     "next_action": "Implement the FLOW-19 AWS CI/CD equivalent runner without GitHub Actions: add tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1, deployment/aws descriptors, Secrets Manager/KMS metadata, ECR/ECS/S3/routing/CloudWatch/rollback/signing/audit evidence outputs, then rerun SESSION-01 evidence mapping.",
@@ -116,12 +116,33 @@
     "sourcePromptSuitePath": null
   },
   "trainableUnitEvidence": {
-    "manifest": null,
-    "locator": null,
-    "checkpointReference": null,
-    "importPath": null,
-    "exportPath": null,
-    "status": "UNKNOWN"
+    "manifest": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/registry/trainable-unit-registry.json",
+    "locator": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/locators/plugin-unit-locator.json",
+    "checkpointReference": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/checkpoints/*.checkpoint-reference.json",
+    "importPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/import/*.import.json",
+    "exportPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/export/*.export.json",
+    "validationReportPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/validation/*.validation-report.json",
+    "evidencePath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/trainable-unit-registry-evidence.json",
+    "auditPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/audit/trainable-unit-registry-audit.json",
+    "status": "PASS_TRAINABLE_UNIT_REGISTRY_DEFINED",
+    "unitCount": 5,
+    "rowsClosed": [
+      "TU-01",
+      "TU-02",
+      "TU-03",
+      "TU-04",
+      "TU-05",
+      "TU-06",
+      "TU-07",
+      "TU-08",
+      "TU-09",
+      "TU-10",
+      "TU-11",
+      "TU-12"
+    ],
+    "noEmbeddedPluginWeights": true,
+    "validationProjectsAreTargetsOnly": true,
+    "staticHelperRejected": true
   },
   "beacon_prompt_path": "docs/plans/enterprise-adaptation/v3.3/XIIGEN-ENTERPRISE-ADAPTATION-BEACON-PROMPT-v1.md",
   "beacon_required_before_every_role_action": true,
@@ -135,8 +156,8 @@
     "architect_final_authority_only": true,
     "coverage_challenge_architect_first": true,
     "stop_permission_gate_required": true,
-    "next_action": "Execute SESSION-04-TRAINABLE-UNIT-REGISTRY.md: define and generate the trainable unit registry, manifest, locator, import/export paths and validation evidence.",
-    "executor_must_handoff_to": "REVIEW_INTERNAL after SESSION-03 linked system graph slice"
+    "next_action": "Execute SESSION-05-TENANT-ADAPTATION-STUDIO.md: implement or define Tenant Adaptation Studio workspace, repo/snapshot intake, policy, diff, approval, audit and AWS visual evidence rows.",
+    "executor_must_handoff_to": "REVIEW_INTERNAL after SESSION-04 trainable unit registry slice"
   },
   "masterTenantLaunch": {
     "controlPlane": "main Enterprise project / master tenant",

@@ -1,0 +1,11 @@
+{
+  "unitId": "primary-master-tenant.xiigen-enterprise-master.project-local-wiki",
+  "importPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/import/project-local-wiki.import.json",
+  "requiredInputs": [
+    "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/manifests/project-local-wiki.manifest.json",
+    "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/checkpoints/project-local-wiki.checkpoint-reference.json",
+    "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/validation/project-local-wiki.validation-report.json"
+  ],
+  "registersLocatorEntry": "xiigen-unit://primary-master-tenant/xiigen-enterprise-master/project-local-wiki/1.0.0",
+  "validatesCheckpointChecksum": "f796bd4fa39843f97303c0d5ecf9baeaf514cccd7e5be863ae7aae1165496055"
+}
