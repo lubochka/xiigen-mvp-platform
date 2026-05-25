@@ -3,8 +3,8 @@
   "goal_reached": false,
   "stop_allowed": false,
   "gate_status": "IN_PROGRESS_NEXT_STEP_KNOWN",
-  "next_action": "Attach deployment/aws/xiigen-cicd-iam-policy.json to arn:aws:iam::595003292091:user/xiigen-cicd using an account-admin credential, then rerun tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1 with ExecuteAws and AWS runtime parameters; continue SESSION-02 visual evidence after hosted URLs are emitted.",
-  "next_action_plan_source": "AWS-RUNTIME-PERMISSION-EVIDENCE.json / AWS-RUNTIME-01..12 blocked-by-IAM rows",
+  "next_action": "Execute SESSION-03-LINKED-SYSTEM-GRAPH.md: build the linked business-system graph for Angular routes/components/services, .NET controllers/services/contracts and SQL/stored procedure surface.",
+  "next_action_plan_source": "SESSION-03-LINKED-SYSTEM-GRAPH.md / LGS-01 first UNKNOWN row",
   "actionable_gaps": [
     "FLOW-19 AWS capability not verified from Enterprise repo evidence",
     "AWS runtime endpoint/IP evidence not captured from FLOW-19 output",
@@ -13,8 +13,8 @@
     "Trainable unit registry/import/export proof not implemented",
     "Final evidence scope does not yet equal final claim scope"
   ],
-  "current_internal_role_state": "ARCHITECT_INTERNAL_REVIEW_FOUND_AWS_IAM_POLICY_REQUIRED_CONTINUE_WITH_PERMISSION_BOOTSTRAP",
-  "last_role_transition_reason": "AWS credential authenticates but lacks service permissions for ECR, ECS, S3, CloudFront, Route53, ALB and IAM. Exact least-privilege policy has been authored.",
+  "current_internal_role_state": "ARCHITECT_INTERNAL_REVIEW_PASS_SESSION_02_AWS_RUNTIME_CONTINUE_SESSION_03",
+  "last_role_transition_reason": "AWS App Runner API, S3 Angular client, health check, DNS/IPs and visual screenshot evidence are captured.",
   "return_to_executor_required": true,
   "loaded_skills": [
     "architect plan",
@@ -45,16 +45,16 @@
     "push_is_stop_gate": false
   },
   "executor_authority": "REINSTATED_FOR_PLAN_DERIVED_ACTION_ONLY",
-  "executor_authority_scope": "Apply or arrange AWS IAM policy attachment outside repo using account-admin rights, then rerun FLOW-19 AWS runner and complete SESSION-02 visual evidence.",
+  "executor_authority_scope": "Execute SESSION-03 linked system graph only; keep SESSION-02 AWS runtime evidence as source of truth.",
   "executor_may_not_self_restore": true,
   "architect_reinstatement_required": true,
   "executor_authority_reinstated": true,
   "architect_verdict": "ARCHITECT_VERDICT_CONTINUE_EXECUTION",
   "reinstatement_reason": "SESSION-01 capability map provides exact implementation targets for missing AWS CI/CD rows.",
-  "first_failed_requirement_id": "AWS-RUNTIME-01",
+  "first_failed_requirement_id": "LGS-01",
   "last_plan_reminder": {
-    "next_action": "Attach deployment/aws/xiigen-cicd-iam-policy.json to arn:aws:iam::595003292091:user/xiigen-cicd using an account-admin credential, then rerun tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1 with ExecuteAws and AWS runtime parameters; continue SESSION-02 visual evidence after hosted URLs are emitted.",
-    "source": "AWS-RUNTIME-PERMISSION-EVIDENCE.json"
+    "next_action": "Execute SESSION-03-LINKED-SYSTEM-GRAPH.md: build the linked business-system graph for Angular routes/components/services, .NET controllers/services/contracts and SQL/stored procedure surface.",
+    "source": "LGS-01"
   },
   "execution_attempt_latest": {
     "next_action": "Implement the FLOW-19 AWS CI/CD equivalent runner without GitHub Actions: add tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1, deployment/aws descriptors, Secrets Manager/KMS metadata, ECR/ECS/S3/routing/CloudWatch/rollback/signing/audit evidence outputs, then rerun SESSION-01 evidence mapping.",
@@ -70,23 +70,39 @@
     "provider": "aws",
     "flow": "FLOW-19",
     "workflowRunUrl": null,
-    "workflowConclusion": "RUNNER_IMPLEMENTED_PLAN_ONLY",
-    "hostedBaseUrl": null,
-    "serverHealthUrl": null,
-    "clientUrl": null,
-    "resolvedPublicIps": [],
-    "region": null,
-    "environment": null,
-    "imageDigest": null,
-    "packageHash": null,
-    "visualEvidenceDir": "docs/plans/enterprise-adaptation/v3.3/evidence",
-    "screenshots": [],
-    "status": "BLOCKED_BY_AWS_IAM_POLICY",
+    "workflowConclusion": "AWS_RUNTIME_DEPLOYED_WITH_LOCAL_RUNNER_EQUIVALENT",
+    "hostedBaseUrl": "https://snt2bpe3zt.eu-west-1.awsapprunner.com",
+    "serverHealthUrl": "https://snt2bpe3zt.eu-west-1.awsapprunner.com/health/ready",
+    "clientUrl": "http://xiigen-primary-master-flow19-client-595003292091.s3-website-eu-west-1.amazonaws.com",
+    "resolvedPublicIps": [
+      "3.248.107.227",
+      "3.5.66.48",
+      "3.5.67.197",
+      "3.5.69.16",
+      "3.5.72.98",
+      "3.5.74.103",
+      "3.5.74.108",
+      "3.5.74.16",
+      "52.92.37.4",
+      "54.220.78.34",
+      "99.80.76.110"
+    ],
+    "region": "eu-west-1",
+    "environment": "primary-master-tenant",
+    "imageDigest": "sha256:c13a4d2d6bc663afa5d5fcc72be16e7008474a72b96488ca089fa9b604556fae",
+    "packageHash": "1f377fada0f804d9cf517b24e08277dc7f3d767f07a18a78254fd6f4fe30c9bc",
+    "visualEvidenceDir": "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime",
+    "screenshots": [
+      "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/flow19-aws-client-home.png"
+    ],
+    "status": "PASS_AWS_RUNTIME_EVIDENCE_CAPTURED",
     "runnerPath": "tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1",
     "deploymentManifestPath": "deployment/aws/flow19-deployment.manifest.json",
     "ecsTaskDefinitionPath": "deployment/aws/ecs-task-definition.json",
     "permissionEvidencePath": "docs/plans/enterprise-adaptation/v3.3/evidence/AWS-RUNTIME-PERMISSION-EVIDENCE.json",
-    "requiredPolicyPath": "deployment/aws/xiigen-cicd-iam-policy.json"
+    "requiredPolicyPath": "deployment/aws/xiigen-cicd-iam-policy.json",
+    "runtimeEvidencePath": "docs/plans/enterprise-adaptation/v3.3/evidence/AWS-RUNTIME-EVIDENCE.json",
+    "visualEvidenceIndex": "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/visualEvidenceIndex.json"
   },
   "interactiveIdeEvidence": {
     "visualStudio": "UNKNOWN",
@@ -119,7 +135,7 @@
     "architect_final_authority_only": true,
     "coverage_challenge_architect_first": true,
     "stop_permission_gate_required": true,
-    "next_action": "Attach deployment/aws/xiigen-cicd-iam-policy.json to arn:aws:iam::595003292091:user/xiigen-cicd using an account-admin credential, then rerun tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1 with ExecuteAws and AWS runtime parameters; continue SESSION-02 visual evidence after hosted URLs are emitted.",
+    "next_action": "Execute SESSION-03-LINKED-SYSTEM-GRAPH.md: build the linked business-system graph for Angular routes/components/services, .NET controllers/services/contracts and SQL/stored procedure surface.",
     "executor_must_handoff_to": "REVIEW_INTERNAL after SESSION-02 AWS runtime evidence slice"
   },
   "masterTenantLaunch": {

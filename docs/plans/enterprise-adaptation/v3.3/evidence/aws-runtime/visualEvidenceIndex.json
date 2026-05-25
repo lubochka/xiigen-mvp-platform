@@ -1,0 +1,45 @@
+{
+  "hostedBaseUrl": "https://snt2bpe3zt.eu-west-1.awsapprunner.com",
+  "serverHealthUrl": "https://snt2bpe3zt.eu-west-1.awsapprunner.com/health/ready",
+  "clientUrl": "http://xiigen-primary-master-flow19-client-595003292091.s3-website-eu-west-1.amazonaws.com",
+  "resolvedPublicIps": [
+    "3.248.107.227",
+    "3.5.66.48",
+    "3.5.67.197",
+    "3.5.69.16",
+    "3.5.72.98",
+    "3.5.74.103",
+    "3.5.74.108",
+    "3.5.74.16",
+    "52.92.37.4",
+    "54.220.78.34",
+    "99.80.76.110"
+  ],
+  "capturedAtUtc": "2026-05-25T18:50:33.546Z",
+  "awsRegion": "eu-west-1",
+  "environment": "primary-master-tenant",
+  "invalidEvidenceRejected": true,
+  "artifacts": [
+    {
+      "matrixRow": "AWS-RUNTIME-07",
+      "url": "http://xiigen-primary-master-flow19-client-595003292091.s3-website-eu-west-1.amazonaws.com",
+      "tenant": "primary-master-tenant",
+      "role": "tenant_ops",
+      "screenshot": "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/flow19-aws-client-home.png",
+      "trace": "",
+      "video": "",
+      "secretsRedacted": true,
+      "sourceCommand": "npx playwright screenshot --full-page 'http://xiigen-primary-master-flow19-client-595003292091.s3-website-eu-west-1.amazonaws.com' 'docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/flow19-aws-client-home.png'",
+      "dnsResolvedPublicIps": [
+        "3.5.66.48",
+        "3.5.67.197",
+        "3.5.69.16",
+        "3.5.72.98",
+        "3.5.74.103",
+        "3.5.74.108",
+        "3.5.74.16",
+        "52.92.37.4"
+      ]
+    }
+  ]
+}
