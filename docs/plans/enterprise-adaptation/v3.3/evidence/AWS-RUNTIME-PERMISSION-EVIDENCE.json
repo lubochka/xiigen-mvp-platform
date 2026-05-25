@@ -1,0 +1,57 @@
+{
+  "flow": "FLOW-19",
+  "provider": "aws",
+  "session": "SESSION-02-AWS-RUNTIME-VISUAL-EVIDENCE",
+  "checkedAtUtc": "2026-05-25T18:16:34.538Z",
+  "credentialIdentity": {
+    "account": "595003292091",
+    "arn": "arn:aws:iam::595003292091:user/xiigen-cicd",
+    "userIdRecorded": true,
+    "secretValuesPrinted": false
+  },
+  "tooling": {
+    "awsPowerShellInstalled": true,
+    "awsCliInstalled": false,
+    "profileName": "xiigen-cicd-session"
+  },
+  "permissionProbe": [
+    {
+      "service": "ECR",
+      "action": "ecr:DescribeRepositories",
+      "status": "ACCESS_DENIED"
+    },
+    {
+      "service": "ECS",
+      "action": "ecs:ListClusters",
+      "status": "ACCESS_DENIED"
+    },
+    {
+      "service": "S3",
+      "action": "s3:ListAllMyBuckets",
+      "status": "ACCESS_DENIED"
+    },
+    {
+      "service": "CloudFront",
+      "action": "cloudfront:ListDistributions",
+      "status": "ACCESS_DENIED"
+    },
+    {
+      "service": "Route53",
+      "action": "route53:ListHostedZones",
+      "status": "ACCESS_DENIED"
+    },
+    {
+      "service": "ALB",
+      "action": "elasticloadbalancing:DescribeLoadBalancers",
+      "status": "ACCESS_DENIED"
+    },
+    {
+      "service": "IAM",
+      "action": "iam:GetUser",
+      "status": "ACCESS_DENIED"
+    }
+  ],
+  "policyToAttach": "deployment/aws/xiigen-cicd-iam-policy.json",
+  "runtimeEvidenceStatus": "BLOCKED_BY_AWS_IAM_POLICY",
+  "nextAction": "Attach deployment/aws/xiigen-cicd-iam-policy.json to arn:aws:iam::595003292091:user/xiigen-cicd using an account-admin credential, then rerun tools/enterprise-deploy/FLOW-19-AWS-CICD.ps1 with ExecuteAws and AWS runtime parameters."
+}
