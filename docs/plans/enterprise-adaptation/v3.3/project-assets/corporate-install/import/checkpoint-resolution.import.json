@@ -1,0 +1,27 @@
+{
+    "schema_version":  "1.0",
+    "importStatus":  "RESOLVED",
+    "checkpointCount":  5,
+    "checkpoints":  [
+                        {
+                            "file":  "arbiter.checkpoint-reference.json",
+                            "sha256":  "a01e6fa377f6ca9d6d44707587debd38c35b2beb7e2c7445c73c8d6ad57ac6b2"
+                        },
+                        {
+                            "file":  "project-local-wiki.checkpoint-reference.json",
+                            "sha256":  "a10d0e15b58c214237c011b5928807f5242dfad180145f63a870008c88796a12"
+                        },
+                        {
+                            "file":  "reprocessor.checkpoint-reference.json",
+                            "sha256":  "42d0088134241d297289330aea1cb9958fc0a4ace79ceef28d23c34307d12a5a"
+                        },
+                        {
+                            "file":  "routing.checkpoint-reference.json",
+                            "sha256":  "57dccaa958a71bf191a87b8340689658435f8a70d56c8786ee705582868b626b"
+                        },
+                        {
+                            "file":  "smart-code-assistant.checkpoint-reference.json",
+                            "sha256":  "b7b2baad6ac428a355b9cbe20d70b6e26201f7c861e756b92de072ad6e1a4048"
+                        }
+                    ]
+}

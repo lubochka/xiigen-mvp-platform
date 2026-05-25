@@ -3,8 +3,8 @@
     "goal_reached":  false,
     "stop_allowed":  false,
     "gate_status":  "IN_PROGRESS_NEXT_STEP_KNOWN",
-    "next_action":  "Execute SESSION-11-CORPORATE-INSTALL-EVIDENCE.md: verify corporate import/install path and close INSTALL-01 first UNKNOWN row.",
-    "next_action_plan_source":  "SESSION-11 / INSTALL-01 first UNKNOWN row",
+    "next_action":  "Execute SESSION-12-UPDATE-REEXPORT-LIFECYCLE.md: verify update/re-export lifecycle and close UPDATE-01 first UNKNOWN row.",
+    "next_action_plan_source":  "SESSION-12 / UPDATE-01 first UNKNOWN row",
     "actionable_gaps":  [
                             "FLOW-19 AWS capability not verified from Enterprise repo evidence",
                             "AWS runtime endpoint/IP evidence not captured from FLOW-19 output",
@@ -12,8 +12,8 @@
                             "Trainable unit registry/import/export proof not implemented",
                             "Final evidence scope does not yet equal final claim scope"
                         ],
-    "current_internal_role_state":  "ARCHITECT_INTERNAL_REVIEW_PASS_SESSION_10_EXPORT_PACKAGE_CONTINUE_SESSION_11",
-    "last_role_transition_reason":  "Enterprise export package tree, manifest, provenance, hashes, detached RSA signature, tenant-scoped authorization, no-secrets scan and evidence map captured; EXPORT-01 through EXPORT-12 can close.",
+    "current_internal_role_state":  "ARCHITECT_INTERNAL_REVIEW_PASS_SESSION_11_CORPORATE_INSTALL_CONTINUE_SESSION_12",
+    "last_role_transition_reason":  "Corporate install/import evidence verified manifest, signature, hash/provenance, no-secrets scan, unit locator import, checkpoint resolution, AWS server/client/data health, plugin locator visibility, rollback and persisted evidence; INSTALL-01 through INSTALL-12 can close.",
     "return_to_executor_required":  true,
     "loaded_skills":  [
                           "architect plan",
@@ -48,20 +48,20 @@
                                  "push_is_stop_gate":  false
                              },
     "executor_authority":  "REINSTATED_FOR_PLAN_DERIVED_ACTION_ONLY",
-    "executor_authority_scope":  "Execute SESSION-11 Corporate Install Evidence only; keep export package evidence as source of truth.",
+    "executor_authority_scope":  "Execute SESSION-12 Update/Re-export Lifecycle only; keep corporate install evidence as source of truth.",
     "executor_may_not_self_restore":  true,
     "architect_reinstatement_required":  true,
     "executor_authority_reinstated":  true,
     "architect_verdict":  "ARCHITECT_VERDICT_CONTINUE_EXECUTION",
     "reinstatement_reason":  "SESSION-01 capability map provides exact implementation targets for missing AWS CI/CD rows.",
-    "first_failed_requirement_id":  "INSTALL-01",
+    "first_failed_requirement_id":  "UPDATE-01",
     "last_plan_reminder":  {
-                               "next_action":  "Execute SESSION-11-CORPORATE-INSTALL-EVIDENCE.md: verify corporate import/install path and close INSTALL-01 first UNKNOWN row.",
-                               "source":  "INSTALL-01"
+                               "next_action":  "Execute SESSION-12-UPDATE-REEXPORT-LIFECYCLE.md: verify update/re-export lifecycle and close UPDATE-01 first UNKNOWN row.",
+                               "source":  "UPDATE-01"
                            },
     "execution_attempt_latest":  {
-                                     "next_action":  "Execute SESSION-11-CORPORATE-INSTALL-EVIDENCE.md: verify corporate import/install path and close INSTALL-01 first UNKNOWN row.",
-                                     "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-11 corporate install evidence slice"
+                                     "next_action":  "Execute SESSION-12-UPDATE-REEXPORT-LIFECYCLE.md: verify update/re-export lifecycle and close UPDATE-01 first UNKNOWN row.",
+                                     "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-12 update re-export lifecycle slice"
                                  },
     "constitution_linkage":  {
                                  "required_if_file_exists":  true,
@@ -292,8 +292,8 @@
                            "architect_final_authority_only":  true,
                            "coverage_challenge_architect_first":  true,
                            "stop_permission_gate_required":  true,
-                           "next_action":  "Execute SESSION-11-CORPORATE-INSTALL-EVIDENCE.md: verify corporate import/install path and close INSTALL-01 first UNKNOWN row.",
-                           "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-10 export package slice"
+                           "next_action":  "Execute SESSION-12-UPDATE-REEXPORT-LIFECYCLE.md: verify update/re-export lifecycle and close UPDATE-01 first UNKNOWN row.",
+                           "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-11 corporate install evidence slice"
                        },
     "masterTenantLaunch":  {
                                "controlPlane":  "main Enterprise project / master tenant",
@@ -376,5 +376,27 @@
                                                      "EXPORT-11",
                                                      "EXPORT-12"
                                                  ]
-                              }
+                              },
+    "corporateInstallEvidence":  {
+                                     "status":  "PASS_CORPORATE_INSTALL_IMPORT_VERIFIED",
+                                     "evidencePath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/corporate-install-evidence.json",
+                                     "runbook":  "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/CORPORATE-INSTALL-RUNBOOK.md",
+                                     "importPath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/import/",
+                                     "healthChecks":  "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/validation/corporate-install-health-checks.json",
+                                     "rollback":  "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/rollback/rollback-plan.json",
+                                     "rowsClosed":  [
+                                                        "INSTALL-01",
+                                                        "INSTALL-02",
+                                                        "INSTALL-03",
+                                                        "INSTALL-04",
+                                                        "INSTALL-05",
+                                                        "INSTALL-06",
+                                                        "INSTALL-07",
+                                                        "INSTALL-08",
+                                                        "INSTALL-09",
+                                                        "INSTALL-10",
+                                                        "INSTALL-11",
+                                                        "INSTALL-12"
+                                                    ]
+                                 }
 }

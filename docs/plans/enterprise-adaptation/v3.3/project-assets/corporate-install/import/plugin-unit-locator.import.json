@@ -1,0 +1,10 @@
+{
+    "schema_version":  "1.0",
+    "importStatus":  "IMPORTED",
+    "tenantId":  "primary-master-tenant",
+    "locatorPath":  "package-root/plugin-locators/plugin-unit-locator.json",
+    "locatorEntries":  5,
+    "visualStudioCanFindUnits":  true,
+    "vsCodeCanFindUnits":  true,
+    "importedAtUtc":  "2026-05-25T20:42:08.7732867Z"
+}

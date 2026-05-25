@@ -1,0 +1,14 @@
+{
+    "schema_version":  "1.0",
+    "rollbackStatus":  "DEFINED_AND_TESTABLE_BY_PACKAGE_VERSION",
+    "previousPackageReference":  "sourceCommit:ba20e8b412b23bc6eba92a6a26a97f6f78709efb",
+    "rollbackSteps":  [
+                          "verify prior package manifest and signature",
+                          "restore prior package tree or zip from artifact store",
+                          "restore plugin locator from prior package",
+                          "restore trainable unit registry from prior package",
+                          "rerun health checks",
+                          "persist rollback audit evidence"
+                      ],
+    "generatedAtUtc":  "2026-05-25T20:42:10.8763928Z"
+}

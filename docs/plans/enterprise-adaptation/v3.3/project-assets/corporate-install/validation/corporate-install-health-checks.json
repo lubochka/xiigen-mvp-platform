@@ -1,0 +1,22 @@
+{
+    "schema_version":  "1.0",
+    "generatedAtUtc":  "2026-05-25T20:42:10.8689604Z",
+    "server":  {
+                   "url":  "https://snt2bpe3zt.eu-west-1.awsapprunner.com/health/ready",
+                   "status":  "PASS",
+                   "statusCode":  200
+               },
+    "client":  {
+                   "url":  "http://xiigen-primary-master-flow19-client-595003292091.s3-website-eu-west-1.amazonaws.com",
+                   "status":  "PASS",
+                   "statusCode":  200
+               },
+    "data":  {
+                 "status":  "PASS",
+                 "packageHashVerified":  true,
+                 "fileHashFailures":  [
+
+                                      ],
+                 "checkpointCount":  5
+             }
+}

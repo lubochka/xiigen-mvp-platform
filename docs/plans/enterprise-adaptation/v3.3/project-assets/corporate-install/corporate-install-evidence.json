@@ -1,0 +1,42 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "corporate_install_evidence",
+    "status":  "PASS_CORPORATE_INSTALL_IMPORT_VERIFIED",
+    "generatedAtUtc":  "2026-05-25T20:42:10.8853768Z",
+    "manifestVerified":  true,
+    "signatureVerified":  true,
+    "hashVerified":  true,
+    "provenanceVerified":  true,
+    "noSecretsScan":  {
+                          "status":  "PASS",
+                          "hitCount":  0,
+                          "hits":  [
+
+                                   ]
+                      },
+    "unitLocatorImport":  "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/import/plugin-unit-locator.import.json",
+    "unitRegistryImport":  "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/import/corporate-unit-registry.import.json",
+    "checkpointResolution":  "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/import/checkpoint-resolution.import.json",
+    "healthChecks":  "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/validation/corporate-install-health-checks.json",
+    "rollback":  "docs/plans/enterprise-adaptation/v3.3/project-assets/corporate-install/rollback/rollback-plan.json",
+    "visualRuntimeEvidence":  "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/visualEvidenceIndex.json",
+    "pluginLocator":  {
+                          "visualStudioCanFindUnits":  true,
+                          "vsCodeCanFindUnits":  true,
+                          "locatorEntries":  5
+                      },
+    "rowsClosed":  [
+                       "INSTALL-01",
+                       "INSTALL-02",
+                       "INSTALL-03",
+                       "INSTALL-04",
+                       "INSTALL-05",
+                       "INSTALL-06",
+                       "INSTALL-07",
+                       "INSTALL-08",
+                       "INSTALL-09",
+                       "INSTALL-10",
+                       "INSTALL-11",
+                       "INSTALL-12"
+                   ]
+}
