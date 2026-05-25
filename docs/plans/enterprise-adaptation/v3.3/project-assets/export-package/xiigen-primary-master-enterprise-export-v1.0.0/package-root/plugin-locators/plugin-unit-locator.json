@@ -1,0 +1,43 @@
+{
+  "tenantId": "primary-master-tenant",
+  "projectId": "xiigen-enterprise-master",
+  "locatorVersion": "1.0.0",
+  "pluginRule": "Plugins may load or reference unit manifests/checkpoints; plugins must not embed model weights.",
+  "locators": [
+    {
+      "unitId": "primary-master-tenant.xiigen-enterprise-master.project-local-wiki",
+      "locatorEntry": "xiigen-unit://primary-master-tenant/xiigen-enterprise-master/project-local-wiki/1.0.0",
+      "manifestPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/manifests/project-local-wiki.manifest.json",
+      "checkpointReference": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/checkpoints/project-local-wiki.checkpoint-reference.json",
+      "noEmbeddedPluginWeights": true
+    },
+    {
+      "unitId": "primary-master-tenant.xiigen-enterprise-master.smart-code-assistant",
+      "locatorEntry": "xiigen-unit://primary-master-tenant/xiigen-enterprise-master/smart-code-assistant/1.0.0",
+      "manifestPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/manifests/smart-code-assistant.manifest.json",
+      "checkpointReference": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/checkpoints/smart-code-assistant.checkpoint-reference.json",
+      "noEmbeddedPluginWeights": true
+    },
+    {
+      "unitId": "primary-master-tenant.xiigen-enterprise-master.routing",
+      "locatorEntry": "xiigen-unit://primary-master-tenant/xiigen-enterprise-master/routing/1.0.0",
+      "manifestPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/manifests/routing.manifest.json",
+      "checkpointReference": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/checkpoints/routing.checkpoint-reference.json",
+      "noEmbeddedPluginWeights": true
+    },
+    {
+      "unitId": "primary-master-tenant.xiigen-enterprise-master.arbiter",
+      "locatorEntry": "xiigen-unit://primary-master-tenant/xiigen-enterprise-master/arbiter/1.0.0",
+      "manifestPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/manifests/arbiter.manifest.json",
+      "checkpointReference": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/checkpoints/arbiter.checkpoint-reference.json",
+      "noEmbeddedPluginWeights": true
+    },
+    {
+      "unitId": "primary-master-tenant.xiigen-enterprise-master.reprocessor",
+      "locatorEntry": "xiigen-unit://primary-master-tenant/xiigen-enterprise-master/reprocessor/1.0.0",
+      "manifestPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/manifests/reprocessor.manifest.json",
+      "checkpointReference": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/checkpoints/reprocessor.checkpoint-reference.json",
+      "noEmbeddedPluginWeights": true
+    }
+  ]
+}

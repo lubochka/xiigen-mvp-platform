@@ -1,0 +1,8 @@
+{
+  "unitId": "primary-master-tenant.xiigen-enterprise-master.smart-code-assistant",
+  "exportPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/export/smart-code-assistant.export.json",
+  "includesManifest": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/manifests/smart-code-assistant.manifest.json",
+  "includesCheckpointReference": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/checkpoints/smart-code-assistant.checkpoint-reference.json",
+  "includesValidationReport": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/validation/smart-code-assistant.validation-report.json",
+  "excludesEmbeddedWeights": true
+}

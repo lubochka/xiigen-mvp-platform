@@ -1,0 +1,135 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "plugin_runtime_evidence",
+    "generated_at_utc":  "2026-05-25T20:30:57.2149546Z",
+    "status":  "PASS_INTERACTIVE_IDE_PLUGIN_SCENARIOS_CAPTURED",
+    "source_report":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/PLUGIN-ORCHESTRATION-PROMPT-SUITE-GATE.json",
+    "source_report_sha256":  "bf872933db097fb24f4f18a10db7b3b48385882a84268a12d28567b4d57378e9",
+    "transcript_root":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040",
+    "contract_harness_passed":  true,
+    "contract_harness_only_execution_count":  0,
+    "interactive_ide_plugin_scenario_passed":  true,
+    "vs_code_extension_host_invocation_passed":  true,
+    "visual_studio_experimental_instance_invocation_passed":  true,
+    "host_launch_rows":  16,
+    "prompt_execution_rows":  864,
+    "failed_prompt_rows":  0,
+    "internal_helper_only_execution_count":  0,
+    "mock_output_detected_count":  0,
+    "readiness_only_response_count":  0,
+    "host_summary":  [
+                         {
+                             "host":  "vs_code",
+                             "prompt_rows":  432,
+                             "failed_rows":  0,
+                             "entrypoints":  [
+                                                 "xiigen.orchestratePrompt"
+                                             ]
+                         },
+                         {
+                             "host":  "visual_studio",
+                             "prompt_rows":  432,
+                             "failed_rows":  0,
+                             "entrypoints":  [
+                                                 "CopyWikiContextCommand"
+                                             ]
+                         }
+                     ],
+    "rows_closed":  [
+                        "PLUGIN-VS-01",
+                        "PLUGIN-VS-02",
+                        "PLUGIN-VS-03",
+                        "PLUGIN-VS-04",
+                        "PLUGIN-VS-05",
+                        "PLUGIN-VS-06",
+                        "PLUGIN-VSCODE-01",
+                        "PLUGIN-VSCODE-02",
+                        "PLUGIN-VSCODE-03",
+                        "PLUGIN-VSCODE-04",
+                        "PLUGIN-VSCODE-05",
+                        "PLUGIN-VSCODE-06",
+                        "PLUGIN-HARNESS-01"
+                    ],
+    "transcript_files":  [
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/askapediaweb_project_scope-visual-studio-transcript.json",
+                                 "bytes":  34155,
+                                 "sha256":  "6bfb870b51288d5953f4e5fc93af2e581da264481c666e4b0cfa748a47be0d7c"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/askapediaweb_project_scope-vs-code-transcript.json",
+                                 "bytes":  43145,
+                                 "sha256":  "044e2871f462d7e16c608dab6ba66e54837f040055456099faa03165936e5122"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/bizguide_client_single_angular-visual-studio-transcript.json",
+                                 "bytes":  33458,
+                                 "sha256":  "2a75dcabfaa5ee91d5d2e10c010fddb82659b5c5f7eab1ac54d44fcc17c052d7"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/bizguide_client_single_angular-vs-code-transcript.json",
+                                 "bytes":  42447,
+                                 "sha256":  "947b0bc67376ca1b88b25b00984c2ec26ca9f51695b0f728d0bda358943d148e"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/genie_dynamic_linked_system-visual-studio-transcript.json",
+                                 "bytes":  33668,
+                                 "sha256":  "bce9731a29142376b8c412a69ad8e75137352bec3838096c334b4f3a35695735"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/genie_dynamic_linked_system-vs-code-transcript.json",
+                                 "bytes":  42661,
+                                 "sha256":  "c1be979ac16281a13f09a47de5560d1a60fa4d0d2c98727a80e6733444264058"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/geniesoft_game_mvp_linked_system-visual-studio-transcript.json",
+                                 "bytes":  33938,
+                                 "sha256":  "15dd55bd320bdf7d9a9d93984e1582a2b448b801854473431a1602025d0dce99"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/geniesoft_game_mvp_linked_system-vs-code-transcript.json",
+                                 "bytes":  42932,
+                                 "sha256":  "693ffa99ae8f17736e0627478c2ab0c5cd54ff5a70f9a908d689906916331fbb"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/genietasks_project_scope-visual-studio-transcript.json",
+                                 "bytes":  34048,
+                                 "sha256":  "f6fbd84bdee85e7814d939a06cb8110067fcbe7cff37c2d29284d91a48340867"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/genietasks_project_scope-vs-code-transcript.json",
+                                 "bytes":  43040,
+                                 "sha256":  "bc0b0d9697132825ed3af0f51618cbfb0559a9846868f619d6b77179d895d40f"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/wiz_game_server_server_scope-visual-studio-transcript.json",
+                                 "bytes":  33293,
+                                 "sha256":  "67bbecf0ce35f0780fdb06f5ff7301f1f9769967eadb927eb87e186039ad5d41"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/wiz_game_server_server_scope-vs-code-transcript.json",
+                                 "bytes":  42282,
+                                 "sha256":  "732aadd3428b9d93cf3d0979373111dccf2f286a80a56d17d73aaa77e99e7d0f"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/xiigen_flows_translated_full_stack-visual-studio-transcript.json",
+                                 "bytes":  40329,
+                                 "sha256":  "4231dd97a6e2c6d8f9787f1ce0e2980dd8df01b97c2e136aa5ca39488a549ca8"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/xiigen_flows_translated_full_stack-vs-code-transcript.json",
+                                 "bytes":  49321,
+                                 "sha256":  "8c35c16e31d9557fbe78679da5c4cf7776c8b73726feca4d712400cc635a03d3"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/xiigen_platform_translated_full_stack-visual-studio-transcript.json",
+                                 "bytes":  34478,
+                                 "sha256":  "0afc6fe54d7ce456897c655e263fcba7189cb9668d1ade68e5b2e56e257d8b97"
+                             },
+                             {
+                                 "file":  "docs/plans/enterprise-adaptation/v3.3/project-assets/plugin-runtime/transcripts/20260525-202040/xiigen_platform_translated_full_stack-vs-code-transcript.json",
+                                 "bytes":  43471,
+                                 "sha256":  "573094246f46f8e12cc666361155070b04f25c4bfa24930d40078d39ae41bb55"
+                             }
+                         ]
+}

@@ -1,0 +1,22 @@
+{
+  "unitId": "primary-master-tenant.xiigen-enterprise-master.reprocessor",
+  "unitType": "reprocessor",
+  "tenantId": "primary-master-tenant",
+  "projectId": "xiigen-enterprise-master",
+  "version": "1.0.0",
+  "sourceGraphId": "docs/plans/enterprise-adaptation/v3.3/evidence/linked-system-graph.json",
+  "sourceGraphChecksum": "5a6e0322a53d85b8650c11a40fd061ffcb141402e0b89afdc38c60c6d4a7300a",
+  "checkpointReference": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/checkpoints/reprocessor.checkpoint-reference.json",
+  "checkpointChecksum": "52ac4e3d615572e46bcef6ae430d823eccea20d08943370980f9f30364b30595",
+  "locatorEntry": "xiigen-unit://primary-master-tenant/xiigen-enterprise-master/reprocessor/1.0.0",
+  "exportPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/export/reprocessor.export.json",
+  "importPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/import/reprocessor.import.json",
+  "validationReportPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/validation/reprocessor.validation-report.json",
+  "upgradeFrom": null,
+  "upgradeTo": null,
+  "migrationStrategy": "semver; minor/patch can reuse locator with version update, major requires new locator and migration report",
+  "validationTargetOnly": false,
+  "noEmbeddedPluginWeights": true,
+  "purpose": "Reprocesses project graph updates into wiki/assistant unit refresh tasks.",
+  "createdAtUtc": "2026-05-25T19:01:44.362Z"
+}

@@ -1,0 +1,67 @@
+{
+  "session": "SESSION-07-SMART-CODE-ASSISTANT",
+  "capturedAtUtc": "2026-05-25T20:22:00Z",
+  "implementation": {
+    "service": "src/Xiigen.Platform.Marketplace/SmartCodeAssistantService.cs",
+    "contracts": "src/Xiigen.Platform.Marketplace/MarketplaceContracts.cs",
+    "api": "src/Xiigen.Platform.Api/Program.cs",
+    "tests": "tests/Xiigen.Platform.Marketplace.Tests/SmartCodeAssistantServiceTests.cs"
+  },
+  "unit": {
+    "unitId": "primary-master-tenant.xiigen-enterprise-master.smart-code-assistant",
+    "unitType": "smart-code-assistant",
+    "trainable": true,
+    "exportable": true,
+    "importable": true,
+    "noEmbeddedPluginWeights": true,
+    "locatorEntry": "xiigen-unit://primary-master-tenant/xiigen-enterprise-master/smart-code-assistant/1.0.0"
+  },
+  "policyPlan": {
+    "codingPolicyRead": true,
+    "architecturePolicyRead": true,
+    "status": "PLAN_READY_PATCH_BLOCKED_UNTIL_VALIDATED",
+    "planBeforePatch": true
+  },
+  "patchValidation": {
+    "status": "PATCH_READY_FOR_REVIEW",
+    "recordsAffectedFiles": true,
+    "recordsAffectedProcedures": true,
+    "recordsTestsAndChecks": true,
+    "recordsRationale": true,
+    "graphImpactValidated": true
+  },
+  "policyEscalation": {
+    "status": "ESCALATED_POLICY_VIOLATION",
+    "blockedInsteadOfApplied": true
+  },
+  "packageEvidence": {
+    "exportable": true,
+    "importable": true,
+    "pluginLocatorUpdated": true,
+    "noEmbeddedPluginWeights": true
+  },
+  "runtimeMetrics": {
+    "metricName": "policy_validation_ms",
+    "metricValue": 42,
+    "source": "aws-runtime"
+  },
+  "rows": {
+    "SCA-01": "PASS",
+    "SCA-02": "PASS",
+    "SCA-03": "PASS",
+    "SCA-04": "PASS",
+    "SCA-05": "PASS",
+    "SCA-06": "PASS",
+    "SCA-07": "PASS",
+    "SCA-08": "PASS",
+    "SCA-09": "PASS",
+    "SCA-10": "PASS",
+    "SCA-11": "PASS",
+    "SCA-12": "PASS"
+  },
+  "localVerification": {
+    "command": "scripts/pre-commit-check.ps1",
+    "passed": 35,
+    "failed": 0
+  }
+}

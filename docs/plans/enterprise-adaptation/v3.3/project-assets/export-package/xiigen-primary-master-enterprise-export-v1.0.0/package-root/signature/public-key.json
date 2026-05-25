@@ -1,0 +1,8 @@
+{
+    "schema_version":  "1.0",
+    "kty":  "RSA",
+    "algorithm":  "RSA-SHA256-PKCS1",
+    "keySize":  1024,
+    "modulusBase64":  "uNHXO3C3HLI2IK8+szA7fZP46Vv+GvAIb4P6GBQgfcFeX+org93uSUuF3JAWVLxXGFVzJNfHLFKTN6pOfxTRU7ZwFDdpjHSJc+BQ1OvfDRs3nJdfAwW6BobfMm8aQ3i+78xCMV9OAJRFyZx0A/L2z2UVQhQIjIFPg8oHfLwLcA0=",
+    "exponentBase64":  "AQAB"
+}

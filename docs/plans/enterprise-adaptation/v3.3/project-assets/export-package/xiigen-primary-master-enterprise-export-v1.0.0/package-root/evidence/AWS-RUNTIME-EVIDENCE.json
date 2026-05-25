@@ -1,0 +1,86 @@
+{
+  "flow": "FLOW-19",
+  "provider": "aws",
+  "session": "SESSION-02-AWS-RUNTIME-VISUAL-EVIDENCE",
+  "capturedAtUtc": "2026-05-25T18:50:33.546Z",
+  "awsAccount": "595003292091",
+  "awsRegion": "eu-west-1",
+  "runtimeMode": "AWS App Runner API plus S3 static Angular website",
+  "hostedBaseUrl": "https://snt2bpe3zt.eu-west-1.awsapprunner.com",
+  "serverHealthUrl": "https://snt2bpe3zt.eu-west-1.awsapprunner.com/health/ready",
+  "clientUrl": "http://xiigen-primary-master-flow19-client-595003292091.s3-website-eu-west-1.amazonaws.com",
+  "appRunner": {
+    "serviceName": "xiigen-flow19-primary",
+    "serviceArn": "arn:aws:apprunner:eu-west-1:595003292091:service/xiigen-flow19-primary/136536767a534b60bb09a9b20cc0e898",
+    "serviceUrl": "snt2bpe3zt.eu-west-1.awsapprunner.com",
+    "status": "RUNNING"
+  },
+  "ecr": {
+    "repository": "xiigen/flow-19-durable-sagas-compliance",
+    "imageUri": "595003292091.dkr.ecr.eu-west-1.amazonaws.com/xiigen/flow-19-durable-sagas-compliance:primary-master-tenant-fd2e3bfd8439",
+    "imageDigest": "sha256:c13a4d2d6bc663afa5d5fcc72be16e7008474a72b96488ca089fa9b604556fae"
+  },
+  "s3": {
+    "clientBucket": "xiigen-primary-master-flow19-client-595003292091",
+    "uploadedFiles": 4,
+    "websiteUrl": "http://xiigen-primary-master-flow19-client-595003292091.s3-website-eu-west-1.amazonaws.com"
+  },
+  "dns": {
+    "apiIps": [
+      "3.248.107.227",
+      "54.220.78.34",
+      "99.80.76.110"
+    ],
+    "clientIps": [
+      "3.5.66.48",
+      "3.5.67.197",
+      "3.5.69.16",
+      "3.5.72.98",
+      "3.5.74.103",
+      "3.5.74.108",
+      "3.5.74.16",
+      "52.92.37.4"
+    ],
+    "resolvedPublicIps": [
+      "3.248.107.227",
+      "3.5.66.48",
+      "3.5.67.197",
+      "3.5.69.16",
+      "3.5.72.98",
+      "3.5.74.103",
+      "3.5.74.108",
+      "3.5.74.16",
+      "52.92.37.4",
+      "54.220.78.34",
+      "99.80.76.110"
+    ]
+  },
+  "healthCheck": {
+    "url": "https://snt2bpe3zt.eu-west-1.awsapprunner.com/health/ready",
+    "statusCode": 200,
+    "responseBody": {
+      "status": "ready",
+      "flow": "FLOW-19"
+    }
+  },
+  "visualEvidenceIndex": "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/visualEvidenceIndex.json",
+  "invalidEvidenceRejected": true,
+  "rejectedEvidenceKinds": [
+    "localhost",
+    "Angular dev server",
+    "mock endpoint",
+    "direct helper call",
+    "contract harness only",
+    "screenshot without URL/IP metadata",
+    "build/readiness report without runtime UI"
+  ],
+  "cloudWatchLogGroups": [
+    "/aws/apprunner/xiigen-flow19-primary/136536767a534b60bb09a9b20cc0e898/application",
+    "/aws/apprunner/xiigen-flow19-primary/136536767a534b60bb09a9b20cc0e898/service"
+  ],
+  "metrics": {
+    "cpuRamTimeSource": "App Runner and CloudWatch log groups available; detailed metric snapshots to be expanded by later observability session.",
+    "runtimeReachabilityTcp443": true,
+    "clientReachabilityTcp80": true
+  }
+}

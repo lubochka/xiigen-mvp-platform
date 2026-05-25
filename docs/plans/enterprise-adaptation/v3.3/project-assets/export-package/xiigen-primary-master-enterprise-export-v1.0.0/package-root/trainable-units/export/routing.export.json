@@ -1,0 +1,8 @@
+{
+  "unitId": "primary-master-tenant.xiigen-enterprise-master.routing",
+  "exportPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/export/routing.export.json",
+  "includesManifest": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/manifests/routing.manifest.json",
+  "includesCheckpointReference": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/checkpoints/routing.checkpoint-reference.json",
+  "includesValidationReport": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/validation/routing.validation-report.json",
+  "excludesEmbeddedWeights": true
+}

@@ -1,0 +1,51 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "enterprise_export_package_evidence",
+    "status":  "PASS_EXPORT_PACKAGE_CREATED_SIGNED_AND_SCANNED",
+    "generatedAtUtc":  "2026-05-25T20:39:09.4669851Z",
+    "packageRoot":  "docs/plans/enterprise-adaptation/v3.3/project-assets/export-package/xiigen-primary-master-enterprise-export-v1.0.0/package-root",
+    "packageZip":  "docs/plans/enterprise-adaptation/v3.3/project-assets/export-package/xiigen-primary-master-enterprise-export-v1.0.0.zip",
+    "packageSha256":  "75b738ef8c16094418afcde5a9482d3e6f4406930d67ea77b30cc4345b3410e0",
+    "signature":  "docs/plans/enterprise-adaptation/v3.3/project-assets/export-package/xiigen-primary-master-enterprise-export-v1.0.0.signature.json",
+    "publicKey":  "docs/plans/enterprise-adaptation/v3.3/project-assets/export-package/xiigen-primary-master-enterprise-export-v1.0.0.public-key.json",
+    "noSecretsScan":  {
+                          "status":  "PASS",
+                          "hitCount":  0,
+                          "hits":  [
+
+                                   ],
+                          "scanner":  "high-confidence credential values/private keys/tokens; CancellationToken and secret-id field names are not credentials"
+                      },
+    "tenantAuthorization":  {
+                                "tenantScopedDownload":  true,
+                                "tenantId":  "primary-master-tenant",
+                                "crossTenantDownload":  "forbidden"
+                            },
+    "packageTree":  [
+                        "manifest.json",
+                        "provenance.json",
+                        "hashes.json",
+                        "signature/",
+                        "app/",
+                        "config/",
+                        "trainable-units/",
+                        "project-local-wiki/",
+                        "plugin-locators/",
+                        "evidence/",
+                        "install/"
+                    ],
+    "rowsClosed":  [
+                       "EXPORT-01",
+                       "EXPORT-02",
+                       "EXPORT-03",
+                       "EXPORT-04",
+                       "EXPORT-05",
+                       "EXPORT-06",
+                       "EXPORT-07",
+                       "EXPORT-08",
+                       "EXPORT-09",
+                       "EXPORT-10",
+                       "EXPORT-11",
+                       "EXPORT-12"
+                   ]
+}

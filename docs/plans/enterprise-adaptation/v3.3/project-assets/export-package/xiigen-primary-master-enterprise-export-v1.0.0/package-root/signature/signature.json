@@ -1,0 +1,12 @@
+{
+    "schema_version":  "1.0",
+    "signingProvider":  "SESSION-10_EPHEMERAL_RSA_APPROVED_SIGNER_NO_PRIVATE_KEY_PERSISTED",
+    "algorithm":  "RSA-SHA256-PKCS1",
+    "keySize":  1024,
+    "signedArtifact":  "docs/plans/enterprise-adaptation/v3.3/project-assets/export-package/xiigen-primary-master-enterprise-export-v1.0.0.zip",
+    "packageSha256":  "75b738ef8c16094418afcde5a9482d3e6f4406930d67ea77b30cc4345b3410e0",
+    "signatureBase64":  "a97a3m+tjRVp7XWIBOeXDYpWn7YEtNbex1pONvIfo4wd27zXvQBBejW0KEIzpM1+UTCYWjmSS2a8RfYoSYPx7gtvZd076zwJQh+TBXk/wYpN7286r0Wt+Cb7EmA+/STEJRvOVt8vUT3dCCxoDtKd5QzUmPQu16Y9DTLBnx/0Wmg=",
+    "publicKeyPath":  "signature/public-key.json",
+    "privateKeyPersisted":  false,
+    "createdAtUtc":  "2026-05-25T20:39:09.4065171Z"
+}

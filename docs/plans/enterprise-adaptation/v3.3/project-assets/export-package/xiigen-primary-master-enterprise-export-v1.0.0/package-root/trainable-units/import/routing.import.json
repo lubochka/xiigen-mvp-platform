@@ -1,0 +1,11 @@
+{
+  "unitId": "primary-master-tenant.xiigen-enterprise-master.routing",
+  "importPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/import/routing.import.json",
+  "requiredInputs": [
+    "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/manifests/routing.manifest.json",
+    "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/checkpoints/routing.checkpoint-reference.json",
+    "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/validation/routing.validation-report.json"
+  ],
+  "registersLocatorEntry": "xiigen-unit://primary-master-tenant/xiigen-enterprise-master/routing/1.0.0",
+  "validatesCheckpointChecksum": "9598b6ad4d79e6612dcf083c2290f2c98a0671ddbf4a661d7b862199139d66f3"
+}
