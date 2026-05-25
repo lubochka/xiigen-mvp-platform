@@ -1,0 +1,83 @@
+{
+  "session": "SESSION-06-SMART-WIKI",
+  "capturedAtUtc": "2026-05-25T20:04:00Z",
+  "implementation": {
+    "service": "src/Xiigen.Platform.Marketplace/SmartWikiService.cs",
+    "contracts": "src/Xiigen.Platform.Marketplace/MarketplaceContracts.cs",
+    "api": "src/Xiigen.Platform.Api/Program.cs",
+    "tests": "tests/Xiigen.Platform.Marketplace.Tests/SmartWikiServiceTests.cs"
+  },
+  "sourceGraph": {
+    "path": "docs/plans/enterprise-adaptation/v3.3/evidence/linked-system-graph.json",
+    "checksum": "5a6e0322a53d85b8650c11a40fd061ffcb141402e0b89afdc38c60c6d4a7300a",
+    "indexedNodeCount": 8,
+    "indexedEdgeCount": 5,
+    "abstentionCount": 1
+  },
+  "projectRegistryStorage": {
+    "registryPath": "docs/plans/enterprise-adaptation/v3.3/project-assets/trainable-units/registry/trainable-unit-registry.json",
+    "unitId": "primary-master-tenant.xiigen-enterprise-master.project-local-wiki",
+    "tenantId": "primary-master-tenant",
+    "projectId": "xiigen-enterprise-master"
+  },
+  "advancedQuestionEvidence": [
+    {
+      "questionKind": "entity-impact",
+      "subject": "xiigen-flow19-compliance-records",
+      "status": "ANSWERED_WITH_CITATIONS",
+      "citationCount": 2
+    },
+    {
+      "questionKind": "flow-trace",
+      "subject": "FLOW-19",
+      "status": "ANSWERED_WITH_CITATIONS",
+      "citationCount": 4
+    },
+    {
+      "questionKind": "stored-procedure-impact",
+      "subject": "sp_UpdateSaga",
+      "status": "ABSTAIN_NO_SOURCE",
+      "citationCount": 1
+    },
+    {
+      "questionKind": "angular-impact",
+      "subject": "FLOW-19",
+      "status": "ANSWERED_WITH_CITATIONS",
+      "citationCount": 3
+    },
+    {
+      "questionKind": "dotnet-impact",
+      "subject": "FLOW-19",
+      "status": "ANSWERED_WITH_CITATIONS",
+      "citationCount": 4
+    },
+    {
+      "questionKind": "missing-evidence-abstention",
+      "subject": "FLOW-19",
+      "status": "ANSWERED_WITH_CITATIONS",
+      "citationCount": 1
+    }
+  ],
+  "reindexEvidence": {
+    "sourceGraphChecksum": "checksum-after-session-06-smart-wiki",
+    "changeSummary": "SESSION-06 Smart Wiki indexed answer evidence and reindex update path.",
+    "result": "REINDEXED"
+  },
+  "rows": {
+    "SW-01": "PASS",
+    "SW-02": "PASS",
+    "SW-03": "PASS",
+    "SW-04": "PASS",
+    "SW-05": "PASS",
+    "SW-06": "PASS",
+    "SW-07": "PASS",
+    "SW-08": "PASS",
+    "SW-09": "PASS",
+    "SW-10": "PASS"
+  },
+  "localVerification": {
+    "command": "scripts/pre-commit-check.ps1",
+    "passed": 29,
+    "failed": 0
+  }
+}

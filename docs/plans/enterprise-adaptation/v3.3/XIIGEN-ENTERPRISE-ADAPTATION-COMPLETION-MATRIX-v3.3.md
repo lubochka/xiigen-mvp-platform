@@ -101,16 +101,16 @@ Every row names a literal expectation. Generic placeholders such as `requirement
 | TAS-08 | Tenant isolation prevents access to another tenant workspace/adaptation | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | PASS | Cross-tenant workspace read returns not found; AWS API evidence returned 404 for other tenant |
 | TAS-09 | Adaptation audit records requester, tenant, source, policy, diff, result | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | PASS | Audit endpoint returned 6 tenant-scoped events after AWS exercise |
 | TAS-10 | Website UI evidence is captured from AWS endpoint when runtime claim is made | Tenant Adaptation Studio UI/API evidence and AWS visual artifacts | PASS | AWS screenshot `evidence/aws-runtime/tenant-adaptation-studio-aws.png` captured from App Runner `/studio` |
-| SW-01 | Smart Wiki indexes Angular + .NET + SQL graph as linked knowledge | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | UNKNOWN | SESSION-06 |
-| SW-02 | Smart Wiki answers cite source graph authority, not unsupported model memory | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | UNKNOWN | SESSION-06 |
-| SW-03 | Smart Wiki supports entity impact questions | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | UNKNOWN | SESSION-06 |
-| SW-04 | Smart Wiki supports flow trace questions | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | UNKNOWN | SESSION-06 |
-| SW-05 | Smart Wiki supports stored procedure impact questions | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | UNKNOWN | SESSION-06 |
-| SW-06 | Smart Wiki supports Angular client impact questions | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | UNKNOWN | SESSION-06 |
-| SW-07 | Smart Wiki supports .NET server impact questions | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | UNKNOWN | SESSION-06 |
-| SW-08 | Smart Wiki abstains when evidence is missing | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | UNKNOWN | SESSION-06 |
-| SW-09 | Smart Wiki stores tenant-local wiki data in project asset registry | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | UNKNOWN | SESSION-06 |
-| SW-10 | Smart Wiki update path handles graph changes and reindexing | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | UNKNOWN | SESSION-06 |
+| SW-01 | Smart Wiki indexes Angular + .NET + SQL graph as linked knowledge | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | PASS | `SmartWikiService.IndexGraphAsync` stores linked graph nodes/edges/abstentions; AWS API evidence indexed 8 nodes and 5 edges |
+| SW-02 | Smart Wiki answers cite source graph authority, not unsupported model memory | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | PASS | `SmartWikiService.AnswerAsync` returns citations for every supported answer; evidence in `evidence/smart-wiki-answer-evidence.json` |
+| SW-03 | Smart Wiki supports entity impact questions | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | PASS | AWS API exercise returned `ANSWERED_WITH_CITATIONS` for `entity-impact` |
+| SW-04 | Smart Wiki supports flow trace questions | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | PASS | AWS API exercise returned `ANSWERED_WITH_CITATIONS` for `flow-trace` |
+| SW-05 | Smart Wiki supports stored procedure impact questions | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | PASS | AWS API exercise returned `ABSTAIN_NO_SOURCE` for missing stored procedure evidence |
+| SW-06 | Smart Wiki supports Angular client impact questions | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | PASS | AWS API exercise returned `ANSWERED_WITH_CITATIONS` for `angular-impact` |
+| SW-07 | Smart Wiki supports .NET server impact questions | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | PASS | AWS API exercise returned `ANSWERED_WITH_CITATIONS` for `dotnet-impact` |
+| SW-08 | Smart Wiki abstains when evidence is missing | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | PASS | Stored procedure answer uses `ABSTAIN_NO_SOURCE`; missing-evidence question cites abstention record |
+| SW-09 | Smart Wiki stores tenant-local wiki data in project asset registry | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | PASS | Wiki index stores tenant id and registry path for project-local wiki unit |
+| SW-10 | Smart Wiki update path handles graph changes and reindexing | Smart Wiki report, answer evidence, graph citations, visual evidence where UI is claimed | PASS | `SmartWikiService.ReindexAsync` updates source graph checksum and records reindex evidence |
 | SCA-01 | Smart Code Assistant unit is created as trainable/exportable/importable unit | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
 | SCA-02 | Assistant reads tenant coding policy from tenant-scoped source | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
 | SCA-03 | Assistant reads architecture policy from tenant-scoped source | Smart Code Assistant unit manifest, patch reports, validation reports, runtime metrics | UNKNOWN | SESSION-07 |
@@ -192,7 +192,7 @@ IN_PROGRESS_NEXT_STEP_KNOWN
 ## First next action
 
 ```text
-Execute SESSION-06-SMART-WIKI.md: implement Smart Wiki answer evidence for linked graph questions, tenant-local wiki data, missing-evidence abstention and visual evidence where UI is claimed.
+Execute SESSION-07-SMART-CODE-ASSISTANT.md: implement Smart Code Assistant trainable unit evidence for tenant coding/architecture policies, plan-before-patch, graph impact validation, patch rationale, export/import and runtime metrics.
 ```
 
 

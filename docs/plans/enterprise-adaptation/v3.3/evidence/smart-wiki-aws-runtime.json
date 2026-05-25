@@ -1,0 +1,75 @@
+{
+  "session": "SESSION-06-SMART-WIKI",
+  "capturedAtUtc": "2026-05-25T20:04:00Z",
+  "provider": "aws",
+  "awsAccount": "595003292091",
+  "awsRegion": "eu-west-1",
+  "runtimeMode": "AWS App Runner platform API",
+  "hostedBaseUrl": "https://gyxwjim5ea.eu-west-1.awsapprunner.com",
+  "serverHealthUrl": "https://gyxwjim5ea.eu-west-1.awsapprunner.com/health/ready",
+  "wikiUrl": "https://gyxwjim5ea.eu-west-1.awsapprunner.com/wiki",
+  "appRunner": {
+    "serviceName": "xiigen-platform-primary",
+    "serviceArn": "arn:aws:apprunner:eu-west-1:595003292091:service/xiigen-platform-primary/a43b42b090ef4d66b33099863c28555d",
+    "serviceUrl": "gyxwjim5ea.eu-west-1.awsapprunner.com",
+    "status": "RUNNING"
+  },
+  "ecr": {
+    "repository": "xiigen/platform-api",
+    "imageUri": "595003292091.dkr.ecr.eu-west-1.amazonaws.com/xiigen/platform-api:smart-wiki-ff1e65ee498b",
+    "imageDigest": "sha256:fa9d87b164f2afe15dc28e21a6c9dc054789d0a215468cbc039ca8287ec45bf2"
+  },
+  "healthCheck": {
+    "statusCode": 200
+  },
+  "wikiPage": {
+    "statusCode": 200,
+    "title": "XIIGen Smart Wiki",
+    "containsCitations": true,
+    "containsAbstention": true,
+    "containsReindex": true,
+    "screenshot": "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/smart-wiki-aws.png"
+  },
+  "apiExercise": {
+    "indexNodeCount": 8,
+    "indexEdgeCount": 5,
+    "answerStatuses": [
+      "ANSWERED_WITH_CITATIONS",
+      "ANSWERED_WITH_CITATIONS",
+      "ABSTAIN_NO_SOURCE",
+      "ANSWERED_WITH_CITATIONS",
+      "ANSWERED_WITH_CITATIONS",
+      "ANSWERED_WITH_CITATIONS"
+    ],
+    "citationCounts": [
+      2,
+      4,
+      1,
+      3,
+      4,
+      1
+    ],
+    "reindexChecksum": "checksum-after-session-06-smart-wiki"
+  },
+  "invalidEvidenceRejected": true,
+  "rejectedEvidenceKinds": [
+    "localhost",
+    "mock endpoint",
+    "direct helper call",
+    "contract harness only",
+    "answer without source citation",
+    "stored procedure answer without SQL source evidence"
+  ],
+  "matrixRows": [
+    "SW-01",
+    "SW-02",
+    "SW-03",
+    "SW-04",
+    "SW-05",
+    "SW-06",
+    "SW-07",
+    "SW-08",
+    "SW-09",
+    "SW-10"
+  ]
+}

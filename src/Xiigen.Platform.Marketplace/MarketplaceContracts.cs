@@ -135,3 +135,65 @@ public interface ITenantAdaptationStudioService
         string workspaceId,
         CancellationToken cancellationToken = default);
 }
+
+public sealed record SmartWikiGraphNode(
+    string NodeId,
+    string NodeType,
+    string SourcePath,
+    int? Line,
+    IReadOnlyDictionary<string, object?> Metadata);
+
+public sealed record SmartWikiGraphEdge(
+    string From,
+    string To,
+    string EdgeType,
+    string SourcePath,
+    int? Line,
+    IReadOnlyDictionary<string, object?> Metadata);
+
+public sealed record SmartWikiAbstention(
+    string SourceFamily,
+    string Status,
+    string Reason,
+    string ScanCommand);
+
+public sealed record SmartWikiIndexRequest(
+    string ProjectId,
+    string UnitId,
+    string SourceGraphPath,
+    string SourceGraphChecksum,
+    IReadOnlyList<SmartWikiGraphNode> Nodes,
+    IReadOnlyList<SmartWikiGraphEdge> Edges,
+    IReadOnlyList<SmartWikiAbstention> Abstentions,
+    string IndexedBy);
+
+public sealed record SmartWikiQuestionRequest(
+    string ProjectId,
+    string QuestionKind,
+    string Subject,
+    string AskedBy);
+
+public sealed record SmartWikiReindexRequest(
+    string ProjectId,
+    string SourceGraphChecksum,
+    string ChangeSummary,
+    string RequestedBy);
+
+public interface ISmartWikiService
+{
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>>> IndexGraphAsync(
+        SmartWikiIndexRequest request,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>>> AnswerAsync(
+        SmartWikiQuestionRequest request,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>>> ReindexAsync(
+        SmartWikiReindexRequest request,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<IReadOnlyDictionary<string, object?>?>> GetIndexAsync(
+        string projectId,
+        CancellationToken cancellationToken = default);
+}
