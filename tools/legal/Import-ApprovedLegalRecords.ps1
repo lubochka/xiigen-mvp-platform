@@ -54,11 +54,18 @@ $PublicationEvidencePath = Resolve-RepoPath -Path $PublicationEvidencePath
 $ValidationOutputPath = Resolve-RepoPath -Path $ValidationOutputPath
 
 & $validator -RecordsPath $ApprovedRecordsPath -OutputPath $ValidationOutputPath | Out-Null
-if ($LASTEXITCODE -ne 0) {
+if (-not $?) {
+    throw "Approved legal records failed validation. See $ValidationOutputPath"
+}
+$validationResult = Read-Json -Path $ValidationOutputPath
+if (-not [bool]$validationResult.passed) {
     throw "Approved legal records failed validation. See $ValidationOutputPath"
 }
 
-$approvedRecords = @(Read-Json -Path $ApprovedRecordsPath)
+$approvedRecords = Read-Json -Path $ApprovedRecordsPath
+if ($approvedRecords -isnot [System.Array]) {
+    $approvedRecords = @($approvedRecords)
+}
 $registry = Read-Json -Path $RegistryPath
 $routeMap = Read-Json -Path $RouteMapPath
 $visualIndex = Read-Json -Path $VisualEvidenceIndexPath

@@ -1,0 +1,16 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_approved_import_tool_test_evidence",
+    "generatedAtUtc":  "2026-05-26T10:10:35.8326547Z",
+    "status":  "PASS_SYNTHETIC_IMPORT_PIPELINE",
+    "passed":  true,
+    "syntheticOnly":  true,
+    "realLegalRowsPass":  false,
+    "tempRoot":  "C:\\Users\\lubao\\AppData\\Local\\Temp\\xiigen-legal-import-test-b8c589881f5840a29c37261c7149be19",
+    "validationPassed":  true,
+    "importedRecordCount":  36,
+    "registryDocumentCount":  36,
+    "screenshotsRequired":  36,
+    "importer":  "tools/legal/Import-ApprovedLegalRecords.ps1",
+    "validator":  "tools/legal/Validate-LegalPublicationRecords.ps1"
+}
