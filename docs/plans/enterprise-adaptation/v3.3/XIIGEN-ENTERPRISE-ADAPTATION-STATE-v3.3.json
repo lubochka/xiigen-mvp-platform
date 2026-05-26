@@ -2,9 +2,9 @@
     "main_focus_goal":  "Create/train/export/import/validate/update/use Enterprise trainable units for project-local wiki and Smart Code Assistant over Angular + .NET + SQL, with VS/VS Code plugin runtime entrypoints, AWS endpoint/IP visual evidence, and prompt-by-prompt validation.",
     "goal_reached":  false,
     "stop_allowed":  false,
-    "gate_status":  "IN_PROGRESS_LEGAL_TECHNICAL_SHELL_READY_APPROVAL_LOCALIZATION_AWS_EVIDENCE_REQUIRED",
-    "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: technical shell is implemented and tested; obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, seed approved records, deploy, and capture AWS legal route screenshots.",
-    "next_action_plan_source":  "SESSION-14 / LEGAL-PUBLIC-01 approval source then AWS publication",
+    "gate_status":  "IN_PROGRESS_LEGAL_APPROVAL_LOCALIZATION_AWS_CREDENTIALS_AND_PUBLICATION_REQUIRED",
+    "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: configure AWS profile/SSO for local runner, obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, import approved records with tools/legal/Import-ApprovedLegalRecords.ps1, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.",
+    "next_action_plan_source":  "SESSION-14 / LEGAL-PUBLIC-01 approval source + AWS credential bootstrap + AWS publication",
     "actionable_gaps":  [
 
                         ],
@@ -52,11 +52,11 @@
     "reinstatement_reason":  "SESSION-01 capability map provides exact implementation targets for missing AWS CI/CD rows.",
     "first_failed_requirement_id":  "LEGAL-PUBLIC-01",
     "last_plan_reminder":  {
-                               "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: technical shell is implemented and tested; obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, seed approved records, deploy, and capture AWS legal route screenshots.",
+                               "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: configure AWS profile/SSO for local runner, obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, import approved records with tools/legal/Import-ApprovedLegalRecords.ps1, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.",
                                "source":  "LEGAL-PUBLIC-01"
                            },
     "execution_attempt_latest":  {
-                                     "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: technical shell is implemented and tested; obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, seed approved records, deploy, and capture AWS legal route screenshots.",
+                                      "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: configure AWS profile/SSO for local runner, obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, import approved records with tools/legal/Import-ApprovedLegalRecords.ps1, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.",
                                      "executor_must_handoff_to":  "REVIEW_INTERNAL after legal approval/localization intake and before public AWS route publication"
                                  },
     "constitution_linkage":  {
@@ -288,7 +288,7 @@
                            "architect_final_authority_only":  true,
                            "coverage_challenge_architect_first":  true,
                            "stop_permission_gate_required":  true,
-                           "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: technical shell is implemented and tested; obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, seed approved records, deploy, and capture AWS legal route screenshots.",
+                           "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: configure AWS profile/SSO for local runner, obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, import approved records with tools/legal/Import-ApprovedLegalRecords.ps1, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.",
                            "executor_must_handoff_to":  "REVIEW_INTERNAL after legal approval/localization intake and before public AWS route publication"
                        },
     "masterTenantLaunch":  {
@@ -316,16 +316,16 @@
                                                    "ru"
                                                ],
                            "requiredDocuments":  [
-                                                     "terms",
-                                                     "privacy",
-                                                     "cookies",
-                                                     "eula",
-                                                     "enterprise_terms",
+                                                      "terms_of_service",
+                                                      "privacy_policy",
+                                                      "cookie_policy",
+                                                      "eula_license",
+                                                      "enterprise_terms_msa",
                                                      "dpa",
                                                      "acceptable_use",
                                                      "affiliate_terms",
                                                      "refund_cancellation",
-                                                     "security",
+                                                      "security_responsible_disclosure",
                                                      "subprocessors",
                                                      "open_source_notices"
                                                  ],
@@ -333,7 +333,10 @@
                            "publicationCompletionEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-completion-evidence.json",
                            "draftSourceInventory":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-inventory.json",
                            "draftSourceMap":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-map.json",
-                           "technicalShellEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-technical-shell-evidence.json"
+                            "technicalShellEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-technical-shell-evidence.json",
+                            "approvedRecordImporter":  "tools/legal/Import-ApprovedLegalRecords.ps1",
+                            "awsDeployRunner":  "tools/legal/Deploy-LegalAwsBlockedShell.ps1",
+                            "awsDeployPrerequisiteEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-deploy-prerequisite-evidence.json"
                        },
     "linkedSystemGraphEvidence":  {
                                       "status":  "PASS_LINKED_SYSTEM_GRAPH_CAPTURED",
