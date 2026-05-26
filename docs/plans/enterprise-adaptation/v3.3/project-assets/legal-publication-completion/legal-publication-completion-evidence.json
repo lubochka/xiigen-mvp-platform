@@ -35,5 +35,16 @@
     "technicalShellEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-technical-shell-evidence.json",
     "approvalLocalizationChecklist":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-approval-localization-checklist.json",
     "approvedRecordTemplate":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/approved-legal-record-template.json",
-    "approvalRunbook":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/LEGAL-APPROVAL-LOCALIZATION-INTAKE-RUNBOOK.md"
+    "approvalRunbook":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/LEGAL-APPROVAL-LOCALIZATION-INTAKE-RUNBOOK.md",
+    "validationRules":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/approved-legal-record-validation-rules.json",
+    "postApprovalImportEvidenceTemplate":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/post-approval-import-evidence-template.json",
+    "approvalRecordValidator":  "tools/legal/Validate-LegalPublicationRecords.ps1",
+    "approvalRecordValidatorFailClosed":  {
+                                              "command":  "tools/legal/Validate-LegalPublicationRecords.ps1 -RecordsPath approved-legal-record-template.json",
+                                              "result":  "PASS_FAIL_CLOSED",
+                                              "exitCode":  1,
+                                              "passed":  false,
+                                              "reason":  "The placeholder template is rejected; validator requires 36 concrete approved records with metadata."
+                                          },
+    "negativeTemplateValidationEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-record-validation.template-negative.json"
 }

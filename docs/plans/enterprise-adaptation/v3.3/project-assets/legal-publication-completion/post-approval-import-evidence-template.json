@@ -1,0 +1,40 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "post_approval_import_evidence_template",
+    "instructions":  "Copy after approval exists. Do not fill with draft or generated legal approval.",
+    "firstOpenRequirementBeforeImport":  "LEGAL-PUBLIC-01",
+    "importBatch":  {
+                        "importedAtUtc":  "\u003cISO-8601 UTC timestamp\u003e",
+                        "importedBy":  "\u003coperator or automation identity\u003e",
+                        "sourceApprovalPackage":  "\u003cpath to approved EN/HE/RU legal source set or locale-scope decision artifact\u003e",
+                        "recordCountExpected":  36,
+                        "recordCountImported":  0,
+                        "validationRules":  "approved-legal-record-validation-rules.json",
+                        "checklist":  "legal-approval-localization-checklist.json"
+                    },
+    "requiredOutputs":  {
+                            "legalDocumentRegistry":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-document-registry.json",
+                            "legalRouteMap":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-route-map.json",
+                            "legalAcceptanceContextMap":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-acceptance-context-map.json",
+                            "legalVisualEvidenceIndex":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-visual-evidence-index.json",
+                            "publicationCompletionEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-completion-evidence.json"
+                        },
+    "awsPublicationEvidence":  {
+                                   "hostedBaseUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com",
+                                   "routePattern":  "/legal/\u003clocale\u003e/\u003cslug\u003e",
+                                   "requiredScreenshots":  [
+                                                               "en all 12 documents",
+                                                               "he all 12 documents with html dir=rtl",
+                                                               "ru all 12 documents"
+                                                           ],
+                                   "healthCheck":  "\u003cAWS health route response after deployment\u003e"
+                               },
+    "passCriteria":  [
+                         "All required records validate against approved-legal-record-validation-rules.json.",
+                         "No imported body contains draft markers or placeholders.",
+                         "All legal acceptance surfaces link the imported version ids.",
+                         "AWS legal routes return the approved body for every required record.",
+                         "Visual evidence is captured after AWS publication for EN/HE/RU.",
+                         "LEGAL-PUBLIC-01..12 remain IN_PROGRESS until every criterion above is true."
+                     ]
+}

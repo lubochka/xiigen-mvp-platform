@@ -1,0 +1,75 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "approved_legal_record_validation_rules",
+    "status":  "ACTIVE_FOR_INTAKE_AND_POST_APPROVAL_IMPORT",
+    "firstOpenRequirement":  "LEGAL-PUBLIC-01",
+    "validationMode":  "fail_closed",
+    "requiredFields":  [
+                           "id",
+                           "slug",
+                           "documentType",
+                           "version",
+                           "status",
+                           "locale",
+                           "canonicalLocale",
+                           "title",
+                           "body",
+                           "summary",
+                           "effectiveDate",
+                           "approvedBy",
+                           "approvedAtUtc",
+                           "owner",
+                           "canonicalUrl",
+                           "requiredAcceptanceContexts",
+                           "relatedSiteSurfaces",
+                           "evidencePath"
+                       ],
+    "enums":  {
+                  "documentType":  [
+                                       "terms",
+                                       "privacy",
+                                       "cookies",
+                                       "eula",
+                                       "enterprise_terms",
+                                       "dpa",
+                                       "acceptable_use",
+                                       "affiliate_terms",
+                                       "refund_cancellation",
+                                       "security",
+                                       "subprocessors",
+                                       "open_source_notices"
+                                   ],
+                  "locale":  [
+                                 "en",
+                                 "he",
+                                 "ru"
+                             ],
+                  "statusBeforeAwsPublication":  [
+                                                     "APPROVED"
+                                                 ],
+                  "statusAfterAwsPublication":  [
+                                                    "PUBLISHED"
+                                                ],
+                  "owner":  [
+                                "legal"
+                            ]
+              },
+    "fieldRules":  {
+                       "id":  "Must equal \u003cdocumentType\u003e:\u003clocale\u003e:\u003cversion\u003e and be immutable after acceptance contexts reference it.",
+                       "slug":  "Must be route-safe lowercase kebab-case with no locale prefix.",
+                       "version":  "Must be non-empty semantic or legal version string; cannot contain draft markers.",
+                       "body":  "Must be final approved copy; reject if it contains [Insert, Insert Date, TODO, DRAFT, placeholder, or empty body.",
+                       "approvedBy":  "Must be supplied by legal approval authority; executor cannot synthesize this value.",
+                       "approvedAtUtc":  "Must be ISO-8601 UTC timestamp ending Z and not later than import timestamp.",
+                       "effectiveDate":  "Must match yyyy-MM-dd and be present for all locales of the same version.",
+                       "canonicalUrl":  "Must start with hosted AWS base URL and match /legal/\u003clocale\u003e/\u003cslug\u003e.",
+                       "evidencePath":  "Must point to AWS visual evidence captured after publication, not local smoke evidence."
+                   },
+    "publicationGuards":  [
+                              "DRAFT_SOURCE_FOUND cannot publish.",
+                              "LEGAL_REVIEW_REQUIRED cannot publish.",
+                              "Missing affiliate_terms blocks affiliate public rows.",
+                              "Missing HE/RU approved localizations blocks full EN/HE/RU public launch unless locale-scope decision exists.",
+                              "PUBLISHED status requires registry update, route map update, AWS route response, and visual evidence index entry."
+                          ]
+}

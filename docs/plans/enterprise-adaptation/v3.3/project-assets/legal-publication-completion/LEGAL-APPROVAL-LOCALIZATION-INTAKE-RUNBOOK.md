@@ -20,10 +20,19 @@ The source root is draft-only. It may be used as review input, but it cannot be 
 4. Affiliate Program Terms source must exist before affiliate public launch rows can pass.
 5. No `[Insert ...]` placeholders may remain.
 
+
+## Validation artifacts
+
+- `legal-approval-localization-checklist.json` is the 36-record checklist: 12 document types x EN/HE/RU.
+- `approved-legal-record-validation-rules.json` is the fail-closed validation rule set for approved records.
+- `approved-legal-record-template.json` is the per-record copy template used only after approval exists.
+- `post-approval-import-evidence-template.json` is the evidence skeleton for the AWS publication run.
+
+The first open requirement remains `LEGAL-PUBLIC-01` until all approved records, route maps, AWS responses, and visual evidence exist.
 ## Import sequence after approval exists
 
 1. Copy each approved record from `approved-legal-record-template.json` into the legal registry import set.
-2. Validate the records against `legal-approval-localization-checklist.json`.
+2. Validate the records against `legal-approval-localization-checklist.json` with `tools/legal/Validate-LegalPublicationRecords.ps1 -RecordsPath <approved-records.json> -OutputPath docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-record-validation.json`.
 3. Seed records through `ILegalPublicationService.UpsertDocumentAsync`.
 4. Deploy the platform API to AWS.
 5. Capture screenshots from AWS routes:
