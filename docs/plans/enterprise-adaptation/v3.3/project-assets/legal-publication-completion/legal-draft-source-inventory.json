@@ -1,19 +1,20 @@
 {
     "schema_version":  "1.0",
     "artifact_scope":  "legal_draft_source_inventory",
-    "generatedAtUtc":  "2026-05-26T04:44:46.8607164Z",
+    "generatedAtUtc":  "2026-05-26T12:14:25.8472415Z",
     "sourceDirectory":  "C:/Users/lubao/Documents/xiigen/legal",
     "sourceDirectoryStatus":  "DRAFT_SOURCE_FOUND_NOT_APPROVED",
     "sourceReadme":  "C:/Users/lubao/Documents/xiigen/legal/README.md",
     "sourceReadmeStatus":  "Initial legal/business drafts for review; counsel review required before commercial release",
     "globalDefects":  [
-                          "English-only",
+                          "English-only draft sources",
                           "Version 1.0 Draft",
                           "Last Updated placeholders",
                           "Legal company placeholders",
                           "No approvedBy metadata",
                           "No approvedAtUtc metadata",
-                          "No effective final approval marker"
+                          "No effective final approval marker",
+                          "HE/RU final localized legal sources missing"
                       ],
     "candidateMappings":  [
                               {
@@ -73,12 +74,12 @@
                                   "locale":  "en"
                               },
                               {
-                                  "notes":  "No exact affiliate terms source found in C:/Users/lubao/Documents/xiigen/legal",
+                                  "notes":  "Version 1.0 Draft, Insert Date placeholder, approval metadata absent; draft source created in platform package draft-sources.",
                                   "requiredRecord":  "affiliate_terms",
-                                  "candidatePath":  null,
+                                  "candidatePath":  "C:\\Projects\\xiigen-platform-dot-net-angular\\docs\\plans\\enterprise-adaptation\\v3.3\\project-assets\\legal-publication-completion\\draft-sources\\affiliate_terms.en.draft.md",
                                   "publicRowCanPass":  false,
-                                  "sourceStatus":  "MISSING_SOURCE",
-                                  "locale":  "none"
+                                  "sourceStatus":  "DRAFT_SOURCE_FOUND",
+                                  "locale":  "en"
                               },
                               {
                                   "notes":  "Version 1.0 Draft, Insert Date placeholder, approval metadata absent",

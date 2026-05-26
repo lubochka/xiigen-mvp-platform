@@ -1,7 +1,7 @@
 {
     "schema_version":  "1.0",
     "artifact_scope":  "legal_approval_work_package",
-    "generatedAtUtc":  "2026-05-26T10:02:52.4152219Z",
+    "generatedAtUtc":  "2026-05-26T12:14:25.8101604Z",
     "purpose":  "Machine-readable queue for producing the approved-records JSON required before public legal publication.",
     "sourceOfTruth":  "LEGAL-PUBLIC-01 through LEGAL-PUBLIC-04 remain IN_PROGRESS until every work item returns an approved record or a locale-scope decision artifact.",
     "requiredDocumentTypes":  [
@@ -29,7 +29,7 @@
     "canPublishPublicLegalRoutes":  false,
     "approvedRecordsOutputContract":  "Array of 36 records accepted by tools/legal/Validate-LegalPublicationRecords.ps1 and tools/legal/Import-ApprovedLegalRecords.ps1.",
     "localeScopeDecisionAlternative":  "If EN-only launch is legally approved, create an explicit locale-scope decision artifact before changing requiredLocales; executor must not infer this.",
-    "noFabricationRule":  "Executor must not synthesize legal approval, approvedBy, approvedAtUtc, effectiveDate, final legal body, HE/RU localization, or affiliate_terms source.",
+    "noFabricationRule":  "Executor must not synthesize legal approval, approvedBy, approvedAtUtc, effectiveDate, final legal body, or HE/RU localization. Draft affiliate_terms source is intake-only and not publication approval.",
     "workItems":  [
                       {
                           "key":  "terms_of_service:en",
@@ -729,13 +729,13 @@
                           "documentType":  "affiliate_terms",
                           "locale":  "en",
                           "required":  true,
-                          "currentStatus":  "MISSING_SOURCE",
+                          "currentStatus":  "DRAFT_UNAPPROVED",
                           "approvalStatus":  "MISSING_APPROVAL_METADATA",
-                          "localizationStatus":  "",
+                          "localizationStatus":  "SOURCE_LOCALE_PRESENT_EN_ONLY",
                           "canPublish":  false,
-                          "draftSourcePath":  null,
-                          "draftSourceUsableForLocale":  false,
-                          "requiredAction":  "CREATE_SOURCE_APPROVE_LOCALIZE",
+                          "draftSourcePath":  "C:\\Projects\\xiigen-platform-dot-net-angular\\docs\\plans\\enterprise-adaptation\\v3.3\\project-assets\\legal-publication-completion\\draft-sources\\affiliate_terms.en.draft.md",
+                          "draftSourceUsableForLocale":  true,
+                          "requiredAction":  "APPROVE_FINAL_EN_COPY_AND_METADATA",
                           "outputRecordRequiredFields":  [
                                                              "id",
                                                              "slug",
@@ -762,13 +762,13 @@
                           "documentType":  "affiliate_terms",
                           "locale":  "he",
                           "required":  true,
-                          "currentStatus":  "MISSING_SOURCE",
+                          "currentStatus":  "DRAFT_UNAPPROVED",
                           "approvalStatus":  "MISSING_APPROVAL_METADATA",
-                          "localizationStatus":  "",
+                          "localizationStatus":  "LOCALIZATION_REQUIRED_FROM_EN_DRAFT",
                           "canPublish":  false,
-                          "draftSourcePath":  null,
+                          "draftSourcePath":  "C:\\Projects\\xiigen-platform-dot-net-angular\\docs\\plans\\enterprise-adaptation\\v3.3\\project-assets\\legal-publication-completion\\draft-sources\\affiliate_terms.en.draft.md",
                           "draftSourceUsableForLocale":  false,
-                          "requiredAction":  "CREATE_SOURCE_APPROVE_LOCALIZE",
+                          "requiredAction":  "LOCALIZE_APPROVE_FINAL_COPY_AND_METADATA",
                           "outputRecordRequiredFields":  [
                                                              "id",
                                                              "slug",
@@ -795,13 +795,13 @@
                           "documentType":  "affiliate_terms",
                           "locale":  "ru",
                           "required":  true,
-                          "currentStatus":  "MISSING_SOURCE",
+                          "currentStatus":  "DRAFT_UNAPPROVED",
                           "approvalStatus":  "MISSING_APPROVAL_METADATA",
-                          "localizationStatus":  "",
+                          "localizationStatus":  "LOCALIZATION_REQUIRED_FROM_EN_DRAFT",
                           "canPublish":  false,
-                          "draftSourcePath":  null,
+                          "draftSourcePath":  "C:\\Projects\\xiigen-platform-dot-net-angular\\docs\\plans\\enterprise-adaptation\\v3.3\\project-assets\\legal-publication-completion\\draft-sources\\affiliate_terms.en.draft.md",
                           "draftSourceUsableForLocale":  false,
-                          "requiredAction":  "CREATE_SOURCE_APPROVE_LOCALIZE",
+                          "requiredAction":  "LOCALIZE_APPROVE_FINAL_COPY_AND_METADATA",
                           "outputRecordRequiredFields":  [
                                                              "id",
                                                              "slug",
@@ -1219,5 +1219,7 @@
                                                              "evidencePath"
                                                          ]
                       }
-                  ]
+                  ],
+    "affiliateTermsDraftSourceCreated":  true,
+    "affiliateTermsDraftSourcePath":  "C:\\Projects\\xiigen-platform-dot-net-angular\\docs\\plans\\enterprise-adaptation\\v3.3\\project-assets\\legal-publication-completion\\draft-sources\\affiliate_terms.en.draft.md"
 }

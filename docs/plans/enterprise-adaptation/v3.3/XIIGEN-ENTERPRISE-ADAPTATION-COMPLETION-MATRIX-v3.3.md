@@ -192,7 +192,7 @@ IN_PROGRESS_LEGAL_APPROVAL_LOCALIZATION_AWS_CREDENTIALS_AND_PUBLICATION_REQUIRED
 ## First next action
 
 ```text
-Use legal-draft-source-action-inventory.json to resolve draft placeholders and missing affiliate terms, then obtain/import approved EN/HE/RU records or a valid locale-scope decision, configure AWS profile/SSO, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.
+Use legal-draft-source-action-inventory.json to resolve 411 draft/placeholder findings, produce approved metadata, localize HE/RU records, import approved EN/HE/RU records or a valid locale-scope decision, configure AWS profile/SSO, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.
 ```
 
 
@@ -242,10 +242,10 @@ Use legal-draft-source-action-inventory.json to resolve draft placeholders and m
 
 | ID | Requirement | Evidence required | Status | Session |
 |---|---|---|---|---|
-| LEGAL-PUBLIC-01 | Approved legal source inventory exists for all required public legal document types | legal-approved-source-inventory.json with approvedLegalDocumentsFound=true and 12 document types mapped | IN_PROGRESS | SESSION-14 now has legal-draft-source-action-inventory.json with 11 EN draft sources, 1 missing affiliate source, 356 line-level draft/placeholder findings, and explicit approval/localization next actions. |
-| LEGAL-PUBLIC-02 | Terms, privacy, cookies, EULA, enterprise terms, DPA, acceptable use, affiliate terms, refund/cancellation, security, subprocessors and open-source notices have approved records | legal-document-registry.json records with APPROVED/PUBLISHED status | IN_PROGRESS | 11 EN draft candidates found; affiliate terms exact source missing; no approved records available. |
+| LEGAL-PUBLIC-01 | Approved legal source inventory exists for all required public legal document types | legal-approved-source-inventory.json with approvedLegalDocumentsFound=true and 12 document types mapped | IN_PROGRESS | SESSION-14 now has legal-draft-source-action-inventory.json with 12/12 draft sources, 0 missing sources, 411 line-level draft/placeholder findings, and explicit approval/localization next actions. |
+| LEGAL-PUBLIC-02 | Terms, privacy, cookies, EULA, enterprise terms, DPA, acceptable use, affiliate terms, refund/cancellation, security, subprocessors and open-source notices have approved records | legal-document-registry.json records with APPROVED/PUBLISHED status | IN_PROGRESS | 12 EN draft candidates found including affiliate_terms draft source; no approved records available. |
 | LEGAL-PUBLIC-03 | EN, HE and RU locale records are approved or an explicit locale-scope decision exists | registry locale rows or locale-scope decision artifact | IN_PROGRESS | EN draft candidates only; HE/RU final localized legal sources missing. |
-| LEGAL-PUBLIC-04 | Each approved legal record has version, effectiveDate, approvedBy, approvedAtUtc, canonical URL and final body | legal-document-registry.json metadata fields | IN_PROGRESS | Draft sources contain 356 line-level placeholder/draft findings and no approval metadata; action inventory identifies exact source lines. |
+| LEGAL-PUBLIC-04 | Each approved legal record has version, effectiveDate, approvedBy, approvedAtUtc, canonical URL and final body | legal-document-registry.json metadata fields | IN_PROGRESS | Draft sources contain 411 line-level placeholder/draft findings and no approval metadata; action inventory identifies exact source lines. |
 | LEGAL-PUBLIC-05 | Public AWS legal routes are published only from approved records | AWS route evidence and route map | IN_PROGRESS | Publication blocked until approved records and AWS credentials/profile exist; deploy runner is present and fails closed without credentials. |
 | LEGAL-PUBLIC-06 | Footer, signup, checkout, affiliate, export and corporate install surfaces link to exact approved versions | link map plus AWS screenshots | IN_PROGRESS | Linkage is governed; public approved-version evidence pending. |
 | LEGAL-PUBLIC-07 | Acceptance contexts persist document ID, version, locale and context for public legal records | acceptance evidence for approved records | IN_PROGRESS | Acceptance model exists; approved public records pending. |

@@ -1,14 +1,14 @@
 {
     "schema_version":  "1.0",
     "artifact_scope":  "legal_draft_source_action_inventory",
-    "generatedAtUtc":  "2026-05-26T12:08:45.2618416Z",
+    "generatedAtUtc":  "2026-05-26T12:14:42.3190298Z",
     "sourceRoot":  "C:\\Users\\lubao\\Documents\\xiigen\\legal",
     "sourceMapPath":  "C:\\Projects\\xiigen-platform-dot-net-angular\\docs\\plans\\enterprise-adaptation\\v3.3\\project-assets\\legal-publication-completion\\legal-draft-source-map.json",
     "requiredDocumentTypes":  12,
-    "scannedSourceCount":  11,
-    "missingSourceCount":  1,
+    "scannedSourceCount":  12,
+    "missingSourceCount":  0,
     "draftOrBlockedSourceCount":  12,
-    "placeholderFindingCount":  356,
+    "placeholderFindingCount":  411,
     "readyForApprovedImport":  false,
     "canPublishPublicLegalRoutes":  false,
     "reason":  "This inventory is an implementation aid only. It never approves legal text; publication remains blocked until approved EN/HE/RU records or a valid locale-scope decision are imported.",
@@ -1763,12 +1763,12 @@
                   },
                   {
                       "documentType":  "affiliate_terms",
-                      "sourceStatus":  "NO_SOURCE_FOUND",
-                      "candidatePath":  null,
-                      "sourceExists":  false,
-                      "lineCount":  0,
+                      "sourceStatus":  "DRAFT_UNAPPROVED",
+                      "candidatePath":  "C:\\Projects\\xiigen-platform-dot-net-angular\\docs\\plans\\enterprise-adaptation\\v3.3\\project-assets\\legal-publication-completion\\draft-sources\\affiliate_terms.en.draft.md",
+                      "sourceExists":  true,
+                      "lineCount":  108,
                       "candidateLocales":  [
-
+                                               "en"
                                            ],
                       "requiredLocales":  [
                                               "en",
@@ -1776,22 +1776,406 @@
                                               "ru"
                                           ],
                       "missingLocales":  [
-                                             "en",
                                              "he",
                                              "ru"
                                          ],
-                      "hasApprovalMarker":  false,
+                      "hasApprovalMarker":  true,
                       "existingBlockers":  [
-                                               "No exact source file found",
-                                               "Missing en locale",
+                                               "Version is draft",
+                                               "Last Updated placeholder",
+                                               "Legal company placeholder",
+                                               "No approval metadata",
                                                "Missing he locale",
-                                               "Missing ru locale",
-                                               "No approval metadata"
+                                               "Missing ru locale"
                                            ],
                       "placeholderFindings":  [
-
+                                                  {
+                                                      "ruleId":  "draft-label",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Draft marker remains in source",
+                                                      "lineNumber":  3,
+                                                      "snippet":  "**Version:** 1.0 Draft"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  4,
+                                                      "snippet":  "**Last Updated:** [Insert Date]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  4,
+                                                      "snippet":  "**Last Updated:** [Insert Date]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  6,
+                                                      "snippet":  "**Legal Company:** [Insert Legal Company Name]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  6,
+                                                      "snippet":  "**Legal Company:** [Insert Legal Company Name]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "draft-label",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Draft marker remains in source",
+                                                      "lineNumber":  8,
+                                                      "snippet":  "\u003e **Important:** This affiliate terms source is a draft intake document for qualified legal counsel review. It is not approved for public publication, partner onboarding, affiliate signup, payout processing, or marketplace use until an approved record with `approvedBy`, `approvedAtUtc`, effective date, canonical URL, and localized EN/HE/RU bodies is imported through `tools/legal/Import-ApprovedLegalRecords.ps1`."
+                                                  },
+                                                  {
+                                                      "ruleId":  "draft-label",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Draft marker remains in source",
+                                                      "lineNumber":  14,
+                                                      "snippet":  "These Affiliate Terms describe the draft operating rules for an XIIGen affiliate, referral, partner, or marketplace-introduction program. The program, if launched, allows approved participants to refer eligible customers to XIIGen and potentially receive compensation under the approved commercial terms."
+                                                  },
+                                                  {
+                                                      "ruleId":  "draft-label",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Draft marker remains in source",
+                                                      "lineNumber":  51,
+                                                      "snippet":  "Draft placeholder for counsel/commercial review:"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  51,
+                                                      "snippet":  "Draft placeholder for counsel/commercial review:"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  53,
+                                                      "snippet":  "- Attribution window: [Insert attribution window]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  53,
+                                                      "snippet":  "- Attribution window: [Insert attribution window]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  54,
+                                                      "snippet":  "- Eligible customer types: [Insert eligible customer types]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  54,
+                                                      "snippet":  "- Eligible customer types: [Insert eligible customer types]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  55,
+                                                      "snippet":  "- Excluded transactions: [Insert exclusions]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  55,
+                                                      "snippet":  "- Excluded transactions: [Insert exclusions]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  56,
+                                                      "snippet":  "- Commission basis: [Insert commission basis]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  56,
+                                                      "snippet":  "- Commission basis: [Insert commission basis]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  57,
+                                                      "snippet":  "- Reversal or clawback period: [Insert reversal period]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  57,
+                                                      "snippet":  "- Reversal or clawback period: [Insert reversal period]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "draft-label",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Draft marker remains in source",
+                                                      "lineNumber":  63,
+                                                      "snippet":  "Draft placeholder for counsel/commercial review:"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  63,
+                                                      "snippet":  "Draft placeholder for counsel/commercial review:"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  65,
+                                                      "snippet":  "- Commission rate or schedule: [Insert commission schedule]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  65,
+                                                      "snippet":  "- Commission rate or schedule: [Insert commission schedule]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  66,
+                                                      "snippet":  "- Minimum payout threshold: [Insert threshold]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  66,
+                                                      "snippet":  "- Minimum payout threshold: [Insert threshold]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  67,
+                                                      "snippet":  "- Payment cadence: [Insert cadence]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  67,
+                                                      "snippet":  "- Payment cadence: [Insert cadence]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  68,
+                                                      "snippet":  "- Required tax forms: [Insert tax form requirements]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  68,
+                                                      "snippet":  "- Required tax forms: [Insert tax form requirements]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  69,
+                                                      "snippet":  "- Payment provider: [Insert payment provider]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  69,
+                                                      "snippet":  "- Payment provider: [Insert payment provider]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  97,
+                                                      "snippet":  "- Legal company name: [Insert Legal Company Name]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  97,
+                                                      "snippet":  "- Legal company name: [Insert Legal Company Name]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  98,
+                                                      "snippet":  "- Legal address: [Insert Address]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  98,
+                                                      "snippet":  "- Legal address: [Insert Address]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  99,
+                                                      "snippet":  "- Legal email: [Insert Legal Email]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  99,
+                                                      "snippet":  "- Legal email: [Insert Legal Email]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  100,
+                                                      "snippet":  "- Support email: [Insert Support Email]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  100,
+                                                      "snippet":  "- Support email: [Insert Support Email]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  101,
+                                                      "snippet":  "- Privacy email: [Insert Privacy Email]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  101,
+                                                      "snippet":  "- Privacy email: [Insert Privacy Email]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  102,
+                                                      "snippet":  "- Governing law: [Insert Governing Law]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  102,
+                                                      "snippet":  "- Governing law: [Insert Governing Law]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  103,
+                                                      "snippet":  "- Venue: [Insert Venue]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  103,
+                                                      "snippet":  "- Venue: [Insert Venue]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  104,
+                                                      "snippet":  "- Affiliate program owner: [Insert Program Owner]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  104,
+                                                      "snippet":  "- Affiliate program owner: [Insert Program Owner]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  105,
+                                                      "snippet":  "- Payment provider and tax handling: [Insert Payment Provider and Tax Handling]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  105,
+                                                      "snippet":  "- Payment provider and tax handling: [Insert Payment Provider and Tax Handling]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  106,
+                                                      "snippet":  "- Effective date: [Insert Effective Date]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  106,
+                                                      "snippet":  "- Effective date: [Insert Effective Date]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  107,
+                                                      "snippet":  "- Approved by: [Insert Approver]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  107,
+                                                      "snippet":  "- Approved by: [Insert Approver]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "insert-placeholder",
+                                                      "severity":  "BLOCK_PUBLICATION",
+                                                      "description":  "Insert placeholder remains in source",
+                                                      "lineNumber":  108,
+                                                      "snippet":  "- Approved at UTC: [Insert Approval Timestamp]"
+                                                  },
+                                                  {
+                                                      "ruleId":  "generic-placeholder",
+                                                      "severity":  "REVIEW_REQUIRED",
+                                                      "description":  "Generic placeholder marker remains in source",
+                                                      "lineNumber":  108,
+                                                      "snippet":  "- Approved at UTC: [Insert Approval Timestamp]"
+                                                  }
                                               ],
-                      "nextAction":  "Create source, then localize en/he/ru and approve metadata before import."
+                      "nextAction":  "Resolve line findings, produce approved metadata, localize missing locales, then feed Import-ApprovedLegalRecords.ps1."
                   },
                   {
                       "documentType":  "refund_cancellation",

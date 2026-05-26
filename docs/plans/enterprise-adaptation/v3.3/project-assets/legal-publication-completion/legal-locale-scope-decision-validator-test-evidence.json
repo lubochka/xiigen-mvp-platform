@@ -1,12 +1,12 @@
 {
     "schema_version":  "1.0",
     "artifact_scope":  "legal_locale_scope_decision_validator_test_evidence",
-    "generatedAtUtc":  "2026-05-26T12:08:46.9297028Z",
+    "generatedAtUtc":  "2026-05-26T12:14:44.3883802Z",
     "status":  "PASS_SYNTHETIC_LOCALE_SCOPE_VALIDATOR",
     "passed":  true,
     "syntheticOnly":  true,
     "realLegalRowsPass":  false,
-    "tempRoot":  "C:\\Users\\lubao\\AppData\\Local\\Temp\\xiigen-locale-scope-test-be2306ab2e534c6fab19de9c0808fdb8",
+    "tempRoot":  "C:\\Users\\lubao\\AppData\\Local\\Temp\\xiigen-locale-scope-test-8d19ff524f3948ca822e5b144133bbf0",
     "validator":  "tools/legal/Validate-LegalLocaleScopeDecision.ps1",
     "validDecisionPassed":  true,
     "includedLocales":  [

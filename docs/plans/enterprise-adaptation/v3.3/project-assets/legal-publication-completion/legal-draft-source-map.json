@@ -1,7 +1,7 @@
 {
     "schema_version":  "1.0",
     "artifact_scope":  "legal_draft_source_map",
-    "generatedAtUtc":  "2026-05-26T10:02:52.3665952Z",
+    "generatedAtUtc":  "2026-05-26T12:11:21.2758231Z",
     "sourceRoot":  "C:\\Users\\lubao\\Documents\\xiigen\\legal",
     "sourceRootStatus":  "DRAFT_INTAKE_ONLY_NOT_PUBLICATION_READY",
     "requiredDocumentTypes":  12,
@@ -163,17 +163,18 @@
                                                          "ru"
                                                      ],
                                  "documentType":  "affiliate_terms",
-                                 "candidatePath":  null,
+                                 "candidatePath":  "C:\\Projects\\xiigen-platform-dot-net-angular\\docs\\plans\\enterprise-adaptation\\v3.3\\project-assets\\legal-publication-completion\\draft-sources\\affiliate_terms.en.draft.md",
                                  "blockers":  [
-                                                  "No exact source file found",
-                                                  "Missing en locale",
+                                                  "Version is draft",
+                                                  "Last Updated placeholder",
+                                                  "Legal company placeholder",
+                                                  "No approval metadata",
                                                   "Missing he locale",
-                                                  "Missing ru locale",
-                                                  "No approval metadata"
+                                                  "Missing ru locale"
                                               ],
-                                 "sourceStatus":  "NO_SOURCE_FOUND",
+                                 "sourceStatus":  "DRAFT_UNAPPROVED",
                                  "candidateLocales":  [
-
+                                                          "en"
                                                       ]
                              },
                              {
@@ -257,6 +258,6 @@
                              }
                          ],
     "canPublishPublicLegalRoutes":  false,
-    "reason":  "Sources are English-only drafts with placeholders and no approval metadata. They are intake material only.",
+    "reason":  "Sources are English-only drafts with placeholders and no approval metadata. Affiliate terms now has a draft intake source, but no source is publication-ready.",
     "documentTypeAuthority":  "project-assets/legal-documents/legal-document-registry.json:requiredDocumentTypes"
 }
