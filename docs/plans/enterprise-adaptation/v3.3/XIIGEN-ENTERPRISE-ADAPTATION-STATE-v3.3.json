@@ -1,15 +1,15 @@
 {
     "main_focus_goal":  "Create/train/export/import/validate/update/use Enterprise trainable units for project-local wiki and Smart Code Assistant over Angular + .NET + SQL, with VS/VS Code plugin runtime entrypoints, AWS endpoint/IP visual evidence, and prompt-by-prompt validation.",
-    "goal_reached":  true,
-    "stop_allowed":  true,
-    "gate_status":  "PASS_FINAL_EVIDENCE_SCOPE_COMPLETE_PUBLIC_LEGAL_PUBLICATION_BLOCKED_UNTIL_APPROVAL",
-    "next_action":  "Final architect report to Luba: matrix has no required UNKNOWN/FAIL/IN_PROGRESS rows; implementation/evidence scope complete; public legal publication remains blocked by explicit legal approval gate, not technical debt.",
-    "next_action_plan_source":  "FINAL_ARCHITECT_REPORT",
+    "goal_reached":  false,
+    "stop_allowed":  false,
+    "gate_status":  "IN_PROGRESS_LEGAL_PUBLICATION_COMPLETION_REQUIRED",
+    "next_action":  "Execute SESSION-14-LEGAL-PUBLICATION-COMPLETION.md: import approved legal content, publish AWS legal routes, capture visual evidence, and close LEGAL-PUBLIC-01 first IN_PROGRESS row.",
+    "next_action_plan_source":  "SESSION-14 / LEGAL-PUBLIC-01 first IN_PROGRESS row",
     "actionable_gaps":  [
 
                         ],
-    "current_internal_role_state":  "ARCHITECT_FINAL_REVIEW_PASS_READY_FOR_HUMAN_REPORT",
-    "last_role_transition_reason":  "Final matrix review closed top-level trainable unit, runtime metric policy, and final evidence-scope rows. Matrix has no required UNKNOWN/FAIL/IN_PROGRESS rows; public legal publication remains blocked by explicit legal approval gate.",
+    "current_internal_role_state":  "ARCHITECT_INTERNAL_REVIEW_CONTINUE_SESSION_14_LEGAL_PUBLICATION_COMPLETION",
+    "last_role_transition_reason":  "User required continuing until the full public-launch plan is complete. Final review found public legal publication still blocked because the source package contains no approved legal content; SESSION-14 legal-publication lane is now explicit.",
     "return_to_executor_required":  true,
     "loaded_skills":  [
                           "architect plan",
@@ -50,14 +50,14 @@
     "executor_authority_reinstated":  true,
     "architect_verdict":  "ARCHITECT_VERDICT_CONTINUE_EXECUTION",
     "reinstatement_reason":  "SESSION-01 capability map provides exact implementation targets for missing AWS CI/CD rows.",
-    "first_failed_requirement_id":  "NONE_REQUIRED_ROWS_REMAINING",
+    "first_failed_requirement_id":  "LEGAL-PUBLIC-01",
     "last_plan_reminder":  {
-                               "next_action":  "Final architect report to Luba: matrix has no required UNKNOWN/FAIL/IN_PROGRESS rows; implementation/evidence scope complete; public legal publication remains blocked by explicit legal approval gate, not technical debt.",
-                               "source":  "FINAL_ARCHITECT_REPORT"
+                               "next_action":  "Execute SESSION-14-LEGAL-PUBLICATION-COMPLETION.md: import approved legal content, publish AWS legal routes, capture visual evidence, and close LEGAL-PUBLIC-01 first IN_PROGRESS row.",
+                               "source":  "LEGAL-PUBLIC-01"
                            },
     "execution_attempt_latest":  {
-                                     "next_action":  "Final architect report to Luba: matrix has no required UNKNOWN/FAIL/IN_PROGRESS rows; implementation/evidence scope complete; public legal publication remains blocked by explicit legal approval gate, not technical debt.",
-                                     "executor_must_handoff_to":  "LUBA_HUMAN_REPORT"
+                                     "next_action":  "Execute SESSION-14-LEGAL-PUBLICATION-COMPLETION.md: import approved legal content, publish AWS legal routes, capture visual evidence, and close LEGAL-PUBLIC-01 first IN_PROGRESS row.",
+                                     "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-14 legal publication completion slice"
                                  },
     "constitution_linkage":  {
                                  "required_if_file_exists":  true,
@@ -288,8 +288,8 @@
                            "architect_final_authority_only":  true,
                            "coverage_challenge_architect_first":  true,
                            "stop_permission_gate_required":  true,
-                           "next_action":  "Final architect report to Luba: matrix has no required UNKNOWN/FAIL/IN_PROGRESS rows; implementation/evidence scope complete; public legal publication remains blocked by explicit legal approval gate, not technical debt.",
-                           "executor_must_handoff_to":  "LUBA_HUMAN_REPORT"
+                           "next_action":  "Execute SESSION-14-LEGAL-PUBLICATION-COMPLETION.md: import approved legal content, publish AWS legal routes, capture visual evidence, and close LEGAL-PUBLIC-01 first IN_PROGRESS row.",
+                           "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-14 legal publication completion slice"
                        },
     "masterTenantLaunch":  {
                                "controlPlane":  "main Enterprise project / master tenant",
@@ -329,7 +329,8 @@
                                                      "subprocessors",
                                                      "open_source_notices"
                                                  ],
-                           "evidencePath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-site-integration-evidence.json"
+                           "evidencePath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-site-integration-evidence.json",
+                           "publicationCompletionEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-completion-evidence.json"
                        },
     "linkedSystemGraphEvidence":  {
                                       "status":  "PASS_LINKED_SYSTEM_GRAPH_CAPTURED",

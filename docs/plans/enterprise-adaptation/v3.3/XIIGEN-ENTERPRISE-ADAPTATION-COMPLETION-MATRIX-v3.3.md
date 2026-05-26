@@ -186,13 +186,13 @@ Every row names a literal expectation. Generic placeholders such as `requirement
 ## Matrix verdict
 
 ```text
-PASS_FINAL_EVIDENCE_SCOPE_COMPLETE_PUBLIC_LEGAL_PUBLICATION_BLOCKED_UNTIL_APPROVAL
+IN_PROGRESS_LEGAL_PUBLICATION_COMPLETION_REQUIRED
 ```
 
 ## First next action
 
 ```text
-All required matrix rows are PASS; architect final review must verify no required UNKNOWN/FAIL/IN_PROGRESS rows remain before public launch claim.
+Execute SESSION-14-LEGAL-PUBLICATION-COMPLETION.md: import approved legal content, publish AWS legal routes, capture visual evidence, and close LEGAL-PUBLIC-01 first IN_PROGRESS row.
 ```
 
 

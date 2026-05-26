@@ -1,0 +1,15 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_approved_source_inventory",
+    "generatedAtUtc":  "2026-05-26T04:36:12.9670417Z",
+    "sourcePackage":  "C:/Users/lubao/Documents/xiigen/website launch/XIIGEN-ENTERPRISE-ADAPTATION-PLAN-PACKAGE-v3.3.zip",
+    "approvedLegalDocumentsFound":  false,
+    "packageLegalEntries":  [
+                                "LEGAL-DOCUMENTS-SITE-INTEGRATION-CONTRACT.md",
+                                "SESSION-13-LEGAL-DOCUMENTS-SITE-INTEGRATION.md"
+                            ],
+    "requiredDocumentRecords":  36,
+    "approvedRecordsAvailable":  0,
+    "nextAction":  "Provide or import lawyer-approved EN/HE/RU legal content, then publish AWS legal routes and capture visual evidence.",
+    "executorRule":  "Do not fabricate legal approval or publish LEGAL_REVIEW_REQUIRED records as final."
+}
