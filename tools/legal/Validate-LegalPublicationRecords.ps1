@@ -99,7 +99,7 @@ $result = [ordered]@{
     errors = @($errors)
 }
 
-$json = $result | ConvertTo-Json -Depth 8
+$json = ($result | ConvertTo-Json -Depth 8) -replace "`r`n", "`n" -replace "`r", "`n"
 if (-not [string]::IsNullOrWhiteSpace($OutputPath)) {
     $parent = Split-Path -Parent $OutputPath
     if (-not [string]::IsNullOrWhiteSpace($parent)) {

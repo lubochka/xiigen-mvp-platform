@@ -77,7 +77,7 @@ $result = [ordered]@{
     publicLaunchAllowed = [bool]$decision.publicLaunchAllowed
     errors = @($errors)
 }
-$json = $result | ConvertTo-Json -Depth 10
+$json = ($result | ConvertTo-Json -Depth 10) -replace "`r`n", "`n" -replace "`r", "`n"
 if (-not [string]::IsNullOrWhiteSpace($OutputPath)) {
     $parent = Split-Path -Parent $OutputPath
     if (-not [string]::IsNullOrWhiteSpace($parent)) { New-Item -ItemType Directory -Force -Path $parent | Out-Null }

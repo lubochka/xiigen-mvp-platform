@@ -1,0 +1,40 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_publication_toolchain_test_evidence",
+    "generatedAtUtc":  "2026-05-26T10:19:09.9440057Z",
+    "status":  "PASS_LEGAL_PUBLICATION_TOOLCHAIN",
+    "passed":  true,
+    "realLegalRowsPass":  false,
+    "rows":  [
+                 {
+                     "name":  "approved-template-fails-closed",
+                     "passed":  true,
+                     "detail":  "Template must fail validation because it is not approved content.",
+                     "checkedAtUtc":  "2026-05-26T10:19:04.3263522Z"
+                 },
+                 {
+                     "name":  "synthetic-approved-import-pipeline",
+                     "passed":  true,
+                     "detail":  "Synthetic 36-record import validates temp-only registry/route/visual updates.",
+                     "checkedAtUtc":  "2026-05-26T10:19:04.9965572Z"
+                 },
+                 {
+                     "name":  "locale-scope-template-fails-closed",
+                     "passed":  true,
+                     "detail":  "Template must fail validation because it lacks real approval metadata.",
+                     "checkedAtUtc":  "2026-05-26T10:19:05.0650870Z"
+                 },
+                 {
+                     "name":  "synthetic-locale-scope-validator",
+                     "passed":  true,
+                     "detail":  "Synthetic locale-scope decision validates positive path.",
+                     "checkedAtUtc":  "2026-05-26T10:19:05.1551799Z"
+                 },
+                 {
+                     "name":  "aws-deploy-fails-closed-without-credentials",
+                     "passed":  true,
+                     "detail":  "Command failed with exit code 253: aws sts get-caller-identity --region eu-west-1",
+                     "checkedAtUtc":  "2026-05-26T10:19:09.9338873Z"
+                 }
+             ]
+}

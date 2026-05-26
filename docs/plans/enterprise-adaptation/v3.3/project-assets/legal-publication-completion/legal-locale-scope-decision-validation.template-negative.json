@@ -1,7 +1,7 @@
 {
     "schema_version":  "1.0",
     "artifact_scope":  "legal_locale_scope_decision_validation",
-    "generatedAtUtc":  "2026-05-26T10:13:02.4809921Z",
+    "generatedAtUtc":  "2026-05-26T10:19:05.0650870Z",
     "decisionPath":  "C:\\Projects\\xiigen-platform-dot-net-angular\\docs\\plans\\enterprise-adaptation\\v3.3\\project-assets\\legal-publication-completion\\legal-locale-scope-decision-template.json",
     "passed":  false,
     "includedLocales":  [
