@@ -72,3 +72,12 @@ Expected interim result before legal approval:
 ## Final public launch still requires
 
 After legal approval and localization, seed approved records, redeploy if needed, then rerun AWS visual evidence for all 36 routes. Only that later evidence can move `LEGAL-PUBLIC-*` rows to PASS.
+## Repeatable prerequisite evidence
+
+Before deploy, run:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/legal/Test-LegalAwsPrerequisites.ps1
+```
+
+This updates `legal-aws-deploy-prerequisite-evidence.json` without printing secret values. If AWS credentials are absent, the script exits non-zero and records `deployCanRunFromThisHost=false`; this is the expected fail-closed state before authentication.

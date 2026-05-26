@@ -9,7 +9,7 @@
 
                         ],
     "current_internal_role_state":  "ARCHITECT_INTERNAL_REVIEW_CONTINUE_SESSION_14_LEGAL_APPROVAL_LOCALIZATION_INTAKE",
-    "last_role_transition_reason":  "Affiliate terms draft source and 36-record approved legal records scaffold are generated. Scaffold intentionally fails approved-record validation until real approved metadata, final legal copy, localization, and AWS screenshots exist.",
+    "last_role_transition_reason":  "AWS prerequisite checker added and integrated into legal publication toolchain. It emits non-secret evidence, proves Docker/AWS CLI/AWS PowerShell availability, and fails closed because AWS credentials are not configured.",
     "return_to_executor_required":  true,
     "loaded_skills":  [
                           "architect plan",
@@ -341,7 +341,8 @@
                            "legalPublicationToolchainEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-toolchain-test-evidence.json",
                            "affiliateTermsDraftSource":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/draft-sources/affiliate_terms.en.draft.md",
                            "approvedRecordsScaffold":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/approved-legal-records.scaffold.json",
-                           "approvedRecordsScaffoldValidation":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-approved-records-scaffold-validation.negative.json"
+                           "approvedRecordsScaffoldValidation":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-approved-records-scaffold-validation.negative.json",
+                           "awsPrerequisiteChecker":  "tools/legal/Test-LegalAwsPrerequisites.ps1"
                        },
     "linkedSystemGraphEvidence":  {
                                       "status":  "PASS_LINKED_SYSTEM_GRAPH_CAPTURED",

@@ -1,30 +1,37 @@
 {
-    "schema_version":  "1.1",
+    "schema_version":  "1.0",
     "artifact_scope":  "legal_aws_deploy_prerequisite_evidence",
-    "generatedAtUtc":  "2026-05-26T06:19:50.5062780Z",
+    "generatedAtUtc":  "2026-05-26T12:36:08.7871605Z",
+    "region":  "eu-west-1",
     "dockerPresent":  true,
+    "dockerPath":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
     "awsCliPresent":  true,
+    "awsCliPath":  "C:\\Program Files\\Amazon\\AWSCLIV2\\aws.exe",
     "awsPowerShellModulesPresent":  true,
+    "awsPowerShellModules":  [
+                                 {
+                                     "name":  "AWS.Tools.SecurityToken",
+                                     "present":  true,
+                                     "version":  "5.0.218",
+                                     "path":  "C:\\Users\\lubao\\Documents\\WindowsPowerShell\\Modules\\AWS.Tools.SecurityToken\\5.0.218\\AWS.Tools.SecurityToken.psd1"
+                                 },
+                                 {
+                                     "name":  "AWS.Tools.ECR",
+                                     "present":  true,
+                                     "version":  "5.0.218",
+                                     "path":  "C:\\Users\\lubao\\Documents\\WindowsPowerShell\\Modules\\AWS.Tools.ECR\\5.0.218\\AWS.Tools.ECR.psd1"
+                                 },
+                                 {
+                                     "name":  "AWS.Tools.AppRunner",
+                                     "present":  true,
+                                     "version":  "5.0.218",
+                                     "path":  "C:\\Users\\lubao\\Documents\\WindowsPowerShell\\Modules\\AWS.Tools.AppRunner\\5.0.218\\AWS.Tools.AppRunner.psd1"
+                                 }
+                             ],
     "awsCredentialsPresent":  false,
+    "callerIdentity":  null,
+    "credentialError":  "",
     "deployCanRunFromThisHost":  false,
-    "missingPrerequisite":  "AWS CLI v2 exists at C:\\Program Files\\Amazon\\AWSCLIV2\\aws.exe and AWS PowerShell deployment modules are installed, but AWS credential resolution fails: no environment credentials, no default profile, and no instance metadata credentials in this session.",
-    "deployRunbook":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/LEGAL-AWS-BLOCKED-SHELL-DEPLOY-RUNBOOK.md",
-    "deployTool":  "tools/legal/Deploy-LegalAwsBlockedShell.ps1",
-    "verifier":  "tools/legal/Test-LegalAwsBlockedShell.ps1",
-    "currentAwsBlockedShellEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-blocked-shell-evidence.json",
-    "currentAwsRouteStatus":  "404 or connection failure for tested legal/health routes; deployed App Runner image predates legal shell or endpoint is not reachable from this session.",
-    "publicLegalRowsPass":  false,
-    "awsConfigureList":  {
-                             "profile":  "\u003cnot set\u003e",
-                             "access_key":  "\u003cnot set\u003e",
-                             "secret_key":  "\u003cnot set\u003e",
-                             "region":  "\u003cnot set\u003e",
-                             "secretValuesPrinted":  false,
-                             "cliPath":  "C:\\Program Files\\Amazon\\AWSCLIV2\\aws.exe"
-                         },
-    "awsPowerShellCredentialCheck":  {
-                                         "command":  "Get-STSCallerIdentity -Region eu-west-1",
-                                         "result":  "FAIL_NO_AWS_CREDENTIALS",
-                                         "secretValuesPrinted":  false
-                                     }
+    "noSecretValuesPrinted":  true,
+    "nextAction":  "Authenticate AWS CLI or AWS PowerShell for account 595003292091, verify Docker is running, then rerun this prerequisite check."
 }

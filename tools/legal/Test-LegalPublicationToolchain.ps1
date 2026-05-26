@@ -40,6 +40,12 @@ Add-Result -Rows $rows -Name "locale-scope-template-fails-closed" -Passed (-not 
 & (Join-Path $PlatformRepo "tools/legal/Test-LegalLocaleScopeDecisionValidator.ps1") | Out-Null
 Add-Result -Rows $rows -Name "synthetic-locale-scope-validator" -Passed ([bool]$?) -Detail "Synthetic locale-scope decision validates positive path."
 
+$awsPrereqOutput = Join-Path $completionDir "legal-aws-deploy-prerequisite-evidence.json"
+$awsPrereqExitCode = 0
+powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PlatformRepo "tools/legal/Test-LegalAwsPrerequisites.ps1") -Region "eu-west-1" -OutputPath $awsPrereqOutput | Out-Null
+$awsPrereqExitCode = $LASTEXITCODE
+$awsPrereqData = Get-Content -Raw -LiteralPath $awsPrereqOutput | ConvertFrom-Json
+Add-Result -Rows $rows -Name "aws-prerequisites-fail-closed-or-ready" -Passed (($awsPrereqExitCode -eq 0 -and $awsPrereqData.deployCanRunFromThisHost -eq $true) -or ($awsPrereqExitCode -ne 0 -and $awsPrereqData.deployCanRunFromThisHost -eq $false -and $awsPrereqData.noSecretValuesPrinted -eq $true)) -Detail "AWS prerequisite checker emits non-secret evidence and either proves deploy readiness or fails closed before deploy."
 $deployPassed=$false
 $deployDetail=""
 try {
