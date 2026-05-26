@@ -74,3 +74,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/legal/Build-LegalDraft
 ```
 
 This writes `legal-draft-source-action-inventory.json` with line-level draft and placeholder findings for every mapped source file. The inventory is an execution aid only: it never marks legal content approved, never changes `readyForApprovedImport` to true, and never unlocks public legal publication. Public routes remain blocked until approved EN/HE/RU records or a valid locale-scope decision pass the import validator.
+## Approved Records Scaffold
+
+Before approved import, run:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/legal/Build-LegalApprovedRecordsScaffold.ps1
+```
+
+This writes `approved-legal-records.scaffold.json` with all 36 required document type and locale records. The scaffold is intentionally not importable: it carries `LEGAL_REVIEW_REQUIRED`, draft bodies or placeholders, empty approval metadata, and must fail `Validate-LegalPublicationRecords.ps1` until legal approval and final localization are supplied.

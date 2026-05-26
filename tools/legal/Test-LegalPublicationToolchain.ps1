@@ -16,6 +16,14 @@ $draftInventoryOutput = Join-Path $completionDir "legal-draft-source-action-inve
 & (Join-Path $PlatformRepo "tools/legal/Build-LegalDraftSourceInventory.ps1") -OutputPath $draftInventoryOutput | Out-Null
 $draftInventoryData = Get-Content -Raw -LiteralPath $draftInventoryOutput | ConvertFrom-Json
 Add-Result -Rows $rows -Name "draft-source-action-inventory" -Passed ($draftInventoryData.readyForApprovedImport -eq $false -and $draftInventoryData.canPublishPublicLegalRoutes -eq $false -and $draftInventoryData.requiredDocumentTypes -eq 12) -Detail "Line-level draft source inventory generated; it remains non-approving and publication-blocking by design."
+$scaffoldOutput = Join-Path $completionDir "approved-legal-records.scaffold.json"
+$scaffoldValidation = Join-Path $completionDir "legal-approved-records-scaffold-validation.negative.json"
+& (Join-Path $PlatformRepo "tools/legal/Build-LegalApprovedRecordsScaffold.ps1") -OutputPath $scaffoldOutput | Out-Null
+& (Join-Path $PlatformRepo "tools/legal/Validate-LegalPublicationRecords.ps1") -RecordsPath $scaffoldOutput -OutputPath $scaffoldValidation | Out-Null
+$scaffoldValidationPassed = ($LASTEXITCODE -eq 0)
+$scaffoldRecords = Get-Content -Raw -LiteralPath $scaffoldOutput | ConvertFrom-Json
+$scaffoldRecordCount = $scaffoldRecords.Count
+Add-Result -Rows $rows -Name "approved-records-scaffold-fails-closed" -Passed (-not $scaffoldValidationPassed -and $scaffoldRecordCount -eq 36) -Detail "36-record legal import scaffold generated and intentionally rejected until approval metadata/final localized copy are supplied."
 $approvedTemplate=Join-Path $completionDir "approved-legal-record-template.json"
 $approvedTemplateValidation=Join-Path $completionDir "legal-publication-record-validation.template-negative.json"
 & (Join-Path $PlatformRepo "tools/legal/Validate-LegalPublicationRecords.ps1") -RecordsPath $approvedTemplate -OutputPath $approvedTemplateValidation | Out-Null
