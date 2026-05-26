@@ -1,11 +1,11 @@
 {
     "schema_version":  "1.1",
     "artifact_scope":  "legal_publication_completion_evidence",
-    "status":  "IN_PROGRESS_DRAFT_SOURCE_FOUND_APPROVAL_AND_LOCALIZATION_REQUIRED",
+    "status":  "IN_PROGRESS_TECHNICAL_SHELL_READY_APPROVAL_AND_LOCALIZATION_REQUIRED",
     "generatedAtUtc":  "2026-05-26T04:44:46.8607164Z",
     "sourceInventory":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-approved-source-inventory.json",
     "draftSourceInventory":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-inventory.json",
-    "publicLaunchLegalGate":  "BLOCKED_UNTIL_LEGAL_APPROVAL_AND_LOCALIZATION",
+    "publicLaunchLegalGate":  "BLOCKED_UNTIL_LEGAL_APPROVAL_LOCALIZATION_AND_AWS_VISUAL_EVIDENCE",
     "firstOpenRequirement":  "LEGAL-PUBLIC-01",
     "rowsOpened":  [
                        "LEGAL-PUBLIC-01",
@@ -30,6 +30,7 @@
                             "AWS publication and visual route evidence cannot be claimed yet"
                         ],
     "notPassReason":  "The contract requires approved legal content and AWS route evidence; draft source material cannot close public legal rows.",
-    "nextExecutableLane":  "LEGAL-APPROVAL",
-    "draftSourceMap":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-map.json"
+    "nextExecutableLane":  "LEGAL-APPROVAL-LOCALIZATION-THEN-AWS-PUBLICATION",
+    "draftSourceMap":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-map.json",
+    "technicalShellEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-technical-shell-evidence.json"
 }

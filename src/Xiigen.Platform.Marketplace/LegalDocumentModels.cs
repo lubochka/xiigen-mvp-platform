@@ -46,4 +46,42 @@ public static class LegalPublicationPolicy
 {
     public static bool CanPublish(LegalDocument document) =>
         document.Status is LegalDocumentStatus.Approved or LegalDocumentStatus.Published;
+
+    public static bool HasApprovalMetadata(LegalDocument document) =>
+        document.EffectiveDate is not null &&
+        !string.IsNullOrWhiteSpace(document.ApprovedBy) &&
+        document.ApprovedAtUtc is not null;
+}
+
+public enum LegalRoutePublicationStatus
+{
+    LegalReviewRequired,
+    Published
+}
+
+public sealed record LegalRouteDocumentView(
+    string Slug,
+    string DocumentType,
+    string Locale,
+    string Title,
+    string Summary,
+    LegalRoutePublicationStatus PublicationStatus,
+    bool CanPublish,
+    string? Body,
+    string CanonicalUrl,
+    IReadOnlyList<string> RequiredAcceptanceContexts,
+    IReadOnlyList<string> RelatedSiteSurfaces,
+    string EvidencePath,
+    string Message);
+
+public interface ILegalPublicationService
+{
+    Task<Xiigen.Kernel.DataProcessResult<LegalRouteDocumentView>> GetRouteAsync(
+        string slug,
+        string locale,
+        CancellationToken cancellationToken = default);
+
+    Task<Xiigen.Kernel.DataProcessResult<LegalDocument>> UpsertDocumentAsync(
+        LegalDocument document,
+        CancellationToken cancellationToken = default);
 }

@@ -1,0 +1,66 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_publication_technical_shell_evidence",
+    "generatedAtUtc":  "2026-05-26T04:58:02.5205686Z",
+    "status":  "PASS_TECHNICAL_SHELL_READY_PUBLIC_CONTENT_BLOCKED",
+    "sourceFiles":  [
+                        "src/Xiigen.Platform.Marketplace/LegalDocumentModels.cs",
+                        "src/Xiigen.Platform.Marketplace/LegalPublicationService.cs",
+                        "src/Xiigen.Platform.Marketplace/XiigenMarketplaceServiceCollectionExtensions.cs",
+                        "src/Xiigen.Platform.Api/Program.cs",
+                        "tests/Xiigen.Platform.Marketplace.Tests/LegalPublicationServiceTests.cs"
+                    ],
+    "publicRoutes":  [
+                         "/legal/{slug}",
+                         "/legal/{locale}/{slug}"
+                     ],
+    "apiRoutes":  [
+                      "/api/legal/documents/{slug}/{locale}"
+                  ],
+    "publicationPolicy":  "Only Approved or Published records with EffectiveDate, ApprovedBy and ApprovedAtUtc can publish final body. Missing, draft or LEGAL_REVIEW_REQUIRED records render a blocked legal-review shell with HTTP 423.",
+    "localVerification":  [
+                              {
+                                  "passed":  29,
+                                  "sdk":  "C:/tmp/dotnet10/dotnet.exe 10.0.300",
+                                  "failed":  0,
+                                  "command":  "dotnet test tests/Xiigen.Platform.Marketplace.Tests/Xiigen.Platform.Marketplace.Tests.csproj -c Release --no-restore",
+                                  "result":  "PASS",
+                                  "skipped":  0
+                              },
+                              {
+                                  "warnings":  0,
+                                  "command":  "dotnet build src/Xiigen.Platform.Api/Xiigen.Platform.Api.csproj -c Release --no-restore",
+                                  "sdk":  "C:/tmp/dotnet10/dotnet.exe 10.0.300",
+                                  "result":  "PASS",
+                                  "errors":  0
+                              }
+                          ],
+    "rowsStillOpen":  [
+                          "LEGAL-PUBLIC-01",
+                          "LEGAL-PUBLIC-02",
+                          "LEGAL-PUBLIC-03",
+                          "LEGAL-PUBLIC-04",
+                          "LEGAL-PUBLIC-05",
+                          "LEGAL-PUBLIC-06",
+                          "LEGAL-PUBLIC-07",
+                          "LEGAL-PUBLIC-08",
+                          "LEGAL-PUBLIC-09",
+                          "LEGAL-PUBLIC-10",
+                          "LEGAL-PUBLIC-11",
+                          "LEGAL-PUBLIC-12"
+                      ],
+    "rowsPassedByThisArtifact":  [
+
+                                 ],
+    "reasonRowsRemainOpen":  "The technical shell is ready, but the completion contract requires approved EN/HE/RU legal content or locale-scope decision plus AWS route visual evidence before any public legal row can pass.",
+    "localRuntimeSmoke":  {
+                              "command":  "dotnet run --project src/Xiigen.Platform.Api/Xiigen.Platform.Api.csproj -c Release --no-build --urls http://127.0.0.1:5058; curl /legal/terms-of-use",
+                              "result":  "PASS",
+                              "statusLine":  "HTTP/1.1 423 Locked",
+                              "bodyLength":  1690,
+                              "containsReviewRequired":  true,
+                              "containsNotYetPublished":  true,
+                              "exposesFinalApprovedBody":  false,
+                              "note":  "Local runtime smoke only; AWS public legal visual evidence remains required before LEGAL-PUBLIC rows can pass."
+                          }
+}

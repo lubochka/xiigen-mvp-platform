@@ -104,6 +104,35 @@ app.MapPost("/api/marketplace/adaptations", async (
     return ToHttpResult(result);
 });
 
+app.MapGet("/api/legal/documents/{slug}/{locale}", async (
+    string slug,
+    string locale,
+    ILegalPublicationService legal,
+    CancellationToken cancellationToken) =>
+{
+    var result = await legal.GetRouteAsync(slug, locale, cancellationToken).ConfigureAwait(false);
+    return ToHttpResult(result);
+});
+
+app.MapGet("/legal/{slug}", async (
+    string slug,
+    ILegalPublicationService legal,
+    CancellationToken cancellationToken) =>
+{
+    var result = await legal.GetRouteAsync(slug, "en", cancellationToken).ConfigureAwait(false);
+    return ToLegalRouteHttpResult(result);
+});
+
+app.MapGet("/legal/{locale}/{slug}", async (
+    string locale,
+    string slug,
+    ILegalPublicationService legal,
+    CancellationToken cancellationToken) =>
+{
+    var result = await legal.GetRouteAsync(slug, locale, cancellationToken).ConfigureAwait(false);
+    return ToLegalRouteHttpResult(result);
+});
+
 app.MapPost("/api/studio/workspaces", async (
     HttpContext context,
     CreateTenantWorkspaceRequest request,
@@ -669,6 +698,70 @@ static IResult ToHttpResult<T>(DataProcessResult<T> result)
         message = result.Error?.Message ?? "Request failed."
     });
 }
+
+static IResult ToLegalRouteHttpResult(DataProcessResult<LegalRouteDocumentView> result)
+{
+    if (result.IsFailure || result.Data is null)
+    {
+        return Results.Content(RenderLegalRouteNotFound(result.Error?.Message ?? "Legal route was not found."), "text/html", statusCode: StatusCodes.Status404NotFound);
+    }
+
+    var statusCode = result.Data.CanPublish
+        ? StatusCodes.Status200OK
+        : StatusCodes.Status423Locked;
+    return Results.Content(RenderLegalRoute(result.Data), "text/html", statusCode: statusCode);
+}
+
+static string RenderLegalRoute(LegalRouteDocumentView document)
+{
+    var direction = string.Equals(document.Locale, "he", StringComparison.Ordinal) ? "rtl" : "ltr";
+    var body = document.CanPublish
+        ? WebUtility.HtmlEncode(document.Body ?? string.Empty).Replace("\n", "<br>", StringComparison.Ordinal)
+        : "<p>This legal document is not yet published. XIIGen will publish the final approved version after legal review, localization coverage, and AWS visual evidence are complete.</p>";
+    return $$"""
+        <!doctype html>
+        <html lang="{{WebUtility.HtmlEncode(document.Locale)}}" dir="{{direction}}">
+        <head>
+          <meta charset="utf-8">
+          <title>{{WebUtility.HtmlEncode(document.Title)}} - XIIGen</title>
+          <style>
+            body { font-family: Arial, sans-serif; margin: 32px; color: #17202a; background: #fbfbfb; }
+            main { max-width: 920px; background: #fff; border: 1px solid #d8dee4; border-radius: 8px; padding: 24px; }
+            h1 { margin: 0 0 8px; font-size: 30px; }
+            p, li { line-height: 1.55; color: #42515c; }
+            .status { display: inline-block; margin-bottom: 16px; padding: 6px 10px; border-radius: 999px; background: #fff4d6; color: #634600; font-size: 13px; font-weight: 700; }
+            .published { background: #e8f6ed; color: #155724; }
+            dl { display: grid; grid-template-columns: 180px 1fr; gap: 8px 16px; margin-top: 24px; }
+            dt { font-weight: 700; color: #17202a; }
+            dd { margin: 0; color: #42515c; }
+          </style>
+        </head>
+        <body>
+          <main>
+            <span class="status {{(document.CanPublish ? "published" : string.Empty)}}">{{WebUtility.HtmlEncode(document.PublicationStatus.ToString())}}</span>
+            <h1>{{WebUtility.HtmlEncode(document.Title)}}</h1>
+            <p>{{WebUtility.HtmlEncode(document.Summary)}}</p>
+            <section>{{body}}</section>
+            <dl>
+              <dt>Document type</dt><dd>{{WebUtility.HtmlEncode(document.DocumentType)}}</dd>
+              <dt>Locale</dt><dd>{{WebUtility.HtmlEncode(document.Locale)}}</dd>
+              <dt>Canonical URL</dt><dd>{{WebUtility.HtmlEncode(document.CanonicalUrl)}}</dd>
+              <dt>Evidence</dt><dd>{{WebUtility.HtmlEncode(document.EvidencePath)}}</dd>
+              <dt>Message</dt><dd>{{WebUtility.HtmlEncode(document.Message)}}</dd>
+            </dl>
+          </main>
+        </body>
+        </html>
+        """;
+}
+
+static string RenderLegalRouteNotFound(string message) => $$"""
+    <!doctype html>
+    <html lang="en">
+    <head><meta charset="utf-8"><title>Legal route not found - XIIGen</title></head>
+    <body><main><h1>Legal route not found</h1><p>{{WebUtility.HtmlEncode(message)}}</p></main></body>
+    </html>
+    """;
 
 internal static class MarketplaceHtmlExtensions
 {

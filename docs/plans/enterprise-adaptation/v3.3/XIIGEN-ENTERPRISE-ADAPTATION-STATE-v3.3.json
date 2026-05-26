@@ -2,9 +2,9 @@
     "main_focus_goal":  "Create/train/export/import/validate/update/use Enterprise trainable units for project-local wiki and Smart Code Assistant over Angular + .NET + SQL, with VS/VS Code plugin runtime entrypoints, AWS endpoint/IP visual evidence, and prompt-by-prompt validation.",
     "goal_reached":  false,
     "stop_allowed":  false,
-    "gate_status":  "IN_PROGRESS_DRAFT_SOURCE_FOUND_LEGAL_APPROVAL_AND_LOCALIZATION_REQUIRED",
-    "next_action":  "Execute SESSION-14 legal approval lane: use C:/Users/lubao/Documents/xiigen/legal as DRAFT_SOURCE_FOUND intake, obtain/record approved EN legal copy, create missing affiliate terms, produce HE/RU approved localizations or explicit locale-scope decision, then publish AWS legal routes and capture visual evidence.",
-    "next_action_plan_source":  "SESSION-14 / LEGAL-PUBLIC-01 approved legal source requirement",
+    "gate_status":  "IN_PROGRESS_LEGAL_TECHNICAL_SHELL_READY_APPROVAL_LOCALIZATION_AWS_EVIDENCE_REQUIRED",
+    "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: technical shell is implemented and tested; obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, seed approved records, deploy, and capture AWS legal route screenshots.",
+    "next_action_plan_source":  "SESSION-14 / LEGAL-PUBLIC-01 approval source then AWS publication",
     "actionable_gaps":  [
 
                         ],
@@ -52,11 +52,11 @@
     "reinstatement_reason":  "SESSION-01 capability map provides exact implementation targets for missing AWS CI/CD rows.",
     "first_failed_requirement_id":  "LEGAL-PUBLIC-01",
     "last_plan_reminder":  {
-                               "next_action":  "Execute SESSION-14 legal approval/localization intake: use legal-draft-source-map.json, obtain approved EN/HE/RU legal records or explicit locale-scope decision, then publish AWS legal routes and capture visual evidence.",
+                               "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: technical shell is implemented and tested; obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, seed approved records, deploy, and capture AWS legal route screenshots.",
                                "source":  "LEGAL-PUBLIC-01"
                            },
     "execution_attempt_latest":  {
-                                     "next_action":  "Execute SESSION-14 legal approval/localization intake: use legal-draft-source-map.json, obtain approved EN/HE/RU legal records or explicit locale-scope decision, then publish AWS legal routes and capture visual evidence.",
+                                     "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: technical shell is implemented and tested; obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, seed approved records, deploy, and capture AWS legal route screenshots.",
                                      "executor_must_handoff_to":  "REVIEW_INTERNAL after legal approval/localization intake and before public AWS route publication"
                                  },
     "constitution_linkage":  {
@@ -288,7 +288,7 @@
                            "architect_final_authority_only":  true,
                            "coverage_challenge_architect_first":  true,
                            "stop_permission_gate_required":  true,
-                           "next_action":  "Execute SESSION-14 legal approval/localization intake: use legal-draft-source-map.json, obtain approved EN/HE/RU legal records or explicit locale-scope decision, then publish AWS legal routes and capture visual evidence.",
+                           "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: technical shell is implemented and tested; obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, seed approved records, deploy, and capture AWS legal route screenshots.",
                            "executor_must_handoff_to":  "REVIEW_INTERNAL after legal approval/localization intake and before public AWS route publication"
                        },
     "masterTenantLaunch":  {
@@ -309,7 +309,7 @@
                            "acceptanceContextMapPath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-acceptance-context-map.json",
                            "visualEvidenceIndexPath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-visual-evidence-index.json",
                            "allRequiredDocsApproved":  false,
-                           "publicLaunchLegalGate":  "BLOCKED_UNTIL_LEGAL_APPROVAL_AND_LOCALIZATION",
+                           "publicLaunchLegalGate":  "BLOCKED_UNTIL_LEGAL_APPROVAL_LOCALIZATION_AND_AWS_VISUAL_EVIDENCE",
                            "requiredLocales":  [
                                                    "en",
                                                    "he",
@@ -332,7 +332,8 @@
                            "evidencePath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-site-integration-evidence.json",
                            "publicationCompletionEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-completion-evidence.json",
                            "draftSourceInventory":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-inventory.json",
-                           "draftSourceMap":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-map.json"
+                           "draftSourceMap":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-map.json",
+                           "technicalShellEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-technical-shell-evidence.json"
                        },
     "linkedSystemGraphEvidence":  {
                                       "status":  "PASS_LINKED_SYSTEM_GRAPH_CAPTURED",

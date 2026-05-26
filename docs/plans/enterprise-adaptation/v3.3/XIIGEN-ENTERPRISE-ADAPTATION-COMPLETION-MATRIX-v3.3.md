@@ -186,13 +186,13 @@ Every row names a literal expectation. Generic placeholders such as `requirement
 ## Matrix verdict
 
 ```text
-IN_PROGRESS_DRAFT_SOURCE_FOUND_LEGAL_APPROVAL_AND_LOCALIZATION_REQUIRED
+IN_PROGRESS_LEGAL_TECHNICAL_SHELL_READY_APPROVAL_LOCALIZATION_AWS_EVIDENCE_REQUIRED
 ```
 
 ## First next action
 
 ```text
-Execute SESSION-14 legal approval/localization lane: use project-assets/legal-publication-completion/legal-draft-source-inventory.json, legal-draft-source-map.json, and C:/Users/lubao/Documents/xiigen/legal as DRAFT_SOURCE_FOUND intake only; obtain approved EN/HE/RU records or explicit locale-scope decision, create missing affiliate terms, then publish AWS legal routes and capture visual evidence.
+Execute SESSION-14 legal approval/localization then AWS publication: technical shell is implemented and tested; obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, seed approved records, deploy, and capture AWS legal route screenshots.
 ```
 
 
@@ -250,7 +250,7 @@ Execute SESSION-14 legal approval/localization lane: use project-assets/legal-pu
 | LEGAL-PUBLIC-06 | Footer, signup, checkout, affiliate, export and corporate install surfaces link to exact approved versions | link map plus AWS screenshots | IN_PROGRESS | Linkage is governed; public approved-version evidence pending. |
 | LEGAL-PUBLIC-07 | Acceptance contexts persist document ID, version, locale and context for public legal records | acceptance evidence for approved records | IN_PROGRESS | Acceptance model exists; approved public records pending. |
 | LEGAL-PUBLIC-08 | Hebrew legal routes render RTL from approved HE records | AWS HE screenshot and RTL metadata | IN_PROGRESS | HE approved source missing. |
-| LEGAL-PUBLIC-09 | No DRAFT or LEGAL_REVIEW_REQUIRED legal record is exposed as final | publication report and route access evidence | IN_PROGRESS | Current safety gate blocks publication; route evidence pending after approval. |
+| LEGAL-PUBLIC-09 | No DRAFT or LEGAL_REVIEW_REQUIRED legal record is exposed as final | publication report and route access evidence | IN_PROGRESS | Technical shell returns blocked review state for unapproved records; AWS route evidence still pending.  |
 | LEGAL-PUBLIC-10 | Public legal visual evidence is captured from AWS endpoint, not localhost | screenshots/traces with AWS URL metadata | IN_PROGRESS | Awaiting approved publication. |
 | LEGAL-PUBLIC-11 | Legal publication evidence proves approval and localization chain, not just placeholders | legal-publication-completion-evidence.json | IN_PROGRESS | Evidence now proves draft intake and missing approval, not completion. |
 | LEGAL-PUBLIC-12 | State goal_reached can become true only after LEGAL-PUBLIC-01 through LEGAL-PUBLIC-11 pass | state JSON and matrix verdict | IN_PROGRESS | goal_reached remains false and stop_allowed remains false. |
