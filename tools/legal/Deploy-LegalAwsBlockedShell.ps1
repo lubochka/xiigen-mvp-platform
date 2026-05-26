@@ -118,7 +118,7 @@ Require-Command -Name "git"
 Require-Command -Name "docker"
 
 if ([string]::IsNullOrWhiteSpace($ImageTag)) {
-    $safeDirectory = (Get-Location).Path
+    $safeDirectory = ((Get-Location).Path -replace "\\", "/")
     $shortSha = (git -c "safe.directory=$safeDirectory" rev-parse --short HEAD).Trim()
     if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($shortSha)) {
         throw "Unable to resolve git short SHA for image tag."
