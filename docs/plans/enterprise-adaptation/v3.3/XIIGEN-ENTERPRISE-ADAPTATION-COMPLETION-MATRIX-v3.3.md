@@ -186,7 +186,7 @@ Every row names a literal expectation. Generic placeholders such as `requirement
 ## Matrix verdict
 
 ```text
-IN_PROGRESS_NEXT_STEP_KNOWN
+PASS_FINAL_EVIDENCE_SCOPE_COMPLETE_PUBLIC_LEGAL_PUBLICATION_BLOCKED_UNTIL_APPROVAL
 ```
 
 ## First next action

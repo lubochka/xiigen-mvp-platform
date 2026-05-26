@@ -6,11 +6,7 @@
     "next_action":  "Final architect report to Luba: matrix has no required UNKNOWN/FAIL/IN_PROGRESS rows; implementation/evidence scope complete; public legal publication remains blocked by explicit legal approval gate, not technical debt.",
     "next_action_plan_source":  "FINAL_ARCHITECT_REPORT",
     "actionable_gaps":  [
-                            "FLOW-19 AWS capability not verified from Enterprise repo evidence",
-                            "AWS runtime endpoint/IP evidence not captured from FLOW-19 output",
-                            "Visual Studio/VS Code interactive plugin host evidence not captured",
-                            "Trainable unit registry/import/export proof not implemented",
-                            "Final evidence scope does not yet equal final claim scope"
+
                         ],
     "current_internal_role_state":  "ARCHITECT_FINAL_REVIEW_PASS_READY_FOR_HUMAN_REPORT",
     "last_role_transition_reason":  "Final matrix review closed top-level trainable unit, runtime metric policy, and final evidence-scope rows. Matrix has no required UNKNOWN/FAIL/IN_PROGRESS rows; public legal publication remains blocked by explicit legal approval gate.",
