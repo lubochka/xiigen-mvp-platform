@@ -1,14 +1,19 @@
 {
     "schema_version":  "1.0",
     "artifact_scope":  "legal_aws_deploy_prerequisite_evidence",
-    "generatedAtUtc":  "2026-05-26T05:14:14.8903348Z",
+    "generatedAtUtc":  "2026-05-26T06:07:30.0020555Z",
     "dockerPresent":  true,
-    "awsCliPresent":  false,
+    "awsCliPresent":  true,
     "deployCanRunFromThisHost":  false,
-    "missingPrerequisite":  "AWS CLI command `aws` was not found in PATH.",
+    "missingPrerequisite":  "AWS credentials and required AWS_REGION/AWS_ACCOUNT_ID/XIIGEN_APP_RUNNER_SERVICE_ARN/XIIGEN_PLATFORM_ECR_REPOSITORY environment values are not configured in this shell.",
     "deployRunbook":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/LEGAL-AWS-BLOCKED-SHELL-DEPLOY-RUNBOOK.md",
     "verifier":  "tools/legal/Test-LegalAwsBlockedShell.ps1",
     "currentAwsBlockedShellEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-blocked-shell-evidence.json",
     "currentAwsRouteStatus":  "404 for tested /legal/en|he|ru/terms-of-use routes; deployed App Runner image predates legal shell.",
-    "publicLegalRowsPass":  false
+    "publicLegalRowsPass":  false,
+    "awsIdentityCheck":  "aws sts get-caller-identity -\u003e NoCredentials",
+    "awsCliInvocation":  "C:/tmp/awscli-venv/Scripts/python.exe -m awscli",
+    "awsCliVersion":  "aws-cli/1.45.14 Python/3.13.5 Windows/11 botocore/1.43.14",
+    "awsCredentialsPresent":  false,
+    "isolatedAwsCliInstallDir":  "C:/tmp/awscli-venv"
 }

@@ -5,8 +5,8 @@ Status: executable deploy runbook for the technical legal shell. This does not a
 ## Current machine prerequisite check
 
 - Docker is present.
-- AWS CLI is required for ECR/App Runner deployment.
-- On this machine, `aws --version` was not available during SESSION-14 verification, so AWS deployment cannot run from this host until AWS CLI credentials/tooling are installed.
+- AWS CLI is installed at `C:\Program Files\Amazon\AWSCLIV2\aws.exe` and the deploy runner adds that directory to `PATH` when needed.
+- On this machine, `aws sts get-caller-identity` currently returns `NoCredentials`, so AWS deployment cannot run from this host until AWS credentials or SSO are configured.
 
 ## Goal
 

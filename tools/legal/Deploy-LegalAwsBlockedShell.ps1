@@ -3,12 +3,11 @@ param(
     [string]$Region = $env:AWS_REGION,
     [string]$AppRunnerServiceArn = $env:XIIGEN_APP_RUNNER_SERVICE_ARN,
     [string]$EcrRepository = $env:XIIGEN_PLATFORM_ECR_REPOSITORY,
-    [string]$BaseUrl = $(if ([string]::IsNullOrWhiteSpace($env:XIIGEN_PLATFORM_BASE_URL)) { "https://gyxwjim5ea.eu-west-1.awsapprunner.com" } else { $env:XIIGEN_PLATFORM_BASE_URL }),
+    [string]$BaseUrl = "https://gyxwjim5ea.eu-west-1.awsapprunner.com",
     [string]$OutputPath = "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-blocked-shell-evidence.json",
     [string]$DeploymentEvidencePath = "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-blocked-shell-deploy-evidence.json",
     [string]$ImageTag = "",
-    [int]$VerificationAttempts = 18,
-    [int]$VerificationDelaySeconds = 20,
+    [string]$AwsCliPython = $env:AWS_CLI_PYTHON,
     [switch]$SkipVerification
 )
 
@@ -65,6 +64,36 @@ function Invoke-LoggedNative {
     }
 }
 
+function Invoke-AwsLogged {
+    param(
+        [Parameter(Mandatory = $true)][string[]]$Arguments,
+        [Parameter(Mandatory = $true)][System.Collections.Generic.List[object]]$CommandLog,
+        [switch]$CaptureOutput
+    )
+
+    if (-not [string]::IsNullOrWhiteSpace($AwsCliPython)) {
+        if (-not (Test-Path -LiteralPath $AwsCliPython)) {
+            throw "AwsCliPython not found: $AwsCliPython"
+        }
+        $commandText = @($AwsCliPython, "-m", "awscli") + $Arguments -join " "
+        $output = & $AwsCliPython -m awscli @Arguments
+    }
+    else {
+        Require-Command -Name "aws"
+        $commandText = @("aws") + $Arguments -join " "
+        $output = & aws @Arguments
+    }
+
+    $exitCode = $LASTEXITCODE
+    Add-LogEntry -CommandLog $CommandLog -Command $commandText -Executed $true -ExitCode $exitCode
+    if ($exitCode -ne 0) {
+        throw "AWS command failed with exit code ${exitCode}: $commandText"
+    }
+    if ($CaptureOutput) {
+        return $output
+    }
+}
+
 function Write-JsonFile {
     param(
         [Parameter(Mandatory = $true)]$Value,
@@ -87,10 +116,6 @@ Require-Value -Name "App Runner service ARN" -Value $AppRunnerServiceArn
 Require-Value -Name "ECR repository" -Value $EcrRepository
 Require-Command -Name "git"
 Require-Command -Name "docker"
-Require-Command -Name "aws"
-
-$commandLog = [System.Collections.Generic.List[object]]::new()
-Invoke-LoggedNative -Tool "aws" -Arguments @("sts", "get-caller-identity", "--region", $Region) -CommandLog $commandLog
 
 if ([string]::IsNullOrWhiteSpace($ImageTag)) {
     $shortSha = (git rev-parse --short HEAD).Trim()
@@ -102,14 +127,14 @@ if ([string]::IsNullOrWhiteSpace($ImageTag)) {
 
 $registry = "$AwsAccountId.dkr.ecr.$Region.amazonaws.com"
 $image = "$registry/$EcrRepository`:$ImageTag"
+$commandLog = [System.Collections.Generic.List[object]]::new()
+
 Invoke-LoggedNative -Tool "docker" -Arguments @("build", "-f", "src/Xiigen.Platform.Api/Dockerfile", "-t", $image, ".") -CommandLog $commandLog
 
-$password = aws ecr get-login-password --region $Region
-if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($password)) {
-    Add-LogEntry -CommandLog $commandLog -Command "aws ecr get-login-password --region $Region" -Executed $true -ExitCode $LASTEXITCODE
+$password = Invoke-AwsLogged -Arguments @("ecr", "get-login-password", "--region", $Region) -CommandLog $commandLog -CaptureOutput
+if ([string]::IsNullOrWhiteSpace($password)) {
     throw "Unable to get ECR login password."
 }
-Add-LogEntry -CommandLog $commandLog -Command "aws ecr get-login-password --region $Region" -Executed $true -ExitCode 0
 
 $password | docker login --username AWS --password-stdin $registry
 $dockerLoginExitCode = $LASTEXITCODE
@@ -119,7 +144,7 @@ if ($dockerLoginExitCode -ne 0) {
 }
 
 Invoke-LoggedNative -Tool "docker" -Arguments @("push", $image) -CommandLog $commandLog
-Invoke-LoggedNative -Tool "aws" -Arguments @(
+Invoke-AwsLogged -Arguments @(
     "apprunner",
     "update-service",
     "--service-arn",
@@ -129,7 +154,7 @@ Invoke-LoggedNative -Tool "aws" -Arguments @(
     "--region",
     $Region
 ) -CommandLog $commandLog
-Invoke-LoggedNative -Tool "aws" -Arguments @(
+Invoke-AwsLogged -Arguments @(
     "apprunner",
     "start-deployment",
     "--service-arn",
@@ -147,30 +172,17 @@ $deployEvidence = [ordered]@{
     appRunnerServiceArn = $AppRunnerServiceArn
     ecrRepository = $EcrRepository
     region = $Region
+    awsCliPython = $AwsCliPython
     verificationSkipped = [bool]$SkipVerification
-    verificationAttempts = $VerificationAttempts
-    verificationDelaySeconds = $VerificationDelaySeconds
     blockedShellEvidence = $OutputPath
     commandLog = $commandLog
 }
 Write-JsonFile -Value $deployEvidence -Path $DeploymentEvidencePath
 
 if (-not $SkipVerification) {
-    $verified = $false
-    for ($attempt = 1; $attempt -le $VerificationAttempts; $attempt++) {
-        & tools/legal/Test-LegalAwsBlockedShell.ps1 -BaseUrl $BaseUrl -OutputPath $OutputPath
-        if ($LASTEXITCODE -eq 0) {
-            $verified = $true
-            break
-        }
-
-        if ($attempt -lt $VerificationAttempts) {
-            Start-Sleep -Seconds $VerificationDelaySeconds
-        }
-    }
-
-    if (-not $verified) {
-        throw "Deploy completed, but blocked-shell verification did not pass after $VerificationAttempts attempts. App Runner may still be rolling out; rerun tools/legal/Test-LegalAwsBlockedShell.ps1."
+    & tools/legal/Test-LegalAwsBlockedShell.ps1 -BaseUrl $BaseUrl -OutputPath $OutputPath
+    if ($LASTEXITCODE -ne 0) {
+        throw "Deploy completed, but blocked-shell verification did not pass yet. App Runner may still be rolling out; rerun tools/legal/Test-LegalAwsBlockedShell.ps1."
     }
 }
 
