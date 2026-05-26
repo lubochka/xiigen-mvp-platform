@@ -1,0 +1,30 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "approved_legal_record_template",
+    "instructions":  "Copy this object once per document type and locale after legal approval. Do not use this template to fabricate approval.",
+    "record":  {
+                   "id":  "\u003cdocumentType\u003e:\u003clocale\u003e:\u003cversion\u003e",
+                   "slug":  "\u003cpublic-route-slug\u003e",
+                   "documentType":  "\u003cone of requiredDocumentTypes\u003e",
+                   "version":  "\u003cimmutable version\u003e",
+                   "status":  "APPROVED",
+                   "locale":  "\u003cen|he|ru\u003e",
+                   "canonicalLocale":  "\u003cen|he|ru\u003e",
+                   "title":  "\u003capproved title\u003e",
+                   "body":  "\u003capproved final legal body\u003e",
+                   "summary":  "\u003capproved summary\u003e",
+                   "effectiveDate":  "\u003cyyyy-MM-dd\u003e",
+                   "approvedBy":  "\u003clegal approval authority\u003e",
+                   "approvedAtUtc":  "\u003cISO-8601 UTC timestamp\u003e",
+                   "owner":  "legal",
+                   "previousVersionId":  null,
+                   "canonicalUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/\u003clocale\u003e/\u003cslug\u003e",
+                   "requiredAcceptanceContexts":  [
+                                                      "\u003csignup|checkout|downloadInstall|corporateInstall|affiliateApply|...\u003e"
+                                                  ],
+                   "relatedSiteSurfaces":  [
+                                               "\u003cfooter|signup|checkout|affiliate|exportPackage|corporateInstall|...\u003e"
+                                           ],
+                   "evidencePath":  "docs/plans/enterprise-adaptation/v3.3/evidence/aws-runtime/legal/\u003clocale\u003e-\u003cslug\u003e.png"
+               }
+}

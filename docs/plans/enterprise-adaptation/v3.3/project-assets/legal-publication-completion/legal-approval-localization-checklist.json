@@ -1,0 +1,57 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_approval_localization_checklist",
+    "generatedAtUtc":  "2026-05-26T05:02:15.5769633Z",
+    "requiredLocales":  [
+                            "en",
+                            "he",
+                            "ru"
+                        ],
+    "requiredDocumentTypes":  [
+                                  "terms",
+                                  "privacy",
+                                  "cookies",
+                                  "eula",
+                                  "enterprise_terms",
+                                  "dpa",
+                                  "acceptable_use",
+                                  "affiliate_terms",
+                                  "refund_cancellation",
+                                  "security",
+                                  "subprocessors",
+                                  "open_source_notices"
+                              ],
+    "requiredRecordCount":  36,
+    "acceptanceCriteria":  [
+                               "status must be APPROVED or PUBLISHED",
+                               "approvedBy must identify the legal approver or approval authority",
+                               "approvedAtUtc must be an ISO-8601 UTC timestamp",
+                               "effectiveDate must be yyyy-MM-dd",
+                               "version must be non-empty and immutable for acceptance records",
+                               "canonicalUrl must match the AWS public legal route",
+                               "body must be final content and must not contain [Insert ...] placeholders",
+                               "locale must be one of en, he, ru unless a locale-scope decision artifact is present",
+                               "Hebrew records must have RTL visual evidence after publication"
+                           ],
+    "rowsBlockedUntilComplete":  [
+                                     "LEGAL-PUBLIC-01",
+                                     "LEGAL-PUBLIC-02",
+                                     "LEGAL-PUBLIC-03",
+                                     "LEGAL-PUBLIC-04",
+                                     "LEGAL-PUBLIC-05",
+                                     "LEGAL-PUBLIC-06",
+                                     "LEGAL-PUBLIC-07",
+                                     "LEGAL-PUBLIC-08",
+                                     "LEGAL-PUBLIC-09",
+                                     "LEGAL-PUBLIC-10",
+                                     "LEGAL-PUBLIC-11",
+                                     "LEGAL-PUBLIC-12"
+                                 ],
+    "currentKnownMissing":  [
+                                "All approval metadata",
+                                "Affiliate Program Terms source",
+                                "HE final legal content",
+                                "RU final legal content",
+                                "AWS publication screenshots for approved routes"
+                            ]
+}
