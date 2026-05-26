@@ -25,7 +25,25 @@ $env:XIIGEN_PLATFORM_ECR_REPOSITORY = "xiigen/platform-api"
 
 AWS CLI must be authenticated for the account above and must have ECR push + App Runner update/start-deployment permissions.
 
-## Deploy command outline
+## Deploy command
+
+Run the self-checking local deploy script from the platform repository root:
+
+```powershell
+$env:AWS_ACCOUNT_ID = "595003292091"
+$env:AWS_REGION = "eu-west-1"
+$env:XIIGEN_APP_RUNNER_SERVICE_ARN = "arn:aws:apprunner:eu-west-1:595003292091:service/xiigen-platform-primary/a43b42b090ef4d66b33099863c28555d"
+$env:XIIGEN_PLATFORM_ECR_REPOSITORY = "xiigen/platform-api"
+$env:XIIGEN_PLATFORM_BASE_URL = "https://gyxwjim5ea.eu-west-1.awsapprunner.com"
+
+tools/legal/Deploy-LegalAwsBlockedShell.ps1
+```
+
+The script performs the full technical shell path: prerequisite checks, AWS identity check, Docker build, ECR login, Docker push, App Runner update/start-deployment, then blocked-shell route evidence capture. It fails closed if AWS CLI, Docker, credentials, deployment or evidence verification are missing.
+
+## Manual deploy command outline
+
+Use this only to debug a failing script step:
 
 ```powershell
 $tag = "legal-shell-" + (git rev-parse --short HEAD)

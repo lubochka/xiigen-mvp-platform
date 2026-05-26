@@ -1,23 +1,24 @@
 {
-    "schema_version":  "1.1",
+    "schema_version":  "1.2",
     "artifact_scope":  "legal_approval_localization_checklist",
-    "generatedAtUtc":  "2026-05-26T05:03:28.5040116Z",
+    "generatedAtUtc":  "2026-05-26T05:36:55.4625485Z",
+    "documentTypeAuthority":  "project-assets/legal-documents/legal-document-registry.json:requiredDocumentTypes",
     "requiredLocales":  [
                             "en",
                             "he",
                             "ru"
                         ],
     "requiredDocumentTypes":  [
-                                  "terms",
-                                  "privacy",
-                                  "cookies",
-                                  "eula",
-                                  "enterprise_terms",
+                                  "terms_of_service",
+                                  "privacy_policy",
+                                  "cookie_policy",
+                                  "eula_license",
+                                  "enterprise_terms_msa",
                                   "dpa",
                                   "acceptable_use",
                                   "affiliate_terms",
                                   "refund_cancellation",
-                                  "security",
+                                  "security_responsible_disclosure",
                                   "subprocessors",
                                   "open_source_notices"
                               ],
@@ -26,8 +27,8 @@
     "firstOpenRequirement":  "LEGAL-PUBLIC-01",
     "records":  [
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:terms:en",
-                        "documentType":  "terms",
+                        "requirementId":  "LEGAL-PUBLIC-01:terms_of_service:en",
+                        "documentType":  "terms_of_service",
                         "locale":  "en",
                         "required":  true,
                         "sourceStatus":  "DRAFT_SOURCE_FOUND",
@@ -42,8 +43,8 @@
                         "blocker":  "English draft exists but requires final approval metadata and placeholder cleanup."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:terms:he",
-                        "documentType":  "terms",
+                        "requirementId":  "LEGAL-PUBLIC-01:terms_of_service:he",
+                        "documentType":  "terms_of_service",
                         "locale":  "he",
                         "required":  true,
                         "sourceStatus":  "MISSING_LOCALIZATION",
@@ -58,8 +59,8 @@
                         "blocker":  "HE approved localization is missing."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:terms:ru",
-                        "documentType":  "terms",
+                        "requirementId":  "LEGAL-PUBLIC-01:terms_of_service:ru",
+                        "documentType":  "terms_of_service",
                         "locale":  "ru",
                         "required":  true,
                         "sourceStatus":  "MISSING_LOCALIZATION",
@@ -74,8 +75,8 @@
                         "blocker":  "RU approved localization is missing."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:privacy:en",
-                        "documentType":  "privacy",
+                        "requirementId":  "LEGAL-PUBLIC-01:privacy_policy:en",
+                        "documentType":  "privacy_policy",
                         "locale":  "en",
                         "required":  true,
                         "sourceStatus":  "DRAFT_SOURCE_FOUND",
@@ -90,8 +91,8 @@
                         "blocker":  "English draft exists but requires final approval metadata and placeholder cleanup."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:privacy:he",
-                        "documentType":  "privacy",
+                        "requirementId":  "LEGAL-PUBLIC-01:privacy_policy:he",
+                        "documentType":  "privacy_policy",
                         "locale":  "he",
                         "required":  true,
                         "sourceStatus":  "MISSING_LOCALIZATION",
@@ -106,8 +107,8 @@
                         "blocker":  "HE approved localization is missing."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:privacy:ru",
-                        "documentType":  "privacy",
+                        "requirementId":  "LEGAL-PUBLIC-01:privacy_policy:ru",
+                        "documentType":  "privacy_policy",
                         "locale":  "ru",
                         "required":  true,
                         "sourceStatus":  "MISSING_LOCALIZATION",
@@ -122,8 +123,8 @@
                         "blocker":  "RU approved localization is missing."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:cookies:en",
-                        "documentType":  "cookies",
+                        "requirementId":  "LEGAL-PUBLIC-01:cookie_policy:en",
+                        "documentType":  "cookie_policy",
                         "locale":  "en",
                         "required":  true,
                         "sourceStatus":  "DRAFT_SOURCE_FOUND",
@@ -138,8 +139,8 @@
                         "blocker":  "English draft exists but requires final approval metadata and placeholder cleanup."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:cookies:he",
-                        "documentType":  "cookies",
+                        "requirementId":  "LEGAL-PUBLIC-01:cookie_policy:he",
+                        "documentType":  "cookie_policy",
                         "locale":  "he",
                         "required":  true,
                         "sourceStatus":  "MISSING_LOCALIZATION",
@@ -154,8 +155,8 @@
                         "blocker":  "HE approved localization is missing."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:cookies:ru",
-                        "documentType":  "cookies",
+                        "requirementId":  "LEGAL-PUBLIC-01:cookie_policy:ru",
+                        "documentType":  "cookie_policy",
                         "locale":  "ru",
                         "required":  true,
                         "sourceStatus":  "MISSING_LOCALIZATION",
@@ -170,8 +171,8 @@
                         "blocker":  "RU approved localization is missing."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:eula:en",
-                        "documentType":  "eula",
+                        "requirementId":  "LEGAL-PUBLIC-01:eula_license:en",
+                        "documentType":  "eula_license",
                         "locale":  "en",
                         "required":  true,
                         "sourceStatus":  "DRAFT_SOURCE_FOUND",
@@ -186,8 +187,8 @@
                         "blocker":  "English draft exists but requires final approval metadata and placeholder cleanup."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:eula:he",
-                        "documentType":  "eula",
+                        "requirementId":  "LEGAL-PUBLIC-01:eula_license:he",
+                        "documentType":  "eula_license",
                         "locale":  "he",
                         "required":  true,
                         "sourceStatus":  "MISSING_LOCALIZATION",
@@ -202,8 +203,8 @@
                         "blocker":  "HE approved localization is missing."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:eula:ru",
-                        "documentType":  "eula",
+                        "requirementId":  "LEGAL-PUBLIC-01:eula_license:ru",
+                        "documentType":  "eula_license",
                         "locale":  "ru",
                         "required":  true,
                         "sourceStatus":  "MISSING_LOCALIZATION",
@@ -218,8 +219,8 @@
                         "blocker":  "RU approved localization is missing."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:enterprise_terms:en",
-                        "documentType":  "enterprise_terms",
+                        "requirementId":  "LEGAL-PUBLIC-01:enterprise_terms_msa:en",
+                        "documentType":  "enterprise_terms_msa",
                         "locale":  "en",
                         "required":  true,
                         "sourceStatus":  "DRAFT_SOURCE_FOUND",
@@ -234,8 +235,8 @@
                         "blocker":  "English draft exists but requires final approval metadata and placeholder cleanup."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:enterprise_terms:he",
-                        "documentType":  "enterprise_terms",
+                        "requirementId":  "LEGAL-PUBLIC-01:enterprise_terms_msa:he",
+                        "documentType":  "enterprise_terms_msa",
                         "locale":  "he",
                         "required":  true,
                         "sourceStatus":  "MISSING_LOCALIZATION",
@@ -250,8 +251,8 @@
                         "blocker":  "HE approved localization is missing."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:enterprise_terms:ru",
-                        "documentType":  "enterprise_terms",
+                        "requirementId":  "LEGAL-PUBLIC-01:enterprise_terms_msa:ru",
+                        "documentType":  "enterprise_terms_msa",
                         "locale":  "ru",
                         "required":  true,
                         "sourceStatus":  "MISSING_LOCALIZATION",
@@ -458,8 +459,8 @@
                         "blocker":  "RU approved localization is missing."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:security:en",
-                        "documentType":  "security",
+                        "requirementId":  "LEGAL-PUBLIC-01:security_responsible_disclosure:en",
+                        "documentType":  "security_responsible_disclosure",
                         "locale":  "en",
                         "required":  true,
                         "sourceStatus":  "DRAFT_SOURCE_FOUND",
@@ -474,8 +475,8 @@
                         "blocker":  "English draft exists but requires final approval metadata and placeholder cleanup."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:security:he",
-                        "documentType":  "security",
+                        "requirementId":  "LEGAL-PUBLIC-01:security_responsible_disclosure:he",
+                        "documentType":  "security_responsible_disclosure",
                         "locale":  "he",
                         "required":  true,
                         "sourceStatus":  "MISSING_LOCALIZATION",
@@ -490,8 +491,8 @@
                         "blocker":  "HE approved localization is missing."
                     },
                     {
-                        "requirementId":  "LEGAL-PUBLIC-01:security:ru",
-                        "documentType":  "security",
+                        "requirementId":  "LEGAL-PUBLIC-01:security_responsible_disclosure:ru",
+                        "documentType":  "security_responsible_disclosure",
                         "locale":  "ru",
                         "required":  true,
                         "sourceStatus":  "MISSING_LOCALIZATION",
@@ -604,6 +605,7 @@
                 ],
     "acceptanceCriteria":  [
                                "Every required record must exist unless a locale-scope decision artifact explicitly removes that locale from launch scope.",
+                               "Document types must exactly match legal-document-registry.json requiredDocumentTypes.",
                                "status must be APPROVED before seeding and PUBLISHED only after AWS route and visual evidence are captured.",
                                "approvedBy must identify the legal approver or approval authority and must not be generated by the executor.",
                                "approvedAtUtc must be an ISO-8601 UTC timestamp ending in Z.",

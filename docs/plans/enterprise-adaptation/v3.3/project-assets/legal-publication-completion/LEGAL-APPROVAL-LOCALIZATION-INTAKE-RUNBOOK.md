@@ -33,8 +33,8 @@ The first open requirement remains `LEGAL-PUBLIC-01` until all approved records,
 
 1. Copy each approved record from `approved-legal-record-template.json` into the legal registry import set.
 2. Validate the records against `legal-approval-localization-checklist.json` with `tools/legal/Validate-LegalPublicationRecords.ps1 -RecordsPath <approved-records.json> -OutputPath docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-record-validation.json`.
-3. Seed records through `ILegalPublicationService.UpsertDocumentAsync`.
-4. Deploy the platform API to AWS.
+3. Import the approved set with `tools/legal/Import-ApprovedLegalRecords.ps1 -ApprovedRecordsPath <approved-records.json>`; the tool validates all 36 records before updating registry, route map, and visual evidence index.
+4. Deploy the platform API to AWS with `tools/legal/Deploy-LegalAwsBlockedShell.ps1` or the existing enterprise deploy path.
 5. Capture screenshots from AWS routes:
    - `/legal/en/<slug>`
    - `/legal/he/<slug>` with `dir="rtl"`

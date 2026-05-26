@@ -26,16 +26,16 @@
                        ],
     "enums":  {
                   "documentType":  [
-                                       "terms",
-                                       "privacy",
-                                       "cookies",
-                                       "eula",
-                                       "enterprise_terms",
+                                       "terms_of_service",
+                                       "privacy_policy",
+                                       "cookie_policy",
+                                       "eula_license",
+                                       "enterprise_terms_msa",
                                        "dpa",
                                        "acceptable_use",
                                        "affiliate_terms",
                                        "refund_cancellation",
-                                       "security",
+                                       "security_responsible_disclosure",
                                        "subprocessors",
                                        "open_source_notices"
                                    ],
@@ -71,5 +71,6 @@
                               "Missing affiliate_terms blocks affiliate public rows.",
                               "Missing HE/RU approved localizations blocks full EN/HE/RU public launch unless locale-scope decision exists.",
                               "PUBLISHED status requires registry update, route map update, AWS route response, and visual evidence index entry."
-                          ]
+                          ],
+    "documentTypeAuthority":  "project-assets/legal-documents/legal-document-registry.json:requiredDocumentTypes"
 }

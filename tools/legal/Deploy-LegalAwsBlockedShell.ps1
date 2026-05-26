@@ -1,0 +1,177 @@
+param(
+    [string]$AwsAccountId = $env:AWS_ACCOUNT_ID,
+    [string]$Region = $env:AWS_REGION,
+    [string]$AppRunnerServiceArn = $env:XIIGEN_APP_RUNNER_SERVICE_ARN,
+    [string]$EcrRepository = $env:XIIGEN_PLATFORM_ECR_REPOSITORY,
+    [string]$BaseUrl = $(if ([string]::IsNullOrWhiteSpace($env:XIIGEN_PLATFORM_BASE_URL)) { "https://gyxwjim5ea.eu-west-1.awsapprunner.com" } else { $env:XIIGEN_PLATFORM_BASE_URL }),
+    [string]$OutputPath = "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-blocked-shell-evidence.json",
+    [string]$DeploymentEvidencePath = "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-blocked-shell-deploy-evidence.json",
+    [string]$ImageTag = "",
+    [int]$VerificationAttempts = 18,
+    [int]$VerificationDelaySeconds = 20,
+    [switch]$SkipVerification
+)
+
+$ErrorActionPreference = "Stop"
+
+function Require-Value {
+    param(
+        [Parameter(Mandatory = $true)][string]$Name,
+        [AllowEmptyString()][string]$Value
+    )
+
+    if ([string]::IsNullOrWhiteSpace($Value)) {
+        throw "$Name is required. Set the parameter or environment variable before running this deploy script."
+    }
+}
+
+function Require-Command {
+    param([Parameter(Mandatory = $true)][string]$Name)
+
+    if (-not (Get-Command $Name -ErrorAction SilentlyContinue)) {
+        throw "Required command '$Name' was not found in PATH."
+    }
+}
+
+function Add-LogEntry {
+    param(
+        [Parameter(Mandatory = $true)][System.Collections.Generic.List[object]]$CommandLog,
+        [Parameter(Mandatory = $true)][string]$Command,
+        [Parameter(Mandatory = $true)][bool]$Executed,
+        [AllowNull()][int]$ExitCode
+    )
+
+    $CommandLog.Add([ordered]@{
+        command = $Command
+        executed = $Executed
+        exitCode = $ExitCode
+        createdAtUtc = (Get-Date).ToUniversalTime().ToString("o")
+    })
+}
+
+function Invoke-LoggedNative {
+    param(
+        [Parameter(Mandatory = $true)][string]$Tool,
+        [Parameter(Mandatory = $true)][string[]]$Arguments,
+        [Parameter(Mandatory = $true)][System.Collections.Generic.List[object]]$CommandLog
+    )
+
+    $commandText = (@($Tool) + $Arguments) -join " "
+    & $Tool @Arguments
+    $exitCode = $LASTEXITCODE
+    Add-LogEntry -CommandLog $CommandLog -Command $commandText -Executed $true -ExitCode $exitCode
+    if ($exitCode -ne 0) {
+        throw "Command failed with exit code ${exitCode}: $commandText"
+    }
+}
+
+function Write-JsonFile {
+    param(
+        [Parameter(Mandatory = $true)]$Value,
+        [Parameter(Mandatory = $true)][string]$Path
+    )
+
+    $parent = Split-Path -Parent $Path
+    if (-not [string]::IsNullOrWhiteSpace($parent)) {
+        New-Item -ItemType Directory -Force -Path $parent | Out-Null
+    }
+
+    $json = ($Value | ConvertTo-Json -Depth 12) -replace "`r`n", "`n" -replace "`r", "`n"
+    $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
+    [System.IO.File]::WriteAllText((Resolve-Path -LiteralPath $parent).Path + "\" + (Split-Path -Leaf $Path), $json + "`n", $utf8NoBom)
+}
+
+Require-Value -Name "AWS account ID" -Value $AwsAccountId
+Require-Value -Name "AWS region" -Value $Region
+Require-Value -Name "App Runner service ARN" -Value $AppRunnerServiceArn
+Require-Value -Name "ECR repository" -Value $EcrRepository
+Require-Command -Name "git"
+Require-Command -Name "docker"
+Require-Command -Name "aws"
+
+$commandLog = [System.Collections.Generic.List[object]]::new()
+Invoke-LoggedNative -Tool "aws" -Arguments @("sts", "get-caller-identity", "--region", $Region) -CommandLog $commandLog
+
+if ([string]::IsNullOrWhiteSpace($ImageTag)) {
+    $shortSha = (git rev-parse --short HEAD).Trim()
+    if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($shortSha)) {
+        throw "Unable to resolve git short SHA for image tag."
+    }
+    $ImageTag = "legal-shell-$shortSha"
+}
+
+$registry = "$AwsAccountId.dkr.ecr.$Region.amazonaws.com"
+$image = "$registry/$EcrRepository`:$ImageTag"
+Invoke-LoggedNative -Tool "docker" -Arguments @("build", "-f", "src/Xiigen.Platform.Api/Dockerfile", "-t", $image, ".") -CommandLog $commandLog
+
+$password = aws ecr get-login-password --region $Region
+if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($password)) {
+    Add-LogEntry -CommandLog $commandLog -Command "aws ecr get-login-password --region $Region" -Executed $true -ExitCode $LASTEXITCODE
+    throw "Unable to get ECR login password."
+}
+Add-LogEntry -CommandLog $commandLog -Command "aws ecr get-login-password --region $Region" -Executed $true -ExitCode 0
+
+$password | docker login --username AWS --password-stdin $registry
+$dockerLoginExitCode = $LASTEXITCODE
+Add-LogEntry -CommandLog $commandLog -Command "docker login --username AWS --password-stdin $registry" -Executed $true -ExitCode $dockerLoginExitCode
+if ($dockerLoginExitCode -ne 0) {
+    throw "Docker login failed for $registry."
+}
+
+Invoke-LoggedNative -Tool "docker" -Arguments @("push", $image) -CommandLog $commandLog
+Invoke-LoggedNative -Tool "aws" -Arguments @(
+    "apprunner",
+    "update-service",
+    "--service-arn",
+    $AppRunnerServiceArn,
+    "--source-configuration",
+    "ImageRepository={ImageIdentifier=$image,ImageRepositoryType=ECR,ImageConfiguration={Port=8080}}",
+    "--region",
+    $Region
+) -CommandLog $commandLog
+Invoke-LoggedNative -Tool "aws" -Arguments @(
+    "apprunner",
+    "start-deployment",
+    "--service-arn",
+    $AppRunnerServiceArn,
+    "--region",
+    $Region
+) -CommandLog $commandLog
+
+$deployEvidence = [ordered]@{
+    schema_version = "1.0"
+    artifact_scope = "legal_aws_blocked_shell_deploy_evidence"
+    generatedAtUtc = (Get-Date).ToUniversalTime().ToString("o")
+    image = $image
+    baseUrl = $BaseUrl
+    appRunnerServiceArn = $AppRunnerServiceArn
+    ecrRepository = $EcrRepository
+    region = $Region
+    verificationSkipped = [bool]$SkipVerification
+    verificationAttempts = $VerificationAttempts
+    verificationDelaySeconds = $VerificationDelaySeconds
+    blockedShellEvidence = $OutputPath
+    commandLog = $commandLog
+}
+Write-JsonFile -Value $deployEvidence -Path $DeploymentEvidencePath
+
+if (-not $SkipVerification) {
+    $verified = $false
+    for ($attempt = 1; $attempt -le $VerificationAttempts; $attempt++) {
+        & tools/legal/Test-LegalAwsBlockedShell.ps1 -BaseUrl $BaseUrl -OutputPath $OutputPath
+        if ($LASTEXITCODE -eq 0) {
+            $verified = $true
+            break
+        }
+
+        if ($attempt -lt $VerificationAttempts) {
+            Start-Sleep -Seconds $VerificationDelaySeconds
+        }
+    }
+
+    if (-not $verified) {
+        throw "Deploy completed, but blocked-shell verification did not pass after $VerificationAttempts attempts. App Runner may still be rolling out; rerun tools/legal/Test-LegalAwsBlockedShell.ps1."
+    }
+}
+
+Write-Output "Legal blocked-shell deploy submitted for $image"

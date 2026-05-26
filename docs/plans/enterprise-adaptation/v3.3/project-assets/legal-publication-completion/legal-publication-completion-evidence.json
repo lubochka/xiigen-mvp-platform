@@ -38,7 +38,9 @@
     "approvalRunbook":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/LEGAL-APPROVAL-LOCALIZATION-INTAKE-RUNBOOK.md",
     "validationRules":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/approved-legal-record-validation-rules.json",
     "postApprovalImportEvidenceTemplate":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/post-approval-import-evidence-template.json",
+    "postApprovalImportCommand":  "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/legal/Import-ApprovedLegalRecords.ps1 -ApprovedRecordsPath \u003capproved-records.json\u003e",
     "approvalRecordValidator":  "tools/legal/Validate-LegalPublicationRecords.ps1",
+    "approvedRecordImporter":  "tools/legal/Import-ApprovedLegalRecords.ps1",
     "approvalRecordValidatorFailClosed":  {
                                               "command":  "tools/legal/Validate-LegalPublicationRecords.ps1 -RecordsPath approved-legal-record-template.json",
                                               "result":  "PASS_FAIL_CLOSED",
@@ -50,5 +52,7 @@
     "awsBlockedShellVerifier":  "tools/legal/Test-LegalAwsBlockedShell.ps1",
     "awsBlockedShellEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-blocked-shell-evidence.json",
     "awsDeployRunbook":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/LEGAL-AWS-BLOCKED-SHELL-DEPLOY-RUNBOOK.md",
-    "awsDeployPrerequisiteEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-deploy-prerequisite-evidence.json"
+    "awsDeployPrerequisiteEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-deploy-prerequisite-evidence.json",
+    "postApprovalImporter":  "tools/legal/Import-ApprovedLegalRecords.ps1",
+    "awsBlockedShellDeployTool":  "tools/legal/Deploy-LegalAwsBlockedShell.ps1"
 }

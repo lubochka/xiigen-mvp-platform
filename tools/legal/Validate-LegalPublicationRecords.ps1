@@ -8,16 +8,16 @@ param(
 $ErrorActionPreference = "Stop"
 
 $requiredTypes = @(
-    "terms",
-    "privacy",
-    "cookies",
-    "eula",
-    "enterprise_terms",
+    "terms_of_service",
+    "privacy_policy",
+    "cookie_policy",
+    "eula_license",
+    "enterprise_terms_msa",
     "dpa",
     "acceptable_use",
     "affiliate_terms",
     "refund_cancellation",
-    "security",
+    "security_responsible_disclosure",
     "subprocessors",
     "open_source_notices"
 )
