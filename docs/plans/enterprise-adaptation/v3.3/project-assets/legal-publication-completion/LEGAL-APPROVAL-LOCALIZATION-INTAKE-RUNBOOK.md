@@ -33,6 +33,9 @@ The first open requirement remains `LEGAL-PUBLIC-01` until all approved records,
 
 `legal-approval-work-package.json` is the canonical 36-item queue for legal approval/localization. It maps each required document type and locale to its draft source, missing source status, required action, and output record fields. Do not import or publish until every required work item has a corresponding approved record or an explicit locale-scope decision artifact.
 
+## Locale-scope decision alternative
+
+If legal/business approval narrows public launch to a subset of EN/HE/RU, create a concrete decision from `legal-locale-scope-decision-template.json` and validate it with `tools/legal/Validate-LegalLocaleScopeDecision.ps1 -DecisionPath <locale-scope-decision.json>`. The template itself fails validation by design; only an approval-backed decision may change launch locale scope.
 ## Import sequence after approval exists
 
 1. Copy each approved record from `approved-legal-record-template.json` into the legal registry import set.

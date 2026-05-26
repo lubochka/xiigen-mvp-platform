@@ -1,0 +1,31 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_locale_scope_decision_template",
+    "instructions":  "Copy this object only when legal/business approval explicitly narrows public launch locale scope. Do not use this template to infer or fabricate locale scope.",
+    "decision":  {
+                     "decisionId":  "\u003cimmutable-decision-id\u003e",
+                     "status":  "APPROVED",
+                     "includedLocales":  [
+                                             "en"
+                                         ],
+                     "excludedLocales":  [
+                                             {
+                                                 "locale":  "he",
+                                                 "reason":  "\u003capproved reason\u003e",
+                                                 "requiredBeforeLocaleLaunch":  true
+                                             },
+                                             {
+                                                 "locale":  "ru",
+                                                 "reason":  "\u003capproved reason\u003e",
+                                                 "requiredBeforeLocaleLaunch":  true
+                                             }
+                                         ],
+                     "decidedBy":  "\u003clegal/business approval authority\u003e",
+                     "decidedAtUtc":  "\u003cISO-8601 UTC timestamp ending Z\u003e",
+                     "effectiveDate":  "\u003cyyyy-MM-dd\u003e",
+                     "rationale":  "\u003capproved rationale\u003e",
+                     "sourceEvidencePath":  "\u003cpath to approval evidence\u003e",
+                     "publicLaunchAllowed":  false,
+                     "notes":  "Set publicLaunchAllowed true only if decision explicitly permits launch with includedLocales."
+                 }
+}

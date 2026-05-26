@@ -56,5 +56,8 @@
     "postApprovalImporter":  "tools/legal/Import-ApprovedLegalRecords.ps1",
     "awsBlockedShellDeployTool":  "tools/legal/Deploy-LegalAwsBlockedShell.ps1",
     "legalApprovalWorkPackage":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-approval-work-package.json",
-    "legalApprovalWorkPackageStatus":  "36 required work items, 0 complete, import/publication disabled until approved records or locale-scope decision exists."
+    "legalApprovalWorkPackageStatus":  "36 required work items, 0 complete, import/publication disabled until approved records or locale-scope decision exists.",
+    "localeScopeDecisionTemplate":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-locale-scope-decision-template.json",
+    "localeScopeDecisionValidator":  "tools/legal/Validate-LegalLocaleScopeDecision.ps1",
+    "localeScopeDecisionValidatorEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-locale-scope-decision-validator-test-evidence.json"
 }
