@@ -48,3 +48,13 @@ The first open requirement remains `LEGAL-PUBLIC-01` until all approved records,
 - Do not infer lawyer approval from file presence.
 - Do not publish `LEGAL_REVIEW_REQUIRED` or `DRAFT` records as final.
 - Do not claim public legal launch from local-only smoke evidence.
+
+## AWS blocked-shell verification before approval
+
+After deploying the technical shell, run:
+
+```powershell
+tools/legal/Test-LegalAwsBlockedShell.ps1 -BaseUrl https://gyxwjim5ea.eu-west-1.awsapprunner.com -OutputPath docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-blocked-shell-evidence.json
+```
+
+A pass here proves only that unapproved drafts are not exposed. It does not close `LEGAL-PUBLIC-*` rows.

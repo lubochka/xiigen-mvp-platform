@@ -1,0 +1,14 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_aws_deploy_prerequisite_evidence",
+    "generatedAtUtc":  "2026-05-26T05:14:14.8903348Z",
+    "dockerPresent":  true,
+    "awsCliPresent":  false,
+    "deployCanRunFromThisHost":  false,
+    "missingPrerequisite":  "AWS CLI command `aws` was not found in PATH.",
+    "deployRunbook":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/LEGAL-AWS-BLOCKED-SHELL-DEPLOY-RUNBOOK.md",
+    "verifier":  "tools/legal/Test-LegalAwsBlockedShell.ps1",
+    "currentAwsBlockedShellEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-blocked-shell-evidence.json",
+    "currentAwsRouteStatus":  "404 for tested /legal/en|he|ru/terms-of-use routes; deployed App Runner image predates legal shell.",
+    "publicLegalRowsPass":  false
+}

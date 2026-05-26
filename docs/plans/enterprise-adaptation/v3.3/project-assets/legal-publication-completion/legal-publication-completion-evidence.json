@@ -1,7 +1,7 @@
 {
     "schema_version":  "1.1",
     "artifact_scope":  "legal_publication_completion_evidence",
-    "status":  "IN_PROGRESS_APPROVAL_LOCALIZATION_INTAKE_READY_PUBLICATION_PENDING",
+    "status":  "IN_PROGRESS_AWS_DEPLOY_PREREQUISITE_MISSING_APPROVAL_LOCALIZATION_REQUIRED",
     "generatedAtUtc":  "2026-05-26T04:44:46.8607164Z",
     "sourceInventory":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-approved-source-inventory.json",
     "draftSourceInventory":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-inventory.json",
@@ -46,5 +46,9 @@
                                               "passed":  false,
                                               "reason":  "The placeholder template is rejected; validator requires 36 concrete approved records with metadata."
                                           },
-    "negativeTemplateValidationEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-record-validation.template-negative.json"
+    "negativeTemplateValidationEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-record-validation.template-negative.json",
+    "awsBlockedShellVerifier":  "tools/legal/Test-LegalAwsBlockedShell.ps1",
+    "awsBlockedShellEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-blocked-shell-evidence.json",
+    "awsDeployRunbook":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/LEGAL-AWS-BLOCKED-SHELL-DEPLOY-RUNBOOK.md",
+    "awsDeployPrerequisiteEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-deploy-prerequisite-evidence.json"
 }

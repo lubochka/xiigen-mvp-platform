@@ -1,0 +1,52 @@
+﻿{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_aws_blocked_shell_evidence",
+    "generatedAtUtc":  "2026-05-26T05:12:35.3539216Z",
+    "baseUrl":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com",
+    "status":  "IN_PROGRESS_AWS_BLOCKED_SHELL_NOT_VERIFIED",
+    "blockedShellDeployed":  false,
+    "rtlEvidencePass":  false,
+    "publicLegalRowsPass":  false,
+    "reasonRowsDoNotPass":  "Blocked-shell route evidence proves drafts are not exposed, but LEGAL-PUBLIC rows require approved legal content and final AWS visual evidence.",
+    "routes":  [
+                   {
+                       "url":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/en/terms-of-use",
+                       "locale":  "en",
+                       "slug":  "terms-of-use",
+                       "statusCode":  404,
+                       "bodyLength":  0,
+                       "containsLegalReviewRequired":  false,
+                       "containsNotYetPublished":  false,
+                       "containsFinalApprovedBody":  false,
+                       "containsRtl":  false,
+                       "requiresRtl":  false,
+                       "errorMessage":  "The remote server returned an error: (404) Not Found."
+                   },
+                   {
+                       "url":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/he/terms-of-use",
+                       "locale":  "he",
+                       "slug":  "terms-of-use",
+                       "statusCode":  404,
+                       "bodyLength":  0,
+                       "containsLegalReviewRequired":  false,
+                       "containsNotYetPublished":  false,
+                       "containsFinalApprovedBody":  false,
+                       "containsRtl":  false,
+                       "requiresRtl":  true,
+                       "errorMessage":  "The remote server returned an error: (404) Not Found."
+                   },
+                   {
+                       "url":  "https://gyxwjim5ea.eu-west-1.awsapprunner.com/legal/ru/terms-of-use",
+                       "locale":  "ru",
+                       "slug":  "terms-of-use",
+                       "statusCode":  404,
+                       "bodyLength":  0,
+                       "containsLegalReviewRequired":  false,
+                       "containsNotYetPublished":  false,
+                       "containsFinalApprovedBody":  false,
+                       "containsRtl":  false,
+                       "requiresRtl":  false,
+                       "errorMessage":  "The remote server returned an error: (404) Not Found."
+                   }
+               ]
+}
