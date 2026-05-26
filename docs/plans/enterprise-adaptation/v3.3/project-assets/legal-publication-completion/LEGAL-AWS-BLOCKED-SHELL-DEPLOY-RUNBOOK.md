@@ -23,7 +23,7 @@ $env:XIIGEN_APP_RUNNER_SERVICE_ARN = "arn:aws:apprunner:eu-west-1:595003292091:s
 $env:XIIGEN_PLATFORM_ECR_REPOSITORY = "xiigen/platform-api"
 ```
 
-AWS CLI must be authenticated for the account above and must have ECR push + App Runner update/start-deployment permissions.
+AWS CLI or AWS PowerShell tools must be authenticated for the account above and must have ECR push + App Runner update/start-deployment permissions. The deploy script auto-selects AWS CLI when available, otherwise it uses AWS.Tools.SecurityToken, AWS.Tools.ECR, and AWS.Tools.AppRunner.
 
 ## Deploy command
 
@@ -39,7 +39,7 @@ $env:XIIGEN_PLATFORM_BASE_URL = "https://gyxwjim5ea.eu-west-1.awsapprunner.com"
 tools/legal/Deploy-LegalAwsBlockedShell.ps1
 ```
 
-The script performs the full technical shell path: prerequisite checks, AWS identity check, Docker build, ECR login, Docker push, App Runner update/start-deployment, then blocked-shell route evidence capture. It fails closed if AWS CLI, Docker, credentials, deployment or evidence verification are missing.
+The script performs the full technical shell path: prerequisite checks, AWS identity check, Docker build, ECR login, Docker push, App Runner update/start-deployment, then blocked-shell route evidence capture. It fails closed if Docker, AWS credentials, deployment permissions or evidence verification are missing. AWS CLI is not required when the AWS PowerShell modules are available.
 
 ## Manual deploy command outline
 
