@@ -65,3 +65,12 @@ tools/legal/Test-LegalAwsBlockedShell.ps1 -BaseUrl https://gyxwjim5ea.eu-west-1.
 ```
 
 A pass here proves only that unapproved drafts are not exposed. It does not close `LEGAL-PUBLIC-*` rows.
+## Draft Source Action Inventory
+
+Before legal approval packaging, run:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/legal/Build-LegalDraftSourceInventory.ps1
+```
+
+This writes `legal-draft-source-action-inventory.json` with line-level draft and placeholder findings for every mapped source file. The inventory is an execution aid only: it never marks legal content approved, never changes `readyForApprovedImport` to true, and never unlocks public legal publication. Public routes remain blocked until approved EN/HE/RU records or a valid locale-scope decision pass the import validator.

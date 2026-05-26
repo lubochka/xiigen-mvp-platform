@@ -1,7 +1,7 @@
 {
     "schema_version":  "1.0",
     "artifact_scope":  "legal_publication_record_validation",
-    "generatedAtUtc":  "2026-05-26T10:19:04.2675974Z",
+    "generatedAtUtc":  "2026-05-26T12:08:45.5755597Z",
     "recordsPath":  "C:\\Projects\\xiigen-platform-dot-net-angular\\docs\\plans\\enterprise-adaptation\\v3.3\\project-assets\\legal-publication-completion\\approved-legal-record-template.json",
     "requiredRecordCount":  36,
     "actualRecordCount":  1,

@@ -3,13 +3,13 @@
     "goal_reached":  false,
     "stop_allowed":  false,
     "gate_status":  "IN_PROGRESS_LEGAL_APPROVAL_LOCALIZATION_AWS_CREDENTIALS_AND_PUBLICATION_REQUIRED",
-    "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: configure AWS profile/SSO for local runner, obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, import approved records with tools/legal/Import-ApprovedLegalRecords.ps1, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.",
+    "next_action":  "Use legal-draft-source-action-inventory.json to resolve draft placeholders and missing affiliate terms, then obtain/import approved EN/HE/RU records or a valid locale-scope decision, configure AWS profile/SSO, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.",
     "next_action_plan_source":  "SESSION-14 / LEGAL-PUBLIC-01 approval source + AWS credential bootstrap + AWS publication",
     "actionable_gaps":  [
 
                         ],
     "current_internal_role_state":  "ARCHITECT_INTERNAL_REVIEW_CONTINUE_SESSION_14_LEGAL_APPROVAL_LOCALIZATION_INTAKE",
-    "last_role_transition_reason":  "Executor audit found draft legal sources only: English drafts with placeholders, no approval metadata, missing affiliate terms exact source, and missing HE/RU final localized sources.",
+    "last_role_transition_reason":  "Executor audit and toolchain now produce line-level draft source action inventory: 11 EN draft sources, 1 missing affiliate source, 356 placeholder/draft findings, no approval metadata, missing HE/RU final localized sources.",
     "return_to_executor_required":  true,
     "loaded_skills":  [
                           "architect plan",
@@ -52,11 +52,11 @@
     "reinstatement_reason":  "SESSION-01 capability map provides exact implementation targets for missing AWS CI/CD rows.",
     "first_failed_requirement_id":  "LEGAL-PUBLIC-01",
     "last_plan_reminder":  {
-                               "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: configure AWS profile/SSO for local runner, obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, import approved records with tools/legal/Import-ApprovedLegalRecords.ps1, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.",
+                               "next_action":  "Use legal-draft-source-action-inventory.json to resolve draft placeholders and missing affiliate terms, then obtain/import approved EN/HE/RU records or a valid locale-scope decision, configure AWS profile/SSO, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.",
                                "source":  "LEGAL-PUBLIC-01"
                            },
     "execution_attempt_latest":  {
-                                      "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: configure AWS profile/SSO for local runner, obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, import approved records with tools/legal/Import-ApprovedLegalRecords.ps1, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.",
+                                     "next_action":  "Use legal-draft-source-action-inventory.json to resolve draft placeholders and missing affiliate terms, then obtain/import approved EN/HE/RU records or a valid locale-scope decision, configure AWS profile/SSO, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.",
                                      "executor_must_handoff_to":  "REVIEW_INTERNAL after legal approval/localization intake and before public AWS route publication"
                                  },
     "constitution_linkage":  {
@@ -288,7 +288,7 @@
                            "architect_final_authority_only":  true,
                            "coverage_challenge_architect_first":  true,
                            "stop_permission_gate_required":  true,
-                           "next_action":  "Execute SESSION-14 legal approval/localization then AWS publication: configure AWS profile/SSO for local runner, obtain approved EN/HE/RU legal records or locale-scope decision, create missing affiliate terms, import approved records with tools/legal/Import-ApprovedLegalRecords.ps1, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.",
+                           "next_action":  "Use legal-draft-source-action-inventory.json to resolve draft placeholders and missing affiliate terms, then obtain/import approved EN/HE/RU records or a valid locale-scope decision, configure AWS profile/SSO, deploy with tools/legal/Deploy-LegalAwsBlockedShell.ps1, and capture AWS legal route screenshots.",
                            "executor_must_handoff_to":  "REVIEW_INTERNAL after legal approval/localization intake and before public AWS route publication"
                        },
     "masterTenantLaunch":  {
@@ -316,16 +316,16 @@
                                                    "ru"
                                                ],
                            "requiredDocuments":  [
-                                                      "terms_of_service",
-                                                      "privacy_policy",
-                                                      "cookie_policy",
-                                                      "eula_license",
-                                                      "enterprise_terms_msa",
+                                                     "terms_of_service",
+                                                     "privacy_policy",
+                                                     "cookie_policy",
+                                                     "eula_license",
+                                                     "enterprise_terms_msa",
                                                      "dpa",
                                                      "acceptable_use",
                                                      "affiliate_terms",
                                                      "refund_cancellation",
-                                                      "security_responsible_disclosure",
+                                                     "security_responsible_disclosure",
                                                      "subprocessors",
                                                      "open_source_notices"
                                                  ],
@@ -333,10 +333,12 @@
                            "publicationCompletionEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-completion-evidence.json",
                            "draftSourceInventory":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-inventory.json",
                            "draftSourceMap":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-map.json",
-                            "technicalShellEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-technical-shell-evidence.json",
-                            "approvedRecordImporter":  "tools/legal/Import-ApprovedLegalRecords.ps1",
-                            "awsDeployRunner":  "tools/legal/Deploy-LegalAwsBlockedShell.ps1",
-                            "awsDeployPrerequisiteEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-deploy-prerequisite-evidence.json"
+                           "technicalShellEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-technical-shell-evidence.json",
+                           "approvedRecordImporter":  "tools/legal/Import-ApprovedLegalRecords.ps1",
+                           "awsDeployRunner":  "tools/legal/Deploy-LegalAwsBlockedShell.ps1",
+                           "awsDeployPrerequisiteEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-deploy-prerequisite-evidence.json",
+                           "draftSourceActionInventory":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-action-inventory.json",
+                           "legalPublicationToolchainEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-toolchain-test-evidence.json"
                        },
     "linkedSystemGraphEvidence":  {
                                       "status":  "PASS_LINKED_SYSTEM_GRAPH_CAPTURED",

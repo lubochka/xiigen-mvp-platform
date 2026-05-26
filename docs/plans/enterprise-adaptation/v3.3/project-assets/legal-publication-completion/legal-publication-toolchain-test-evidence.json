@@ -1,40 +1,46 @@
 {
     "schema_version":  "1.0",
     "artifact_scope":  "legal_publication_toolchain_test_evidence",
-    "generatedAtUtc":  "2026-05-26T10:19:09.9440057Z",
+    "generatedAtUtc":  "2026-05-26T12:08:49.6892033Z",
     "status":  "PASS_LEGAL_PUBLICATION_TOOLCHAIN",
     "passed":  true,
     "realLegalRowsPass":  false,
     "rows":  [
                  {
+                     "name":  "draft-source-action-inventory",
+                     "passed":  true,
+                     "detail":  "Line-level draft source inventory generated; it remains non-approving and publication-blocking by design.",
+                     "checkedAtUtc":  "2026-05-26T12:08:45.4434302Z"
+                 },
+                 {
                      "name":  "approved-template-fails-closed",
                      "passed":  true,
                      "detail":  "Template must fail validation because it is not approved content.",
-                     "checkedAtUtc":  "2026-05-26T10:19:04.3263522Z"
+                     "checkedAtUtc":  "2026-05-26T12:08:45.5836106Z"
                  },
                  {
                      "name":  "synthetic-approved-import-pipeline",
                      "passed":  true,
                      "detail":  "Synthetic 36-record import validates temp-only registry/route/visual updates.",
-                     "checkedAtUtc":  "2026-05-26T10:19:04.9965572Z"
+                     "checkedAtUtc":  "2026-05-26T12:08:46.6530276Z"
                  },
                  {
                      "name":  "locale-scope-template-fails-closed",
                      "passed":  true,
                      "detail":  "Template must fail validation because it lacks real approval metadata.",
-                     "checkedAtUtc":  "2026-05-26T10:19:05.0650870Z"
+                     "checkedAtUtc":  "2026-05-26T12:08:46.7976659Z"
                  },
                  {
                      "name":  "synthetic-locale-scope-validator",
                      "passed":  true,
                      "detail":  "Synthetic locale-scope decision validates positive path.",
-                     "checkedAtUtc":  "2026-05-26T10:19:05.1551799Z"
+                     "checkedAtUtc":  "2026-05-26T12:08:46.9348767Z"
                  },
                  {
                      "name":  "aws-deploy-fails-closed-without-credentials",
                      "passed":  true,
                      "detail":  "Command failed with exit code 253: aws sts get-caller-identity --region eu-west-1",
-                     "checkedAtUtc":  "2026-05-26T10:19:09.9338873Z"
+                     "checkedAtUtc":  "2026-05-26T12:08:49.6811377Z"
                  }
              ]
 }

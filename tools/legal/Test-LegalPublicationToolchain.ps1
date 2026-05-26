@@ -12,6 +12,10 @@ function Add-Result { param($Rows,[string]$Name,[bool]$Passed,[string]$Detail) $
 $rows=[System.Collections.Generic.List[object]]::new()
 $completionDir=Resolve-RepoPath "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion"
 
+$draftInventoryOutput = Join-Path $completionDir "legal-draft-source-action-inventory.json"
+& (Join-Path $PlatformRepo "tools/legal/Build-LegalDraftSourceInventory.ps1") -OutputPath $draftInventoryOutput | Out-Null
+$draftInventoryData = Get-Content -Raw -LiteralPath $draftInventoryOutput | ConvertFrom-Json
+Add-Result -Rows $rows -Name "draft-source-action-inventory" -Passed ($draftInventoryData.readyForApprovedImport -eq $false -and $draftInventoryData.canPublishPublicLegalRoutes -eq $false -and $draftInventoryData.requiredDocumentTypes -eq 12) -Detail "Line-level draft source inventory generated; it remains non-approving and publication-blocking by design."
 $approvedTemplate=Join-Path $completionDir "approved-legal-record-template.json"
 $approvedTemplateValidation=Join-Path $completionDir "legal-publication-record-validation.template-negative.json"
 & (Join-Path $PlatformRepo "tools/legal/Validate-LegalPublicationRecords.ps1") -RecordsPath $approvedTemplate -OutputPath $approvedTemplateValidation | Out-Null
