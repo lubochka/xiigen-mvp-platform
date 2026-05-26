@@ -1,8 +1,10 @@
 {
-    "schema_version":  "1.0",
+    "schema_version":  "1.1",
     "artifact_scope":  "legal_approved_source_inventory",
-    "generatedAtUtc":  "2026-05-26T04:36:12.9670417Z",
+    "generatedAtUtc":  "2026-05-26T04:44:46.8607164Z",
     "sourcePackage":  "C:/Users/lubao/Documents/xiigen/website launch/XIIGEN-ENTERPRISE-ADAPTATION-PLAN-PACKAGE-v3.3.zip",
+    "draftSourceDirectory":  "C:/Users/lubao/Documents/xiigen/legal",
+    "draftSourceFound":  true,
     "approvedLegalDocumentsFound":  false,
     "packageLegalEntries":  [
                                 "LEGAL-DOCUMENTS-SITE-INTEGRATION-CONTRACT.md",
@@ -10,6 +12,170 @@
                             ],
     "requiredDocumentRecords":  36,
     "approvedRecordsAvailable":  0,
-    "nextAction":  "Provide or import lawyer-approved EN/HE/RU legal content, then publish AWS legal routes and capture visual evidence.",
-    "executorRule":  "Do not fabricate legal approval or publish LEGAL_REVIEW_REQUIRED records as final."
+    "localizedApprovedRecordsAvailable":  0,
+    "candidateMappings":  [
+                              {
+                                  "notes":  "Version 1.0 Draft, Insert Date placeholder, approval metadata absent",
+                                  "requiredRecord":  "terms_of_service",
+                                  "candidatePath":  "C:/Users/lubao/Documents/xiigen/legal/2-xiigen_terms_of_use_v_1.md",
+                                  "publicRowCanPass":  false,
+                                  "sourceStatus":  "DRAFT_SOURCE_FOUND",
+                                  "locale":  "en"
+                              },
+                              {
+                                  "notes":  "Version 1.0 Draft, Insert Date placeholder, approval metadata absent",
+                                  "requiredRecord":  "privacy_policy",
+                                  "candidatePath":  "C:/Users/lubao/Documents/xiigen/legal/3-xiigen_privacy_policy_v_1.md",
+                                  "publicRowCanPass":  false,
+                                  "sourceStatus":  "DRAFT_SOURCE_FOUND",
+                                  "locale":  "en"
+                              },
+                              {
+                                  "notes":  "Version 1.0 Draft, Insert Date placeholder, approval metadata absent",
+                                  "requiredRecord":  "cookie_policy",
+                                  "candidatePath":  "C:/Users/lubao/Documents/xiigen/legal/13-xiigen_cookie_policy_v_1.md",
+                                  "publicRowCanPass":  false,
+                                  "sourceStatus":  "DRAFT_SOURCE_FOUND",
+                                  "locale":  "en"
+                              },
+                              {
+                                  "notes":  "Version 1.0 Draft, Insert Date placeholder, approval metadata absent",
+                                  "requiredRecord":  "eula_license",
+                                  "candidatePath":  "C:/Users/lubao/Documents/xiigen/legal/1-xiigen_end_user_license_agreement_v_1.md",
+                                  "publicRowCanPass":  false,
+                                  "sourceStatus":  "DRAFT_SOURCE_FOUND",
+                                  "locale":  "en"
+                              },
+                              {
+                                  "notes":  "Version 1.0 Draft, Insert Date placeholder, approval metadata absent",
+                                  "requiredRecord":  "enterprise_terms_msa",
+                                  "candidatePath":  "C:/Users/lubao/Documents/xiigen/legal/8-xiigen_enterprise_license_agreement_v_1.md",
+                                  "publicRowCanPass":  false,
+                                  "sourceStatus":  "DRAFT_SOURCE_FOUND",
+                                  "locale":  "en"
+                              },
+                              {
+                                  "notes":  "Version 1.0 Draft, Insert Date placeholder, approval metadata absent",
+                                  "requiredRecord":  "dpa",
+                                  "candidatePath":  "C:/Users/lubao/Documents/xiigen/legal/7-xiigen_data_processing_addendum_v_1.md",
+                                  "publicRowCanPass":  false,
+                                  "sourceStatus":  "DRAFT_SOURCE_FOUND",
+                                  "locale":  "en"
+                              },
+                              {
+                                  "notes":  "Version 1.0 Draft, Insert Date placeholder, approval metadata absent",
+                                  "requiredRecord":  "acceptable_use",
+                                  "candidatePath":  "C:/Users/lubao/Documents/xiigen/legal/5-xiigen_acceptable_use_policy_v_1.md",
+                                  "publicRowCanPass":  false,
+                                  "sourceStatus":  "DRAFT_SOURCE_FOUND",
+                                  "locale":  "en"
+                              },
+                              {
+                                  "notes":  "No exact affiliate terms source found in C:/Users/lubao/Documents/xiigen/legal",
+                                  "requiredRecord":  "affiliate_terms",
+                                  "candidatePath":  null,
+                                  "publicRowCanPass":  false,
+                                  "sourceStatus":  "MISSING_SOURCE",
+                                  "locale":  "none"
+                              },
+                              {
+                                  "notes":  "Version 1.0 Draft, Insert Date placeholder, approval metadata absent",
+                                  "requiredRecord":  "refund_cancellation",
+                                  "candidatePath":  "C:/Users/lubao/Documents/xiigen/legal/12-xiigen_refund_and_cancellation_policy_v_1.md",
+                                  "publicRowCanPass":  false,
+                                  "sourceStatus":  "DRAFT_SOURCE_FOUND",
+                                  "locale":  "en"
+                              },
+                              {
+                                  "notes":  "Version 1.0 Draft, Insert Date placeholder, approval metadata absent",
+                                  "requiredRecord":  "security_responsible_disclosure",
+                                  "candidatePath":  "C:/Users/lubao/Documents/xiigen/legal/15-xiigen_vulnerability_disclosure_and_security_reporting_policy_v_1.md",
+                                  "publicRowCanPass":  false,
+                                  "sourceStatus":  "DRAFT_SOURCE_FOUND",
+                                  "locale":  "en"
+                              },
+                              {
+                                  "notes":  "Version 1.0 Draft, Insert Date placeholder, approval metadata absent",
+                                  "requiredRecord":  "subprocessors",
+                                  "candidatePath":  "C:/Users/lubao/Documents/xiigen/legal/25-XIIGEN-Vendor-Subprocessor-and-Third-Party-Provider-Management-Policy.md",
+                                  "publicRowCanPass":  false,
+                                  "sourceStatus":  "DRAFT_SOURCE_FOUND",
+                                  "locale":  "en"
+                              },
+                              {
+                                  "notes":  "Version 1.0 Draft, Insert Date placeholder, approval metadata absent",
+                                  "requiredRecord":  "open_source_notices",
+                                  "candidatePath":  "C:/Users/lubao/Documents/xiigen/legal/6-xiigen_third_party_and_open_source_notices_v_1.md",
+                                  "publicRowCanPass":  false,
+                                  "sourceStatus":  "DRAFT_SOURCE_FOUND",
+                                  "locale":  "en"
+                              }
+                          ],
+    "unresolvedInputs":  [
+                             "Lawyer-approved final content for 12 required legal document types",
+                             "Hebrew final localized legal content or explicit locale-scope decision",
+                             "Russian final localized legal content or explicit locale-scope decision",
+                             "Affiliate Program Terms source document",
+                             "approvedBy metadata",
+                             "approvedAtUtc metadata",
+                             "effectiveDate metadata",
+                             "canonical public AWS route evidence",
+                             "visual evidence for EN/HE/RU legal routes, including RTL Hebrew evidence"
+                         ],
+    "nextExecutableLanes":  [
+                                {
+                                    "closesRows":  [
+                                                       "LEGAL-PUBLIC-01",
+                                                       "LEGAL-PUBLIC-03"
+                                                   ],
+                                    "action":  "Review draft EN source documents, replace placeholders, approve final copy, and attach approvedBy/approvedAtUtc/effectiveDate metadata",
+                                    "lane":  "LEGAL-APPROVAL"
+                                },
+                                {
+                                    "closesRows":  [
+                                                       "LEGAL-PUBLIC-01",
+                                                       "LEGAL-PUBLIC-03"
+                                                   ],
+                                    "action":  "Create or locate Affiliate Program Terms, then send through the same legal approval path",
+                                    "lane":  "LEGAL-AFFILIATE-TERMS"
+                                },
+                                {
+                                    "closesRows":  [
+                                                       "LEGAL-PUBLIC-02",
+                                                       "LEGAL-PUBLIC-07"
+                                                   ],
+                                    "action":  "Produce HE/RU approved localized versions or record explicit locale-scope decision",
+                                    "lane":  "LEGAL-LOCALIZATION"
+                                },
+                                {
+                                    "closesRows":  [
+                                                       "LEGAL-PUBLIC-04",
+                                                       "LEGAL-PUBLIC-08",
+                                                       "LEGAL-PUBLIC-09"
+                                                   ],
+                                    "action":  "Publish only approved records to AWS legal routes and update registry/route map",
+                                    "lane":  "LEGAL-PUBLICATION"
+                                },
+                                {
+                                    "closesRows":  [
+                                                       "LEGAL-PUBLIC-05",
+                                                       "LEGAL-PUBLIC-06"
+                                                   ],
+                                    "action":  "Verify footer, signup, checkout, affiliate, export and corporate install surfaces link exact approved versions",
+                                    "lane":  "LEGAL-SURFACE-LINKAGE"
+                                },
+                                {
+                                    "closesRows":  [
+                                                       "LEGAL-PUBLIC-07",
+                                                       "LEGAL-PUBLIC-10",
+                                                       "LEGAL-PUBLIC-11",
+                                                       "LEGAL-PUBLIC-12"
+                                                   ],
+                                    "action":  "Capture AWS screenshots/traces for EN/HE/RU routes after approved publication",
+                                    "lane":  "LEGAL-VISUAL-EVIDENCE"
+                                }
+                            ],
+    "nextAction":  "Use the draft source directory as legal intake material only. Do not publish until approval/localization metadata exists; first open row remains LEGAL-PUBLIC-01.",
+    "executorRule":  "Do not fabricate legal approval, translations, effective dates, or public route evidence. Do not publish LEGAL_REVIEW_REQUIRED or DRAFT records as final.",
+    "draftSourceMap":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-map.json"
 }

@@ -15,3 +15,9 @@ Public legal launch cannot pass from governed placeholders. It passes only when 
 9. screenshots/traces from the AWS endpoint prove the public legal route claims.
 
 If approved legal copy is absent, executor must not fabricate approval. The next action remains legal content intake and publication evidence.
+
+## Draft-source intake rule
+
+Draft legal sources may be inventoried as `DRAFT_SOURCE_FOUND`, but they do not satisfy public launch requirements. A draft source record must keep public legal rows `IN_PROGRESS` until final lawyer approval, EN/HE/RU localization coverage or an explicit locale-scope decision, publication route evidence, and visual evidence are present.
+
+Known SESSION-14 draft source intake: `C:/Users/lubao/Documents/xiigen/legal` contains English draft-only legal files with placeholders and no approval metadata. It is not a publication source.

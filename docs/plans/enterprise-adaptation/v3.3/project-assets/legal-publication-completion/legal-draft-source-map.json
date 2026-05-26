@@ -1,0 +1,261 @@
+{
+    "schema_version":  "1.0",
+    "artifact_scope":  "legal_draft_source_map",
+    "generatedAtUtc":  "2026-05-26T04:44:17.2714667Z",
+    "sourceRoot":  "C:\\Users\\lubao\\Documents\\xiigen\\legal",
+    "sourceRootStatus":  "DRAFT_INTAKE_ONLY_NOT_PUBLICATION_READY",
+    "requiredDocumentTypes":  12,
+    "requiredLocales":  [
+                            "en",
+                            "he",
+                            "ru"
+                        ],
+    "candidateSources":  [
+                             {
+                                 "requiredLocales":  [
+                                                         "en",
+                                                         "he",
+                                                         "ru"
+                                                     ],
+                                 "documentType":  "terms",
+                                 "candidatePath":  "C:\\Users\\lubao\\Documents\\xiigen\\legal\\2-xiigen_terms_of_use_v_1.md",
+                                 "blockers":  [
+                                                  "Version is draft",
+                                                  "Last Updated placeholder",
+                                                  "Legal company placeholder",
+                                                  "No approval metadata",
+                                                  "Missing he locale",
+                                                  "Missing ru locale"
+                                              ],
+                                 "sourceStatus":  "DRAFT_UNAPPROVED",
+                                 "candidateLocales":  [
+                                                          "en"
+                                                      ]
+                             },
+                             {
+                                 "requiredLocales":  [
+                                                         "en",
+                                                         "he",
+                                                         "ru"
+                                                     ],
+                                 "documentType":  "privacy",
+                                 "candidatePath":  "C:\\Users\\lubao\\Documents\\xiigen\\legal\\3-xiigen_privacy_policy_v_1.md",
+                                 "blockers":  [
+                                                  "Version is draft",
+                                                  "Last Updated placeholder",
+                                                  "Legal company placeholder",
+                                                  "No approval metadata",
+                                                  "Missing he locale",
+                                                  "Missing ru locale"
+                                              ],
+                                 "sourceStatus":  "DRAFT_UNAPPROVED",
+                                 "candidateLocales":  [
+                                                          "en"
+                                                      ]
+                             },
+                             {
+                                 "requiredLocales":  [
+                                                         "en",
+                                                         "he",
+                                                         "ru"
+                                                     ],
+                                 "documentType":  "cookies",
+                                 "candidatePath":  "C:\\Users\\lubao\\Documents\\xiigen\\legal\\13-xiigen_cookie_policy_v_1.md",
+                                 "blockers":  [
+                                                  "Version is draft",
+                                                  "Last Updated placeholder",
+                                                  "No approval metadata",
+                                                  "Missing he locale",
+                                                  "Missing ru locale"
+                                              ],
+                                 "sourceStatus":  "DRAFT_UNAPPROVED",
+                                 "candidateLocales":  [
+                                                          "en"
+                                                      ]
+                             },
+                             {
+                                 "requiredLocales":  [
+                                                         "en",
+                                                         "he",
+                                                         "ru"
+                                                     ],
+                                 "documentType":  "eula",
+                                 "candidatePath":  "C:\\Users\\lubao\\Documents\\xiigen\\legal\\1-xiigen_end_user_license_agreement_v_1.md",
+                                 "blockers":  [
+                                                  "Version is draft",
+                                                  "Last Updated placeholder",
+                                                  "Legal company placeholder",
+                                                  "No approval metadata",
+                                                  "Missing he locale",
+                                                  "Missing ru locale"
+                                              ],
+                                 "sourceStatus":  "DRAFT_UNAPPROVED",
+                                 "candidateLocales":  [
+                                                          "en"
+                                                      ]
+                             },
+                             {
+                                 "requiredLocales":  [
+                                                         "en",
+                                                         "he",
+                                                         "ru"
+                                                     ],
+                                 "documentType":  "enterprise_terms",
+                                 "candidatePath":  "C:\\Users\\lubao\\Documents\\xiigen\\legal\\8-xiigen_enterprise_license_agreement_v_1.md",
+                                 "blockers":  [
+                                                  "Version is draft",
+                                                  "Last Updated placeholder",
+                                                  "Legal company placeholder",
+                                                  "No approval metadata",
+                                                  "Missing he locale",
+                                                  "Missing ru locale"
+                                              ],
+                                 "sourceStatus":  "DRAFT_UNAPPROVED",
+                                 "candidateLocales":  [
+                                                          "en"
+                                                      ]
+                             },
+                             {
+                                 "requiredLocales":  [
+                                                         "en",
+                                                         "he",
+                                                         "ru"
+                                                     ],
+                                 "documentType":  "dpa",
+                                 "candidatePath":  "C:\\Users\\lubao\\Documents\\xiigen\\legal\\7-xiigen_data_processing_addendum_v_1.md",
+                                 "blockers":  [
+                                                  "Version is draft",
+                                                  "Last Updated placeholder",
+                                                  "Legal company placeholder",
+                                                  "No approval metadata",
+                                                  "Missing he locale",
+                                                  "Missing ru locale"
+                                              ],
+                                 "sourceStatus":  "DRAFT_UNAPPROVED",
+                                 "candidateLocales":  [
+                                                          "en"
+                                                      ]
+                             },
+                             {
+                                 "requiredLocales":  [
+                                                         "en",
+                                                         "he",
+                                                         "ru"
+                                                     ],
+                                 "documentType":  "acceptable_use",
+                                 "candidatePath":  "C:\\Users\\lubao\\Documents\\xiigen\\legal\\5-xiigen_acceptable_use_policy_v_1.md",
+                                 "blockers":  [
+                                                  "Version is draft",
+                                                  "Last Updated placeholder",
+                                                  "No approval metadata",
+                                                  "Missing he locale",
+                                                  "Missing ru locale"
+                                              ],
+                                 "sourceStatus":  "DRAFT_UNAPPROVED",
+                                 "candidateLocales":  [
+                                                          "en"
+                                                      ]
+                             },
+                             {
+                                 "requiredLocales":  [
+                                                         "en",
+                                                         "he",
+                                                         "ru"
+                                                     ],
+                                 "documentType":  "affiliate_terms",
+                                 "candidatePath":  null,
+                                 "blockers":  [
+                                                  "No exact source file found",
+                                                  "Missing en locale",
+                                                  "Missing he locale",
+                                                  "Missing ru locale",
+                                                  "No approval metadata"
+                                              ],
+                                 "sourceStatus":  "NO_SOURCE_FOUND",
+                                 "candidateLocales":  [
+
+                                                      ]
+                             },
+                             {
+                                 "requiredLocales":  [
+                                                         "en",
+                                                         "he",
+                                                         "ru"
+                                                     ],
+                                 "documentType":  "refund_cancellation",
+                                 "candidatePath":  "C:\\Users\\lubao\\Documents\\xiigen\\legal\\12-xiigen_refund_and_cancellation_policy_v_1.md",
+                                 "blockers":  [
+                                                  "Version is draft",
+                                                  "Last Updated placeholder",
+                                                  "No approval metadata",
+                                                  "Missing he locale",
+                                                  "Missing ru locale"
+                                              ],
+                                 "sourceStatus":  "DRAFT_UNAPPROVED",
+                                 "candidateLocales":  [
+                                                          "en"
+                                                      ]
+                             },
+                             {
+                                 "requiredLocales":  [
+                                                         "en",
+                                                         "he",
+                                                         "ru"
+                                                     ],
+                                 "documentType":  "security",
+                                 "candidatePath":  "C:\\Users\\lubao\\Documents\\xiigen\\legal\\15-xiigen_vulnerability_disclosure_and_security_reporting_policy_v_1.md",
+                                 "blockers":  [
+                                                  "Version is draft",
+                                                  "Last Updated placeholder",
+                                                  "No approval metadata",
+                                                  "Missing he locale",
+                                                  "Missing ru locale"
+                                              ],
+                                 "sourceStatus":  "DRAFT_UNAPPROVED",
+                                 "candidateLocales":  [
+                                                          "en"
+                                                      ]
+                             },
+                             {
+                                 "requiredLocales":  [
+                                                         "en",
+                                                         "he",
+                                                         "ru"
+                                                     ],
+                                 "documentType":  "subprocessors",
+                                 "candidatePath":  "C:\\Users\\lubao\\Documents\\xiigen\\legal\\25-XIIGEN-Vendor-Subprocessor-and-Third-Party-Provider-Management-Policy.md",
+                                 "blockers":  [
+                                                  "Version is draft or policy draft",
+                                                  "No approval metadata",
+                                                  "Missing he locale",
+                                                  "Missing ru locale"
+                                              ],
+                                 "sourceStatus":  "DRAFT_UNAPPROVED",
+                                 "candidateLocales":  [
+                                                          "en"
+                                                      ]
+                             },
+                             {
+                                 "requiredLocales":  [
+                                                         "en",
+                                                         "he",
+                                                         "ru"
+                                                     ],
+                                 "documentType":  "open_source_notices",
+                                 "candidatePath":  "C:\\Users\\lubao\\Documents\\xiigen\\legal\\6-xiigen_third_party_and_open_source_notices_v_1.md",
+                                 "blockers":  [
+                                                  "Version is draft",
+                                                  "Last Updated placeholder",
+                                                  "No approval metadata",
+                                                  "Missing he locale",
+                                                  "Missing ru locale"
+                                              ],
+                                 "sourceStatus":  "DRAFT_UNAPPROVED",
+                                 "candidateLocales":  [
+                                                          "en"
+                                                      ]
+                             }
+                         ],
+    "canPublishPublicLegalRoutes":  false,
+    "reason":  "Sources are English-only drafts with placeholders and no approval metadata. They are intake material only."
+}

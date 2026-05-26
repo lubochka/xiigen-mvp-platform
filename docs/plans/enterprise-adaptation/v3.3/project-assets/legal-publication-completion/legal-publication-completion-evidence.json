@@ -1,10 +1,12 @@
 {
-    "schema_version":  "1.0",
+    "schema_version":  "1.1",
     "artifact_scope":  "legal_publication_completion_evidence",
-    "status":  "IN_PROGRESS_APPROVED_LEGAL_SOURCE_MISSING",
-    "generatedAtUtc":  "2026-05-26T04:36:12.9670417Z",
+    "status":  "IN_PROGRESS_DRAFT_SOURCE_FOUND_APPROVAL_AND_LOCALIZATION_REQUIRED",
+    "generatedAtUtc":  "2026-05-26T04:44:46.8607164Z",
     "sourceInventory":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-approved-source-inventory.json",
-    "publicLaunchLegalGate":  "BLOCKED_UNTIL_LEGAL_APPROVAL",
+    "draftSourceInventory":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-inventory.json",
+    "publicLaunchLegalGate":  "BLOCKED_UNTIL_LEGAL_APPROVAL_AND_LOCALIZATION",
+    "firstOpenRequirement":  "LEGAL-PUBLIC-01",
     "rowsOpened":  [
                        "LEGAL-PUBLIC-01",
                        "LEGAL-PUBLIC-02",
@@ -18,5 +20,16 @@
                        "LEGAL-PUBLIC-10",
                        "LEGAL-PUBLIC-11",
                        "LEGAL-PUBLIC-12"
-                   ]
+                   ],
+    "currentFindings":  [
+                            "Draft EN source set found at C:/Users/lubao/Documents/xiigen/legal",
+                            "No approved legal source set found in v3.3 package or local legal directory",
+                            "Affiliate Program Terms source is missing",
+                            "HE/RU approved localized legal content is missing",
+                            "Approval metadata is absent",
+                            "AWS publication and visual route evidence cannot be claimed yet"
+                        ],
+    "notPassReason":  "The contract requires approved legal content and AWS route evidence; draft source material cannot close public legal rows.",
+    "nextExecutableLane":  "LEGAL-APPROVAL",
+    "draftSourceMap":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-map.json"
 }

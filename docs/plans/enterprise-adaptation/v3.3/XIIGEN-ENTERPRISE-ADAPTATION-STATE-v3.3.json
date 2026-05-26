@@ -2,14 +2,14 @@
     "main_focus_goal":  "Create/train/export/import/validate/update/use Enterprise trainable units for project-local wiki and Smart Code Assistant over Angular + .NET + SQL, with VS/VS Code plugin runtime entrypoints, AWS endpoint/IP visual evidence, and prompt-by-prompt validation.",
     "goal_reached":  false,
     "stop_allowed":  false,
-    "gate_status":  "IN_PROGRESS_LEGAL_PUBLICATION_COMPLETION_REQUIRED",
-    "next_action":  "Execute SESSION-14-LEGAL-PUBLICATION-COMPLETION.md: import approved legal content, publish AWS legal routes, capture visual evidence, and close LEGAL-PUBLIC-01 first IN_PROGRESS row.",
-    "next_action_plan_source":  "SESSION-14 / LEGAL-PUBLIC-01 first IN_PROGRESS row",
+    "gate_status":  "IN_PROGRESS_DRAFT_SOURCE_FOUND_LEGAL_APPROVAL_AND_LOCALIZATION_REQUIRED",
+    "next_action":  "Execute SESSION-14 legal approval lane: use C:/Users/lubao/Documents/xiigen/legal as DRAFT_SOURCE_FOUND intake, obtain/record approved EN legal copy, create missing affiliate terms, produce HE/RU approved localizations or explicit locale-scope decision, then publish AWS legal routes and capture visual evidence.",
+    "next_action_plan_source":  "SESSION-14 / LEGAL-PUBLIC-01 approved legal source requirement",
     "actionable_gaps":  [
 
                         ],
-    "current_internal_role_state":  "ARCHITECT_INTERNAL_REVIEW_CONTINUE_SESSION_14_LEGAL_PUBLICATION_COMPLETION",
-    "last_role_transition_reason":  "User required continuing until the full public-launch plan is complete. Final review found public legal publication still blocked because the source package contains no approved legal content; SESSION-14 legal-publication lane is now explicit.",
+    "current_internal_role_state":  "ARCHITECT_INTERNAL_REVIEW_CONTINUE_SESSION_14_LEGAL_APPROVAL_LOCALIZATION_INTAKE",
+    "last_role_transition_reason":  "Executor audit found draft legal sources only: English drafts with placeholders, no approval metadata, missing affiliate terms exact source, and missing HE/RU final localized sources.",
     "return_to_executor_required":  true,
     "loaded_skills":  [
                           "architect plan",
@@ -44,7 +44,7 @@
                                  "push_is_stop_gate":  false
                              },
     "executor_authority":  "REINSTATED_FOR_PLAN_DERIVED_ACTION_ONLY",
-    "executor_authority_scope":  "Execute SESSION-13 Legal Documents Site Integration only; keep update/re-export evidence as source of truth.",
+    "executor_authority_scope":  "Execute SESSION-14 legal approval/localization intake and public legal publication only after approval evidence exists.",
     "executor_may_not_self_restore":  true,
     "architect_reinstatement_required":  true,
     "executor_authority_reinstated":  true,
@@ -52,12 +52,12 @@
     "reinstatement_reason":  "SESSION-01 capability map provides exact implementation targets for missing AWS CI/CD rows.",
     "first_failed_requirement_id":  "LEGAL-PUBLIC-01",
     "last_plan_reminder":  {
-                               "next_action":  "Execute SESSION-14-LEGAL-PUBLICATION-COMPLETION.md: import approved legal content, publish AWS legal routes, capture visual evidence, and close LEGAL-PUBLIC-01 first IN_PROGRESS row.",
+                               "next_action":  "Execute SESSION-14 legal approval/localization intake: use legal-draft-source-map.json, obtain approved EN/HE/RU legal records or explicit locale-scope decision, then publish AWS legal routes and capture visual evidence.",
                                "source":  "LEGAL-PUBLIC-01"
                            },
     "execution_attempt_latest":  {
-                                     "next_action":  "Execute SESSION-14-LEGAL-PUBLICATION-COMPLETION.md: import approved legal content, publish AWS legal routes, capture visual evidence, and close LEGAL-PUBLIC-01 first IN_PROGRESS row.",
-                                     "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-14 legal publication completion slice"
+                                     "next_action":  "Execute SESSION-14 legal approval/localization intake: use legal-draft-source-map.json, obtain approved EN/HE/RU legal records or explicit locale-scope decision, then publish AWS legal routes and capture visual evidence.",
+                                     "executor_must_handoff_to":  "REVIEW_INTERNAL after legal approval/localization intake and before public AWS route publication"
                                  },
     "constitution_linkage":  {
                                  "required_if_file_exists":  true,
@@ -288,8 +288,8 @@
                            "architect_final_authority_only":  true,
                            "coverage_challenge_architect_first":  true,
                            "stop_permission_gate_required":  true,
-                           "next_action":  "Execute SESSION-14-LEGAL-PUBLICATION-COMPLETION.md: import approved legal content, publish AWS legal routes, capture visual evidence, and close LEGAL-PUBLIC-01 first IN_PROGRESS row.",
-                           "executor_must_handoff_to":  "REVIEW_INTERNAL after SESSION-14 legal publication completion slice"
+                           "next_action":  "Execute SESSION-14 legal approval/localization intake: use legal-draft-source-map.json, obtain approved EN/HE/RU legal records or explicit locale-scope decision, then publish AWS legal routes and capture visual evidence.",
+                           "executor_must_handoff_to":  "REVIEW_INTERNAL after legal approval/localization intake and before public AWS route publication"
                        },
     "masterTenantLaunch":  {
                                "controlPlane":  "main Enterprise project / master tenant",
@@ -309,7 +309,7 @@
                            "acceptanceContextMapPath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-acceptance-context-map.json",
                            "visualEvidenceIndexPath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-visual-evidence-index.json",
                            "allRequiredDocsApproved":  false,
-                           "publicLaunchLegalGate":  "BLOCKED_UNTIL_LEGAL_APPROVAL",
+                           "publicLaunchLegalGate":  "BLOCKED_UNTIL_LEGAL_APPROVAL_AND_LOCALIZATION",
                            "requiredLocales":  [
                                                    "en",
                                                    "he",
@@ -330,7 +330,9 @@
                                                      "open_source_notices"
                                                  ],
                            "evidencePath":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-site-integration-evidence.json",
-                           "publicationCompletionEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-completion-evidence.json"
+                           "publicationCompletionEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-publication-completion-evidence.json",
+                           "draftSourceInventory":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-inventory.json",
+                           "draftSourceMap":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-draft-source-map.json"
                        },
     "linkedSystemGraphEvidence":  {
                                       "status":  "PASS_LINKED_SYSTEM_GRAPH_CAPTURED",

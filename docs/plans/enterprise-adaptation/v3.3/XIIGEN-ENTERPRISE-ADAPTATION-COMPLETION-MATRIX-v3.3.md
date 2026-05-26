@@ -186,13 +186,13 @@ Every row names a literal expectation. Generic placeholders such as `requirement
 ## Matrix verdict
 
 ```text
-IN_PROGRESS_LEGAL_PUBLICATION_COMPLETION_REQUIRED
+IN_PROGRESS_DRAFT_SOURCE_FOUND_LEGAL_APPROVAL_AND_LOCALIZATION_REQUIRED
 ```
 
 ## First next action
 
 ```text
-Execute SESSION-14-LEGAL-PUBLICATION-COMPLETION.md: import approved legal content, publish AWS legal routes, capture visual evidence, and close LEGAL-PUBLIC-01 first IN_PROGRESS row.
+Execute SESSION-14 legal approval/localization lane: use project-assets/legal-publication-completion/legal-draft-source-inventory.json, legal-draft-source-map.json, and C:/Users/lubao/Documents/xiigen/legal as DRAFT_SOURCE_FOUND intake only; obtain approved EN/HE/RU records or explicit locale-scope decision, create missing affiliate terms, then publish AWS legal routes and capture visual evidence.
 ```
 
 
@@ -237,3 +237,20 @@ Execute SESSION-14-LEGAL-PUBLICATION-COMPLETION.md: import approved legal conten
 | LEGAL-16 | Export download/corporate install references license, third-party notices and enterprise terms | export/install evidence | PASS | Legal site integration evidence captured at docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-site-integration-evidence.json; content model, 36 versioned locale records, route map, acceptance contexts, export/install linkage, locale/RTL status, and draft-not-published gate verified. Public launch legal gate remains BLOCKED_UNTIL_LEGAL_APPROVAL. |
 | LEGAL-17 | EN/HE/RU locale status is recorded; Hebrew RTL legal page evidence is required when published | locale registry + screenshot metadata | PASS | Legal site integration evidence captured at docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-site-integration-evidence.json; content model, 36 versioned locale records, route map, acceptance contexts, export/install linkage, locale/RTL status, and draft-not-published gate verified. Public launch legal gate remains BLOCKED_UNTIL_LEGAL_APPROVAL. |
 | LEGAL-18 | No DRAFT or LEGAL_REVIEW_REQUIRED legal document is publicly published as final | publication status report + route access evidence | PASS | Legal site integration evidence captured at docs/plans/enterprise-adaptation/v3.3/project-assets/legal-documents/legal-site-integration-evidence.json; content model, 36 versioned locale records, route map, acceptance contexts, export/install linkage, locale/RTL status, and draft-not-published gate verified. Public launch legal gate remains BLOCKED_UNTIL_LEGAL_APPROVAL. |
+
+## Public Legal Publication Completion Matrix
+
+| ID | Requirement | Evidence required | Status | Session |
+|---|---|---|---|---|
+| LEGAL-PUBLIC-01 | Approved legal source inventory exists for all required public legal document types | legal-approved-source-inventory.json with approvedLegalDocumentsFound=true and 12 document types mapped | IN_PROGRESS | SESSION-14 found draft-only EN sources; approval/localization intake required. |
+| LEGAL-PUBLIC-02 | Terms, privacy, cookies, EULA, enterprise terms, DPA, acceptable use, affiliate terms, refund/cancellation, security, subprocessors and open-source notices have approved records | legal-document-registry.json records with APPROVED/PUBLISHED status | IN_PROGRESS | 11 EN draft candidates found; affiliate terms exact source missing; no approved records available. |
+| LEGAL-PUBLIC-03 | EN, HE and RU locale records are approved or an explicit locale-scope decision exists | registry locale rows or locale-scope decision artifact | IN_PROGRESS | EN draft candidates only; HE/RU final localized legal sources missing. |
+| LEGAL-PUBLIC-04 | Each approved legal record has version, effectiveDate, approvedBy, approvedAtUtc, canonical URL and final body | legal-document-registry.json metadata fields | IN_PROGRESS | Draft sources contain placeholders and no approval metadata. |
+| LEGAL-PUBLIC-05 | Public AWS legal routes are published only from approved records | AWS route evidence and route map | IN_PROGRESS | Publication blocked until approved records exist. |
+| LEGAL-PUBLIC-06 | Footer, signup, checkout, affiliate, export and corporate install surfaces link to exact approved versions | link map plus AWS screenshots | IN_PROGRESS | Linkage is governed; public approved-version evidence pending. |
+| LEGAL-PUBLIC-07 | Acceptance contexts persist document ID, version, locale and context for public legal records | acceptance evidence for approved records | IN_PROGRESS | Acceptance model exists; approved public records pending. |
+| LEGAL-PUBLIC-08 | Hebrew legal routes render RTL from approved HE records | AWS HE screenshot and RTL metadata | IN_PROGRESS | HE approved source missing. |
+| LEGAL-PUBLIC-09 | No DRAFT or LEGAL_REVIEW_REQUIRED legal record is exposed as final | publication report and route access evidence | IN_PROGRESS | Current safety gate blocks publication; route evidence pending after approval. |
+| LEGAL-PUBLIC-10 | Public legal visual evidence is captured from AWS endpoint, not localhost | screenshots/traces with AWS URL metadata | IN_PROGRESS | Awaiting approved publication. |
+| LEGAL-PUBLIC-11 | Legal publication evidence proves approval and localization chain, not just placeholders | legal-publication-completion-evidence.json | IN_PROGRESS | Evidence now proves draft intake and missing approval, not completion. |
+| LEGAL-PUBLIC-12 | State goal_reached can become true only after LEGAL-PUBLIC-01 through LEGAL-PUBLIC-11 pass | state JSON and matrix verdict | IN_PROGRESS | goal_reached remains false and stop_allowed remains false. |
