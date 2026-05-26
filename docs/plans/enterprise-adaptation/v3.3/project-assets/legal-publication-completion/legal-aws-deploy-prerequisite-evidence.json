@@ -1,19 +1,24 @@
 {
-    "schema_version":  "1.0",
+    "schema_version":  "1.1",
     "artifact_scope":  "legal_aws_deploy_prerequisite_evidence",
-    "generatedAtUtc":  "2026-05-26T06:07:30.0020555Z",
+    "generatedAtUtc":  "2026-05-26T06:09:32.9206009Z",
     "dockerPresent":  true,
-    "awsCliPresent":  true,
+    "awsCliPresent":  false,
+    "awsPowerShellModulesPresent":  true,
+    "awsCredentialsPresent":  false,
     "deployCanRunFromThisHost":  false,
-    "missingPrerequisite":  "AWS credentials and required AWS_REGION/AWS_ACCOUNT_ID/XIIGEN_APP_RUNNER_SERVICE_ARN/XIIGEN_PLATFORM_ECR_REPOSITORY environment values are not configured in this shell.",
+    "missingPrerequisite":  "AWS CLI is installed, but aws configure list shows no profile, no access key, no secret key, and no region. Configure AWS credentials or SSO before running tools/legal/Deploy-LegalAwsBlockedShell.ps1.",
     "deployRunbook":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/LEGAL-AWS-BLOCKED-SHELL-DEPLOY-RUNBOOK.md",
+    "deployTool":  "tools/legal/Deploy-LegalAwsBlockedShell.ps1",
     "verifier":  "tools/legal/Test-LegalAwsBlockedShell.ps1",
     "currentAwsBlockedShellEvidence":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/legal-aws-blocked-shell-evidence.json",
-    "currentAwsRouteStatus":  "404 for tested /legal/en|he|ru/terms-of-use routes; deployed App Runner image predates legal shell.",
+    "currentAwsRouteStatus":  "404 or connection failure for tested legal/health routes; deployed App Runner image predates legal shell or endpoint is not reachable from this session.",
     "publicLegalRowsPass":  false,
-    "awsIdentityCheck":  "aws sts get-caller-identity -\u003e NoCredentials",
-    "awsCliInvocation":  "C:/tmp/awscli-venv/Scripts/python.exe -m awscli",
-    "awsCliVersion":  "aws-cli/1.45.14 Python/3.13.5 Windows/11 botocore/1.43.14",
-    "awsCredentialsPresent":  false,
-    "isolatedAwsCliInstallDir":  "C:/tmp/awscli-venv"
+    "awsConfigureList":  {
+                             "profile":  "\u003cnot set\u003e",
+                             "access_key":  "\u003cnot set\u003e",
+                             "secret_key":  "\u003cnot set\u003e",
+                             "region":  "\u003cnot set\u003e",
+                             "secretValuesPrinted":  false
+                         }
 }
