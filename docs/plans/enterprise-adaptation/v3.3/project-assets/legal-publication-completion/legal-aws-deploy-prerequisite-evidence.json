@@ -1,13 +1,13 @@
 {
     "schema_version":  "1.1",
     "artifact_scope":  "legal_aws_deploy_prerequisite_evidence",
-    "generatedAtUtc":  "2026-05-26T06:09:32.9206009Z",
+    "generatedAtUtc":  "2026-05-26T06:19:50.5062780Z",
     "dockerPresent":  true,
-    "awsCliPresent":  false,
+    "awsCliPresent":  true,
     "awsPowerShellModulesPresent":  true,
     "awsCredentialsPresent":  false,
     "deployCanRunFromThisHost":  false,
-    "missingPrerequisite":  "AWS CLI is installed, but aws configure list shows no profile, no access key, no secret key, and no region. Configure AWS credentials or SSO before running tools/legal/Deploy-LegalAwsBlockedShell.ps1.",
+    "missingPrerequisite":  "AWS CLI v2 exists at C:\\Program Files\\Amazon\\AWSCLIV2\\aws.exe and AWS PowerShell deployment modules are installed, but AWS credential resolution fails: no environment credentials, no default profile, and no instance metadata credentials in this session.",
     "deployRunbook":  "docs/plans/enterprise-adaptation/v3.3/project-assets/legal-publication-completion/LEGAL-AWS-BLOCKED-SHELL-DEPLOY-RUNBOOK.md",
     "deployTool":  "tools/legal/Deploy-LegalAwsBlockedShell.ps1",
     "verifier":  "tools/legal/Test-LegalAwsBlockedShell.ps1",
@@ -19,6 +19,12 @@
                              "access_key":  "\u003cnot set\u003e",
                              "secret_key":  "\u003cnot set\u003e",
                              "region":  "\u003cnot set\u003e",
-                             "secretValuesPrinted":  false
-                         }
+                             "secretValuesPrinted":  false,
+                             "cliPath":  "C:\\Program Files\\Amazon\\AWSCLIV2\\aws.exe"
+                         },
+    "awsPowerShellCredentialCheck":  {
+                                         "command":  "Get-STSCallerIdentity -Region eu-west-1",
+                                         "result":  "FAIL_NO_AWS_CREDENTIALS",
+                                         "secretValuesPrinted":  false
+                                     }
 }
