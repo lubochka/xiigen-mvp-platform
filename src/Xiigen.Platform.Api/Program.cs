@@ -2,6 +2,7 @@ using System.Net;
 using System.Text;
 using Xiigen.Fabrics.InMemory;
 using Xiigen.Kernel;
+using Xiigen.Platform.Api.DesignConversion;
 using Xiigen.Platform.Marketplace;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,40 @@ builder.Services.AddSingleton<ICorrelationContextAccessor, AsyncLocalCorrelation
 builder.Services.AddSingleton<ITenantContextRunner, TenantContextRunner>();
 builder.Services.AddXiigenInMemoryFabrics();
 builder.Services.AddXiigenMarketplace();
+var flow47Options = new Flow47DesignConversionOptions
+{
+    BaseUrl = builder.Configuration["Flow47:BaseUrl"],
+    UseLocalFakeClient = string.Equals(
+        builder.Configuration["Flow47:UseLocalFakeClient"],
+        "true",
+        StringComparison.OrdinalIgnoreCase),
+    SubmitRoute = builder.Configuration["Flow47:SubmitRoute"] ?? "/jobs/design-conversions",
+    StatusRouteTemplate = builder.Configuration["Flow47:StatusRouteTemplate"] ?? "/jobs/design-conversions/{jobId}",
+    ReadinessRoute = builder.Configuration["Flow47:ReadinessRoute"] ?? Flow47DesignConversionOptions.ReadinessEndpoint
+};
+builder.Services.AddSingleton(flow47Options);
+builder.Services.AddSingleton<IDesignConversionService, Flow47DesignConversionDispatchService>();
+if (flow47Options.UseLocalFakeClient)
+{
+    builder.Services.AddSingleton<IFlow47DesignConversionClient, LocalFakeFlow47DesignConversionClient>();
+    builder.Services.AddSingleton<IFlow47DesignConversionReadinessProbe, LocalFakeFlow47DesignConversionReadinessProbe>();
+}
+else if (!flow47Options.HasBaseUrl)
+{
+    builder.Services.AddSingleton<IFlow47DesignConversionClient, MissingFlow47ConfigurationDesignConversionClient>();
+    builder.Services.AddSingleton<IFlow47DesignConversionReadinessProbe, MissingFlow47ConfigurationReadinessProbe>();
+}
+else
+{
+    builder.Services.AddHttpClient<IFlow47DesignConversionClient, HttpFlow47DesignConversionClient>(client =>
+    {
+        client.BaseAddress = new Uri(flow47Options.BaseUrl!, UriKind.Absolute);
+    });
+    builder.Services.AddHttpClient<IFlow47DesignConversionReadinessProbe, HttpFlow47DesignConversionReadinessProbe>(client =>
+    {
+        client.BaseAddress = new Uri(flow47Options.BaseUrl!, UriKind.Absolute);
+    });
+}
 
 var app = builder.Build();
 
@@ -48,7 +83,7 @@ app.Use(async (context, next) =>
 });
 
 app.MapGet("/health/live", () => Results.Ok(new { status = "live", service = "xiigen-platform-api" }));
-app.MapGet("/health/ready", () => Results.Ok(new { status = "ready", service = "xiigen-platform-api" }));
+app.MapGet("/health/ready", GetReadyResult);
 
 app.MapGet("/api/marketplace/listings", async (IMarketplaceService marketplace, CancellationToken cancellationToken) =>
 {
@@ -402,6 +437,103 @@ app.MapPost("/api/assistant/metrics", async (
     return ToHttpResult(result);
 });
 
+var conversion = app.MapGroup("/conversion")
+    .WithTags("DesignConversion");
+
+conversion.MapPost("/submit", async (
+    HttpContext context,
+    DesignConversionSubmitRequest request,
+    IDesignConversionService conversionService,
+    IIdempotencyStore idempotencyStore,
+    CancellationToken cancellationToken) =>
+{
+    var authorization = RequireStudioRole(context);
+    if (authorization is not null)
+    {
+        return authorization;
+    }
+
+    var tierResult = DesignConversionTierPolicy.Validate(context, request);
+    if (tierResult.IsFailure || tierResult.Data is null)
+    {
+        return DesignConversionEndpointModels.ToErrorResult(
+            tierResult.Error?.Code ?? "TIER_VALIDATION_FAILED",
+            tierResult.Error?.Message ?? "Design conversion tier validation failed.",
+            StatusCodes.Status400BadRequest);
+    }
+
+    var command = DesignConversionEndpointModels.CreateCommand(context, request, tierResult.Data);
+    var idempotency = await DesignConversionIdempotency.TryReserveSubmitAsync(
+            idempotencyStore,
+            command,
+            cancellationToken)
+        .ConfigureAwait(false);
+    if (idempotency.IsFailure || idempotency.Data is null)
+    {
+        return DesignConversionEndpointModels.ToErrorResult(
+            idempotency.Error?.Code ?? "IDEMPOTENCY_FAILED",
+            idempotency.Error?.Message ?? "Design conversion idempotency validation failed.",
+            StatusCodes.Status400BadRequest);
+    }
+
+    if (idempotency.Data.ShortCircuitResult is not null)
+    {
+        return idempotency.Data.ShortCircuitResult;
+    }
+
+    var result = await conversionService.SubmitAsync(command, cancellationToken).ConfigureAwait(false);
+    if (result.IsFailure || result.Data is null)
+    {
+        await idempotencyStore.MarkFailedAsync(
+                idempotency.Data.OperationKey,
+                result.Error?.Code ?? "DESIGN_CONVERSION_SUBMIT_FAILED",
+                result.Error?.Message ?? "Design conversion submission failed.",
+                cancellationToken)
+            .ConfigureAwait(false);
+        return DesignConversionEndpointModels.ToErrorResult(
+            result.Error?.Code ?? "DESIGN_CONVERSION_SUBMIT_FAILED",
+            result.Error?.Message ?? "Design conversion submission failed.",
+            StatusCodes.Status400BadRequest);
+    }
+
+    await DesignConversionIdempotency.MarkSubmitSucceededAsync(
+            idempotencyStore,
+            idempotency.Data.OperationKey,
+            result.Data,
+            cancellationToken)
+        .ConfigureAwait(false);
+
+    return Results.Accepted($"/conversion/jobs/{result.Data.JobId}", result.Data);
+})
+.WithName("SubmitDesignConversion");
+
+conversion.MapGet("/jobs/{jobId}", async (
+    HttpContext context,
+    string jobId,
+    IDesignConversionService conversionService,
+    CancellationToken cancellationToken) =>
+{
+    var authorization = RequireStudioRole(context);
+    if (authorization is not null)
+    {
+        return authorization;
+    }
+
+    var result = await conversionService.GetJobAsync(jobId, cancellationToken).ConfigureAwait(false);
+    if (result.IsFailure)
+    {
+        return DesignConversionEndpointModels.ToErrorResult(
+            result.Error?.Code ?? "DESIGN_CONVERSION_STATUS_FAILED",
+            result.Error?.Message ?? "Design conversion status lookup failed.",
+            StatusCodes.Status400BadRequest);
+    }
+
+    return result.Data is null
+        ? Results.NotFound(new { code = "DESIGN_CONVERSION_JOB_NOT_FOUND", message = "Design conversion job was not found." })
+        : Results.Ok(result.Data);
+})
+.WithName("GetDesignConversionJob");
+
 app.MapGet("/marketplace", async (IMarketplaceService marketplace, CancellationToken cancellationToken) =>
 {
     var result = await marketplace.ListListingsAsync(cancellationToken).ConfigureAwait(false);
@@ -685,6 +817,36 @@ static IResult? RequireStudioRole(HttpContext context)
             : Results.Forbid();
 }
 
+static async Task<IResult> GetReadyResult(
+    IFlow47DesignConversionReadinessProbe readinessProbe,
+    CancellationToken cancellationToken)
+{
+    var readiness = await readinessProbe.CheckAsync(cancellationToken).ConfigureAwait(false);
+    if (readiness.IsReady)
+    {
+        return Results.Ok(new
+        {
+            status = "ready",
+            service = "xiigen-platform-api",
+            flow47 = new { mode = readiness.Mode }
+        });
+    }
+
+    return Results.Json(
+        new
+        {
+            status = "not-ready",
+            service = "xiigen-platform-api",
+            flow47 = new
+            {
+                mode = readiness.Mode,
+                code = readiness.Code ?? Flow47DesignConversionOptions.ReadinessProbeFailedCode,
+                message = readiness.Message ?? "FLOW-47 readiness probe failed."
+            }
+        },
+        statusCode: StatusCodes.Status503ServiceUnavailable);
+}
+
 static IResult ToHttpResult<T>(DataProcessResult<T> result)
 {
     if (result.IsSuccess)
@@ -772,4 +934,8 @@ internal static class MarketplaceHtmlExtensions
         builder.Append(WebUtility.HtmlEncode(value));
         builder.Append("</td>");
     }
+}
+
+public partial class Program
+{
 }
