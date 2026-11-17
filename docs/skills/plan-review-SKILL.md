@@ -98,15 +98,15 @@ replacement, or any plan sentence contradicts a binding requirement.
 
 ### FC-20 — Readable-Plan Admission Gate: **HARD FAIL — admission blocked**
 The plan ALREADY CONTAINS (not merely promises) Part A:
-- §0 — Mermaid `classDiagram` (draw.io importable), `note for` (Russian) on every class, legend table.
-- §1 — Algorithm descriptions in Russian, plain language, WITHOUT code fragments, WITH class references.
-- §2 — Per algorithm: exact file + class + method + parameters + step-by-step algorithm (not a functional summary), human analogy, concrete example values, "что НЕ делает".
+- §0 — Mermaid `classDiagram` (draw.io importable), `note for` (English unless the user requests another language) on every class, legend table.
+- §1 — Algorithm descriptions in plain English unless the user requests another language, WITHOUT code fragments, WITH class references.
+- §2 — Per algorithm: exact file + class + method + parameters + step-by-step algorithm (not a functional summary), human analogy, concrete example values, "what it does NOT do".
 - §3 — Exact short `path:line` citations reflecting code AS ACTUALLY IMPLEMENTED; every threshold/condition has WHY; every non-obvious call has HOW.
 - §4 — Status table: one row per component in the affected area, status symbol + concrete "what works / what is stub".
 
 Hard fail when Part A is absent, present as a heading only ("will be written in a
 future documentation phase"), §0 is a flowchart image instead of a class diagram,
-§0 lacks `note for` / legend, or §1 is English-only prose. (§5 hierarchy is
+§0 lacks `note for` / legend, or §1 does not use the required language (English by default, or the language requested by the user). (§5 hierarchy is
 core-specific / not in this group's scope — omit unless the plan touches an
 ILearningMachine-style hierarchy.)
 
@@ -117,8 +117,8 @@ there is a worked simulation for **every §0 connection** and **every §1 branch
 `implementation-doc-uml-SKILL.md`.
 
 ### FC-15 — Algorithm descriptions: **HARD FAIL**
-Every component in §2 has a human analogy, concrete example values, a "что НЕ
-делает" statement, a `**Сигнатуры и типы данных:**` block with `DataProcessResult<T>`,
+Every component in §2 has a human analogy, concrete example values, a "what it does NOT
+do" statement, a `**Signatures and data types:**` block with `DataProcessResult<T>`,
 and a status symbol. See `implementation-doc-algorithms-SKILL.md`.
 
 ### FC-16 — Code references: **HARD FAIL**
@@ -166,8 +166,8 @@ Reject the plan / status / packet when:
 - it lacks `current_execution_pointer` + `ordered_phase_queue` with exact
   `phase.step.status` rows (`done | in-progress | remaining | review-block |
   blocked`) and the first-unfinished-row-is-the-only-target rule;
-- a Luba-facing status omits the Russian human-readable block (phase/step
-  meaning + counts) before machine labels;
+- a Luba-facing status omits the human-readable block (phase/step meaning + counts),
+  in English or the language requested by the user, before machine labels;
 - it treats a **soft stop** as completion: "commit done", "report written", "one
   child session/test passed", "AWS URL produced", "screenshot captured", "context
   getting long", or "I will continue next" **as a final pause** while an

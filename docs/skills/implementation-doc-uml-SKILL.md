@@ -14,7 +14,7 @@
 Every implementation documentation section (Part A) must begin with two UML
 subsections:
 - **§0 Class diagram** — technical reference for programmers (draw.io importable)
-- **§1 Human-language flowcharts** — explain what happens in plain Russian, not
+- **§1 Human-language flowcharts** — explain what happens in plain English unless the user requests another language, not
   method names
 
 ## §0 Class Diagram — required elements
@@ -23,9 +23,9 @@ subsections:
    PlantUML is also acceptable when it is importable to draw.io and carries the
    same class responsibilities, relationship legend, and simulations.
 2. Every class/record/interface must have a `note for ClassName "..."`
-   annotation **in Russian** explaining in 1-3 lines:
+   annotation **in English** (unless the user requests another language) explaining in 1-3 lines:
    - What this class does (not its method names)
-   - Its status: ПОЛНОСТЬЮ РЕАЛИЗОВАНА / ЧАСТИЧНО / ЗАГЛУШКА / СКЕЛЕТ
+   - Its status: FULLY IMPLEMENTED / PARTIAL / STUB / SKELETON
 3. All relationship arrows must be present: inheritance (`--|>`), implementation
    (`<|..`), composition (`-->`), dependency (`..>`). For this platform that
    means the minimal-API endpoint delegate → domain service (e.g.
@@ -34,11 +34,11 @@ subsections:
    `MicroserviceBase<TSelf>` inheritance and `ITenantContextAccessor` /
    `ICorrelationContextAccessor` dependencies.
 4. **Legend table** immediately after the mermaid block with columns:
-   Класс | Что делает | Статус
+   Class | What it does | Status
 
 **What the `note for` must say (example):**
 ```
-note for MarketplaceService "ПОЛНОСТЬЮ РЕАЛИЗОВАНА\nЧитает/публикует записи маркетплейса →\nпишет через IDocumentStore в tenant-scope →\nвозвращает DataProcessResult<T>"
+note for MarketplaceService "FULLY IMPLEMENTED\nReads/publishes marketplace listings →\nwrites through IDocumentStore within the tenant scope →\nreturns DataProcessResult<T>"
 ```
 
 5. **Per-connection simulation table (REQUIRED).** For EVERY relationship arrow
@@ -46,10 +46,10 @@ note for MarketplaceService "ПОЛНОСТЬЮ РЕАЛИЗОВАНА\nЧита
    sample input that flows across that connection AND the expected result/output
    on that path. Use this table immediately after the legend:
 
-| Соединение (A → B) | Пример входа (симуляция) | Ожидаемый результат по этой ветке |
+| Connection (A → B) | Example input (simulation) | Expected result on this branch |
 |---|---|---|
 | `MapPost /api/marketplace/listings` → `MarketplaceService.PublishListingAsync` | `PublishMarketplaceListingRequest{ flowSlug="user-registration", version="1.0.0" }`, header `X-Tenant-Id: acme` | `DataProcessResult<...>.Success` → `Results.Ok(data)` (HTTP 200) |
-| `MarketplaceService` → `IDocumentStore.UpsertAsync` | collection="marketplace-listings", id="user-registration:1.0.0" | `DataProcessResult<DocumentRecord>.Success`, запись в tenant-scope |
+| `MarketplaceService` → `IDocumentStore.UpsertAsync` | collection="marketplace-listings", id="user-registration:1.0.0" | `DataProcessResult<DocumentRecord>.Success`, record within the tenant scope |
 
 A connection without an example simulation and expected result is an incomplete §0.
 
@@ -65,27 +65,27 @@ A connection without an example simulation and expected result is an incomplete 
 
 1. Use `flowchart TD` (not `sequenceDiagram` for the primary human diagram)
 2. Every decision node `{...}` must state the human question, not a method name:
-   - ✅ `{Заголовок X-Roles содержит platform_admin / tenant_admin / tenant_ops?}`
+   - ✅ `{Does the X-Roles header contain platform_admin / tenant_admin / tenant_ops?}`
    - ❌ `{RequireStudioRole(context) == null}`
 3. Every action node must explain the business meaning:
-   - ✅ `["🎯 Публикуем листинг в маркетплейс\nЗапись попадает в tenant-scope через IDocumentStore"]`
+   - ✅ `["🎯 Publish the marketplace listing\nThe record enters the tenant scope through IDocumentStore"]`
    - ❌ `["MarketplaceService.PublishListingAsync(request, ct)"]`
 4. Label arrows with the condition in human language:
-   - ✅ `-->|"ДА\nРоль разрешена"|`
+   - ✅ `-->|"YES\nRole is allowed"|`
    - ❌ `-->|true|`
 5. Include emoji status indicators: ✅⚠️🔶 on skeleton/partial components
 6. **Per-branch simulation (REQUIRED).** For EVERY decision branch (each outcome
    of each `{...}` node), give a concrete simulation input + the expected result
    for that branch. Example:
-   `Вход: запрос без заголовка X-Roles → ветка НЕТ → результат: Results.Unauthorized() (HTTP 401)`;
-   `Вход: X-Roles=platform_admin, тело валидно → ветка ДА → результат: Results.Ok(data) (HTTP 200)`.
+   `Input: request without the X-Roles header → NO branch → result: Results.Unauthorized() (HTTP 401)`;
+   `Input: X-Roles=platform_admin, valid body → YES branch → result: Results.Ok(data) (HTTP 200)`.
    Every branch of every decision node must show one simulated input and its
    expected output (use the actual `request → handler → response` branches:
    `Results.Ok`, `Results.BadRequest`, `Results.NotFound`, `Results.Problem`,
    `Results.Forbid`, `Results.Unauthorized`).
 
-**Что НЕ делать (ветки):** ветка решения без примера-симуляции входа и
-ожидаемого результата — нарушение контракта §0/§1 (cross-ref FC-14 в
+**What NOT to do (branches):** a decision branch without a simulated example input and
+expected result violates the §0/§1 contract (cross-reference FC-14 in
 `plan-review-SKILL.md`).
 
 **One flowchart per major decision path.** The request-validation / authorization
@@ -95,7 +95,7 @@ flowchart showing all branches.
 ## Validation gate
 
 Before submitting a UML section, verify:
-- [ ] Class diagram has `note for` (Russian) on EVERY class/record/interface
+- [ ] Class diagram has `note for` (English unless the user requests another language) on EVERY class/record/interface
 - [ ] Legend table present after class diagram
 - [ ] Flowcharts use human-language labels (no raw method names as primary labels)
 - [ ] Decision nodes ask human questions

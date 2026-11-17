@@ -10,7 +10,7 @@ update instead — the crystallization step is the state write.
 
 Platform port of the `llm_mvp_core` skill. Stack-bound to **.NET 10 ASP.NET Core
 Web API**, **xUnit** (`tests/`), `Xiigen.Platform.slnx`, and the v3.3 governance
-triple. The Russian-first board fields below are required by the
+triple. The English-first board fields below (unless the user requests another language) are required by the
 `output-readability-gate-SKILL.md` Execution Board gate.
 
 ---

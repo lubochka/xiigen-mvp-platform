@@ -105,8 +105,8 @@ Session type: IMPLEMENTATION | PLANNING | SKILL_PORT | REVIEW
       scoped artifacts and reports evidence instead of invoking nested agents
 - [ ] Parent direct execution remains forbidden, and sub-agent execution is not
       parent direct execution
-- [ ] Every execution report/status board row is human-first (Russian where the
-      governance asks for it) and includes phase/step meaning, status
+- [ ] Every execution report/status board row is human-first (English unless the
+      user requests another language) and includes phase/step meaning, status
       (DONE | IN_PROGRESS | NEEDS_FIX | REVIEWING | BLOCKED_WITH_REASON),
       total project position, done, in-progress, numbered remaining, review
       findings, fixes, next action, and whether commit/continuation is allowed —

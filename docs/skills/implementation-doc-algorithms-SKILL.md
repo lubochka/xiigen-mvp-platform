@@ -13,7 +13,7 @@
 Every component in an implementation document must have a human-language
 algorithm description (§1/§2) that explains HOW and WHY, not just WHAT. A
 programmer must understand the component without reading the source code. Default
-language is **Russian** unless Luba asks otherwise.
+language is **English** unless the user requests another language.
 
 For each algorithm, name the **exact class AND the implementing method**, the
 **parameters** it takes, and the **actual step-by-step algorithm**. A functional
@@ -23,10 +23,10 @@ spec ("what it should do") and a class name alone are NOT sufficient.
 
 ### 1. Human analogy first (mandatory)
 Start with an analogy a non-programmer can understand:
-- ✅ "Представь регистратора маркетплейса: он принимает заявку на публикацию,
-  проверяет, что у заявителя есть нужная роль и арендатор (tenant), и только
-  тогда заносит запись в журнал арендатора."
-- ❌ "Этот класс вызывает `IDocumentStore.UpsertAsync` с optimistic concurrency."
+- ✅ "Imagine a marketplace registrar: they receive a publication request,
+  check that the applicant has the required role and tenant, and only
+  then add an entry to the tenant’s log."
+- ❌ "This class calls `IDocumentStore.UpsertAsync` with optimistic concurrency."
 
 ### 2. What happens during initialization / setup
 Concrete description of what state the component holds and how it changes. Name
@@ -42,20 +42,20 @@ Numbered list of what the component does on a request:
    `PublishMarketplaceListingRequest{ flowSlug="user-registration", version="1.0.0" }`)
 2. What transformation/validation happens (tenant scope check, role check,
    idempotency reservation)
-3. What decision is made and why (threshold, condition — e.g. "если
-   `expectedVersion` не совпал → конфликт версий")
+3. What decision is made and why (threshold, condition — e.g. "if
+   `expectedVersion` does not match → version conflict")
 4. What comes out (with a **real example value** — e.g.
-   `DataProcessResult<DocumentRecord>.Success(record)` или
+   `DataProcessResult<DocumentRecord>.Success(record)` or
    `DataProcessResult.Failure("VALIDATION_FAILED", "...")`)
 
-### 4. "Что метод НЕ делает" section (mandatory)
+### 4. "What the method does NOT do" section (mandatory)
 Explicitly state what the component does NOT do:
 - ❌ does not bypass the tenant scope (`CurrentTenant` is required)
 - ❌ does not throw for business errors — it returns `DataProcessResult.Failure(...)`
 - ❌ does not call another tenant's data
 
 ### 5. Parameter signatures with examples
-After the text, add a `**Сигнатуры и типы данных:**` block:
+After the text, add a `**Signatures and data types:**` block:
 - Show the main method signature (`Task<DataProcessResult<T>> ...Async(...)`)
 - Show what the return type contains with real field values
 - Show an example of the most important input type
@@ -63,28 +63,28 @@ After the text, add a `**Сигнатуры и типы данных:**` block:
 **Example of correct parameter block:**
 ```csharp
 // MarketplaceService (src/Xiigen.Platform.Marketplace/MarketplaceService.cs),
-// наследует MicroserviceBase<MarketplaceService>, IMarketplaceService.
+// inherits MicroserviceBase<MarketplaceService>, IMarketplaceService.
 Task<DataProcessResult<IReadOnlyDictionary<string, object?>>> PublishListingAsync(
     PublishMarketplaceListingRequest request,   // flowSlug="user-registration", version="1.0.0"
     CancellationToken cancellationToken = default);
 
-// Возвращаемое значение при успехе:
+// Return value on success:
 DataProcessResult<...>.Success(new Dictionary<string, object?>
 {
-    ["flowSlug"] = "user-registration",   // ключ листинга
-    ["version"]  = "1.0.0",               // версия пакета
-    ["status"]   = "published"            // состояние записи
+    ["flowSlug"] = "user-registration",   // listing key
+    ["version"]  = "1.0.0",               // package version
+    ["status"]   = "published"            // record status
 });
-// При ошибке валидации:
+// On validation failure:
 DataProcessResult<...>.Failure("VALIDATION_FAILED", "flowSlug is required");
 ```
 
 ## Status annotation
 
 Every component description must end with its implementation status:
-- **✅ Полная** — all public methods implemented and tested (xUnit green)
-- **⚠️ Частичная** — state exactly which methods work and which are stubs
-- **🔶 Скелет** — state what is saved (contract fields), what returns stub values, and WHY
+- **✅ Complete** — all public methods implemented and tested (xUnit green)
+- **⚠️ Partial** — state exactly which methods work and which are stubs
+- **🔶 Skeleton** — state what is saved (contract fields), what returns stub values, and WHY
 - **✅ Hardcoded** — returns fixed values (e.g. a static registry/list)
 
 ## Validation gate
@@ -93,8 +93,8 @@ Before submitting §1/§2, verify each component description:
 - [ ] Has a human analogy (not a technical summary)
 - [ ] Names exact class + implementing method + parameters + step-by-step algorithm
 - [ ] Shows concrete example values (not just type names)
-- [ ] Has "Что НЕ делает" section
-- [ ] Has a `**Сигнатуры и типы данных:**` block with real example values and `DataProcessResult<T>` (never `OperationResult<T>`)
+- [ ] Has "What it does NOT do" section
+- [ ] Has a `**Signatures and data types:**` block with real example values and `DataProcessResult<T>` (never `OperationResult<T>`)
 - [ ] States implementation status
 
 ## Integration

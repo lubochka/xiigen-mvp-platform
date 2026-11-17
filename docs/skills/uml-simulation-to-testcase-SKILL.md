@@ -46,7 +46,7 @@ For every algorithm/decision branch (each `request → handler → response` out
 ```text
 algorithm_branch_case:
   branch_id:
-  human_condition:               # e.g. "Заголовок X-Roles отсутствует"
+  human_condition:               # e.g. "The X-Roles header is missing"
   input_example:
   expected_result:               # e.g. Results.Unauthorized() (401)
   not_expected_result:           # e.g. Results.Ok (must NOT reach the service)

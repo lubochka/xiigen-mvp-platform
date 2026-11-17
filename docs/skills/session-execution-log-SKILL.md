@@ -10,7 +10,7 @@ reference it.
 Platform port of the `llm_mvp_core` skill. Stack-bound to **.NET 10 ASP.NET Core
 Web API**, **xUnit** (`tests/`), `Xiigen.Platform.slnx`, and the v3.3 governance
 triple. The mandatory `humanReadablePlanExecutionLog` block satisfies the
-Russian-first Human-Readable Plan/Execution Log requirement that
+English-first Human-Readable Plan/Execution Log requirement (unless the user requests another language) that
 `AGENTS.md`/`CLAUDE.md` state only as prose.
 
 ---
@@ -129,7 +129,7 @@ Examples:
    and names, current result type, `whatChanged`, `whatRemains`, `claimsOpened`,
    `claimsClosed`, claims still closed and why, `whyThisStatusIsTrue`, and
    `nextRequiredAction` in language a human can read without decoding machine
-   status fields. The Russian-first board (`output-readability-gate-SKILL.md`)
+   status fields. The English-first board (`output-readability-gate-SKILL.md`)
    uses these same fields.
 8. Tie `claimsClosed` to rows of `XIIGEN-ENTERPRISE-ADAPTATION-COMPLETION-MATRIX-v3.3.md`.
 9. Human gate for chat logs: if Luba cannot tell from the log what is done, what

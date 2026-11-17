@@ -22,8 +22,7 @@ Any session that adds, modifies, or reviews code or tests.
 ## Human-readable plan/report precondition
 
 Do not start implementation from a plan/report that fails the Human-Readable
-Architecture Artifact Gate: reject table-only, shortcode-heavy, English-only
-where Russian was required, schema-only, or prompt/spec inputs. Per `AGENTS.md`
+Architecture Artifact Gate: reject table-only, shortcode-heavy, written in a language other than the one requested by the user, schema-only, or prompt/spec inputs. Per `AGENTS.md`
 and `CLAUDE.md`, also read the beacon, state, completion matrix, and active
 session file before any execution; skills cannot override the beacon.
 
@@ -52,7 +51,7 @@ research. Parent read-only verification is allowed only after the packet returns
 returns`; `sub-agent waiting is not a stop`; `no local non-overlapping work escape`.
 
 Every code-execution packet opens with human-readable status (plain
-Russian/plain language): total phases/steps, done/in-progress/remaining, what the
+English unless the user requests another language): total phases/steps, done/in-progress/remaining, what the
 phase solves, what the step solves, what evidence exists, what is not proven, and
 the next bounded action. Machine labels and paths follow only after that.
 

@@ -1,6 +1,6 @@
 # XIIGEN-ENTERPRISE-ADAPTATION-BEACON-PROMPT-v1.md
 
-**Status:** binding beacon / маяк управления для всех ролей и моделей.  
+**Status:** binding control beacon for all roles and models.\
 **Applies to:** XIIGen Enterprise adaptation package v3.2 and every child session.  
 **Purpose:** keep every model, role, RAG lookup, executor slice, review, repair and report aligned with one controlling objective and one source-of-truth order.
 
@@ -129,6 +129,8 @@ blocked
 ```
 
 unless an Architect verdict immediately follows and validates whether this is a real blocker or a continuation point.
+
+The literal `gотово` above is a mixed-script spelling of Russian "ready/done".
 
 ---
 
@@ -360,16 +362,16 @@ ARCHITECT VERDICT:
 
 Only after this may executor metrics be shown.
 
-Coverage challenge examples:
+Coverage challenge examples (original Russian phrases retained with English glosses):
 
 ```text
-все ли покрыто?
-какие сценарии проверены?
-план полностью выполнен?
-почему остановился?
-точность выше порога?
-модель реально импортируется/экспортируется?
-плагин реально оркестрирует?
+все ли покрыто? — is everything covered?
+какие сценарии проверены? — which scenarios were checked?
+план полностью выполнен? — has the plan been fully completed?
+почему остановился? — why did you stop?
+точность выше порога? — is accuracy above the threshold?
+модель реально импортируется/экспортируется? — is the model actually imported/exported?
+плагин реально оркестрирует? — does the plugin actually orchestrate?
 ```
 
 ---

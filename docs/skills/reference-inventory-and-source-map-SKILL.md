@@ -29,12 +29,12 @@ Preserve these exact proof strings from `AGENTS.md` as authority:
 - `sub-agent waiting is not a stop`
 - `no local non-overlapping work escape`
 
-Человеческое правило (RU): карта источников нужна не для красивой таблицы, а
-чтобы Luba видела, откуда взят каждый вывод. Чужой пример, старый план,
-benchmark, sub-agent packet или broad folder search могут быть только
-доказательным контекстом. Они не становятся текущей задачей, текущим артефактом,
-лицензией на копирование или product-ready доказательством без прямой текущей
-команды Luba и прямого чтения источника.
+Plain-language rule: the source map is not just a polished table; it lets
+Luba see where each conclusion comes from. Another author's example, an old plan,
+a benchmark, a sub-agent packet, or a broad folder search can serve only as
+supporting evidence. They do not become the current task, the current artifact,
+permission to copy, or evidence of product readiness without a direct current
+instruction from Luba and direct reading of the source.
 
 ## Required Source Inventory
 

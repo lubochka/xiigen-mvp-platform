@@ -5,7 +5,7 @@
 Load this skill for architect, planning, plan review, code review, documentation,
 and audit artifacts that explain architecture, the fabric layer, service
 contracts, persistence/concurrency behavior, tenant scoping, or code risks. Also
-load it when Luba asks for a human-readable (Russian) architecture explanation,
+load it when Luba asks for a human-readable architecture explanation,
 UML, no-code algorithms, code quotes, or iterative audit readability improvement.
 
 Also load it when an audit claims sufficiency/completion/closure, when "v1 scope
@@ -46,12 +46,12 @@ action exists.
 
 ## Human-Readable Architecture Artifact Gate
 
-The artifact must be readable by Luba as a human architect, in Russian unless Luba
-explicitly asks for another language. Machine labels may exist, but they are
+The artifact must be readable by Luba as a human architect, in English unless the user
+explicitly requests another language. Machine labels may exist, but they are
 secondary anchors. They cannot be the main explanation.
 
 Hard fail:
-- table-only, shortcode-heavy, English-only, schema-first, or schema-only text;
+- table-only, shortcode-heavy, schema-first, or schema-only text, or text that ignores the requested language;
 - prompt/spec text that tells a future executor what to invent;
 - code dumps without no-code explanation;
 - generic rows such as "wrap in a service", "add tests", "create schema", or
@@ -62,7 +62,7 @@ Hard fail:
 Every architecture, code-review, documentation, or audit artifact that touches
 architecture must include:
 
-1. Clear Russian summary in human terms.
+1. Clear English summary in human terms unless the user requests another language.
 2. A solved architecture block for every major architecture area: problem,
    selected design, rejected alternatives, UML, data flow, current code refs,
    future files/classes/methods/signatures/dependencies,
@@ -78,12 +78,12 @@ architecture must include:
    class/function references (`src/**/*.cs`), but not a code dump.
 5. Code quote section. For each finding, give exact `file:line` and a short quote,
    then:
-   - сейчас;
-   - почему плохо/ок;
-   - должно стать;
-   - какие файлы/classes/records/methods/data rows;
-   - как работает (поведение метода/фабрики);
-   - какие tests/integration/e2e/qa;
+   - current behavior;
+   - why this is wrong/acceptable;
+   - required behavior;
+   - affected files/classes/records/methods/data rows;
+   - how it works (method/fabric behavior);
+   - affected tests/integration/e2e/qa;
    - lifecycle (DI registration, tenant scope, idempotency/outbox/document store interaction).
 6. A concrete solution immediately under each problem quote. A later appendix is
    not enough.
@@ -122,8 +122,8 @@ records, methods, tests, the fabric boundary, and the `DataProcessResult` shape.
 
 ## Audit Sufficiency Boundary Gate
 
-A readable audit may still be too narrow. Do not claim "достаточно", "готово",
-"закрыто", "architecture audit sufficient", or "architecture audit complete"
+A readable audit may still be too narrow. Do not claim "достаточно" ("sufficient"), "готово" ("ready"),
+"закрыто" ("closed"), "architecture audit sufficient", or "architecture audit complete"
 unless the audit scope was broad enough and the breadth challenge pass is green.
 
 Allowed bounded wording:
@@ -209,7 +209,7 @@ fields live in `output-readability-gate-SKILL.md` Section 6.
 ## Review Verdict
 
 Reject the artifact when:
-- the Russian human summary is missing;
+- the human summary is missing or does not use the required language (English by default, or the language requested by the user);
 - UML has no concrete simulation examples;
 - algorithm text is code-first rather than no-code;
 - code quotes lack adjacent concrete solutions;

@@ -204,10 +204,10 @@ label alone is not a complete code review.
 
 ### Human-readable code review report gate
 
-For trainable/architecture findings the review must include a Russian human
-summary; a Mermaid/PlantUML diagram when architecture/data flow is explained; a
+For trainable/architecture findings the review must include an English human
+summary unless the user requests another language; a Mermaid/PlantUML diagram when architecture/data flow is explained; a
 no-code algorithm explanation; an exact `file:line` quote plus
-`сейчас` / `почему плохо/ок` / `должно стать`; and the Concrete Repair Blueprint
+`current behavior` / `why this is wrong/acceptable` / `required behavior`; and the Concrete Repair Blueprint
 fields. "wrap in ILogicalUnit", "add KNN", "add tests" is not a decision unless
 exact classes/records/methods/tests/sets/manifests and lifecycle are named.
 

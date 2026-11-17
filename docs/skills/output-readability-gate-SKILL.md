@@ -7,7 +7,7 @@ identifiers written as plain prose is unreadable to a human reviewer. The same
 token that belongs in a code fence — `CF-12`, `NOT_READY`, `Rule 1` — becomes
 noise when scattered through a paragraph. This skill defines the four prohibited
 patterns, the exception for code fences, the dashboard/API readability gate, and
-the Russian-first Execution Board gate that must pass before any generated output
+the English-first Execution Board gate that must pass before any generated output
 or status is accepted.
 
 Platform port of the `llm_mvp_core` skill. Stack-bound to **.NET 10 ASP.NET Core
@@ -17,7 +17,7 @@ and the v3.3 governance triple. The host-UI proof sections of the core skill
 Target Window Control, No-Blind-Spot UI Scenario Script) are **`na`** here — the
 platform has no frontend and no host UI. The machine-learning pipeline-signal
 example (`OUTCOME` / `DPO_TRIPLE`) is also not ported (no learning pipeline here).
-The Russian-first Execution Board below is the formal form of the human-first
+The English-first Execution Board below is the formal form of the human-first
 status rule that `AGENTS.md`/`CLAUDE.md` state only as prose.
 
 ---
@@ -150,7 +150,7 @@ Required for project docs:
 □ The text explains parameters and outputs before showing code quotations
 □ Code quotations are short and tied to a "why this matters" explanation
 □ Test evidence is separated by scope: unit, integration (e.g. WebApplicationFactory), and full end-to-end
-□ No mojibake or broken encoding markers such as "Ð", "Ñ", "Â", or "â€™" (relevant for Russian board strings)
+□ No mojibake or broken encoding markers such as "Ð", "Ñ", "Â", or "â€™" (relevant for multilingual board strings)
 □ No code-style status noise replaces a human explanation
 ```
 
@@ -162,20 +162,20 @@ hides the failure-path / error-code boundary.
 
 ## Section 6 — Human-Readable Execution Board Gate
 
-Every long plan execution status sent to Luba must include a plain Russian
-progress board (the human-first status rule is binding from
+Every long plan execution status sent to Luba must include a progress board in plain
+English unless the user requests another language (the human-first status rule is binding from
 `AGENTS.md`/`CLAUDE.md`; this gate makes it enforceable):
 
 ```text
-Всего: <total major plan blocks and/or current-phase tasks>
-Сделано: <completed count>/<total>; <completed names>
-Сейчас выполняется: <current task and owner/sub-agent>
-Осталось: <remaining count>; <remaining names>
-Тип текущего результата: <code | artifact | review | policy | evidence-only | commit boundary>
-Принятые доказательства: <accepted evidence in human words>
-Закрытые claims и почему: <claim names + human reason they remain closed>
-Открытые разрывы: <open gaps>
-Следующее действие: <next bounded action>
+Total: <total major plan blocks and/or current-phase tasks>
+Done: <completed count>/<total>; <completed names>
+In progress: <current task and owner/sub-agent>
+Remaining: <remaining count>; <remaining names>
+Current result type: <code | artifact | review | policy | evidence-only | commit boundary>
+Accepted evidence: <accepted evidence in human words>
+Claims that remain closed and why: <claim names + human reason they remain closed>
+Open gaps: <open gaps>
+Next action: <next bounded action>
 Execution paused for plan-review visibility: yes/no
 ```
 
@@ -199,10 +199,10 @@ JSON object, or an internal status label. Internal labels may appear only with a
 human translation:
 
 ```text
-Проверка: what was checked
-Результат: what passed or failed
-Что исправлено: repair made or NONE
-Что осталось: remaining gap or NONE
+Check: what was checked
+Result: what passed or failed
+What was fixed: repair made or NONE
+What remains: remaining gap or NONE
 ```
 
 If a status cannot be understood without opening raw logs, return it to
@@ -217,7 +217,7 @@ Human-Readable Architecture Artifact Gate (full detail in
 `human-readable-architecture-audit-SKILL.md`):
 
 ```
-□ Primary explanation is human-readable (Russian unless Luba asked otherwise)
+□ Primary explanation is human-readable (English unless the user requests another language)
 □ Machine labels are secondary, not the explanation
 □ UML is PlantUML or Mermaid classDiagram importable to draw.io
 □ Data-flow simulations and expected branch outcomes are present
@@ -262,7 +262,7 @@ Readable architecture/audit prose must not overclaim completion.
 ```
 □ "v1 scope completed" names the exact bounded scope
 □ "audit sufficient/complete" appears only after a green breadth challenge
-□ "достаточно", "готово", or "закрыто" does not describe a narrow audit as broad
+□ "достаточно" ("sufficient"), "готово" ("ready"), or "закрыто" ("closed") does not describe a narrow audit as broad
 □ Parent review asks: "What would a broader audit likely find that this artifact missed?"
 □ Later same-domain BLOCKING/HIGH findings create a Delta-Severity Feedback Gate record
 ```
@@ -282,7 +282,7 @@ governance/review repair before accepting the artifact.
    generation time.
 4. **"The code fence exception covers this"** — inline single backticks are allowed
    for identifiers within a sentence; ALL_CAPS_UNDERSCORE as a bare prose word is not.
-5. **Machine board only** — a STATE/JSON status without the Russian-first Execution
+5. **Machine board only** — a STATE/JSON status without the English-first Execution
    Board and human translation fails Section 6.
 
 ---

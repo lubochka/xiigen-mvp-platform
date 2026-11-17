@@ -167,11 +167,11 @@ For each hit, trace whether the mechanism sits inside an allowed level
 `ILearningMachinePair`) or outside the allowed hierarchy. Report each finding as:
 
 ```text
-Russian human explanation:
+Human explanation in English (unless the user requests another language):
 Code quote with file:line:
-сейчас:
-почему плохо/ок:
-должно стать:
+current behavior:
+why this is wrong/acceptable:
+required behavior:
 Allowed location / Current location:
 Verdict:
 Concrete repair: current -> target; replacement level; replacement class/unit;

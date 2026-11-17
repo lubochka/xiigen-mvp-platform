@@ -180,10 +180,10 @@ Search with conceptual vocabulary, not only literal strings.
 **Signature:** Luba asks a direct question/challenge/"why"/"answer only"; the response starts by closing/waiting a sub-agent, running a tool, or updating state before answering.
 **Detection:** The first action after the question is not the user-visible answer (a tool call appears before the answer) — unless it was the narrow interrupt required to stop an immediately destructive or externally publishing action.
 **Class:** Class-a.
-**Required response:** Answer first in plain language. Only after may the architect close sub-agents, patch governance, or resume authorized work. For "why/почему" failure-cause wording, the after-answer action is root-cause repair of the exact governing skill/guide/agent-file loophole, a human explanation, and continuation of the previously authorized work.
+**Required response:** Answer first in plain language. Only after may the architect close sub-agents, patch governance, or resume authorized work. For "why/почему" (English/Russian for "why") failure-cause wording, the after-answer action is root-cause repair of the exact governing skill/guide/agent-file loophole, a human explanation, and continuation of the previously authorized work.
 
 #### FAIL-23A: Why-Question root-cause-repair trigger missed
-**Signature:** Luba asks "why", "why did you stop", "почему", "pochemu", or equivalent; the response answers only, defends only, apologizes only, sends a final summary, or starts unrelated implementation before repairing the governing loophole.
+**Signature:** Luba asks "why", "why did you stop", "почему" ("why"), "pochemu", or equivalent; the response answers only, defends only, apologizes only, sends a final summary, or starts unrelated implementation before repairing the governing loophole.
 **Detection:** Treat the message as `answer_first_then_continue` unless Luba explicitly says stop/pause/answer-only/no-continue. Verify the response answered first, named the exact missing/contradictory rule, used the active role boundary, completed the repair before continuation, reported the changed files/rules, and then continued.
 **Class:** Class-a.
 **Required response:** why is not a stop. Answer first, repair the exact skill/guide/agent-file loophole through the active role boundary, explain in human language, and continue. Protocol repair complete is not a completion boundary.
@@ -208,8 +208,8 @@ Search with conceptual vocabulary, not only literal strings.
 **Score:** score_delta -500. Cross-reference: R2.
 
 #### FAIL-27: Admitting-a-plan-without-Part-A (R3 breach)
-**Signature:** A plan was admitted to execution without already containing Part A: §0 draw.io-importable UML (a Mermaid `classDiagram` is acceptable), §1 algorithm descriptions in Russian, plain language, without code, with class references, §2/§3 per algorithm: where the logic sits + detailed explanation + exact `file:line` citations reflecting code AS ACTUALLY IMPLEMENTED.
-**Detection:** Part A is absent, aspirational ("will be written later"), flowchart-only without class structure, or English-only prose for §1.
+**Signature:** A plan was admitted to execution without already containing Part A: §0 draw.io-importable UML (a Mermaid `classDiagram` is acceptable), §1 algorithm descriptions in plain English unless the user requests another language, without code, with class references, §2/§3 per algorithm: where the logic sits + detailed explanation + exact `file:line` citations reflecting code AS ACTUALLY IMPLEMENTED.
+**Detection:** Part A is absent, aspirational ("will be written later"), flowchart-only without class structure, or prose for §1 in a language other than the one requested (English is the default).
 **Class:** Class-a.
 **Required response:** Block execution. Return the plan with the explicit list of missing Part A sections. A promise to add it later = still a FAIL-27.
 **Score:** score_delta -500. Cross-reference: R3; `plan-review-SKILL.md` FC-20.

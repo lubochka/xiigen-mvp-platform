@@ -17,52 +17,52 @@ source of truth for "what works, what doesn't" before any plan starts.
 
 ## Required table format
 
-| Компонент | Файл | Статус | Что реально работает сейчас |
+| Component | File | Status | What actually works now |
 |---|---|---|---|
 
 **Columns:**
-- **Компонент** — class / interface / endpoint name with backtick formatting
-- **Файл** — relative path from repo root, no absolute paths (e.g.
+- **Component** — class / interface / endpoint name with backtick formatting
+- **File** — relative path from repo root, no absolute paths (e.g.
   `src/Xiigen.Platform.Marketplace/MarketplaceService.cs`)
-- **Статус** — one of the status symbols below
-- **Что реально работает сейчас** — concrete routes/methods and their state, not
-  "see above", not "Частично реализована"
+- **Status** — one of the status symbols below
+- **What actually works now** — concrete routes/methods and their state, not
+  "see above", not "Partially implemented"
 
 ## Status symbols
 
-| Символ | Значение | Когда использовать |
+| Symbol | Meaning | When to use |
 |---|---|---|
-| ✅ Полная | All public methods implemented, tested (xUnit green) | Nothing returns stub / NOT_READY |
-| ⚠️ Частичная | Core path works, some methods are stubs | Name working methods AND stub methods explicitly |
-| 🔶 Скелет | Contract-only — types/fields exist, inference always returns a constant stub | State what is SAVED and what ALWAYS returns stub, and WHY |
+| ✅ Complete | All public methods implemented, tested (xUnit green) | Nothing returns stub / NOT_READY |
+| ⚠️ Partial | Core path works, some methods are stubs | Name working methods AND stub methods explicitly |
+| 🔶 Skeleton | Contract-only — types/fields exist, inference always returns a constant stub | State what is SAVED and what ALWAYS returns stub, and WHY |
 | ✅ Hardcoded | Returns fixed values — not trained, not configurable | Registries/factories/static lists; static wrappers |
 
-## What the "Что реально работает сейчас" column must contain
+## What the "What actually works now" column must contain
 
-- For ✅ Полная: list key working routes/methods (e.g.
+- For ✅ Complete: list key working routes/methods (e.g.
   "`GET /api/marketplace/listings`, `POST /api/marketplace/listings` →
-  `MarketplaceService` пишет через `IDocumentStore`, tenant-scope, 200/400").
-- For ⚠️ Частичная: explicitly name working methods AND stub methods:
-  - ✅ "`ListListingsAsync`, `PublishListingAsync` рабочие; `ApplyAdaptationAsync` → `DataProcessResult.Failure(\"NOT_READY\", ...)`"
-  - ❌ "Частично реализована" (no detail)
-- For 🔶 Скелет: state what is SAVED (preserved contract fields) and what ALWAYS
+  `MarketplaceService` writes through `IDocumentStore`, tenant scope, 200/400").
+- For ⚠️ Partial: explicitly name working methods AND stub methods:
+  - ✅ "`ListListingsAsync`, `PublishListingAsync` work; `ApplyAdaptationAsync` → `DataProcessResult.Failure(\"NOT_READY\", ...)`"
+  - ❌ "Partially implemented" (no detail)
+- For 🔶 Skeleton: state what is SAVED (preserved contract fields) and what ALWAYS
   returns stub:
-  - ✅ "`AnswerAsync` сохраняет projectId/checksum; при отсутствии SQL-источника всегда `ABSTAIN_NO_SOURCE`"
-  - ❌ "Не реализована"
+  - ✅ "`AnswerAsync` preserves projectId/checksum; without a SQL source, it always returns `ABSTAIN_NO_SOURCE`"
+  - ❌ "Not implemented"
 
 ## Example row
 
-| Компонент | Файл | Статус | Что реально работает сейчас |
+| Component | File | Status | What actually works now |
 |---|---|---|---|
-| `MarketplaceService` | `src/Xiigen.Platform.Marketplace/MarketplaceService.cs` | ✅ Полная | `ListListingsAsync` / `GetListingAsync` / `PublishListingAsync` / `RecordPackageReadbackAsync` / `CreateTenantForkAsync` через `IDocumentStore`, tenant-scope; маршруты `/api/marketplace/*` возвращают 200/400 |
-| `InMemorySchedulerService` | `src/Xiigen.Fabrics.Scheduler/Scheduler.cs` | ✅ Hardcoded | In-memory словарь заданий; `ScheduleDelayedAsync` (idempotent по ключу), `ListAsync`; не персистится между перезапусками |
+| `MarketplaceService` | `src/Xiigen.Platform.Marketplace/MarketplaceService.cs` | ✅ Complete | `ListListingsAsync` / `GetListingAsync` / `PublishListingAsync` / `RecordPackageReadbackAsync` / `CreateTenantForkAsync` through `IDocumentStore`, tenant scope; routes `/api/marketplace/*` return 200/400 |
+| `InMemorySchedulerService` | `src/Xiigen.Fabrics.Scheduler/Scheduler.cs` | ✅ Hardcoded | In-memory job dictionary; `ScheduleDelayedAsync` (idempotent by key), `ListAsync`; not persisted across restarts |
 
 ## Validation gate
 
 Before submitting §4:
 - [ ] Every component mentioned in §1-§3 has a row
 - [ ] No row uses a status symbol not in the allowed list (no `Bootstrap` here)
-- [ ] "Что реально работает сейчас" contains specific route/method names or return values, not prose
+- [ ] "What actually works now" contains specific route/method names or return values, not prose
 - [ ] Partial and skeleton components explicitly list which methods work and which don't
 - [ ] Paths are relative, never absolute
 

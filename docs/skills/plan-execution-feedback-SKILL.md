@@ -20,7 +20,7 @@ appended to the active plan's **User Prompt Source Ledger** before the next phas
 is planned or reported complete.
 
 Execution feedback must satisfy the **Human-Readable Plan/Execution Log Gate**:
-Section A cannot be only machine rows — it must state, in plain Russian, the
+Section A cannot be only machine rows — it must state, in plain English unless the user requests another language, the
 stage, the current plan step, what changed, what remains, claims opened/closed,
 and why the status is true (machine labels only after the human meaning).
 
@@ -83,12 +83,12 @@ location assumed without checking `Program.cs`.
 4. If test delivery rate < 80%: investigate whether tests were deferred for a real reason or because the plan over-counted (`[Fact]` description blocks vs actual test methods).
 5. Report the discovery rate and User Prompt Source Ledger deltas in the Section A summary.
 
-## Section A Format (Phase End Summary, Russian-first)
+## Section A Format (Phase End Summary, English by default)
 ```
 ## Section A — Phase [N] Execution Summary
 
-Человеческий смысл: <что эта фаза дала продукту одной фразой>
-Стадия / текущий шаг: <stage / step>
+Human meaning: <what this phase delivered to the product, in one sentence>
+Stage / current step: <stage / step>
 
 Deliverables:
   - [every file delivered]
@@ -104,7 +104,7 @@ Unmapped user prompt source entries: [0 required]
 
 Deviations from plan: [none | describe]
 Claims opened/closed: [opened] / [closed]
-What remains and why: [plain Russian]
+What remains and why: [plain English unless the user requests another language]
 Next bounded action: [...]
 ```
 

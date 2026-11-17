@@ -118,7 +118,7 @@ Before execution continuation, the visible status must show human-readable phase
 counts (total phases/steps, done, in-progress, remaining) and plain-language
 current phase/step meaning **before** any machine/STATE/row label. See
 `phase-planning-SKILL.md` Sequential Execution-Control Gate for the exact board
-fields and Russian status block.
+fields and English status block (unless the user requests another language).
 
 ## Plan-Not-Ready Is Repair Loop, Not Stop
 

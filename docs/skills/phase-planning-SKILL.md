@@ -58,21 +58,21 @@ completed phase list; current phase and step; remaining phase list; remaining
 action count and names; a plain-language sentence per phase explaining what it
 solves; a human-readable `requirement → phase → evidence` matrix.
 
-### Human-readable status block (Russian, before any machine label)
+### Human-readable status block (English unless the user requests another language, before any machine label)
 For every Luba-facing progress update, execution status, review status, or
 near-final/final packet:
 ```
-Фаза X из Y: <человеческое название>. Смысл фазы: <что эта фаза решает для продукта>.
-Шаг X.Y из X.N: <человеческое название>. Смысл шага: <что этот шаг проверяет/создаёт>.
-Статус: DONE | IN_PROGRESS | NEEDS_FIX | REVIEWING | BLOCKED_WITH_REASON. <одна русская фраза>
-Позиция проекта: всего <Y> фаз; сделано <n>; текущая фаза/шаг <X>/<X.Y>; осталось <n> фаз и <n> шагов.
-Сделано: <counts + concrete artifacts>.
-В процессе: <current action and who/what is doing it>.
-Осталось: 1. <...> 2. <...>
-Review нашёл: <...или "пока не проверялось">
-Что исправлено: <...или "пока ничего не менялось">
-Следующее действие: <next bounded action, или NONE>
-Commit/continuation allowed: <да/нет; что именно>
+Phase X of Y: <human-readable name>. Purpose: <what this phase solves for the product>.
+Step X.Y of X.N: <human-readable name>. Purpose: <what this step verifies/creates>.
+Status: DONE | IN_PROGRESS | NEEDS_FIX | REVIEWING | BLOCKED_WITH_REASON. <one plain-language sentence>
+Project position: <Y> phases total; <n> done; current phase/step <X>/<X.Y>; <n> phases and <n> steps remaining.
+Done: <counts + concrete artifacts>.
+In progress: <current action and who/what is doing it>.
+Remaining: 1. <...> 2. <...>
+Review findings: <...or "not checked yet">
+What was fixed: <...or "nothing changed yet">
+Next action: <next bounded action, or NONE>
+Commit/continuation allowed: <yes/no; exactly what is allowed>
 opaque codes: <technical labels only after the human explanation, or NONE>
 ```
 A bare label such as `Phase 01.01 ...`, `STATE goal_reached=true`, or

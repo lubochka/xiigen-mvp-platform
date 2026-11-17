@@ -53,7 +53,7 @@ service-boundary design, also run the Human-Readable Architecture Artifact Gate 
 `human-readable-architecture-audit-SKILL.md`. Required evidence:
 
 ```text
-Russian (or human-language) summary present:
+Plain-English summary present (unless the user requests another language):
 PlantUML or Mermaid UML importable to draw.io:
 data-flow simulations and expected branch outcomes present:
 no-code algorithm explanation present:

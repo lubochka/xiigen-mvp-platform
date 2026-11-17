@@ -16,10 +16,10 @@ xUnit unit/integration, `SK-FAB` → the platform fabric interfaces, `SK-VERIFY`
 `generated-code-review-SKILL.md` + `verification-before-completion-SKILL.md`,
 `SK-DOCS` → `documentation-sync` (when present).
 
-Коротко для архитектора (RU): в рабочем приказе и пакете возврата нельзя
-ограничиться короткими метками `SK-PLAN` / `SK-REVIEW`. Человеческим языком
-назови, какие файлы/секции проверяются, что прочитано, где граница артефакта, и
-почему это не разрешает прямое исполнение родительской сессией.
+For the architect: a work order and its returned packet must go beyond short
+labels such as `SK-PLAN` / `SK-REVIEW`. Explain in plain language which files/sections
+are being checked, what was read, the artifact's scope, and why this does not
+authorize the parent session to execute the work directly.
 
 ## Binding order on this platform
 

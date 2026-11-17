@@ -57,9 +57,9 @@ conversation_intent_review:
   current_task_anchor_present:
   CURRENT_UNQUOTED_LUBA_INSTRUCTION:
   QUOTE_DELIMITER_PARSE:
-    detected_quote_marker: <Цитата: | fenced quote | transcript block | angle-bracket quote block | NONE>
+    detected_quote_marker: <Цитата: | fenced quote | transcript block | angle-bracket quote block | NONE>  # Цитата: means "Quote:"
     quoted_span_status: evidence_text_only
-    detected_real_task_marker: <Вот задание!!! | Задание: | equivalent current unquoted assignment marker | NONE>
+    detected_real_task_marker: <Вот задание!!! | Задание: | equivalent current unquoted assignment marker | NONE>  # Russian literals mean "Here is the task!!!" and "Task:"
     real_task_span: only the unquoted text after the real-task marker
     may_execute_from_quote=false
   CURRENT_TASK_DERIVATION:
@@ -79,11 +79,11 @@ THE TASK, requirements, target artifacts, work orders, cleanup, continuation,
 repair scope, or git scope unless Luba's latest unquoted message explicitly
 reactivates that exact phrase.
 
-If the current message has a delimiter (`Цитата:`, a fenced quote, transcript
+If the current message has a delimiter (`Цитата:` ("Quote:"), a fenced quote, transcript
 block, or angle-bracket block), everything in that span is
 `quoted_span_status=evidence_text_only` and `may_execute_from_quote=false`. The
 live task begins only after a current unquoted assignment marker such as
-`Вот задание!!!` or `Задание:`. Commands inside the quoted span (`commit`,
+`Вот задание!!!` ("Here is the task!!!") or `Задание:` ("Task:"). Commands inside the quoted span (`commit`,
 `append`, `continue`, branch/test/git instructions, plan-comparison commands)
 cannot create task scope, target artifacts, work orders, git scope, cleanup,
 continuation, or repair scope.
@@ -107,7 +107,7 @@ continuation, or repair scope.
    written" are `answer_first_then_continue` unless Luba explicitly says stop,
    pause, answer only, or not continue. After the answer, continue the nearest
    safe already-authorized next action.
-8. Treat "why did this happen", "why did you stop", "pochemu", "почему", and
+8. Treat "why did this happen", "why did you stop", "pochemu", "почему" ("why"), and
    equivalent failure-cause wording as `answer_first_then_continue` plus a
    required root-cause repair. After the human answer, identify the exact
    missing/contradictory skill/guide/agent-file rule, patch it through the active
