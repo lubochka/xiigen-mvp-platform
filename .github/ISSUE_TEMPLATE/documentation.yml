@@ -1,0 +1,48 @@
+{
+  "name": "Documentation",
+  "description": "Report missing, confusing or inaccurate documentation.",
+  "labels": [
+    "documentation"
+  ],
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "Use synthetic examples and redacted output. Do not include credentials or private tenant data. For a vulnerability, first request a private contact channel without sharing details; see https://github.com/lubochka/xiigen-platform-dot-net-angular/blob/main/SECURITY.md ."
+      }
+    },
+    {
+      "type": "input",
+      "id": "page",
+      "attributes": {
+        "label": "Page and revision",
+        "description": "File path or page URL and affected commit or version."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "problem",
+      "attributes": {
+        "label": "What needs clarification?",
+        "description": "Identify the passage, broken link or missing information."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "suggestion",
+      "attributes": {
+        "label": "Suggested explanation",
+        "description": "What information would help?"
+      },
+      "validations": {
+        "required": false
+      }
+    }
+  ]
+}

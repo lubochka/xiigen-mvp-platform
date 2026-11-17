@@ -1,0 +1,59 @@
+{
+  "name": "Feature request",
+  "description": "Describe a useful product or contributor improvement.",
+  "labels": [
+    "enhancement"
+  ],
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "Use synthetic examples and redacted output. Do not include credentials or private tenant data. For a vulnerability, first request a private contact channel without sharing details; see https://github.com/lubochka/xiigen-platform-dot-net-angular/blob/main/SECURITY.md ."
+      }
+    },
+    {
+      "type": "input",
+      "id": "area",
+      "attributes": {
+        "label": "Affected component or flow",
+        "description": "Name the area where this improvement belongs."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "outcome",
+      "attributes": {
+        "label": "Desired outcome",
+        "description": "Explain the user need and a concrete example."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "current",
+      "attributes": {
+        "label": "Current behavior",
+        "description": "Describe how you handle this today and what gets in the way."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "acceptance",
+      "attributes": {
+        "label": "What would success look like?",
+        "description": "Describe an observable result without requiring a particular implementation."
+      },
+      "validations": {
+        "required": true
+      }
+    }
+  ]
+}

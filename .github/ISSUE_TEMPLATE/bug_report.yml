@@ -1,0 +1,59 @@
+{
+  "name": "Bug report",
+  "description": "Report a reproducible problem.",
+  "labels": [
+    "bug"
+  ],
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "Use synthetic examples and redacted output. Do not include credentials or private tenant data. For a vulnerability, first request a private contact channel without sharing details; see https://github.com/lubochka/xiigen-platform-dot-net-angular/blob/main/SECURITY.md ."
+      }
+    },
+    {
+      "type": "input",
+      "id": "revision",
+      "attributes": {
+        "label": "Revision and component",
+        "description": "Commit or version, platform component or flow, and relevant environment."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "reproduction",
+      "attributes": {
+        "label": "Reproduction",
+        "description": "Small, synthetic steps that reproduce the problem."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "behavior",
+      "attributes": {
+        "label": "Expected and observed behavior",
+        "description": "Describe both, including any error message with secrets removed."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "logs",
+      "attributes": {
+        "label": "Redacted supporting details",
+        "description": "Optional relevant logs or screenshots without private data."
+      },
+      "validations": {
+        "required": false
+      }
+    }
+  ]
+}
