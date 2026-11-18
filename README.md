@@ -4,7 +4,7 @@
 
 XIIGen is a fabric-first AI code generation engine for agentic workflows. It turns business intent into application flows through planning, generation, orchestration, retrieval and review. This is the .NET and Angular microservices implementation of the same product developed in [xiigen-mvp](https://github.com/lubochka/xiigen-mvp).
 
-This repository supplies the shared .NET foundation. Business microservices and Angular applications live in [XIIGen Flows](https://github.com/lubochka/xiigen-flows-dot-net-angular). Together, the repositories keep reusable infrastructure contracts separate from individual business flows.
+This repository supplies the shared .NET foundation. Business microservices and Angular applications live in [XIIGen Flows](https://github.com/lubochka/xiigen-mvp-flows). Together, the repositories keep reusable infrastructure contracts separate from individual business flows.
 
 ## What the platform provides
 
@@ -64,13 +64,13 @@ For a client application, continue in the [flows repository](https://github.com/
 
 Read the [contributor guide](CONTRIBUTING.md), [support guidance](SUPPORT.md) and [security policy](SECURITY.md).
 
-Use [issues](https://github.com/lubochka/xiigen-platform-dot-net-angular/issues) for bugs, documentation corrections and proposed improvements. Explain the affected component and intended result. Shared infrastructure changes belong here; flow-specific behavior belongs in the companion repository. Keep examples synthetic and exclude credentials and private tenant data.
+Use [issues](https://github.com/lubochka/xiigen-mvp-platform) for bugs, documentation corrections and proposed improvements. Explain the affected component and intended result. Shared infrastructure changes belong here; flow-specific behavior belongs in the companion repository. Keep examples synthetic and exclude credentials and private tenant data.
 
 ## License and related projects
 
 XIIGen's first-party licensing is GNU Affero General Public License version 3 only (`AGPL-3.0-only`). Third-party dependencies retain their own licenses. See [LICENSE](LICENSE), [NOTICE](NOTICE) and [third-party notices](THIRD_PARTY_NOTICES.md).
 
-- [XIIGen Flows for .NET and Angular](https://github.com/lubochka/xiigen-flows-dot-net-angular) — business microservices and clients built on this platform.
+- [XIIGen Flows for .NET and Angular](https://github.com/lubochka/xiigen-mvp-flows) — business microservices and clients built on this platform.
 - [xiigen-mvp](https://github.com/lubochka/xiigen-mvp) — the parallel XIIGen implementation and product reference.
 
 The engine consumes models and can produce learning signals; model-weight training belongs to the separate XIIGen model core. See the [FAQ](docs/FAQ.md).
